@@ -1,0 +1,1 @@
+var tipuesearch = {"pages":[{"title":"About","text":"Pyslvs.com 網誌 Pyslvs.com","tags":"misc","url":"http://www.pyslvs.com/blog/pages/about/"},{"title":"Pyslvs.com 上線","text":"pyslvs.com pyslvs.com","tags":"論壇","url":"http://www.pyslvs.com/blog/pyslvs-on-line.html"}]};
