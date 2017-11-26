@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論壇</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-tan.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-11-07T12:00:00+08:00</updated><entry><title>Pyslvs.com 上線</title><link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="alternate"></link><published>2017-11-07T12:00:00+08:00</published><updated>2017-11-07T12:00:00+08:00</updated><author><name>pyslvs.com</name></author><id>tag:pyslvs.github.io,2017-11-07:/blog/pyslvs-on-line.html</id><summary type="html">&lt;p&gt;pyslvs.com&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;pyslvs.com&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論壇</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-tan.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-11-07T12:00:00+08:00</updated><entry><title>Pyslvs.com 上線</title><link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="alternate"></link><published>2017-11-07T12:00:00+08:00</published><updated>2017-11-07T12:00:00+08:00</updated><author><name>pyslvs.com</name></author><id>tag:pyslvs.github.io,2017-11-07:/blog/pyslvs-on-line.html</id><summary type="html">&lt;p&gt;目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs.com.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs.com.&lt;/p&gt;
 
 
-&lt;p&gt;pyslvs.com&lt;/p&gt;</content><category term="pyslvs"></category></entry></feed>
+&lt;p&gt;接下來將要 CNAME 為 pyslvs.com, 供 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 擷取, 而 ,&lt;a href="https://pyslvs.github.io"&gt;https://pyslvs.github.io&lt;/a&gt; 則為 Github Pages 網址.&lt;/p&gt;</content><category term="pyslvs"></category></entry></feed>
