@@ -42,7 +42,7 @@
 
     <link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="canonical" />
 
-        <meta name="description" content="目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs-com.">
+        <meta name="description" content="2017.11.26 之前的 pyslvs 網站內容備份在 https://kmolyuan.github.io/pyslvs/, 目前的http://pyslvs.com 使用 作為網址, disqus 則登記為 pyslvs-com.">
 
         <meta name="author" content="pyslvs.com">
 
@@ -54,7 +54,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Pyslvs.com"/>
 <meta property="og:title" content="Pyslvs.com 上線"/>
-<meta property="og:description" content="目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs-com."/>
+<meta property="og:description" content="2017.11.26 之前的 pyslvs 網站內容備份在 https://kmolyuan.github.io/pyslvs/, 目前的http://pyslvs.com 使用 作為網址, disqus 則登記為 pyslvs-com."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://pyslvs.github.io/blog/pyslvs-on-line.html"/>
 <meta property="og:type" content="article"/>
@@ -74,7 +74,7 @@
 
         <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
 
-      <meta name="twitter:description" content="目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs-com.">
+      <meta name="twitter:description" content="2017.11.26 之前的 pyslvs 網站內容備份在 https://kmolyuan.github.io/pyslvs/, 目前的http://pyslvs.com 使用 作為網址, disqus 則登記為 pyslvs-com.">
 
 <script type="application/ld+json">
 {
@@ -91,7 +91,7 @@
   },
   "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
   "url": "https://pyslvs.github.io/blog/pyslvs-on-line.html",
-  "description": "目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs-com."
+  "description": "2017.11.26 之前的 pyslvs 網站內容備份在 https://kmolyuan.github.io/pyslvs/, 目前的http://pyslvs.com 使用 作為網址, disqus 則登記為 pyslvs-com."
 }
 </script>
 </head>
@@ -158,10 +158,13 @@
         <article class="post">
         <div class="inner">
             <section class="post-content">
-                <p>目前使用 pyslvs.github.io 作為網址, disqus 登記為 pyslvs-com.</p>
+                <p>2017.11.26 之前的 pyslvs 網站內容備份在 <a href="https://kmolyuan.github.io/pyslvs/">https://kmolyuan.github.io/pyslvs/</a>, 目前的<a href="http://pyslvs.com">http://pyslvs.com</a> 使用 <pyslvs.github.io> 作為網址, disqus 則登記為 pyslvs-com.</p>
 
 
-<p>接下來將要 CNAME 為 pyslvs.com, 供 <a href="http://pyslvs.com">http://pyslvs.com</a> 擷取, 而 <a href="https://pyslvs.github.io">https://pyslvs.github.io</a> 則為 Github Pages 網址.</p>
+<p>這項改變的目的是以 <a href="https://github.com/getpelican/pelican">Pelican</a> 靜態網頁取代原先的一頁式網頁, 除了比較容易維護之外, 也可以提供更充實的內容.</p>
+<p>這項以 <a href="https://pages.github.com/">Github Pages</a> 架構作為雲端 WWW 伺服器, 而 DNS 的設定首先是將 <a href="http://www.pyslvs.com">http://www.pyslvs.com</a> 以 CNAME 指向 <a href="http://pyslvs.github.io">http://pyslvs.github.io</a>, 然後在內定轉址的根網址 <a href="http://pyslvs.com">http://pyslvs.com</a>, 以 301 類型轉至 <a href="http://www.pyslvs.com">http://www.pyslvs.com</a>.</p>
+<p>至於 <a href="https://pages.github.com/">Github Pages</a> 的部分則是針對 <a href="https://github.com/pyslvs/pyslvs.github.io">https://github.com/pyslvs/pyslvs.github.io</a> 倉儲, 將 Settings 中的 Custom Domain 設為 <www.pyslvs.com> 就算完成.</p>
+<p>Pyslvs 的原意為 Python for <a href="http://solvespace.com">Solvespace</a>, 是讓使用者容易使用 <a href="http://solvespace.com">Solvespace</a> 所開源出來的 Geometric Constraint Solver, 也就是<a href="https://github.com/KmolYuan/python-solvespace">Python Solvespace</a>, 隨後利用 <a href="https://www.riverbankcomputing.com/software/pyqt/download5">PyQt5</a> 使用者介面並加上演化合成引擎, 成為目前的 PSLVS (Python Synthesis of Linkages and Verification Software), 中文為 Python 機構合成與驗證套件, 其開發目標希望能夠成為一套能夠用於機械產品平面機構合成與機構可用性驗證的模擬分析與最佳化設計套件.</p>
             </section>
 
             <section class="post-info">
