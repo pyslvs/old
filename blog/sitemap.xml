@@ -4,63 +4,63 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://www.pyslvs.com/blog/</loc>
-<lastmod>2017-11-26T12:10:38-00:00</lastmod>
+<loc>http://pyslvs.github.io/blog/</loc>
+<lastmod>2017-11-26T12:12:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/archives.html</loc>
-<lastmod>2017-11-26T12:10:38-00:00</lastmod>
+<loc>http://pyslvs.github.io/blog/archives.html</loc>
+<lastmod>2017-11-26T12:12:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/tags.html</loc>
-<lastmod>2017-11-26T12:10:38-00:00</lastmod>
+<loc>http://pyslvs.github.io/blog/tags.html</loc>
+<lastmod>2017-11-26T12:12:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/categories.html</loc>
-<lastmod>2017-11-26T12:10:38-00:00</lastmod>
+<loc>http://pyslvs.github.io/blog/categories.html</loc>
+<lastmod>2017-11-26T12:12:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/pages/about/</loc>
+<loc>http://pyslvs.github.io/blog/pages/about/</loc>
 <lastmod>2017-11-15T09:53:31+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/pyslvs-on-line.html</loc>
+<loc>http://pyslvs.github.io/blog/pyslvs-on-line.html</loc>
 <lastmod>2017-11-07T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/category/lun-tan.html</loc>
+<loc>http://pyslvs.github.io/blog/category/lun-tan.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/tag/pyslvs.html</loc>
+<loc>http://pyslvs.github.io/blog/tag/pyslvs.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.pyslvs.com/blog/author/pyslvscom.html</loc>
+<loc>http://pyslvs.github.io/blog/author/pyslvscom.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

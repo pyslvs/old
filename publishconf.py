@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # 將所有靜態 html 檔案移到 blog 子目錄
-SITEURL = 'http://www.pyslvs.com/blog'
+SITEURL = 'http://pyslvs.github.io/blog'
 # 此設定用於將資料送到 gh-pages, 因此使用絕對 URL 設定
 RELATIVE_URLS = False
 
