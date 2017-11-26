@@ -16,7 +16,7 @@
 <v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
-<v t="leo.20151213173811.1"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
+<v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
 <v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
