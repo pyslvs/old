@@ -16,52 +16,52 @@
 <v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
-<v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
+<v t="leo.20151213173811.1"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
 <v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
-<v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
+<v t="leo.20151213173830.1"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
 <v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
 <v t="amd.20151216152209.1"><vh>@edit README.md</vh></v>
 <v t="leo.20171105093855.1"><vh>@edit CNAME</vh></v>
-<v t="leo.20151213230723.1" a="E"><vh>Pelican 設定</vh>
+<v t="leo.20151213230723.1"><vh>Pelican 設定</vh>
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
 </v>
-<v t="amd.20151215170117.1" a="E"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
+<v t="amd.20151215170117.1"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
 <v t="leo.20151212173725.1"><vh>@edit pelicanconf.py</vh></v>
 </v>
 <v t="amd.20151215170142.1" a="E"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
 <v t="leo.20151212173803.1"><vh>@edit publishconf.py</vh></v>
 </v>
-<v t="amd.20151215170221.1" a="E"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
+<v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
-<v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
-<v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
-<v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
+<v t="amd.20151215121740.1"><vh>@path theme</vh>
+<v t="leo.20171105220232.1"><vh>@path attila</vh>
+<v t="leo.20171105220325.1"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
 <v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
-<v t="leo.20171107153729.1" a="E"><vh>@path partials</vh>
+<v t="leo.20171107153729.1"><vh>@path partials</vh>
 <v t="leo.20171107153746.1"><vh>@edit navigation.html</vh></v>
 </v>
 </v>
 </v>
 </v>
 <v t="amd.20151215170326.1"><vh>以下在修改或查驗 plugin 目錄下的檔案</vh></v>
-<v t="amd.20151215154225.1" a="E"><vh>@path plugin</vh>
-<v t="amd.20151215154238.1" a="E"><vh>@path tipue_search</vh>
+<v t="amd.20151215154225.1"><vh>@path plugin</vh>
+<v t="amd.20151215154238.1"><vh>@path tipue_search</vh>
 <v t="amd.20151215154248.1"><vh>@edit tipue_search.py</vh></v>
 </v>
 </v>
 </v>
 </v>
 <v t="amd.20151215170350.1"><vh>以下為 content 目錄中的 md 檔案</vh></v>
-<v t="amd.20160106094754.1" a="E"><vh>@path ./../content/pages</vh>
-<v t="amd.20160106094829.1" a="E"><vh>chiayicity pages 文章</vh>
+<v t="amd.20160106094754.1"><vh>@path ./../content/pages</vh>
+<v t="amd.20160106094829.1"><vh>chiayicity pages 文章</vh>
 <v t="amd.20160106094844.1"><vh>@edit pyslvs_pages_1.md</vh></v>
 </v>
 </v>
