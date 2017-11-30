@@ -191,11 +191,9 @@ QLineEdit#editorLabel {
 <t tx="leo.20151212173315.3">horizontal: body pane to the left
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
-import subprocess
-result = subprocess.run(['pelican', 'content', '-o', 'blog', '-s', 'publishconf.py'], stdout=subprocess.PIPE)
-#os.system("pelican content -o blog -s publishconf.py")
+import os
+os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
-g.es(result.stdout.decode("utf-8"))
 
 </t>
 <t tx="leo.20151213085727.1">@language python
