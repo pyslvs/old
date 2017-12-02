@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>設計、設計方法與機械設計</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://pyslvs.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Full Atom Feed" />
+          <link href="https://pyslvs.github.io/blog/feeds/lun-shu.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Categories Atom Feed" />
+
+  <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+
+  
+    <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" rel="canonical" />
+
+        <meta name="description" content="從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?">
+
+        <meta name="author" content="scrum">
+
+        <meta name="tags" content="design">
+        <meta name="tags" content="design method">
+        <meta name="tags" content="mechanical design">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Pyslvs.com"/>
+<meta property="og:title" content="設計、設計方法與機械設計"/>
+<meta property="og:description" content="從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-12-02 11:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://pyslvs.github.io/blog/author/scrum.html">
+  <meta property="article:publisher" content="https://facebook.com/myprofile" />
+<meta property="article:section" content="論述"/>
+<meta property="article:tag" content="design"/>
+<meta property="article:tag" content="design method"/>
+<meta property="article:tag" content="mechanical design"/>
+<meta property="og:image" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@myprofile">
+    <meta name="twitter:title" content="設計、設計方法與機械設計">
+    <meta name="twitter:url" content="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html">
+
+        <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "設計、設計方法與機械設計",
+  "headline": "設計、設計方法與機械設計",
+  "datePublished": "2017-12-02 11:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "scrum",
+    "url": "https://pyslvs.github.io/blog/author/scrum.html"
+  },
+  "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
+  "url": "https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html",
+  "description": "從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="https://pyslvs.github.io/blog/pages/about/">About</a></li>
+
+            <li><a href="https://pyslvs.github.io/blog/archives.html">Archives</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/categories.html">Categories</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/tags.html">Tags</span></a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://pyslvs.github.io/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">設計、設計方法與機械設計</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://pyslvs.github.io/blog/author/scrum.html">Scrum</a>
+            | <time datetime="Sat 02 December 2017">Sat 02 December 2017</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://pyslvs.github.io/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="https://pyslvs.github.io/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?</p>
+
+
+<h2>設計到底是甚麼?</h2>
+<p>在工程領域, 設計應該是一種表達, 而且是能夠讓參與設計的所有團隊成員都充分了解, 且據以依循, 可以得到預期結果的具體表達.</p>
+<p>工程設計常用的表達至少有口語、文字、2D、3D、數學與實體等六種方式.</p>
+<p>例如: 利用 <a href="http://leoeditor.com/">Leo Editor</a> 管理 <a href="https://github.com/getpelican/pelican">Pelican</a> 靜態網誌系統的協同使用"設計", 文字表達敘述如下:</p>
+<ul>
+<li>這是一套允許多人協同編寫位於 content 目錄下的 <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> 檔案格式或 <a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> 格式文章原稿的系統</li>
+<li>為了完整保留本網誌系統原稿與設定檔案的歷程資料, 採用 <a href="https://github.com/">Github</a> 或 <a href="https://www.fossil-scm.org">Fossil SCM</a> 進行內容組態管理</li>
+<li>為了在組態管理歷程資料過程, 避免各學員的 <a href="http://leoeditor.com/">Leo Editor</a> 專案 XML 檔案, 因合併產生衝突處理上的困難, 規定各成員必須自行維護管理 users 目錄下, 以作者名稱命名的 .leo 檔案</li>
+<li>為了讓 <a href="https://github.com/getpelican/pelican">Pelican</a> 所產生的 html 網誌系統, 可以同時在無網路連線的近端與雲端上使用, 近端利用 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/pelicanconf.py">pelicanconf.py</a> 加上 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/local_publishconf.py">local_publishconf.py</a> 轉檔, 遠端則使用 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/pelicanconf.py">pelicanconf.py</a> 加上 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/publishconf.py">publishconf.py</a> 轉檔</li>
+<li><a href="https://github.com/getpelican/pelican">Pelican</a> 轉換完成的 html 檔案, 設定置於 blog 目錄中</li>
+<li>由於 <a href="https://github.com/getpelican/pelican">Pelican</a> 轉換後的 html 位於 blog 子目錄, 因此整個系統根目錄中的 index.html 以 head 標註中的 meta redirect 跳轉至 blog 目錄中的 index.html</li>
+<li>為了讓多人所建立的文章原稿, 同時存入 content 目錄而不會產生覆蓋, 規定以作者名稱加上底線, 再加上當天日期及副檔名命名</li>
+<li>作者若同一天建立多篇文章原稿, 則以用戶名稱_日期-1.md 等 dash 後加上數字區別</li>
+<li>因為 <a href="https://github.com/getpelican/pelican">Pelican</a> 針對沒有 slug 欄位設定的中文標題文章原稿, 會以拉丁拼音命名轉換後的 html 檔案, 比較不容易望文生義, 因此建議各文章以有意義的英文名稱命名, 且最前方加上作者名稱, 以避免因重複 slug 設定, 而讓 <a href="https://github.com/getpelican/pelican">Pelican</a> 無法轉檔</li>
+<li>為了讓各用戶的 <a href="http://leoeditor.com/">Leo Editor</a> 文章節點中, 以 @edit 或 @clean 節點指令下的文章更容易查找, 建議在存檔節點的根節點, 以文章標題註記</li>
+<li>有關 <a href="https://github.com/arulrajnet/attila">attila</a> 樣板右方 menu 側欄中的連結增刪, 可以透過編輯 partials 目錄中的 navigation.html 達成</li>
+<li>頁面正中方的搜尋表達, 以修改近端與雲端 templates 目錄中的 base.html 檔案中的 search section, 套入 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/theme/attila/templates/search.html">search.html</a> 達成</li>
+<li>系統啟用 <a href="https://github.com/getpelican/pelican-plugins/tree/master/summary">summary plugin</a> 的目的, 在於讓 <a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> 格式文章原稿可以透過標註, 區隔摘要與內文</li>
+<li>系統啟用 <a href="https://github.com/getpelican/pelican-plugins/tree/master/neighbors">neighbors plugin</a> 的目的, 在於讓各篇文章末端出現前後文章的連結, 以方便循序瀏覽閱讀</li>
+<li>系統啟用 <a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search">tipuesearch plugin</a> 的目的, 在於讓使用者可以透過兩個字元以上的關鍵字進行全文搜尋</li>
+<li>為了讓 <a href="https://github.com/getpelican/pelican">Pelican</a> 轉換完成的 html 檔案, 可以採 <a href="http://www.tipue.com/search/">tipuesearch</a> Javascript 延伸功能, 以關鍵字搜尋, 近端關鍵字以 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/blog/tipuesearch_content.js">tipuesearch_content.js</a> 儲存, 遠端則使用 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/blog/tipuesearch_content.json">tipuesearch_content.json</a> 儲存, 詳細內容可參見 plugin 目錄中, tipue_search 子目錄中的 <a href="https://github.com/pyslvs/pyslvs.github.io/blob/master/plugin/tipue_search/tipue_search.py">tipue_search.py</a> 設定</li>
+<li>上述之所以在轉檔階段需要區分近端與雲端的原因, 在於近端無 <a href="https://disqus.com/">disqus</a> 設定, 而遠端則附加 <a href="https://disqus.com/">disqus</a> 回應系統</li>
+<li>為了讓近端與遠端瀏覽器中各 <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a> 前後端程式系統的反應一致, 近端利用 www-server 按鈕, 以執行緒啟動 https 伺服器, 使用者可以在轉檔完成後, 以瀏覽器 IPv4 網路協定檢查內容</li>
+<li>為了讓系統在 IPv6 網路協定下正常運作, 以 ipv6-https-server 按鈕, 以執行緒啟動 https 伺服器, 使用者可以在轉檔完成後 ,以瀏覽器 IPv6 網路協定檢查內容</li>
+</ul>
+<p>當然, 本網誌系統的完整原始資料都保存在 <a href="https://github.com/pyslvs/pyslvs.github.io">Pyslvs 倉儲</a>, 任何人只要 git clone 倉儲, 稍加修改, 就可以另起爐灶, 延續這個網誌系統的價值, 但是其中許多細微精密的設計, 若沒有完整表達, 一旦爾後使用環境改變或各相關系統改版, 使用者就無法充分掌握各開放系統的互動搭配, 獨力配置因應.</p>
+<p>換言之, 工程領域中與所謂設計相關的具體表達, 至少是時間與所處環境的函數, 一旦時空轉變, 就必須透過完整的歷程組態管理紀錄, 啟動各互動元件間的配置修改, 方能延續或加值原始設計的表達, 得到預期結果.</p>
+<h2>設計方法</h2>
+<p>假如我們接受在工程領域中, 上述所謂設計是一種表達的陳述, 那麼在表達設計的歷程中, 將存在許多解決問題的方法, 與所處時空背景的說明.</p>
+<p>首先, 甚麼是方法? "方"為合乎約制條件, 可以實際拿出來使用的策略與規則, 表示並非空想, 而可實際施行的內容, 才叫"方". 至於"法"是順應自然條件下, 可因時空而制宜的最高行事準則. 因此"方法"就是: 配合不同條件, 實際施行的最高準則.</p>
+<p>而再從上述設計有六種表達方式的論述出發, 那麼以口語表達而言的設計方法, 就是:</p>
+<p>配合不同條件, 實際施行口語表達的最高準則. 也就是因應環境與對象, 將設計內容, 說清楚講明白所採行的策略與準則.</p>
+<p>因此, 所謂設計方法, 除了口語表達外, 還可以從文字、2D、3D、數學與實體等表達的形式, 加以發揮, 具體呈現設計內容.</p>
+<p>由於設計方法以各種形式表達的過程中, 會因時空背景與參與人員所做決策的差異, 而產生不同的結果, 多人協同團隊為了更有效掌握過程中的各項細節, 因此設計方法及組成元件有關的組態管理系統 (Configuration Management) 因應而生.</p>
+<h2>機械設計</h2>
+<p>機械是一種器物, 而且是由固體、流體與軟體元件精巧組合而成, 可互動運作, 達成特定功能之器物. 因此機械設計就是靈活運用六種表達方式, 明確說明如何透過固體、流體與軟體元件之互動運作, 而能達成預定結果之明確與具體表達.</p>
+<p><a href="http://pyslvs.com">Pyslvs</a> 是機械設計過程中的一項工具, 主要由平面機構模擬核心、演化運算核心與視窗圖形化介面程式所組成. 其中, 兩種運算核心都依據平面機構有關的數學模型與分析表達, 採用軟體元件製作, 再結合 2D 使用者圖形介面建立物件導向, 以及事件驅動程式元件等功能, 讓使用者可以輸入平面機構模型後, 進行模擬或合成運算.</p>
+<p>而 <a href="http://pyslvs.com">Pyslvs</a> 平面機構模擬核心的主體為一套 Geometric Constrain Solver, 依附在 Solvespace 參數化 3D 繪圖套件中. 在 2013 年 9 月透過 <a href="http://www.swig.org/">SWIG</a> (Simplified Wrapper and Interface Generator) 技術, 轉為 Python2 可呼叫的程式庫, 為 <a href="https://github.com/BBBSnowball/python-solvespace">Python2-Solvespace</a>. 2016 年 7 月之後, 經本站轉為 Python3 可呼叫的程式庫, 成為 <a href="https://github.com/KmolYuan/python-solvespace">Python3-Solvespace</a>.</p>
+<p>至於 <a href="http://pyslvs.com">Pyslvs</a> 平面機構合成所使用的演化運算核心 ,則源自 2015 年 4 月利用 <a href="http://cython.org/">Cython</a> (C-extension for Python) 技術所開發的 <a href="https://github.com/kmollee/algorithm">Algorithm</a>, 包含實數編碼基因 (Real-coded Genetic) 演算法、差分進化 (Differential Evolution) 演算法與螢火蟲 (Firefly) 演算法等模組.</p>
+<p><a href="http://pyslvs.com">Pyslvs</a> 的圖形介面採用 <a href="https://www.riverbankcomputing.com/software/pyqt/intro">PyQt5</a> , 在 <a href="https://eric-ide.python-projects.org">Eric6</a> 整合開發環境中建立.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=設計、設計方法與機械設計&amp;url=https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://pyslvs.github.io/blog/tag/design.html">design</a><a href="https://pyslvs.github.io/blog/tag/design-method.html">design method</a><a href="https://pyslvs.github.io/blog/tag/mechanical-design.html">mechanical design</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'pyslvs-com';
+                    var disqus_shortname = 'pyslvs-com';
+                    var disqus_identifier = '/scrum_design-design_methods-and-mechanical-design.html';
+                    var disqus_url = 'https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/scrum_design-design_methods-and-mechanical-design.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-prev" href="https://pyslvs.github.io/blog/2017-11-28.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">Pyslvs 開發進度 - 11/28</h2>
+                            <p class="post-nav-excerpt">Pyslvs v0.9 更新進度 介面操作重大更新</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+  
+  <script type="text/javascript" src="https://pyslvs.github.io/blog/theme/js/script.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'pyslvs-com';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+ 
+
+
+</body>
+</html>

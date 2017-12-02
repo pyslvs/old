@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-02T11:00:00+08:00</updated><entry><title>設計、設計方法與機械設計</title><link href="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" rel="alternate"></link><published>2017-12-02T11:00:00+08:00</published><updated>2017-12-02T11:00:00+08:00</updated><author><name>scrum</name></author><id>tag:pyslvs.github.io,2017-12-02:/blog/scrum_design-design_methods-and-mechanical-design.html</id><summary type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論述</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-shu.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-02T11:00:00+08:00</updated><entry><title>設計、設計方法與機械設計</title><link href="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" rel="alternate"></link><published>2017-12-02T11:00:00+08:00</published><updated>2017-12-02T11:00:00+08:00</updated><author><name>scrum</name></author><id>tag:pyslvs.github.io,2017-12-02:/blog/scrum_design-design_methods-and-mechanical-design.html</id><summary type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
 
 
@@ -42,37 +42,4 @@
 &lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 是機械設計過程中的一項工具, 主要由平面機構模擬核心、演化運算核心與視窗圖形化介面程式所組成. 其中, 兩種運算核心都依據平面機構有關的數學模型與分析表達, 採用軟體元件製作, 再結合 2D 使用者圖形介面建立物件導向, 以及事件驅動程式元件等功能, 讓使用者可以輸入平面機構模型後, 進行模擬或合成運算.&lt;/p&gt;
 &lt;p&gt;而 &lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 平面機構模擬核心的主體為一套 Geometric Constrain Solver, 依附在 Solvespace 參數化 3D 繪圖套件中. 在 2013 年 9 月透過 &lt;a href="http://www.swig.org/"&gt;SWIG&lt;/a&gt; (Simplified Wrapper and Interface Generator) 技術, 轉為 Python2 可呼叫的程式庫, 為 &lt;a href="https://github.com/BBBSnowball/python-solvespace"&gt;Python2-Solvespace&lt;/a&gt;. 2016 年 7 月之後, 經本站轉為 Python3 可呼叫的程式庫, 成為 &lt;a href="https://github.com/KmolYuan/python-solvespace"&gt;Python3-Solvespace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;至於 &lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 平面機構合成所使用的演化運算核心 ,則源自 2015 年 4 月利用 &lt;a href="http://cython.org/"&gt;Cython&lt;/a&gt; (C-extension for Python) 技術所開發的 &lt;a href="https://github.com/kmollee/algorithm"&gt;Algorithm&lt;/a&gt;, 包含實數編碼基因 (Real-coded Genetic) 演算法、差分進化 (Differential Evolution) 演算法與螢火蟲 (Firefly) 演算法等模組.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 的圖形介面採用 &lt;a href="https://www.riverbankcomputing.com/software/pyqt/intro"&gt;PyQt5&lt;/a&gt; , 在 &lt;a href="https://eric-ide.python-projects.org"&gt;Eric6&lt;/a&gt; 整合開發環境中建立.&lt;/p&gt;</content><category term="design"></category><category term="design method"></category><category term="mechanical design"></category></entry><entry><title>Pyslvs 開發進度 - 11/28</title><link href="https://pyslvs.github.io/blog/2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/2017-11-28.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;介面操作重大更新&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;介面操作重大更新&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;介面操作重大更新&lt;/h1&gt;
-&lt;p&gt;今天改寫了一下畫布介面。&lt;/p&gt;
-&lt;p&gt;將拍照到剪貼簿的按鈕移到右上角的版本標籤旁；表格頁籤旁改成「全部選擇」按鈕。&lt;/p&gt;
-&lt;p&gt;新增兩個功能的快捷鍵：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;全選點 (Select all point)：Ctrl + A&lt;/li&gt;
-&lt;li&gt;自由移動模式切換 (Free move mode toggle)：Ctrl + F&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;另外有一個重大突破：矩形窗選功能。&lt;/p&gt;
-&lt;p&gt;在非自由移動模式下可靠滑鼠拖拉矩形線框，選取畫布上的點。&lt;/p&gt;
-&lt;p&gt;自由移動模式下拖拉將會移動並修改選擇的點座標。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/-pdUPiUBOfA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs.com 上線</title><link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="alternate"></link><published>2017-11-26T12:00:00+08:00</published><updated>2017-11-26T12:00:00+08:00</updated><author><name>pyslvs.com</name></author><id>tag:pyslvs.github.io,2017-11-26:/blog/pyslvs-on-line.html</id><summary type="html">&lt;p&gt;2017.11.26 之前的 pyslvs 網站內容備份在 &lt;a href="https://kmolyuan.github.io/pyslvs/"&gt;https://kmolyuan.github.io/pyslvs/&lt;/a&gt;, 目前的 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 使用 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt; 作為網站內容, disqus 則登記為 pyslvs-com.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;2017.11.26 之前的 pyslvs 網站內容備份在 &lt;a href="https://kmolyuan.github.io/pyslvs/"&gt;https://kmolyuan.github.io/pyslvs/&lt;/a&gt;, 目前的 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 使用 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt; 作為網站內容, disqus 則登記為 pyslvs-com.&lt;/p&gt;
-
-
-&lt;p&gt;這項改變的目的是以 &lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt; 靜態網頁取代原先的一頁式網頁, 除了比較容易維護之外, 也可以提供更充實的內容.&lt;/p&gt;
-&lt;p&gt;這項以 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; 架構作為雲端 WWW 伺服器, 而 DNS 的設定首先是將 &lt;a href="http://www.pyslvs.com"&gt;http://www.pyslvs.com&lt;/a&gt; 以 CNAME 指向 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt;, 然後在內定轉址的根網址 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt;, 以 301 類型轉至 &lt;a href="http://www.pyslvs.com"&gt;http://www.pyslvs.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;至於 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; 的部分則是針對 &lt;a href="https://github.com/pyslvs/pyslvs.github.io"&gt;https://github.com/pyslvs/pyslvs.github.io&lt;/a&gt; 倉儲, 將 Settings 中的 Custom Domain 設為 &lt;a href="http://www.pyslvs.com"&gt;http://www.pyslvs.com&lt;/a&gt; 就算完成.&lt;/p&gt;
-&lt;p&gt;Pyslvs 的原意為 Python for &lt;a href="http://solvespace.com"&gt;Solvespace&lt;/a&gt;, 是讓使用者容易使用 &lt;a href="http://solvespace.com"&gt;Solvespace&lt;/a&gt; 所開源出來的 Geometric Constraint Solver, 也就是 &lt;a href="https://github.com/KmolYuan/python-solvespace"&gt;Python Solvespace&lt;/a&gt;, 隨後利用 &lt;a href="https://www.riverbankcomputing.com/software/pyqt/download5"&gt;PyQt5&lt;/a&gt; 使用者介面並加上演化合成引擎, 成為目前的 PSLVS (Python Synthesis of Linkages and Verification Software), 中文為 Python 機構合成與驗證套件, 其開發目標希望成為一套能夠用於機械產品平面機構合成與機構可用性驗證的模擬分析與最佳化設計套件.&lt;/p&gt;
-&lt;p&gt;其他開放源機構分析軟體:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://blog.rectorsquid.com/linkage-mechanism-designer-and-simulator/"&gt;http://blog.rectorsquid.com/linkage-mechanism-designer-and-simulator/&lt;/a&gt; (Github: &lt;a href="https://github.com/rectorsquid/Linkage"&gt;https://github.com/rectorsquid/Linkage&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://designengrlab.github.io/PMKS/"&gt;https://designengrlab.github.io/PMKS/&lt;/a&gt; (Github: &lt;a href="https://github.com/DesignEngrLab/PMKS"&gt;https://github.com/DesignEngrLab/PMKS&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;</content><category term="pyslvs"></category></entry></feed>
+&lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 的圖形介面採用 &lt;a href="https://www.riverbankcomputing.com/software/pyqt/intro"&gt;PyQt5&lt;/a&gt; , 在 &lt;a href="https://eric-ide.python-projects.org"&gt;Eric6&lt;/a&gt; 整合開發環境中建立.&lt;/p&gt;</content><category term="design"></category><category term="design method"></category><category term="mechanical design"></category></entry></feed>

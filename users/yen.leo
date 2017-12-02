@@ -30,30 +30,30 @@
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
 </v>
-<v t="amd.20151215170117.1"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
+<v t="amd.20151215170117.1" a="E"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
 <v t="leo.20151212173725.1"><vh>@edit pelicanconf.py</vh></v>
 </v>
 <v t="amd.20151215170142.1" a="E"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
 <v t="leo.20151212173803.1"><vh>@edit publishconf.py</vh></v>
 </v>
-<v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
+<v t="amd.20151215170221.1" a="E"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
-<v t="amd.20151215121740.1"><vh>@path theme</vh>
-<v t="leo.20171105220232.1"><vh>@path attila</vh>
-<v t="leo.20171105220325.1"><vh>@path templates</vh>
+<v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
+<v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
+<v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
 <v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
-<v t="leo.20171107153729.1"><vh>@path partials</vh>
+<v t="leo.20171107153729.1" a="E"><vh>@path partials</vh>
 <v t="leo.20171107153746.1"><vh>@edit navigation.html</vh></v>
 </v>
 </v>
 </v>
 </v>
 <v t="amd.20151215170326.1"><vh>以下在修改或查驗 plugin 目錄下的檔案</vh></v>
-<v t="amd.20151215154225.1"><vh>@path plugin</vh>
-<v t="amd.20151215154238.1"><vh>@path tipue_search</vh>
+<v t="amd.20151215154225.1" a="E"><vh>@path plugin</vh>
+<v t="amd.20151215154238.1" a="E"><vh>@path tipue_search</vh>
 <v t="amd.20151215154248.1"><vh>@edit tipue_search.py</vh></v>
 </v>
 </v>
@@ -68,8 +68,11 @@
 <v t="amd.20151215170031.1" a="E"><vh>@path ./../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>網誌 md 檔案</vh>
 <v t="leo.20171105103358.1" a="E"><vh>201711</vh>
-<v t="leo.20171107221802.1" a="E"><vh>Pyslvs.com 上線</vh>
+<v t="leo.20171107221802.1"><vh>Pyslvs.com 上線</vh>
 <v t="leo.20171107221504.1"><vh>@edit pyslvs_20171115.md</vh></v>
+</v>
+<v t="leo.20171202102438.1" a="E"><vh>設計、設計方法與機械設計</vh>
+<v t="leo.20171202093723.1"><vh>@edit scrum_20171202.md</vh></v>
 </v>
 </v>
 </v>
@@ -258,5 +261,6 @@ make.start()</t>
 <t tx="leo.20171105220325.1"></t>
 <t tx="leo.20171107153729.1"></t>
 <t tx="leo.20171107221802.1"></t>
+<t tx="leo.20171202102438.1"></t>
 </tnodes>
 </leo_file>
