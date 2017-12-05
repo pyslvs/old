@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-05T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拓樸排列程式&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拓樸排列程式&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;拓樸排列程式&lt;/h1&gt;
+&lt;p&gt;花了一些時間寫了一個排列拓樸程式，將概念寫在這邊。&lt;/p&gt;
+&lt;p&gt;在論壇爬文時，看到作者自己推薦的 Python 樹狀結構模組 anytree，看了說明文件後決定使用此模組協助樹狀管理。&lt;/p&gt;
+&lt;p&gt;以一個四連桿 (4,) 的樹狀拓樸如下，只有一種排列方法：&lt;/p&gt;
+&lt;pre&gt;
+L0(2)
+├── L1(2)
+│   └── L3(2)
+│       └── [L2](2)
+└── L2(2)
+    └── [L3](2)
+-------
+Answer count: 1
+&lt;/pre&gt;
+
+&lt;p&gt;需要的模組有：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from anytree import Node, RenderTree
+from anytree.search import findall
+from itertools import permutations
+from typing import Tuple
+&lt;/pre&gt;
+
+&lt;p&gt;接著是印出上面樹狀結構的函式，anytree 的 RenderTree 搜尋函式會朝下列出節點的階級字元。&lt;/p&gt;
+&lt;p&gt;這邊用 &lt;code&gt;noname&lt;/code&gt; 這個 bool 變數決定是否顯示名稱。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+show_tree = lambda root: '\n'.join("{}{}({})".format(pre, n.name, n.limit) for pre, fill, n in RenderTree(root))
+&lt;/pre&gt;
+
+&lt;p&gt;接下來是主函式，稱為 &lt;code&gt;make_link&lt;/code&gt;，接收內含 int 的可迭代物件。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def make_link(iter: Tuple[int,]):
+    ...
+    return answer
+&lt;/pre&gt;
+
+&lt;p&gt;第一部分是創出連桿的數量，數字則是接頭數。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+link_type = []
+  for i, num in enumerate(iter):
+    i += 2
+    for j in range(num):
+        link_type.append(i)
+&lt;/pre&gt;
+
+&lt;p&gt;如輸入 &lt;code&gt;(4,)&lt;/code&gt;，可以得到 &lt;code&gt;[2, 2, 2, 2]&lt;/code&gt;；輸入 &lt;code&gt;(5, 4)&lt;/code&gt; 可得 &lt;code&gt;[2, 2, 2, 2, 2, 3, 3, 3, 3]&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;使用 Python 迭代工具模組的 &lt;a href="https://docs.python.org/3/library/itertools.html#itertools.permutations"&gt;permutations&lt;/a&gt; 函式來創造排列組合的迴圈。&lt;/p&gt;
+&lt;p&gt;相符無誤的項目會將 root 節點加入答案，有錯誤則用 continue 關鍵字跳過。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+answer = []
+for all_link in list(set(permutations(link_type))):
+  ...
+  answer.append(links[0])
+&lt;/pre&gt;
+
+&lt;p&gt;首先轉換 &lt;code&gt;link_type&lt;/code&gt; 的內容成為 anytree 模組的 Node 類型。&lt;/p&gt;
+&lt;p&gt;其中 &lt;code&gt;limit&lt;/code&gt; 屬性是此節點的接頭上限，僅用於比對，並無程式上的限制。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+all_link = [Node("L{}".format(i), limit=v) for i, v in enumerate(all_link)]
+&lt;/pre&gt;
+
+&lt;p&gt;接著將第一項當作 root 節點，加入 &lt;code&gt;links&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;這裡 &lt;code&gt;links&lt;/code&gt; 清單的最後一項 &lt;code&gt;links[-1]&lt;/code&gt; 是接下來的搜索法準備填入的項目。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+links = []
+links.append(all_link.pop(0))
+&lt;/pre&gt;
+
+&lt;p&gt;然後使用廣度優先搜索法 (Breadth-First-Search, BFS) 填入所有節點，使用 list 類型的 pop 方法配上 while 迴圈可以確保用光所有節點。&lt;/p&gt;
+&lt;p&gt;當指派一個節點的 &lt;code&gt;parent&lt;/code&gt; 屬性時，anytree 模組會自動將節點連上父節點，父節點可以透過 &lt;code&gt;children&lt;/code&gt; 屬性取得一個裝有所有子節點指標的 tuple 物件。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+while all_link:
+    link = all_link.pop(0)
+    if (len(links[-1].children) + bool(links[-1].parent))==links[-1].limit:
+        links.append(links[-1].children[0])
+    link.parent = links[-1]
+&lt;/pre&gt;
+
+&lt;p&gt;由於數學定義的「樹 (tree)」結構中，子節點只能擁有一個父項，否則為迴路 (Loop)，anytree 模組會在連接成迴路時自動回擲 &lt;code&gt;LoopError&lt;/code&gt; 錯誤。&lt;/p&gt;
+&lt;p&gt;但是我們的運動鍊為 close chain，因此必須再創立一個配對流程，這次使用類似連結的概念，同時為「主體」連結一個虛擬節點。&lt;/p&gt;
+&lt;p&gt;虛擬節點的樣式使用中括弧 &lt;code&gt;[ ]&lt;/code&gt; 辨識，不用指派名稱。&lt;/p&gt;
+&lt;p&gt;創立 &lt;code&gt;get_no_done&lt;/code&gt; 函式回傳使用 anytree 的 findall 模組過濾沒配對完成的節點。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+get_no_done = lambda: findall(links[0], filter_=lambda n: '[' not in n.name and (len(n.children) + bool(links[-1].parent)) &lt; n.limit)
+error = False
+while get_no_done():
+    nodes = get_no_done()
+    try:
+        l_1, l_2 = nodes[0], nodes[1]
+    except (ValueError, IndexError):
+        error = True
+        break
+    else:
+        Node("[{}]".format(l_1.name), limit=str(l_1.limit), parent=l_2)
+        Node("[{}]".format(l_2.name), limit=str(l_2.limit), parent=l_1)
+&lt;/pre&gt;
+
+&lt;p&gt;最後檢查是否在上述迴圈出現沒閉合狀況。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+if error:
+    continue
+&lt;/pre&gt;
+
+&lt;p&gt;或是兩對連桿之間有連到一個以上的接頭。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+if findall(links[0], filter_=lambda n: len([c.name for c in n.children])!=len(set(c.name for c in n.children))):
+    continue
+&lt;/pre&gt;
+
+&lt;p&gt;最後可以進行測試：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+if __name__=='__main__':
+    print("Topologic test")
+    answer = topo([5, 4])
+    #Show tree
+    for root in answer:
+        print(show_tree(root))
+        print('-'*7)
+    print("Answer count: {}".format(len(answer)))
+&lt;/pre&gt;
+
+&lt;p&gt;可得：&lt;/p&gt;
+&lt;pre&gt;
+...
+-------
+L0(2)
+├── L1(3)
+│   ├── L3(2)
+│   │   └── L5(3)
+│   │       ├── L6(3)
+│   │       │   ├── L8(3)
+│   │       │   │   ├── [L6](3)
+│   │       │   │   └── [L7](2)
+│   │       │   └── [L8](3)
+│   │       └── L7(2)
+│   │           └── [L8](3)
+│   └── L4(2)
+│       └── [L2](2)
+└── L2(2)
+    └── [L4](2)
+-------
+Answer count: 60
+&lt;/pre&gt;
+
+&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/03</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/yuan_2017-12-03.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
+&lt;li&gt;機構範例&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
+&lt;li&gt;機構範例&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;PMKS 轉換式更新&lt;/h1&gt;
+&lt;p&gt;完成滑動接頭 P 與 RP 的轉換式，已經可以支援這兩種接頭的輸入。&lt;/p&gt;
+&lt;p&gt;另外改進了三點共線和共點在 Solvespace 輸入的錯誤。&lt;/p&gt;
+&lt;h1&gt;機構範例&lt;/h1&gt;
+&lt;p&gt;增加了兩個範例，用作測試上述程式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;曲柄滑塊&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;雙臂接球機構&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 11/28</title><link href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/yuan_2017-11-28.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;介面操作重大更新&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;介面操作重大更新&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;介面操作重大更新&lt;/h1&gt;
+&lt;p&gt;今天改寫了一下畫布介面。&lt;/p&gt;
+&lt;p&gt;將拍照到剪貼簿的按鈕移到右上角的版本標籤旁；表格頁籤旁改成「全部選擇」按鈕。&lt;/p&gt;
+&lt;p&gt;新增兩個功能的快捷鍵：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全選點 (Select all point)：Ctrl + A&lt;/li&gt;
+&lt;li&gt;自由移動模式切換 (Free move mode toggle)：Ctrl + F&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外有一個重大突破：矩形窗選功能。&lt;/p&gt;
+&lt;p&gt;在非自由移動模式下可靠滑鼠拖拉矩形線框，選取畫布上的點。&lt;/p&gt;
+&lt;p&gt;自由移動模式下拖拉將會移動並修改選擇的點座標。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/-pdUPiUBOfA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry></feed>

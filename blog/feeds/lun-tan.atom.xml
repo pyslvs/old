@@ -1,46 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論壇</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-tan.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-03T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/03</title><link href="https://pyslvs.github.io/blog/2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/2017-12-03.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
-&lt;li&gt;機構範例&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
-&lt;li&gt;機構範例&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;PMKS 轉換式更新&lt;/h1&gt;
-&lt;p&gt;完成滑動接頭 P 與 RP 的轉換式，已經可以支援這兩種接頭的輸入。&lt;/p&gt;
-&lt;p&gt;另外改進了三點共線和共點在 Solvespace 輸入的錯誤。&lt;/p&gt;
-&lt;h1&gt;機構範例&lt;/h1&gt;
-&lt;p&gt;增加了兩個範例，用作測試上述程式。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;曲柄滑塊&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_01.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;雙臂接球機構&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 11/28</title><link href="https://pyslvs.github.io/blog/2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/2017-11-28.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;介面操作重大更新&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;介面操作重大更新&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;介面操作重大更新&lt;/h1&gt;
-&lt;p&gt;今天改寫了一下畫布介面。&lt;/p&gt;
-&lt;p&gt;將拍照到剪貼簿的按鈕移到右上角的版本標籤旁；表格頁籤旁改成「全部選擇」按鈕。&lt;/p&gt;
-&lt;p&gt;新增兩個功能的快捷鍵：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;全選點 (Select all point)：Ctrl + A&lt;/li&gt;
-&lt;li&gt;自由移動模式切換 (Free move mode toggle)：Ctrl + F&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;另外有一個重大突破：矩形窗選功能。&lt;/p&gt;
-&lt;p&gt;在非自由移動模式下可靠滑鼠拖拉矩形線框，選取畫布上的點。&lt;/p&gt;
-&lt;p&gt;自由移動模式下拖拉將會移動並修改選擇的點座標。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/-pdUPiUBOfA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs.com 上線</title><link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="alternate"></link><published>2017-11-26T12:00:00+08:00</published><updated>2017-11-26T12:00:00+08:00</updated><author><name>pyslvs.com</name></author><id>tag:pyslvs.github.io,2017-11-26:/blog/pyslvs-on-line.html</id><summary type="html">&lt;p&gt;2017.11.26 之前的 pyslvs 網站內容備份在 &lt;a href="https://kmolyuan.github.io/pyslvs/"&gt;https://kmolyuan.github.io/pyslvs/&lt;/a&gt;, 目前的 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 使用 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt; 作為網站內容, disqus 則登記為 pyslvs-com.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論壇</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-tan.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-11-26T12:00:00+08:00</updated><entry><title>Pyslvs.com 上線</title><link href="https://pyslvs.github.io/blog/pyslvs-on-line.html" rel="alternate"></link><published>2017-11-26T12:00:00+08:00</published><updated>2017-11-26T12:00:00+08:00</updated><author><name>pyslvs.com</name></author><id>tag:pyslvs.github.io,2017-11-26:/blog/pyslvs-on-line.html</id><summary type="html">&lt;p&gt;2017.11.26 之前的 pyslvs 網站內容備份在 &lt;a href="https://kmolyuan.github.io/pyslvs/"&gt;https://kmolyuan.github.io/pyslvs/&lt;/a&gt;, 目前的 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 使用 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt; 作為網站內容, disqus 則登記為 pyslvs-com.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2017.11.26 之前的 pyslvs 網站內容備份在 &lt;a href="https://kmolyuan.github.io/pyslvs/"&gt;https://kmolyuan.github.io/pyslvs/&lt;/a&gt;, 目前的 &lt;a href="http://pyslvs.com"&gt;http://pyslvs.com&lt;/a&gt; 使用 &lt;a href="http://pyslvs.github.io"&gt;http://pyslvs.github.io&lt;/a&gt; 作為網站內容, disqus 則登記為 pyslvs-com.&lt;/p&gt;
 
 
