@@ -73,6 +73,10 @@
 </v>
 <v t="leo.20171202102438.1" a="E"><vh>設計、設計方法與機械設計</vh>
 <v t="leo.20171202093723.1"><vh>@edit scrum_20171202.md</vh></v>
+<v t="leo.20171209222421.1"><vh>@edit pyslvs_20171115.md</vh></v>
+<v t="leo.20171209222439.1"><vh>@edit 20171205.md</vh></v>
+<v t="leo.20171209222514.1"><vh>@edit 20171203.md</vh></v>
+<v t="leo.20171209222526.1"><vh>@edit 20171128.md</vh></v>
 </v>
 </v>
 </v>
@@ -178,7 +182,7 @@ g.es("admin pelican 執行完畢")
 <t tx="leo.20151213085727.1">@language python
 import os
 os.system("pelican content -o blog -s local_publishconf.py")
-g.es("admin pelican 近端執行完畢")
+g.es("pelican 近端執行完畢")
 
 
 </t>
