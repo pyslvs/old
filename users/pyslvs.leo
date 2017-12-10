@@ -39,9 +39,9 @@
 <v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
-<v t="amd.20151215121740.1"><vh>@path theme</vh>
-<v t="leo.20171105220232.1"><vh>@path attila</vh>
-<v t="leo.20171105220325.1"><vh>@path templates</vh>
+<v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
+<v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
+<v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
 <v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
@@ -70,6 +70,7 @@
 <v t="ahshoe.20171128212217.1"><vh>@edit 20171128.md</vh></v>
 <v t="ahshoe.20171203204922.1"><vh>@edit 20171203.md</vh></v>
 <v t="40323230.20171205231103.1"><vh>@edit 20171205.md</vh></v>
+<v t="ahshoe.20171211002738.1"><vh>@edit 20171210.md</vh></v>
 </v>
 </vnodes>
 <tnodes>

@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-05T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-10T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Graphviz 引擎限制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Graphviz 引擎限制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;QIcon 透明背景繪製&lt;/h1&gt;
+&lt;p&gt;使用 QImage 取代 QPixmap 可以繪製出具有透明背景的圖示或影像。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+image = QImage(QSize(*rect), QImage.Format_ARGB32_Premultiplied)
+image.fill(Qt.transparent)
+painter = QPainter(image)
+painter.translate(image.width()/2, image.height()/2)
+painter.end()
+return QIcon(QPixmap.fromImage(image).scaledToWidth(width))
+&lt;/pre&gt;
+
+&lt;p&gt;從 QIcon 轉為 QPixmap 可以用 &lt;code&gt;pixmap(size: QSize)&lt;/code&gt; 或 &lt;code&gt;pixmap(w: float, h: float)&lt;/code&gt; 方法。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+listWidget.currentItem().icon().pixmap(listWidget.iconSize())
+&lt;/pre&gt;
+
+&lt;h1&gt;Graphviz 引擎限制&lt;/h1&gt;
+&lt;p&gt;NetworkX 透過 PyGraphviz 引入 Graphviz 的繪圖演算法，提供更好的節點位置在圖譜中表現。&lt;/p&gt;
+&lt;p&gt;Graphviz 引擎如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dot&lt;/li&gt;
+&lt;li&gt;neato&lt;/li&gt;
+&lt;li&gt;fdp&lt;/li&gt;
+&lt;li&gt;twopi&lt;/li&gt;
+&lt;li&gt;circo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中 circo 和 neato 的效果較符合圖譜期望。&lt;/p&gt;
+&lt;p&gt;NetworkX 引擎如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kamada kawai（有 SciPy 需求因此未加入）&lt;/li&gt;
+&lt;li&gt;shell&lt;/li&gt;
+&lt;li&gt;circular&lt;/li&gt;
+&lt;li&gt;spring&lt;/li&gt;
+&lt;li&gt;spectral&lt;/li&gt;
+&lt;li&gt;random&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中較適合的為 shell，random 為隨機產生。&lt;/p&gt;
+&lt;p&gt;很遺憾的是，Windows x64 的 Python 無法安裝 PyGraphviz，因此 Pyslvs 目前只有 Ubuntu 版本提供 Graphviz 引擎。&lt;/p&gt;
+&lt;p&gt;而經測試，AppImage 技術由於只將 PyGraphviz 包入，端口程式庫仍然連接 Graphviz 程式庫，所以 &lt;strong&gt;Ubuntu 用戶必須安裝 Graphviz&lt;/strong&gt;。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+sudo apt install graphviz
+&lt;/pre&gt;
+
+&lt;p&gt;以下是瓦特與史帝芬生鍊用 neato 引擎排佈的結果。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;拓樸排列程式&lt;/li&gt;
 &lt;/ul&gt;
