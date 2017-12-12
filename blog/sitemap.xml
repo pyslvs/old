@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/</loc>
-<lastmod>2017-12-11T00:28:22-00:00</lastmod>
+<lastmod>2017-12-12T22:56:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/archives.html</loc>
-<lastmod>2017-12-11T00:28:22-00:00</lastmod>
+<lastmod>2017-12-12T22:56:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/tags.html</loc>
-<lastmod>2017-12-11T00:28:22-00:00</lastmod>
+<lastmod>2017-12-12T22:56:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/categories.html</loc>
-<lastmod>2017-12-11T00:28:22-00:00</lastmod>
+<lastmod>2017-12-12T22:56:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/pages/about/</loc>
-<lastmod>2017-11-28T20:56:57+08:00</lastmod>
+<lastmod>2017-11-27T21:48:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pyslvs.github.io/blog/yuan_2017-12-12.html</loc>
+<lastmod>2017-12-12T21:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,7 +89,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/category/kai-fa.html</loc>
-<lastmod>2017-12-10T21:00:00+08:06</lastmod>
+<lastmod>2017-12-12T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -103,14 +110,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/tag/development.html</loc>
-<lastmod>2017-12-10T21:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pyslvs.github.io/blog/tag/design-method.html</loc>
-<lastmod>2017-12-02T11:00:00+08:06</lastmod>
+<lastmod>2017-12-12T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -123,8 +123,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://pyslvs.github.io/blog/tag/pyslvs.html</loc>
-<lastmod>2017-11-26T12:00:00+08:06</lastmod>
+<loc>https://pyslvs.github.io/blog/tag/design-method.html</loc>
+<lastmod>2017-12-02T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -132,6 +132,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pyslvs.github.io/blog/tag/mechanical-design.html</loc>
 <lastmod>2017-12-02T11:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pyslvs.github.io/blog/tag/pyslvs.html</loc>
+<lastmod>2017-11-26T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/author/yuan-chang.html</loc>
-<lastmod>2017-12-10T21:00:00+08:06</lastmod>
+<lastmod>2017-12-12T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

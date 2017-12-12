@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-10T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-12T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/12</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2017-12-12.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Beta 3 Release&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Beta 3 Release&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Graphviz 引擎限制（已解決）&lt;/h1&gt;
+&lt;p&gt;最後使用 NetworkX 呼叫 Pydot 模組克服障礙。&lt;/p&gt;
+&lt;p&gt;Pydot 模組的原理是使用 command line 擷取回傳資訊，因此只要系統可以呼叫「dot」等指令即可。&lt;/p&gt;
+&lt;p&gt;即使不安裝 Graphviz，Pyslvs 只會跳出提醒視窗，可以選擇 Network 的引擎，或是馬上安裝，不用重開 Pyslvs 也可以重繪圖譜。&lt;/p&gt;
+&lt;p&gt;嘗試之餘也完成了轉換式，可以接頭表示；另外還有排除退化結果的功能。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_12.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Beta 3 Release&lt;/h1&gt;
+&lt;p&gt;先釋出測試版，包含 beta 2 之後的進度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;舊的函式錯誤修復。&lt;/li&gt;
+&lt;li&gt;PMKS 表示式的 P 和 RP 接頭已經支援。&lt;/li&gt;
+&lt;li&gt;矩形選取模式。&lt;/li&gt;
+&lt;li&gt;類型合成圖譜。&lt;/li&gt;
+&lt;li&gt;更多範例。&lt;/li&gt;
+&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;

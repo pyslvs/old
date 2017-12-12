@@ -66,44 +66,14 @@
 </v>
 </v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ./../content</vh>
-<v t="40323230.20171127215456.1"><vh>範例 md</vh></v>
 <v t="ahshoe.20171128212217.1"><vh>@edit 20171128.md</vh></v>
 <v t="ahshoe.20171203204922.1"><vh>@edit 20171203.md</vh></v>
 <v t="40323230.20171205231103.1"><vh>@edit 20171205.md</vh></v>
 <v t="ahshoe.20171211002738.1"><vh>@edit 20171210.md</vh></v>
+<v t="40323230.20171212225549.1"><vh>@edit 20171212.md</vh></v>
 </v>
 </vnodes>
 <tnodes>
-<t tx="40323230.20171127215456.1">@language md
----
-Title: Pyslvs.com 上線
-Date: 2017-11-26 12:00
-Category: 論壇
-Tags: pyslvs
-Slug: pyslvs-on-line
-Author: pyslvs.com
----
-
-2017.11.26 之前的 pyslvs 網站內容備份在 &lt;https://kmolyuan.github.io/pyslvs/&gt;, 目前的 &lt;http://pyslvs.com&gt; 使用 &lt;http://pyslvs.github.io&gt; 作為網站內容, disqus 則登記為 pyslvs-com.
-
-&lt;!-- PELICAN_END_SUMMARY --&gt;
-
-這項改變的目的是以 [Pelican] 靜態網頁取代原先的一頁式網頁, 除了比較容易維護之外, 也可以提供更充實的內容.
-
-這項以 [Github Pages] 架構作為雲端 WWW 伺服器, 而 DNS 的設定首先是將 &lt;http://www.pyslvs.com&gt; 以 CNAME 指向 &lt;http://pyslvs.github.io&gt;, 然後在內定轉址的根網址 &lt;http://pyslvs.com&gt;, 以 301 類型轉至 &lt;http://www.pyslvs.com&gt;.
-
-至於 [Github Pages] 的部分則是針對 &lt;https://github.com/pyslvs/pyslvs.github.io&gt; 倉儲, 將 Settings 中的 Custom Domain 設為 &lt;http://www.pyslvs.com&gt; 就算完成.
-
-Pyslvs 的原意為 Python for [Solvespace], 是讓使用者容易使用 [Solvespace] 所開源出來的 Geometric Constraint Solver, 也就是 [Python Solvespace], 隨後利用 [PyQt5] 使用者介面並加上演化合成引擎, 成為目前的 PSLVS (Python Synthesis of Linkages and Verification Software), 中文為 Python 機構合成與驗證套件, 其開發目標希望能夠成為一套能夠用於機械產品平面機構合成與機構可用性驗證的模擬分析與最佳化設計套件.
-
-[Solvespace]: http://solvespace.com
-[Python Solvespace]: https://github.com/KmolYuan/python-solvespace
-[PyQt5]: https://www.riverbankcomputing.com/software/pyqt/download5
-[Pelican]: https://github.com/getpelican/pelican
-[Github Pages]: https://pages.github.com/
-
-
-</t>
 <t tx="amd.20151215121740.1"></t>
 <t tx="amd.20151215154225.1"></t>
 <t tx="amd.20151215154238.1"></t>
