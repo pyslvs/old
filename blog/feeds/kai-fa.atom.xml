@@ -33,7 +33,21 @@
 &lt;li&gt;矩形選取模式。&lt;/li&gt;
 &lt;li&gt;類型合成圖譜。&lt;/li&gt;
 &lt;li&gt;更多範例。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;About release 關於發佈&lt;/h1&gt;
+&lt;p&gt;Since 2018, Pyslvs will take the monthly release of the version update. The format of the version will be numbered as &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The progress of the update will be updated in both English and Traditional Chinese in this blog.&lt;/p&gt;
+&lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
+&lt;p&gt;自 2018 年開始，Pyslvs 將會採取每月釋出的方式進行版本更新。版本格式將以 &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt; 的方式編號。&lt;/p&gt;
+&lt;p&gt;更新進度將以英文與繁體中文的方式全部更新在本網誌。&lt;/p&gt;
+&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
