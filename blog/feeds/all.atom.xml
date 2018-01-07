@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-12T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 12/12</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2017-12-12.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-01-07T21:00:00+08:00</updated><entry><title>Pyslvs v18.1.0 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Topological library 拓樸程式庫&lt;/li&gt;
+&lt;li&gt;Atlas function 圖譜功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Topological library 拓樸程式庫&lt;/li&gt;
+&lt;li&gt;Atlas function 圖譜功能&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Topological library 拓樸程式庫&lt;/h1&gt;
+&lt;p&gt;For better computing performance, the number synthesis library changed to Cython prepared. Which extracted some of the functions of NetworkX module, translated into Cython syntax.&lt;/p&gt;
+&lt;p&gt;為取得更好的運算效能，數目合成的程式庫改為 Cython 編寫。其中提取 NetworkX 模組的部份功能，轉譯為 Cython 語法。&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Graph&lt;/code&gt; class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;edges&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;tuple&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nodes&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;tuple&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;adj&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;dict&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;neighbors&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;has_triangles&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_connected&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;degree&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;number_of_edges&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__len__&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;GraphMatcher&lt;/code&gt; class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;G1&lt;/code&gt; public &lt;code&gt;Graph&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G2&lt;/code&gt; public &lt;code&gt;Graph&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G1_nodes&lt;/code&gt; &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G2_nodes&lt;/code&gt; &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mapping&lt;/code&gt; &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;core_1&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;core_2&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;inout_1&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;inout_2&lt;/code&gt; public &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;state&lt;/code&gt; &lt;code&gt;GMState&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;initialize&lt;/code&gt; c function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;candidate_pairs_iter&lt;/code&gt; python generator&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_isomorphic&lt;/code&gt; cpp function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isomorphisms_iter&lt;/code&gt; python generator&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;match&lt;/code&gt; python generator&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;semantic_feasibility&lt;/code&gt; c function&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;syntactic_feasibility&lt;/code&gt; c function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;GMState&lt;/code&gt; class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;GM&lt;/code&gt; &lt;code&gt;GraphMatcher&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G1_node&lt;/code&gt; &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;None&lt;/code&gt; or &lt;code&gt;int&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G2_node&lt;/code&gt; &lt;code&gt;object&lt;/code&gt; (&lt;code&gt;None&lt;/code&gt; or &lt;code&gt;int&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;depth&lt;/code&gt; &lt;code&gt;int&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Atlas function 圖譜功能&lt;/h1&gt;
+&lt;p&gt;Use the text file to store the atlas, the expression is the &lt;code&gt;edge&lt;/code&gt; attribute in &lt;code&gt;Graph&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;You can also load text files into Pyslvs for processing.&lt;/p&gt;
+&lt;p&gt;使用文字文件儲存圖譜，表示式為 &lt;code&gt;Graph&lt;/code&gt; 類型的 &lt;code&gt;edges&lt;/code&gt; 屬性。&lt;/p&gt;
+&lt;p&gt;另外還可以將文字文件載入 Pyslvs 中處理。&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;About release 關於發佈&lt;/h1&gt;
+&lt;p&gt;Since 2018, Pyslvs will take the monthly release of the version update. The format of the version will be numbered as &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The progress of the update will be updated in both English and Traditional Chinese in this blog.&lt;/p&gt;
+&lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
+&lt;p&gt;自 2018 年開始，Pyslvs 將會採取每月釋出的方式進行版本更新。版本格式將以 &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt; 的方式編號。&lt;/p&gt;
+&lt;p&gt;更新進度將以英文與繁體中文的方式全部更新在本網誌。&lt;/p&gt;
+&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/12</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2017-12-12.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
 &lt;/li&gt;
@@ -8,8 +86,7 @@
 &lt;p&gt;Beta 3 Release&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
 &lt;/li&gt;
@@ -33,22 +110,7 @@
 &lt;li&gt;矩形選取模式。&lt;/li&gt;
 &lt;li&gt;類型合成圖譜。&lt;/li&gt;
 &lt;li&gt;更多範例。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;About release 關於發佈&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;ul&gt;
-&lt;li&gt;About release 關於發佈&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;About release 關於發佈&lt;/h1&gt;
-&lt;p&gt;Since 2018, Pyslvs will take the monthly release of the version update. The format of the version will be numbered as &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The progress of the update will be updated in both English and Traditional Chinese in this blog.&lt;/p&gt;
-&lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
-&lt;p&gt;自 2018 年開始，Pyslvs 將會採取每月釋出的方式進行版本更新。版本格式將以 &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt; 的方式編號。&lt;/p&gt;
-&lt;p&gt;更新進度將以英文與繁體中文的方式全部更新在本網誌。&lt;/p&gt;
-&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
 &lt;/li&gt;
@@ -56,8 +118,7 @@
 &lt;p&gt;Graphviz 引擎限制&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
 &lt;/li&gt;
@@ -111,12 +172,10 @@ sudo apt install graphviz
 &lt;/pre&gt;
 
 &lt;p&gt;以下是瓦特與史帝芬生鍊用 neato 引擎排佈的結果。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;拓樸排列程式&lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;拓樸排列程式&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -265,13 +324,11 @@ L0(2)
 Answer count: 60
 &lt;/pre&gt;
 
-&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 開發進度 - 12/03</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/yuan_2017-12-03.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/03</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/yuan_2017-12-03.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
 &lt;li&gt;機構範例&lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
 &lt;li&gt;機構範例&lt;/li&gt;
 &lt;/ul&gt;
@@ -328,12 +385,10 @@ Answer count: 60
 &lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 是機械設計過程中的一項工具, 主要由平面機構模擬核心、演化運算核心與視窗圖形化介面程式所組成. 其中, 兩種運算核心都依據平面機構有關的數學模型與分析表達, 採用軟體元件製作, 再結合 2D 使用者圖形介面建立物件導向, 以及事件驅動程式元件等功能, 讓使用者可以輸入平面機構模型後, 進行模擬或合成運算.&lt;/p&gt;
 &lt;p&gt;而 &lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 平面機構模擬核心的主體為一套 Geometric Constrain Solver, 依附在 Solvespace 參數化 3D 繪圖套件中. 在 2013 年 9 月透過 &lt;a href="http://www.swig.org/"&gt;SWIG&lt;/a&gt; (Simplified Wrapper and Interface Generator) 技術, 轉為 Python2 可呼叫的程式庫, 為 &lt;a href="https://github.com/BBBSnowball/python-solvespace"&gt;Python2-Solvespace&lt;/a&gt;. 2016 年 7 月之後, 經本站轉為 Python3 可呼叫的程式庫, 成為 &lt;a href="https://github.com/KmolYuan/python-solvespace"&gt;Python3-Solvespace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;至於 &lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 平面機構合成所使用的演化運算核心 ,則源自 2015 年 4 月利用 &lt;a href="http://cython.org/"&gt;Cython&lt;/a&gt; (C-extension for Python) 技術所開發的 &lt;a href="https://github.com/kmollee/algorithm"&gt;Algorithm&lt;/a&gt;, 包含實數編碼基因 (Real-coded Genetic) 演算法、差分進化 (Differential Evolution) 演算法與螢火蟲 (Firefly) 演算法等模組.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 的圖形介面採用 &lt;a href="https://www.riverbankcomputing.com/software/pyqt/intro"&gt;PyQt5&lt;/a&gt; , 在 &lt;a href="https://eric-ide.python-projects.org"&gt;Eric6&lt;/a&gt; 整合開發環境中建立.&lt;/p&gt;</content><category term="design"></category><category term="design method"></category><category term="mechanical design"></category></entry><entry><title>Pyslvs 開發進度 - 11/28</title><link href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/yuan_2017-11-28.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+&lt;p&gt;&lt;a href="http://pyslvs.com"&gt;Pyslvs&lt;/a&gt; 的圖形介面採用 &lt;a href="https://www.riverbankcomputing.com/software/pyqt/intro"&gt;PyQt5&lt;/a&gt; , 在 &lt;a href="https://eric-ide.python-projects.org"&gt;Eric6&lt;/a&gt; 整合開發環境中建立.&lt;/p&gt;</content><category term="design"></category><category term="design method"></category><category term="mechanical design"></category></entry><entry><title>Pyslvs v0.9 - 11/28</title><link href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/yuan_2017-11-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;介面操作重大更新&lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs v0.9 更新進度&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;介面操作重大更新&lt;/li&gt;
 &lt;/ul&gt;
 
