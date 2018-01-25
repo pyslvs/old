@@ -39,9 +39,9 @@
 <v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
-<v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
-<v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
-<v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
+<v t="amd.20151215121740.1"><vh>@path theme</vh>
+<v t="leo.20171105220232.1"><vh>@path attila</vh>
+<v t="leo.20171105220325.1"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
 <v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
@@ -76,6 +76,7 @@
 <v t="ahshoe.20180107162320.1" a="E"><vh>2018</vh>
 <v t="ahshoe.20180107161224.1"><vh>@edit 2018.md</vh></v>
 <v t="ahshoe.20180107163855.1"><vh>@edit 20180107.md</vh></v>
+<v t="ahshoe.20180125204903.1"><vh>@edit 20180125.md</vh></v>
 </v>
 </v>
 </vnodes>
@@ -175,7 +176,6 @@ vertical: body pane on the botton</t>
 import os
 os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
-
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
