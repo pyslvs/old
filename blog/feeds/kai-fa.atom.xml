@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-01-25T21:00:00+08:00</updated><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-11T21:00:00+08:00</updated><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/h1&gt;
+&lt;p&gt;The new synthesis options will support algorithms that end with fitness, and we will conduct small calculations for ball lifter mechanisms with two target paths.&lt;/p&gt;
+&lt;p&gt;新的合成設定中將支援隨適應值結束演算法，針對有兩個目標路徑的提球機構展開小型演算測試。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;The construction of the ball lifter mechanism is so variable that it takes 6 minutes to 20 minutes to calculate the fitness below 100.&lt;/p&gt;
+&lt;p&gt;提球機構的變數較多，導致演算適應值至 100 以下的所需時間為 6 分鐘到 20 分鐘不等。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;In addition, the staggered position of two target paths will also affect the result.&lt;/p&gt;
+&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Triangular iteration 三角迭代展示影片&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
