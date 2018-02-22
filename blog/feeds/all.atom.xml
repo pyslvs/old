@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-11T21:00:00+08:00</updated><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-22T21:00:00+08:00</updated><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Update information about dimensional synthesis function 尺寸合成功能更新資訊&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Update information about dimensional synthesis function 尺寸合成功能更新資訊&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Update information about dimensional synthesis function 尺寸合成功能更新資訊&lt;/h1&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
