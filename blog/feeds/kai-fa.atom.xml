@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-22T21:00:00+08:00</updated><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-28T21:00:00+08:00</updated><entry><title>Pyslvs v18.3.0 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Auto configuration algorithm 自動配置演算法&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Auto configuration algorithm 自動配置演算法&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Auto configuration algorithm 自動配置演算法&lt;/h1&gt;
+&lt;p&gt;A function that can auto configure the solutions.&lt;/p&gt;
+&lt;p&gt;一個可以自動配置解決方案的功能。&lt;/p&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Update information 更新資訊&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
