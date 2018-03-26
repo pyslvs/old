@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-02-28T21:00:00+08:00</updated><entry><title>Pyslvs v18.3.0 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="./" rel="alternate"></link><link href="./feeds/kai-fa.atom.xml" rel="self"></link><id>./</id><updated>2018-03-26T21:00:00+08:00</updated><entry><title>Flow chart of Pyslvs synthesis function</title><link href="./yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-03-26:./yuan_2018-03-26.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h1&gt;Flow chart of Pyslvs synthesis function&lt;/h1&gt;
+&lt;p&gt;Number and type synthesis&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;Dimensional synthesis&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.3.0 - 02/28</title><link href="./yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-28:./yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Auto configuration algorithm 自動配置演算法&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -10,7 +16,7 @@
 &lt;h1&gt;Auto configuration algorithm 自動配置演算法&lt;/h1&gt;
 &lt;p&gt;A function that can auto configure the solutions.&lt;/p&gt;
 &lt;p&gt;一個可以自動配置解決方案的功能。&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="./yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-22:./yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Update information 更新資訊&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -21,7 +27,7 @@
 &lt;h1&gt;Update information 更新資訊&lt;/h1&gt;
 &lt;p&gt;Update information about dimensional synthesis function.&lt;/p&gt;
 &lt;p&gt;尺寸合成功能的更新資訊。&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="./yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-11:./yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -37,7 +43,7 @@
 &lt;p&gt;提球機構的變數較多，導致演算適應值至 100 以下的所需時間為 6 分鐘到 20 分鐘不等。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;In addition, the staggered position of two target paths will also affect the result.&lt;/p&gt;
-&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="./yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-25:./yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Triangular iteration 三角迭代展示影片&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -55,7 +61,7 @@
 &lt;p&gt;Triangular iteration function will be update in version 18.1.&lt;/p&gt;
 &lt;p&gt;But the profile can not apply in dimensional synthesis function currently.&lt;/p&gt;
 &lt;p&gt;三角迭代功能將會於 18.1 版更新。&lt;/p&gt;
-&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/07</title><link href="./yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-07:./yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Topological library 拓樸程式庫&lt;/li&gt;
 &lt;li&gt;Atlas function 圖譜功能&lt;/li&gt;
 &lt;/ul&gt;
@@ -120,7 +126,7 @@
 &lt;p&gt;You can also load text files into Pyslvs for processing.&lt;/p&gt;
 &lt;p&gt;使用文字文件儲存圖譜，表示式為 &lt;code&gt;Graph&lt;/code&gt; 類型的 &lt;code&gt;edges&lt;/code&gt; 屬性。&lt;/p&gt;
 &lt;p&gt;另外還可以將文字文件載入 Pyslvs 中處理。&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="./yuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-07:./yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;About release 關於發佈&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -134,7 +140,7 @@
 &lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
 &lt;p&gt;自 2018 年開始，Pyslvs 將會採取每月釋出的方式進行版本更新。版本格式將以 &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt; 的方式編號。&lt;/p&gt;
 &lt;p&gt;更新進度將以英文與繁體中文的方式全部更新在本網誌。&lt;/p&gt;
-&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/12</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2017-12-12.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/12</title><link href="./yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-12:./yuan_2017-12-12.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
 &lt;/li&gt;
@@ -166,7 +172,7 @@
 &lt;li&gt;矩形選取模式。&lt;/li&gt;
 &lt;li&gt;類型合成圖譜。&lt;/li&gt;
 &lt;li&gt;更多範例。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/10</title><link href="./yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-10:./yuan_2017-12-10.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
 &lt;/li&gt;
@@ -228,7 +234,7 @@ sudo apt install graphviz
 &lt;/pre&gt;
 
 &lt;p&gt;以下是瓦特與史帝芬生鍊用 neato 引擎排佈的結果。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/05</title><link href="./yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-05:./yuan_2017-12-05.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;拓樸排列程式&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -380,7 +386,7 @@ L0(2)
 Answer count: 60
 &lt;/pre&gt;
 
-&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/03</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/yuan_2017-12-03.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/03</title><link href="./yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-03:./yuan_2017-12-03.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
 &lt;li&gt;機構範例&lt;/li&gt;
 &lt;/ul&gt;
@@ -398,7 +404,7 @@ Answer count: 60
 &lt;p&gt;&lt;strong&gt;曲柄滑塊&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;雙臂接球機構&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 11/28</title><link href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/yuan_2017-11-28.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 11/28</title><link href="./yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-11-28:./yuan_2017-11-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;介面操作重大更新&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;

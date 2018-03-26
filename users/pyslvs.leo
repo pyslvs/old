@@ -22,7 +22,7 @@
 <v t="leo.20151213173830.1"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
-<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
 <v t="amd.20151216152209.1"><vh>@edit README.md</vh></v>
 <v t="leo.20171105093855.1"><vh>@edit CNAME</vh></v>
@@ -33,7 +33,7 @@
 <v t="amd.20151215170117.1"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
 <v t="leo.20151212173725.1"><vh>@edit pelicanconf.py</vh></v>
 </v>
-<v t="amd.20151215170142.1" a="E"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
+<v t="amd.20151215170142.1"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
 <v t="leo.20151212173803.1"><vh>@edit publishconf.py</vh></v>
 </v>
 <v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
@@ -80,6 +80,7 @@
 <v t="ahshoe.20180211203838.1"><vh>@edit 20180211.md</vh></v>
 <v t="40323230.20180222235751.1"><vh>@edit 20180222.md</vh></v>
 <v t="ahshoe.20180228215206.1"><vh>@edit 20180228.md</vh></v>
+<v t="ahshoe.20180326120104.1"><vh>@edit 20180326.md</vh></v>
 </v>
 </v>
 </vnodes>
