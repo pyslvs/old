@@ -16,13 +16,13 @@
 <v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
-<v t="leo.20151213173811.1"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
+<v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
 <v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
-<v t="leo.20151213173830.1"><vh>假如要在近端檢視, 使用下列按鈕</vh>
+<v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
-<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
 <v t="amd.20151216152209.1"><vh>@edit README.md</vh></v>
 <v t="leo.20171105093855.1"><vh>@edit CNAME</vh></v>
@@ -170,14 +170,11 @@ vertical: body pane on the botton</t>
 import os
 os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
-
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
 os.system("pelican content -o blog -s local_publishconf.py")
 g.es("admin pelican 近端執行完畢")
-
-
 </t>
 <t tx="leo.20151213173811.1"></t>
 <t tx="leo.20151213173830.1"></t>
