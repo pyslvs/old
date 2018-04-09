@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-03-26T21:00:00+08:00</updated><entry><title>Flow chart of Pyslvs synthesis function</title><link href="https://pyslvs.github.io/blog/yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-03-26:/blog/yuan_2018-03-26.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-04-09T21:00:00+08:00</updated><entry><title>Pyslvs v18.4.0 - 04/09</title><link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-09:/blog/yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/h1&gt;
+&lt;p&gt;We can using &lt;a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html"&gt;auto configure function&lt;/a&gt; to preview the paths (limit ranges) of any mechanism.&lt;/p&gt;
+&lt;p&gt;This function is achieved by expanded "tinycadlib", some new Cython functions to calculate the path data.&lt;/p&gt;
+&lt;p&gt;But we still keep &lt;a href="http://solvespace.com/index.pl"&gt;Solvespace&lt;/a&gt; as a third party verification tool. So the calculation of main canvas will still using Python-Solvespace kernel.&lt;/p&gt;
+&lt;p&gt;我們可以利用&lt;a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html"&gt;自動配置功能&lt;/a&gt;來預覽任何機構的運動路徑（極限範圍）。&lt;/p&gt;
+&lt;p&gt;這個功能是透過擴充後的「tinycadlib」實現的，多了一些 Cython 函式來計算路徑數據。&lt;/p&gt;
+&lt;p&gt;但是我們仍保留 &lt;a href="http://solvespace.com/index.pl"&gt;Solvespace&lt;/a&gt; 作為第三方驗證工具。因此主畫布的計算仍會使用 Python-Solvespace 核心。&lt;/p&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Flow chart of Pyslvs synthesis function</title><link href="https://pyslvs.github.io/blog/yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-03-26:/blog/yuan_2018-03-26.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h1&gt;Flow chart of Pyslvs synthesis function&lt;/h1&gt;
 &lt;p&gt;Number and type synthesis&lt;/p&gt;

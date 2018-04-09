@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>Pyslvs.com - Articles by Yuan Chang</title>
+  <title>Pyslvs v18.4.0 - 04/09</title>
 
 
   <meta name="HandheldFriendly" content="True" />
@@ -18,6 +18,7 @@
 
   <!-- Feed -->
         <link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Full Atom Feed" />
+          <link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Categories Atom Feed" />
 
   <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
 
@@ -39,33 +40,58 @@
   <![endif]-->
 
 
+    <link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="canonical" />
+
+        <meta name="description" content="Application of auto configuration algorithm 自動配置演算法的應用">
+
+        <meta name="author" content="Yuan Chang">
+
+        <meta name="tags" content="development">
+
+
 
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Pyslvs.com"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="Pyslvs.com"/>
-<meta property="og:description" content="View the blog."/>
+<meta property="og:title" content="Pyslvs v18.4.0 - 04/09"/>
+<meta property="og:description" content="Application of auto configuration algorithm 自動配置演算法的應用"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://pyslvs.github.io/blog/"/>
-<meta property="og:image" content="https://pyslvs.github.io/blog/theme/images/home-bg.jpg">
+<meta property="og:url" content="https://pyslvs.github.io/blog/yuan_2018-04-09.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-04-09 21:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://pyslvs.github.io/blog/author/yuan-chang.html">
+  <meta property="article:publisher" content="https://facebook.com/myprofile" />
+<meta property="article:section" content="開發"/>
+<meta property="article:tag" content="development"/>
+<meta property="og:image" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
 
 <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@myprofile">
-  <meta name="twitter:title" content="Pyslvs.com">
-  <meta name="twitter:description" content="View the blog.">
-  <meta name="twitter:url" content="https://pyslvs.github.io/blog/">
-  <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/home-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@myprofile">
+    <meta name="twitter:title" content="Pyslvs v18.4.0 - 04/09">
+    <meta name="twitter:url" content="https://pyslvs.github.io/blog/yuan_2018-04-09.html">
+
+        <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="Application of auto configuration algorithm 自動配置演算法的應用">
 
 <script type="application/ld+json">
 {
-  "@context" : "http://schema.org",
-  "@type" : "Website",
-  "name": " Pyslvs.com ",
-  "url" : "https://pyslvs.github.io/blog/",
-  "image": "https://pyslvs.github.io/blog/theme/images/home-bg.jpg",
-  "description": "View the blog."
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Pyslvs v18.4.0 - 04/09",
+  "headline": "Pyslvs v18.4.0 - 04/09",
+  "datePublished": "2018-04-09 21:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Yuan Chang",
+    "url": "https://pyslvs.github.io/blog/author/yuan-chang.html"
+  },
+  "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
+  "url": "https://pyslvs.github.io/blog/yuan_2018-04-09.html",
+  "description": "Application of auto configuration algorithm 自動配置演算法的應用"
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
@@ -139,9 +165,14 @@
     </ul>
   </div>
 </nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header id="blog-header" class="has-cover">
+    <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
             <span id="home-button" class="nav-button">
@@ -151,11 +182,16 @@
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
           </span>
         </nav>
+        <h1 class="post-title">Pyslvs v18.4.0 - 04/09</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
+            | <time datetime="一 09 四月 2018">一 09 四月 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
             <div class="post-cover cover" style="background-image: url('https://pyslvs.github.io/blog/theme/images/post-bg.jpg')">
       </div>
     </header>
-
-
 
   <section id="wrapper">
     <a class="hidden-close"></a>
@@ -167,101 +203,74 @@
 </section>
 
 
-<div id="index" class="container">
-  <main class="content" role="main">
-    <div class="extra-pagination">
-<nav class="pagination" role="pagination">
-  <div class="inner">
-    <a class="pagination-next" href="https://pyslvs.github.io/blog/author/yuan-chang.html"><i class="ic ic-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
-    <span class="pagination-info">Page 2 / 2</span>
-    <div class="clear"></div>
-  </div>
-</nav>
-    </div>
-
+    <!-- Post content -->
+    <main class="content" role="main">
         <article class="post">
         <div class="inner">
-            <header class="post-header">         
-                <h2 class="post-title"><a href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="bookmark" title="Permalink to Pyslvs v0.9 - 12/05">Pyslvs v0.9 - 12/05</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
-                     | <time datetime="二 05 十二月 2017">二 05 十二月 2017</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        <ul>
-<li>拓樸排列程式</li>
+            <section class="post-content">
+                <ul>
+<li>Application of auto configuration algorithm 自動配置演算法的應用</li>
 </ul>
 
-                    </p>
-                </section>
-<p>
-  <a data-disqus-identifier="/yuan_2017-12-05.html" href="https://pyslvs.github.io/blog/yuan_2017-12-05.html#disqus_thread">comments</a>
-</p>
-            </div>
-        </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">         
-                <h2 class="post-title"><a href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="bookmark" title="Permalink to Pyslvs v0.9 - 12/03">Pyslvs v0.9 - 12/03</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
-                     | <time datetime="日 03 十二月 2017">日 03 十二月 2017</time>
-                </span>
+
+<h1>Application of auto configuration algorithm 自動配置演算法的應用</h1>
+<p>We can using <a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html">auto configure function</a> to preview the paths (limit ranges) of any mechanism.</p>
+<p>This function is achieved by expanded "tinycadlib", some new Cython functions to calculate the path data.</p>
+<p>But we still keep <a href="http://solvespace.com/index.pl">Solvespace</a> as a third party verification tool. So the calculation of main canvas will still using Python-Solvespace kernel.</p>
+<p>我們可以利用<a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html">自動配置功能</a>來預覽任何機構的運動路徑（極限範圍）。</p>
+<p>這個功能是透過擴充後的「tinycadlib」實現的，多了一些 Cython 函式來計算路徑數據。</p>
+<p>但是我們仍保留 <a href="http://solvespace.com/index.pl">Solvespace</a> 作為第三方驗證工具。因此主畫布的計算仍會使用 Python-Solvespace 核心。</p>
+<iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Pyslvs v18.4.0 - 04/09&amp;url=https://pyslvs.github.io/blog/yuan_2018-04-09.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyslvs.github.io/blog/yuan_2018-04-09.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://pyslvs.github.io/blog/yuan_2018-04-09.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://pyslvs.github.io/blog/tag/development.html">development</a>                </aside>
+
                 <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        <ul>
-<li>PMKS 轉換式更新</li>
-<li>機構範例</li>
-</ul>
 
-                    </p>
+
                 </section>
-<p>
-  <a data-disqus-identifier="/yuan_2017-12-03.html" href="https://pyslvs.github.io/blog/yuan_2017-12-03.html#disqus_thread">comments</a>
-</p>
+
+                <script type="text/javascript">
+                    var disqus = 'pyslvs-com';
+                    var disqus_shortname = 'pyslvs-com';
+                    var disqus_identifier = '/yuan_2018-04-09.html';
+                    var disqus_url = 'https://pyslvs.github.io/blog/yuan_2018-04-09.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/yuan_2018-04-09.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-prev" href="https://pyslvs.github.io/blog/yuan_2018-03-26.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">Flow chart of Pyslvs synthesis function</h2>
+                            <p class="post-nav-excerpt"></p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
             </div>
         </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">         
-                <h2 class="post-title"><a href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="bookmark" title="Permalink to Pyslvs v0.9 - 11/28">Pyslvs v0.9 - 11/28</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
-                     | <time datetime="二 28 十一月 2017">二 28 十一月 2017</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        <ul>
-<li>介面操作重大更新</li>
-</ul>
-
-                    </p>
-                </section>
-<p>
-  <a data-disqus-identifier="/yuan_2017-11-28.html" href="https://pyslvs.github.io/blog/yuan_2017-11-28.html#disqus_thread">comments</a>
-</p>
-            </div>
-        </article>
-
-<nav class="pagination" role="pagination">
-  <div class="inner">
-    <a class="pagination-next" href="https://pyslvs.github.io/blog/author/yuan-chang.html"><i class="ic ic-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
-    <span class="pagination-info">Page 2 / 2</span>
-    <div class="clear"></div>
-  </div>
-</nav>
-  </main>
-</div>
+    </main>
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class=""></div>
 
