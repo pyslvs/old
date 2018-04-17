@@ -24,9 +24,9 @@
 &lt;h1&gt;Triangular formulas in Pyslvs&lt;/h1&gt;
 &lt;p&gt;In order to reach the simulation of mechanism motion path, Pyslvs takes three geometric solutions to meets the joint types in PMKS.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;PLA(P): Through two (or one) known point(s), distance of reference point to the target point, and an angle value of them (or horizontal line), we can find the coordinate of target point.&lt;/li&gt;
-&lt;li&gt;PLLP: Through two known points, two distances of two reference points to the target point, we can find the coordinate of target point.&lt;/li&gt;
-&lt;li&gt;PLPP: Through a known point, distance of reference point to the target point, a straight line between two known points, we can find the coordinate of target point that is on the line.&lt;/li&gt;
+&lt;li&gt;PLA(P): Input as two (or one) known point(s), distance of reference point to the target point, and an angle value of them (or horizontal line), we can find the coordinate of target point.&lt;/li&gt;
+&lt;li&gt;PLLP: Input as two known points, two distances of two reference points to the target point, we can find the coordinate of target point.&lt;/li&gt;
+&lt;li&gt;PLPP: Input as a known point, distance of reference point to the target point, a straight line between two known points, we can find the coordinate of target point that is on the line.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;為了達成機構路徑的模擬，以符合 PMKS 所能模擬的接頭種類，Pyslvs 採用三種幾何解法：&lt;/p&gt;
 &lt;ul&gt;
@@ -43,7 +43,7 @@
 &lt;h2&gt;Expression&lt;/h2&gt;
 &lt;p&gt;Pyslvs is using the expression to solving coordinates as below:&lt;/p&gt;
 &lt;p&gt;Pyslvs 使用函式解題的表示法如下：&lt;/p&gt;
-&lt;pre&gt;
+&lt;pre style="overflow-x:scroll"&gt;
 Function[parameter0, parameter1, parameter2, ...](Target); ...
 &lt;/pre&gt;
 
@@ -51,7 +51,7 @@ Function[parameter0, parameter1, parameter2, ...](Target); ...
 &lt;p&gt;For example, the coordinates of a four bar linkage mechanism can be find out with three formulas:&lt;/p&gt;
 &lt;p&gt;當透過輸入端求解之後，可以透過解出的目標點繼續求解。&lt;/p&gt;
 &lt;p&gt;例如，一個四連桿機構可以透過三個函式求解：&lt;/p&gt;
-&lt;pre&gt;
+&lt;pre style="overflow-x:scroll"&gt;
 #Known: a0, P0, P2, L0, L1, L2, L3, L4
 PLAP[P0, L0, a0](P1); PLLP[P1, L1, L2, P2](P3); PLLP[P1, L3, L4, P3](P4)
 &lt;/pre&gt;

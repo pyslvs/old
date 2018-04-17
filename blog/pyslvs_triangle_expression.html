@@ -223,9 +223,9 @@
 <h1>Triangular formulas in Pyslvs</h1>
 <p>In order to reach the simulation of mechanism motion path, Pyslvs takes three geometric solutions to meets the joint types in PMKS.</p>
 <ul>
-<li>PLA(P): Through two (or one) known point(s), distance of reference point to the target point, and an angle value of them (or horizontal line), we can find the coordinate of target point.</li>
-<li>PLLP: Through two known points, two distances of two reference points to the target point, we can find the coordinate of target point.</li>
-<li>PLPP: Through a known point, distance of reference point to the target point, a straight line between two known points, we can find the coordinate of target point that is on the line.</li>
+<li>PLA(P): Input as two (or one) known point(s), distance of reference point to the target point, and an angle value of them (or horizontal line), we can find the coordinate of target point.</li>
+<li>PLLP: Input as two known points, two distances of two reference points to the target point, we can find the coordinate of target point.</li>
+<li>PLPP: Input as a known point, distance of reference point to the target point, a straight line between two known points, we can find the coordinate of target point that is on the line.</li>
 </ul>
 <p>為了達成機構路徑的模擬，以符合 PMKS 所能模擬的接頭種類，Pyslvs 採用三種幾何解法：</p>
 <ul>
@@ -242,7 +242,7 @@
 <h2>Expression</h2>
 <p>Pyslvs is using the expression to solving coordinates as below:</p>
 <p>Pyslvs 使用函式解題的表示法如下：</p>
-<pre>
+<pre style="overflow-x:scroll">
 Function[parameter0, parameter1, parameter2, ...](Target); ...
 </pre>
 
@@ -250,7 +250,7 @@ Function[parameter0, parameter1, parameter2, ...](Target); ...
 <p>For example, the coordinates of a four bar linkage mechanism can be find out with three formulas:</p>
 <p>當透過輸入端求解之後，可以透過解出的目標點繼續求解。</p>
 <p>例如，一個四連桿機構可以透過三個函式求解：</p>
-<pre>
+<pre style="overflow-x:scroll">
 #Known: a0, P0, P2, L0, L1, L2, L3, L4
 PLAP[P0, L0, a0](P1); PLLP[P1, L1, L2, P2](P3); PLLP[P1, L3, L4, P3](P4)
 </pre>
