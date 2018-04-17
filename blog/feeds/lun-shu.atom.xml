@@ -1,5 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論述</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-shu.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2017-12-02T11:00:00+08:00</updated><entry><title>設計、設計方法與機械設計</title><link href="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" rel="alternate"></link><published>2017-12-02T11:00:00+08:00</published><updated>2017-12-02T11:00:00+08:00</updated><author><name>scrum</name></author><id>tag:pyslvs.github.io,2017-12-02:/blog/scrum_design-design_methods-and-mechanical-design.html</id><summary type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 論述</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/lun-shu.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-04-17T21:00:00+08:00</updated><entry><title>Triangular formulas in Pyslvs</title><link href="https://pyslvs.github.io/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-17T21:00:00+08:00</published><updated>2018-04-17T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-17:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Triangular formula expression in Pyslvs&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Source code written in Python&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pyslvs 中的三角形表示式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Python 版本的原始碼&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Triangular formula expression in Pyslvs&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Source code written in Python&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pyslvs 中的三角形表示式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Python 版本的原始碼&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Triangular formulas in Pyslvs&lt;/h1&gt;
+&lt;p&gt;In order to reach the simulation of mechanism motion path, Pyslvs takes three geometric solutions to meets the joint types in PMKS.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PLA(P): Through two (or one) known point(s), distance of reference point to the target point, and an angle value of them (or horizontal line), we can find the coordinate of target point.&lt;/li&gt;
+&lt;li&gt;PLLP: Through two known points, two distances of two reference points to the target point, we can find the coordinate of target point.&lt;/li&gt;
+&lt;li&gt;PLPP: Through a known point, distance of reference point to the target point, a straight line between two known points, we can find the coordinate of target point that is on the line.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;為了達成機構路徑的模擬，以符合 PMKS 所能模擬的接頭種類，Pyslvs 採用三種幾何解法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PLA(P)：透過兩個（或一個）已知點、基準點至目標點距離，及其（與水平線）的夾角，可以求得目標點座標。&lt;/li&gt;
+&lt;li&gt;PLLP：透過兩個已知點、兩基準點至目標點距離，可以求得目標點座標。&lt;/li&gt;
+&lt;li&gt;PLPP：透過一個已知點、基準點至目標點距離、已知兩點連成的直線，可以求得目標點在直線上的座標。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;PLAP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/PLAP.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PLLP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/PLLP.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PLPP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/PLPP.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Expression&lt;/h2&gt;
+&lt;p&gt;Pyslvs is using the expression to solving coordinates as below:&lt;/p&gt;
+&lt;p&gt;Pyslvs 使用函式解題的表示法如下：&lt;/p&gt;
+&lt;pre&gt;
+Function[parameter0, parameter1, parameter2, ...](Target); ...
+&lt;/pre&gt;
+
+&lt;p&gt;After determined the target point by arguments, it can be use as a parameter to calculate next formula.&lt;/p&gt;
+&lt;p&gt;For example, the coordinates of a four bar linkage mechanism can be find out with three formulas:&lt;/p&gt;
+&lt;p&gt;當透過輸入端求解之後，可以透過解出的目標點繼續求解。&lt;/p&gt;
+&lt;p&gt;例如，一個四連桿機構可以透過三個函式求解：&lt;/p&gt;
+&lt;pre&gt;
+#Known: a0, P0, P2, L0, L1, L2, L3, L4
+PLAP[P0, L0, a0](P1); PLLP[P1, L1, L2, P2](P3); PLLP[P1, L3, L4, P3](P4)
+&lt;/pre&gt;
+
+&lt;h2&gt;Source code&lt;/h2&gt;
+&lt;p&gt;There has input and output types of Cython function, and the calculation method as Python version.&lt;/p&gt;
+&lt;p&gt;這裡提供 Cython 的輸入輸出類型與 Python 版本的運算方法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PLAP&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+tuple PLAP(Coordinate A, double L0, double a0, Coordinate B=0, bool inverse=false);
+&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;
+def PLAP(A, L0, a0, B=None, inverse=False):
+    """Point on circle by angle."""
+    a1 = atan2(B.y - A.y, B.x - A.x) if B else 0
+    if inverse:
+        return (A.x + L0*cos(a1 - a0), A.y + L0*sin(a1 - a0))
+    else:
+        return (A.x + L0*cos(a1 + a0), A.y + L0*sin(a1 + a0))
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;PLLP&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+tuple PLLP(Coordinate A, double L0, double L1, Coordinate B, bool inverse=false);
+&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;
+def PLLP(A, L0, L1, B, inverse=False):
+    """Two intersection points of two circles."""
+    dx = B.x - A.x
+    dy = B.y - A.y
+    d = A.distance(B)
+
+    #No solutions, the circles are separate.
+    if d &gt; L0 + L1:
+        return (nan, nan)
+
+    #No solutions because one circle is contained within the other.
+    if d &lt; abs(L0 - L1):
+        return (nan, nan)
+
+    #Circles are coincident and there are an infinite number of solutions.
+    if (d == 0) and (L0 == L1):
+        return (nan, nan)
+    a = (L0*L0 - L1*L1 + d*d)/(2*d)
+    h = sqrt(L0*L0 - a*a)
+    xm = A.x + a*dx/d
+    ym = A.y + a*dy/d
+
+    if inverse:
+        return (xm + h*dy/d, ym - h*dx/d)
+    else:
+        return (xm - h*dy/d, ym + h*dx/d)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;PLPP&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+tuple PLPP(Coordinate A, double L0, Coordinate B, Coordinate C, bool inverse=false);
+&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;
+def PLAP(A, L0, B, C, inverse=False):
+    """Two intersection points of a line and a circle."""
+    line_mag = B.distance(C)
+    dx = C.x - B.x
+    dy = C.y - B.y
+    u = ((A.x - B.x)*dx + (A.y - B.y)*dy) / (line_mag*line_mag)
+    I = Coordinate(B.x + u*dx, B.y + u*dy)
+
+    #Test distance between point A and intersection.
+    d = A.distance(I)
+    if d &gt; L0:
+        #No intersection.
+        return (nan, nan)
+    elif d == L0:
+        #One intersection point.
+        return (I.x, I.y)
+
+    #Two intersection points.
+    d = sqrt(L0*L0 - d*d) / line_mag
+    dx *= d
+    dy *= d
+    if inverse:
+        return (I.x - dx, I.y - dy)
+    else:
+        return (I.x + dx, I.y + dy)
+&lt;/pre&gt;</content><category term="expression"></category></entry><entry><title>設計、設計方法與機械設計</title><link href="https://pyslvs.github.io/blog/scrum_design-design_methods-and-mechanical-design.html" rel="alternate"></link><published>2017-12-02T11:00:00+08:00</published><updated>2017-12-02T11:00:00+08:00</updated><author><name>scrum</name></author><id>tag:pyslvs.github.io,2017-12-02:/blog/scrum_design-design_methods-and-mechanical-design.html</id><summary type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;從設計觀念的釐清, 到設計方法的探尋, 以及利用各種設計方法來進行機械設計, 到底有沒有一套脈絡或論述可以依循?&lt;/p&gt;
 
 

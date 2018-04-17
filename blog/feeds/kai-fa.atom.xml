@@ -1,56 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-04-09T21:00:00+08:00</updated><entry><title>Pyslvs v18.4.0 - 04/09</title><link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-09:/blog/yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Application of auto configuration algorithm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自動配置演算法的應用&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Application of auto configuration algorithm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自動配置演算法的應用&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Application of auto configuration algorithm 自動配置演算法的應用&lt;/h1&gt;
+&lt;h1&gt;Application of auto configuration algorithm&lt;/h1&gt;
 &lt;p&gt;We can using &lt;a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html"&gt;auto configure function&lt;/a&gt; to preview the paths (limit ranges) of any mechanism.&lt;/p&gt;
 &lt;p&gt;This function is achieved by expanded "tinycadlib", some new Cython functions to calculate the path data.&lt;/p&gt;
 &lt;p&gt;But we still keep &lt;a href="http://solvespace.com/index.pl"&gt;Solvespace&lt;/a&gt; as a third party verification tool. So the calculation of main canvas will still using Python-Solvespace kernel.&lt;/p&gt;
 &lt;p&gt;我們可以利用&lt;a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html"&gt;自動配置功能&lt;/a&gt;來預覽任何機構的運動路徑（極限範圍）。&lt;/p&gt;
 &lt;p&gt;這個功能是透過擴充後的「tinycadlib」實現的，多了一些 Cython 函式來計算路徑數據。&lt;/p&gt;
 &lt;p&gt;但是我們仍保留 &lt;a href="http://solvespace.com/index.pl"&gt;Solvespace&lt;/a&gt; 作為第三方驗證工具。因此主畫布的計算仍會使用 Python-Solvespace 核心。&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Flow chart of Pyslvs synthesis function</title><link href="https://pyslvs.github.io/blog/yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-03-26:/blog/yuan_2018-03-26.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Flow charts of Pyslvs synthesis function</title><link href="https://pyslvs.github.io/blog/yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-03-26:/blog/yuan_2018-03-26.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Flow charts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流程圖&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Flow charts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流程圖&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h1&gt;Flow chart of Pyslvs synthesis function&lt;/h1&gt;
+
+&lt;h1&gt;Flow charts of Pyslvs synthesis function&lt;/h1&gt;
 &lt;p&gt;Number and type synthesis&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;Dimensional synthesis&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.3.0 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Auto configuration algorithm 自動配置演算法&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Auto configuration algorithm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自動配置演算法&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Auto configuration algorithm 自動配置演算法&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Auto configuration algorithm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自動配置演算法&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Auto configuration algorithm 自動配置演算法&lt;/h1&gt;
+&lt;h1&gt;Auto configuration algorithm&lt;/h1&gt;
 &lt;p&gt;A function that can auto configure the solutions.&lt;/p&gt;
 &lt;p&gt;一個可以自動配置解決方案的功能。&lt;/p&gt;
 &lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Update information 更新資訊&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update information&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新資訊&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Update information 更新資訊&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update information&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新資訊&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Update information 更新資訊&lt;/h1&gt;
+&lt;h1&gt;Update information&lt;/h1&gt;
 &lt;p&gt;Update information about dimensional synthesis function.&lt;/p&gt;
 &lt;p&gt;尺寸合成功能的更新資訊。&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ball lifter mechanism synthesis test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提球機構合成測試&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ball lifter mechanism synthesis test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提球機構合成測試&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Ball lifter mechanism synthesis test 提球機構合成測試&lt;/h1&gt;
+&lt;h1&gt;Ball lifter mechanism synthesis test&lt;/h1&gt;
 &lt;p&gt;The new synthesis options will support algorithms that end with fitness, and we will conduct small calculations for ball lifter mechanisms with two target paths.&lt;/p&gt;
 &lt;p&gt;新的合成設定中將支援隨適應值結束演算法，針對有兩個目標路徑的提球機構展開小型演算測試。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_01.png"&gt;&lt;/p&gt;
@@ -59,14 +115,24 @@
 &lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;In addition, the staggered position of two target paths will also affect the result.&lt;/p&gt;
 &lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Triangular iteration 三角迭代展示影片&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Triangular iteration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三角迭代展示影片&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Triangular iteration 三角迭代展示影片&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Triangular iteration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三角迭代展示影片&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Triangular iteration demo video 三角迭代展示影片&lt;/h1&gt;
+&lt;h1&gt;Triangular iteration demo video&lt;/h1&gt;
 &lt;p&gt;Video - English version:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/-zmGU0RoFNo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -77,16 +143,28 @@
 &lt;p&gt;But the profile can not apply in dimensional synthesis function currently.&lt;/p&gt;
 &lt;p&gt;三角迭代功能將會於 18.1 版更新。&lt;/p&gt;
 &lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;Topological library 拓樸程式庫&lt;/li&gt;
-&lt;li&gt;Atlas function 圖譜功能&lt;/li&gt;
+&lt;li&gt;Topological library&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Atlas function&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拓樸程式庫&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;圖譜功能&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;Topological library 拓樸程式庫&lt;/li&gt;
-&lt;li&gt;Atlas function 圖譜功能&lt;/li&gt;
+&lt;li&gt;Topological library&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Atlas function&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拓樸程式庫&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;圖譜功能&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;Topological library 拓樸程式庫&lt;/h1&gt;
+&lt;h1&gt;Topological library&lt;/h1&gt;
 &lt;p&gt;For better computing performance, the number synthesis library changed to Cython prepared. Which extracted some of the functions of NetworkX module, translated into Cython syntax.&lt;/p&gt;
 &lt;p&gt;為取得更好的運算效能，數目合成的程式庫改為 Cython 編寫。其中提取 NetworkX 模組的部份功能，轉譯為 Cython 語法。&lt;/p&gt;
 &lt;ul&gt;
@@ -136,20 +214,30 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Atlas function 圖譜功能&lt;/h1&gt;
+&lt;h1&gt;Atlas function&lt;/h1&gt;
 &lt;p&gt;Use the text file to store the atlas, the expression is the &lt;code&gt;edge&lt;/code&gt; attribute in &lt;code&gt;Graph&lt;/code&gt; class.&lt;/p&gt;
 &lt;p&gt;You can also load text files into Pyslvs for processing.&lt;/p&gt;
 &lt;p&gt;使用文字文件儲存圖譜，表示式為 &lt;code&gt;Graph&lt;/code&gt; 類型的 &lt;code&gt;edges&lt;/code&gt; 屬性。&lt;/p&gt;
 &lt;p&gt;另外還可以將文字文件載入 Pyslvs 中處理。&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;About release&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於發佈&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;About release 關於發佈&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;About release&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於發佈&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h1&gt;About release 關於發佈&lt;/h1&gt;
+&lt;h1&gt;About release&lt;/h1&gt;
 &lt;p&gt;Since 2018, Pyslvs will take the monthly release of the version update. The format of the version will be numbered as &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The progress of the update will be updated in both English and Traditional Chinese in this blog.&lt;/p&gt;
 &lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
