@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-04-17T21:00:00+08:00</updated><entry><title>Triangular formulas in Pyslvs</title><link href="https://pyslvs.github.io/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-17T21:00:00+08:00</published><updated>2018-04-17T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-17:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-05-21T21:00:00+08:00</updated><entry><title>Pyslvs v18.05 - 05/21</title><link href="https://pyslvs.github.io/blog/yuan_2018-05-21.html" rel="alternate"></link><published>2018-05-21T21:00:00+08:00</published><updated>2018-05-21T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-05-21:/blog/yuan_2018-05-21.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Simple reading function of Solvespace format.&lt;/li&gt;
+&lt;li&gt;Linkage select function.&lt;/li&gt;
+&lt;li&gt;New planar solving kernel "Pyslvs".&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Simple reading function of Solvespace format.&lt;/li&gt;
+&lt;li&gt;Linkage select function.&lt;/li&gt;
+&lt;li&gt;New planar solving kernel "Pyslvs".&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Demo video&lt;/h1&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/NL5nkH_5JQ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The reading function just support 2D sketch. In addition to get the R joints from "constrain" condition and get the grounded joints from "point-plane distance" condition with (0, 1, 0) work plane and (1, 0, 0) work plane.&lt;/p&gt;
+&lt;p&gt;Another new function can allow user to select linkages by clicking mouse on main canvas, including to choose table items from linkage table widget just like the table of points.&lt;/p&gt;
+&lt;p&gt;讀取功能僅支援 2D 草圖。還有自 "constrain" 條件取得 R 接頭，由 "point-plane distance" 條件自 (0,1,0) 工作平面和 (1,0,0) 工作平面取得接地接頭。&lt;/p&gt;
+&lt;p&gt;另一個新功能可以讓用戶在主畫布上點擊游標來選擇連桿，包括像接點表格一樣從連桿表格元件中選取表格項目。&lt;/p&gt;
+&lt;h1&gt;New solving kernel option&lt;/h1&gt;
+&lt;p&gt;In Pyslvs 18.05, a independent Cython module has pack together from old "algorithm" and "topologic" module.&lt;/p&gt;
+&lt;p&gt;This module can be work without user interface and it just need two dependent module -- "Cython" to compile, "lark-parser" for parse expression. If there has highlight demand, optional dependent module "Pygments" can be provide to it.&lt;/p&gt;
+&lt;p&gt;Now the "Pyslvs" kernel can use to be a planar solver of Pyslvs GUI program or external API.&lt;/p&gt;
+&lt;p&gt;Pyslvs will using "Pyslvs" module as default planar solving kernel in new version, "Python-Solvespace" will still be a option in setting interface.&lt;/p&gt;
+&lt;p&gt;在Pyslvs 18.05中，一個獨立的Cython模塊從舊的 "algorithm" 和 "topologic" 模塊組裝在一起。&lt;/p&gt;
+&lt;p&gt;這個模塊可以在沒有用戶界面的情況下工作，它只需要兩個依賴模塊 - "Cython" 來編譯，解析表達式的 "lark-parser"。 如果有亮顯的需求，可以提供可選的相關模塊 "Pygments"。&lt;/p&gt;
+&lt;p&gt;現在 "Pyslvs" 內核可以用作Pyslvs GUI程序或外部API的平面解算器。&lt;/p&gt;
+&lt;p&gt;在新版本中，Pyslvs將使用 "Pyslvs" 模塊作為默認的平面解決內核，"Python-Solvespace" 仍然是設置界面的一個選項。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Triangular formulas in Pyslvs</title><link href="https://pyslvs.github.io/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-17T21:00:00+08:00</published><updated>2018-04-17T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-17:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Triangular formula expression in Pyslvs&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Source code written in Python&lt;/p&gt;
@@ -139,7 +166,7 @@ def PLAP(A, L0, B, C, inverse=False):
         return (I.x - dx, I.y - dy)
     else:
         return (I.x + dx, I.y + dy)
-&lt;/pre&gt;</content><category term="expression"></category></entry><entry><title>Pyslvs v18.4.0 - 04/09</title><link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-09:/blog/yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
+&lt;/pre&gt;</content><category term="expression"></category></entry><entry><title>Pyslvs v18.04 - 04/09</title><link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-09:/blog/yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Application of auto configuration algorithm&lt;/p&gt;
 &lt;/li&gt;
@@ -186,7 +213,7 @@ def PLAP(A, L0, B, C, inverse=False):
 &lt;p&gt;Number and type synthesis&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;Dimensional synthesis&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.3.0 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.03 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Auto configuration algorithm&lt;/p&gt;
 &lt;/li&gt;
@@ -207,7 +234,7 @@ def PLAP(A, L0, B, C, inverse=False):
 &lt;h1&gt;Auto configuration algorithm&lt;/h1&gt;
 &lt;p&gt;A function that can auto configure the solutions.&lt;/p&gt;
 &lt;p&gt;一個可以自動配置解決方案的功能。&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Update information&lt;/p&gt;
 &lt;/li&gt;
@@ -228,7 +255,7 @@ def PLAP(A, L0, B, C, inverse=False):
 &lt;h1&gt;Update information&lt;/h1&gt;
 &lt;p&gt;Update information about dimensional synthesis function.&lt;/p&gt;
 &lt;p&gt;尺寸合成功能的更新資訊。&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.2.0 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Ball lifter mechanism synthesis test&lt;/p&gt;
 &lt;/li&gt;
@@ -254,7 +281,7 @@ def PLAP(A, L0, B, C, inverse=False):
 &lt;p&gt;提球機構的變數較多，導致演算適應值至 100 以下的所需時間為 6 分鐘到 20 分鐘不等。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;In addition, the staggered position of two target paths will also affect the result.&lt;/p&gt;
-&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Triangular iteration&lt;/p&gt;
 &lt;/li&gt;
@@ -282,7 +309,7 @@ def PLAP(A, L0, B, C, inverse=False):
 &lt;p&gt;Triangular iteration function will be update in version 18.1.&lt;/p&gt;
 &lt;p&gt;But the profile can not apply in dimensional synthesis function currently.&lt;/p&gt;
 &lt;p&gt;三角迭代功能將會於 18.1 版更新。&lt;/p&gt;
-&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.1.0 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Topological library&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Atlas function&lt;/p&gt;
