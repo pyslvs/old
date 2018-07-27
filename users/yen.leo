@@ -60,12 +60,12 @@
 </v>
 </v>
 <v t="amd.20151215170350.1"><vh>以下為 content 目錄中的 md 檔案</vh></v>
-<v t="amd.20160106094754.1" a="E"><vh>@path ./../content/pages</vh>
+<v t="amd.20160106094754.1" a="E"><vh>@path ./../markdown/pages</vh>
 <v t="amd.20160106094829.1" a="E"><vh>pyslvs.com pages 文章</vh>
 <v t="amd.20160106094844.1"><vh>@edit pyslvs_pages_1.md</vh></v>
 </v>
 </v>
-<v t="amd.20151215170031.1" a="E"><vh>@path ./../content</vh>
+<v t="amd.20151215170031.1" a="E"><vh>@path ./../markdown</vh>
 <v t="amd.20160106093454.1" a="E"><vh>網誌 md 檔案</vh>
 <v t="leo.20171105103358.1" a="E"><vh>201711</vh>
 <v t="leo.20171107221802.1"><vh>Pyslvs.com 上線</vh>
@@ -96,6 +96,15 @@
 <t tx="amd.20160106093454.1"></t>
 <t tx="amd.20160106094754.1"></t>
 <t tx="amd.20160106094829.1"></t>
+<t tx="amd.20160106094844.1">@language md
+Title: About
+
+## Pyslvs.com 網誌
+
+假如您要連結到先前的網站內容, 請至 &lt;https://kmolyuan.github.io/pyslvs/&gt;, 目前的 &lt;http://pyslvs.com&gt; 網站倉儲內容位於 &lt;https://github.com/pyslvs/pyslvs.github.io&gt;.
+
+Pyslvs 是一套以 Python3 及 PyQt5 打造的平面機構模擬與合成套件.
+</t>
 <t tx="amd.20160106095324.1"></t>
 <t tx="leo.20151212173315.1"></t>
 <t tx="leo.20151212173315.2">QTreeWidget {
@@ -175,13 +184,13 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-os.system("pelican content -o blog -s publishconf.py")
+os.system("pelican markdown -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
 
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
-os.system("pelican content -o blog -s local_publishconf.py")
+os.system("pelican markdown -o blog -s local_publishconf.py")
 g.es("pelican 近端執行完畢")
 
 

@@ -168,12 +168,12 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-os.system("pelican content -o blog -s publishconf.py")
+os.system("pelican markdown -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
-os.system("pelican content -o blog -s local_publishconf.py")
+os.system("pelican markdown -o blog -s local_publishconf.py")
 g.es("admin pelican 近端執行完畢")
 </t>
 <t tx="leo.20151213173811.1"></t>
