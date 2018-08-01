@@ -1,21 +1,40 @@
 <h1>簡介</h1>
 <p>Pyslvs 是一套平面機構模擬與合成系統</p>
-<h1>操作</h1>
+<h2>Mechanism</h2>
+<p>Pyslvs 左側中的 Mechanism 子頁面, 主要用於輸入機構關鍵點與運動連桿, 使用時以滑鼠點選 Mechanism 頁面後, 可在右方工作區, 以滑鼠輸入機構關鍵點與運動連桿.</p>
+<p></p><h2>Inputs</h2>
+<p>Pyslvs 的 Inputs 子頁面用於宣告機構的主動軸, 並進行運動模擬.</p><h2>Synthesis</h2>
+<p>Pyslvs 的 Synthesis 子頁面用於進行平面機構的結構合成與尺寸合成.</p><h1>操作</h1>
 <h2>模擬操作</h2>
-<h2>尺寸合成操作</h2>
+<h3>曲柄滑塊</h3>
+<p>File -&gt; New Workbook</p>
+<p>選擇左側 Mechanism 子頁面.</p>
+<h4>建立固定點與移動點</h4>
+<p>利用滑鼠在右側畫布區, 按住滑鼠右鍵輸入兩個固定點與一個可運動點.</p>
+<h4>建立連桿</h4>
+<p>將其中一個固定點轉為滑塊, 即將 point2 之類型 (type) 由 pin 轉為 pin in slot, 採內建水平滑動面, 或更改滑動面的對應角度.</p>
+<p>在 Mechanism 完成機構定義後, 轉到 Inputs 子頁面, 定義 Driver point 後進行曲柄滑塊的運動模擬.</p><h3>四連桿</h3>
+<p>在 Mechanism 子頁面定義兩個固定點與兩個移動點後, 建立三根可運動連桿.</p>
+<p>接著進入 Inputs 頁面, 定義 driver points 後進行基本運動模擬.</p><h2>尺寸合成操作</h2>
 <h2>結構合成操作</h2>
-<h1>下載</h1>
-<p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
-<p><a href="https://github.com/KmolYuan/Pyslvs-PyQt5/tree/v18.05.0">https://github.com/KmolYuan/Pyslvs-PyQt5/tree/v18.05.0</a>&nbsp;</p>
-<p><a href="https://github.com/KmolYuan/Pyslvs-PyQt5/tree/v18.06.0">https://github.com/KmolYuan/Pyslvs-PyQt5/tree/v18.06.0</a>&nbsp;</p>
-<p>Windows 64 位元操作系統:</p>
-<p><a href="http://wcmg3.kmol.info/downloads/pyslvs-18.5.0.mscv1900-amd64.exe" rel="nofollow">http://wcmg3.kmol.info/downloads/pyslvs-18.5.0.mscv1900-amd64.exe</a></p>
-<p><a href="http://wcmg3.kmol.info/downloads/pyslvs-18.6.0.mscv1900-amd64.exe" rel="nofollow">http://wcmg3.kmol.info/downloads/pyslvs-18.6.0.mscv1900-amd64.exe</a></p>
-<p><a href="http://wcmg3.kmol.info/downloads/pyslvs-18.7.0.mscv1900-amd64.exe" rel="nofollow">http://wcmg3.kmol.info/downloads/pyslvs-18.7.0.mscv1900-amd64.exe</a></p><h1>範例</h1>
-<p>展示利用 Pyslvs 解題</p><h2>模擬範例</h2>
+<h1>下載</h1><p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p><p>Windows 64 位元操作系統:</p><p><a href="https://drive.google.com/file/d/1fgHcl6cO2_SB1W8AkP3ta6qCeICgFyLG/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p><h1>範例</h1>
+<p>展示利用 Pyslvs 解題</p>
+<p>參考資料:</p>
+<p>1977 -&nbsp;<a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
+<p><a href="https://www.researchgate.net/publication/304782762_MeKin2D_Suite_for_Planar_Mechanism_Kinematics">MeKin2d</a></p>
+<p><a href="https://www.amazon.com/Machines-Mechanisms-Applied-Kinematic-Analysis/dp/0132157802">MACHINES AND MECHANISMS APPLIED KINEMATIC ANALYSIS Fourth Edition by David H. Myszka</a></p>
+<p><a href="https://books.google.com.tw/books?id=0A1mDwAAQBAJ&amp;pg=PP1&amp;lpg=PP1&amp;dq=Introduction+to+Mechanism+Design:+with+Computer+Applications&amp;source=bl&amp;ots=WakYIZ-L93&amp;sig=tSRFX6Z9fhaT3Lzk3USgSb05PXA&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiPqeP4-sPcAhVHFYgKHbE_Ae4Q6AEwBHoECAUQAQ#v=onepage&amp;q=Introduction%20to%20Mechanism%20Design%3A%20with%20Computer%20Applications">Introduction to Mechanism Design: with Computer Applications by By Eric Constans and Karl B. Dyer</a></p>
+<p><a href="https://www.amazon.com/Theory-Machines-Mechanisms-John-Uicker/dp/0195371232">THEORY OF MACHINES AND MECHANISMS Fourth Edition by John Uicker, Gordon Pennock and&nbsp; Joseph Shigley</a></p>
+<p></p>
+<p></p><h2>模擬範例</h2>
 <h2>尺寸合成範例</h2>
 <h2>結構合成範例</h2>
 <h1>開發</h1>
 <h2>Windows 開發</h2>
 <h2>Ubuntu 開發</h2>
-<h1>參考</h1><p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p><p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a>&nbsp;</p><p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a>&nbsp;</p><p></p><pre class="lang-bsh prettyprint prettyprinted"><code><span class="pln"></span></code></pre>
+<h1>參考</h1>
+<p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
+<p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a>&nbsp;</p>
+<p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a>&nbsp;</p>
+<p></p>
+<pre class="lang-bsh prettyprint prettyprinted"><code><span class="pln"></span></code></pre>
