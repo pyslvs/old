@@ -1364,7 +1364,7 @@ def fileuploadform(edit):
 &lt;script src="/static/axuploader.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;script&gt;
 $(document).ready(function(){
-$('.prova').axuploader({url:'fileaxupload', allowExt:['jpg','png','gif','7z','pdf','zip','flv','stl','swf'],
+$('.prova').axuploader({url:'fileaxupload', allowExt:['jpg','png','gif','7z','pdf','zip','flv','stl','swf','pyslvs'],
 finish:function(x,files)
     {
         alert('All files have been uploaded: '+files);
