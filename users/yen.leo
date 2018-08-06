@@ -96,15 +96,6 @@
 <t tx="amd.20160106093454.1"></t>
 <t tx="amd.20160106094754.1"></t>
 <t tx="amd.20160106094829.1"></t>
-<t tx="amd.20160106094844.1">@language md
-Title: About
-
-## Pyslvs.com 網誌
-
-假如您要連結到先前的網站內容, 請至 &lt;https://kmolyuan.github.io/pyslvs/&gt;, 目前的 &lt;http://pyslvs.com&gt; 網站倉儲內容位於 &lt;https://github.com/pyslvs/pyslvs.github.io&gt;.
-
-Pyslvs 是一套以 Python3 及 PyQt5 打造的平面機構模擬與合成套件.
-</t>
 <t tx="amd.20160106095324.1"></t>
 <t tx="leo.20151212173315.1"></t>
 <t tx="leo.20151212173315.2">QTreeWidget {
