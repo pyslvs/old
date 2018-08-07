@@ -68,5 +68,30 @@ $(function(){
 </ul>
 </confmenu></header>
 <div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='Mechanism.html'>Mechanism</a><li><a href='Inputs.html'>Inputs</a><li><a href='Synthesis.html'>Synthesis</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a></li></ul><li><a href='參考.html'>參考</a></li></ul></nav><section> <a href='Mechanism.html'>Next</a> >> Mechanism<br /><h1>簡介</h1>
-<p>Pyslvs 是一套平面機構模擬與合成系統</p>
-<br /> <a href='Mechanism.html'>Next</a> >> Mechanism</section></div></body></html>
+<p><a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 是一套利用 Python 3 與 PyQt5 建立的平面機構模擬與合成系統.&nbsp; 機構模擬與合成的主要核心包括&nbsp;<a href="https://github.com/KmolYuan/python-solvespace">Python-Solvespace</a>&nbsp;幾何約束求解程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a> 三角幾何函式程式庫、<a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/bfgs.pyx">bgfs</a> 幾何約束求解程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/topologic.pyx">topologic</a>&nbsp;類型合成程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/number.pyx">number</a> 數目合成程式庫等.</p>
+<p>其中, <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫包含 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 與 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 等三種, 用於平面機構尺寸合成演算.</p>
+<h4>源起</h4>
+<p><a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 的開發源自 2008 年, 從最基本的實數基因演算法在平面機構的應用研究起步, 期間歷經下列研究者的貢獻:</p>
+<ol>
+<li>李孟恭, 2015, <a href="https://hdl.handle.net/11296/tur9hu">Django 網際框架在平面四連桿尺寸合成系統上的應用</a></li>
+<li>李玠廷, 2013, <a href="https://hdl.handle.net/11296/mtf789">網際程式框架在平面連桿機構尺寸合成系統上的應用</a></li>
+<li>陳威任, 2013, 符號式平面滑塊機構應用研究</li>
+<li>謝政良, 2012, <a href="https://hdl.handle.net/11296/h5z5sb">網際雙自由度凸輪機構尺寸合成系統</a></li>
+<li>黃竣鉉, 2012, <a href="https://hdl.handle.net/11296/a5b4p7">網際符號輔助軸接連桿機構之基因演算法尺寸合成系統</a></li>
+<li>謝智翔, 2012, <a href="https://hdl.handle.net/11296/v9mr92">網際史都華平台機構逆運動學分析與模擬</a></li>
+<li>許哲菘, 2010, <a href="https://hdl.handle.net/11296/w66tpa">網際六軸機械臂系統的逆運動學分析與模擬</a></li>
+<li>葉岱錦, 2009, <a href="https://hdl.handle.net/11296/tt6672">基因演算法在網際機構合成系統上的應用</a></li>
+</ol>
+<p>過程中, 於 2015 年由<a href="https://github.com/kmollee">李孟恭</a>整合上述論文所開發的三種演算法, 完成 <a href="http://cython.org/">Cython</a> 格式的 <a href="https://github.com/kmollee/algorithm/blob/master/rga.pyx">RGA</a>、<a href="https://github.com/kmollee/algorithm/blob/master/de.pyx">DE</a> 與 <a href="https://github.com/kmollee/algorithm/blob/master/firefly.pyx">Firefly</a> 演算法程式庫後. 並自 2016 年起由<a href="https://github.com/KmolYuan">張元</a>將上述尺寸合成演算法, 搭配利用&nbsp; <a href="http://www.swig.org/">SWIG</a> 技術, 將原本只能用於 Python 2 的 <a href="https://github.com/BBBSnowball/python-solvespace">Python-Solvespace</a> 倉儲, 改寫為能結合 PyQt5 圖形介面使用的 <a href="https://github.com/KmolYuan/python-solvespace">Python-Solvespace</a> 程式庫作為另一項開端. 再搭配平面機構中的數目合成與類型合成等程式庫後, 成為目前的 <a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 平面機構模擬與合成套件.</p>
+<h4>Pyslvs 開發紀要</h4>
+<p>2015 年 4 月 - 由<a href="https://github.com/kmollee">李孟恭</a>以 <a href="http://cython.org/">Cython</a> 技術, 完成三個<a href="https://github.com/kmollee/algorithm">尺寸合成演算法</a>程式庫.</p>
+<p>2016 年 7 月 - 由<a href="https://github.com/KmolYuan">張元</a>完成 Python 3 格式的 <a href="https://github.com/KmolYuan/python-solvespace">Python-Solvespace</a> 程式庫.</p>
+<p>2016 年 12 月- 由<a href="https://github.com/KmolYuan">張元</a>結合 PyQt5 與演算程式庫, 完成第一代 <a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 套件.</p>
+<p>2017 年 11 月 - <a href="http://pyslvs.com">http://pyslvs.com</a>&nbsp;上線.</p>
+<p>2018 年 1 月 - 推出 <a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 18.01&nbsp; 版, 自此改為以年月序作為版次.</p>
+<p>2018 年 7 月 -&nbsp;<a href="http://pyslvs.com/content/">http://pyslvs.com/content/</a>&nbsp;使用手冊上線.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><br /> <a href='Mechanism.html'>Next</a> >> Mechanism</section></div></body></html>
