@@ -1425,8 +1425,11 @@ def parse_content():
     # i = 0
     temp_data = subject.split(str(htag[0]))
     # cut the first htag out
-    subject = temp_data[1]
-
+    # has duplicate head title
+    if len(temp_data) > 2:
+        subject = str(htag[0]).join(temp_data[1:])
+    else:
+        subject = temp_data[1]
     if n >1:
             # i from 1 to i-1
             for i in range(1, len(htag)):
@@ -1436,7 +1439,11 @@ def parse_content():
                 # the number of h1, h2 or h3 is the level of page menu
                 level_list.append(htag[i-1].name[1])
                 temp_data = subject.split(str(htag[i]))
-                subject = temp_data[1]
+                # has duplicate head title
+                if len(temp_data) > 2:
+                    subject = str(htag[i]).join(temp_data[1:])
+                else:
+                    subject = temp_data[1]
                 # cut the other page content out of htag from 1 to i-1
                 cut = temp_data[0]
                 # add the page content
