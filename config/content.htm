@@ -67,12 +67,9 @@
 <p>在 Mechanism 子頁面定義兩個固定點與兩個移動點後, 建立三根可運動連桿.</p>
 <p>接著進入 Inputs 頁面, 定義 driver points 後進行基本運動模擬.</p>
 <h2>尺寸合成操作</h2>
-<p>Pyslvs 的尺寸合成功能, 主要依賴&nbsp;<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span>&nbsp;三角幾何函式程式庫與&nbsp;</span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span>&nbsp;演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a>&nbsp;演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>結構合成操作</h2><p>Pyslvs 的結構合成包括平面機構的數目合成與類型合成等兩部分.</p><p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、關節軸個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1>
-<p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
-<p>Windows 64 位元操作系統:</p>
-<p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p>
-<p><a href="https://drive.google.com/file/d/11_1GZB3Ky0RcbWfCLKqSm1COcQ1XZdps/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53457 KB)</p>
-<h1>範例</h1>
+<p>Pyslvs 的尺寸合成功能, 主要依賴&nbsp;<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span>&nbsp;三角幾何函式程式庫與&nbsp;</span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span>&nbsp;演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a>&nbsp;演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>結構合成操作</h2>
+<p>Pyslvs 的結構合成包括平面機構的數目合成與類型合成等兩部分.</p>
+<p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、關節軸個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1><p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p><p>Windows 64 位元操作系統:</p><p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p><p><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p><h1>範例</h1>
 <p>展示利用 Pyslvs 解題</p>
 <p>參考資料:</p>
 <p>1977 -&nbsp;<a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
@@ -98,7 +95,8 @@
 <p><img src="/images/sixbar_foot_exercise_machine.png" width="800" height="450" alt=""></p>
 <p></p>
 <h1>開發</h1>
-<h2>Windows 開發</h2>
+<p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
+<p><img src="/images/pyslvs_under_eric6.png" width="600" height="338" alt=""></p><h2>Windows 開發</h2>
 <p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z&nbsp;</a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
 <p>執行 start.bat</p>
 <p>取得 Pyslvs 原始碼:</p>
