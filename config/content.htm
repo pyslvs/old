@@ -22,7 +22,14 @@
 <p>2018 年 1 月 - 推出 <a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 18.01&nbsp; 版, 自此改為以年月序作為版次.</p>
 <p>2018 年 7 月 -&nbsp;<a href="http://pyslvs.com/content/">http://pyslvs.com/content/</a>&nbsp;使用手冊上線.</p>
 <p></p>
-<h2>Pyslvs 介面</h2>
+<h2>機構與機器</h2>
+<h4>機構 (Mechanism)</h4>
+<p>機構是由剛體 (Rigid) 或撓性 (Flexible) 體機械元件所組成, 這些元件透過接頭 (Joint) 連接, 並以特定的運動相互移動.</p>
+<h4>機器 (Machine)</h4>
+<p>機器是由機構或機構的集合所組成, 能將力從動力源傳遞到預計要施加之元件上.</p>
+<p>換言之, 機器是由剛性元件或撓性元件所組合而成,&nbsp;能將力從動力源傳遞到預計要施加之元件上.</p>
+<p>機器具有兩個功能: 傳遞確定的相對運動和傳遞力.&nbsp; 這些功能需要足夠強度與剛性來傳遞力.</p>
+<p>若機構中所有的機件皆為連桿, 且所有的接頭皆為旋轉對, 則這個機構特稱為連 (Linkage).</p><h2>Pyslvs 介面</h2>
 <p><img src="/images/pyslvs-18.7.0-screenshot.png" width="600" height="524" alt=""></p>
 <p>Pyslvs 主畫面的上方為功能表列 (Menu bar), 右側為畫布 (Canvas), 左方則有各式功能的分頁欄 (Tab widgets).</p>
 <p>功能表列涵蓋大部分的功能, 其中部分有關各項目的細部操作, 則必須在對應的分頁欄中選取或設定.&nbsp;</p>
@@ -69,7 +76,11 @@
 <h2>尺寸合成操作</h2>
 <p>Pyslvs 的尺寸合成功能, 主要依賴&nbsp;<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span>&nbsp;三角幾何函式程式庫與&nbsp;</span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span>&nbsp;演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a>&nbsp;演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>結構合成操作</h2>
 <p>Pyslvs 的結構合成包括平面機構的數目合成與類型合成等兩部分.</p>
-<p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、關節軸個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1><p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p><p>Windows 64 位元操作系統:</p><p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p><p><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p><h1>範例</h1>
+<p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、接頭個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1>
+<p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
+<p>Windows 64 位元操作系統:</p>
+<p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p>
+<p><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p><h1>範例</h1>
 <p>展示利用 Pyslvs 解題</p>
 <p>參考資料:</p>
 <p>1977 -&nbsp;<a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
@@ -89,12 +100,7 @@
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/1BcjhYgvQtY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe></p>
 <h2>尺寸合成範例</h2>
 <h2>結構合成範例</h2>
-<h2>產品設計範例</h2>
-<p><a href="/downloads/2014_nsysu_design_linkage_type_foot_exercise_machine.pdf">連桿式健步機設計.pdf</a></p>
-<p><a href="/downloads/sixbar_foot_exercise_machine.pyslvs">sixbar_foot_exercise_machine.pyslvs</a></p>
-<p><img src="/images/sixbar_foot_exercise_machine.png" width="800" height="450" alt=""></p>
-<p></p>
-<h1>開發</h1>
+<h2>產品設計範例</h2><h4>健步機</h4><p><a href="/downloads/2014_nsysu_design_linkage_type_foot_exercise_machine.pdf">連桿式健步機設計.pdf</a></p><p><a href="/downloads/sixbar_foot_exercise_machine.pyslvs">sixbar_foot_exercise_machine.pyslvs</a></p><p><img src="/images/sixbar_foot_exercise_machine.png" width="600" height="338" alt=""></p><h4>汽車雨刷</h4><p><a href="/downloads/windshield_design1.pyslvs">windshield_design1.pyslvs</a></p><p><img src="/images/windshield_design1.png" width="600" height="338" alt=""></p><h4>汽車引擎蓋</h4><p><a href="/downloads/automobile_hood1.pyslvs">automobile_hood1.pyslvs</a></p><p><img src="/images/automobile_hood1.png" width="600" height="322" alt=""></p><p></p><p></p><h1>開發</h1>
 <p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
 <p><img src="/images/pyslvs_under_eric6.png" width="600" height="338" alt=""></p><h2>Windows 開發</h2>
 <p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z&nbsp;</a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
