@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
-<leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
-<globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
-	<global_window_position top="50" left="50" height="500" width="700"/>
-	<global_log_window_position top="0" left="0" height="0" width="0"/>
-</globals>
+<leo_header file_format="2"/>
+<globals/>
 <preferences/>
 <find_panel_settings/>
 <vnodes>
@@ -15,11 +12,11 @@
 </v>
 <v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
-<v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
-<v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
+<v t="amd.20160106095324.1"><vh>@path ./../</vh>
+<v t="leo.20151213173811.1"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
 <v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
-<v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
+<v t="leo.20151213173830.1"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
 <v t="amd.20151215180106.1"><vh>設定與開發</vh>
@@ -65,15 +62,15 @@
 <v t="amd.20160106094844.1"><vh>@edit pyslvs_pages_1.md</vh></v>
 </v>
 </v>
-<v t="amd.20151215170031.1" a="E"><vh>@path ./../markdown</vh>
-<v t="ahshoe.20180107162303.1" a="E"><vh>2017</vh>
+<v t="amd.20151215170031.1"><vh>@path ./../markdown</vh>
+<v t="ahshoe.20180107162303.1"><vh>2017</vh>
 <v t="ahshoe.20171128212217.1"><vh>@edit 20171128.md</vh></v>
 <v t="ahshoe.20171203204922.1"><vh>@edit 20171203.md</vh></v>
 <v t="40323230.20171205231103.1"><vh>@edit 20171205.md</vh></v>
 <v t="ahshoe.20171211002738.1"><vh>@edit 20171210.md</vh></v>
 <v t="40323230.20171212225549.1"><vh>@edit 20171212.md</vh></v>
 </v>
-<v t="ahshoe.20180107162320.1" a="E"><vh>2018</vh>
+<v t="ahshoe.20180107162320.1"><vh>2018</vh>
 <v t="ahshoe.20180107161224.1"><vh>@edit 2018.md</vh></v>
 <v t="ahshoe.20180107163855.1"><vh>@edit 20180107.md</vh></v>
 <v t="ahshoe.20180125204903.1"><vh>@edit 20180125.md</vh></v>

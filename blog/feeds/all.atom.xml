@@ -1,5 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-09-13T21:00:00+08:00</updated><entry><title>Pyslvs v18.09 - 09/13</title><link href="https://pyslvs.github.io/blog/yuan_2018-09-13.html" rel="alternate"></link><published>2018-09-13T21:00:00+08:00</published><updated>2018-09-13T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-09-13:/blog/yuan_2018-09-13.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-09-22T21:00:00+08:00</updated><entry><title>Testing Mac OS X with specific Python version in Travis CI</title><link href="https://pyslvs.github.io/blog/yuan_2018-09-22.html" rel="alternate"></link><published>2018-09-22T21:00:00+08:00</published><updated>2018-09-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-09-22:/blog/yuan_2018-09-22.html</id><summary type="html">&lt;p&gt;How to test Python executable file with specific version in Mac OS X?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Travis CI basic options&lt;/li&gt;
+&lt;li&gt;MacPorts&lt;/li&gt;
+&lt;li&gt;Python, pip and PyInstaller&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;How to test Python executable file with specific version in Mac OS X?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Travis CI basic options&lt;/li&gt;
+&lt;li&gt;MacPorts&lt;/li&gt;
+&lt;li&gt;Python, pip and PyInstaller&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Travis CI basic options&lt;/h1&gt;
+&lt;p&gt;Test with Ubuntu and Mac OS X platform.&lt;/p&gt;
+&lt;p&gt;Because of Travis CI are not provide Python language in "osx" platform, so we choose "generic".&lt;/p&gt;
+&lt;p&gt;With "matrix" option, the Linux and OS X platform can test at same time.&lt;/p&gt;
+&lt;p&gt;In OS X platform, set a "PYTHON" environment variable to represent specific version of Python.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# .travis.yml&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;matrix&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;include&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx_image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;env&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then, use "addons" option to install packages in Ubuntu platform with "apt" option.&lt;/p&gt;
+&lt;p&gt;For example, install SWIG.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;addons&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;apt&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;packages&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;swig&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;MacPorts&lt;/h1&gt;
+&lt;p&gt;Since Homebrew always provide newest version of Python, it is recommended to use MacPorts as package management tool.&lt;/p&gt;
+&lt;p&gt;With "TRAVIS_OS_NAME" variable, the bash command will only execute in OS X platform.&lt;/p&gt;
+&lt;p&gt;Homebrew is already installed by Travis CI, so you can install dependency directly.&lt;/p&gt;
+&lt;p&gt;Download MacPort from &lt;a href="https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci"&gt;https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci&lt;/a&gt; and install it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# For OSX&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_install&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;brew install swig;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;source ./macports-ci install;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Python, pip and PyInstaller&lt;/h1&gt;
+&lt;p&gt;Install Python and pip by MacPorts.&lt;/p&gt;
+&lt;p&gt;Type "yes" front of command can be pass the ask of MacPorts during installation.&lt;/p&gt;
+&lt;p&gt;And using &lt;code&gt;port select&lt;/code&gt; command to update &lt;code&gt;python3&lt;/code&gt; and &lt;code&gt;pip&lt;/code&gt; soft link in &lt;code&gt;/usr/local/bin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;PyInstaller can be installed by pip, but should install with "--user" flag.&lt;/p&gt;
+&lt;p&gt;That's because of MacPorts will install executable scripts to &lt;code&gt;/opt/local&lt;/code&gt;, which is protected by system, it cannot be done with "sudo".&lt;/p&gt;
+&lt;p&gt;User folder &lt;code&gt;/Users/travis/Library/Python/$PYTHON/bin&lt;/code&gt; is not in "PATH" variable, so add it after installation completed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install python$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install py$PYTHON-pip;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set python3 python$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set pip pip$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install pyinstaller --user;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;export PATH=$PATH:/Users/travis/Library/Python/$PYTHON/bin;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check the versions.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python3 --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pyinstaller --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Install Python modules from &lt;code&gt;requirements.txt&lt;/code&gt;. This step is also recommand using "--user" flag without "sudo".&lt;/p&gt;
+&lt;p&gt;This step will automatically executed in Linux platform.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt --user;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;The final version of configuration file looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Travis-Ci for Pyslvs-PyQt5&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;matrix&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;include&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx_image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;env&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;branches&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;only&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/^dev\d*[.]?\d*$/&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;addons&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;apt&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;packages&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;swig&lt;/span&gt;
+
+&lt;span class="c1"&gt;# For OS X&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_install&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;brew install swig;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;source ./macports-ci install;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install python$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install py$PYTHON-pip;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set python3 python$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set pip pip$PYTHON;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install pyinstaller --user;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;export PATH=$PATH:/Users/travis/Library/Python/$PYTHON/bin;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python3 --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pyinstaller --version;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt --user;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;script&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;make&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_cache&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rm -rf $HOME/.cache/pip/log&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cache&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;directories&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;$HOME/.cache/pip&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.09 - 09/13</title><link href="https://pyslvs.github.io/blog/yuan_2018-09-13.html" rel="alternate"></link><published>2018-09-13T21:00:00+08:00</published><updated>2018-09-13T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-09-13:/blog/yuan_2018-09-13.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Mac OS platform supported.&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
