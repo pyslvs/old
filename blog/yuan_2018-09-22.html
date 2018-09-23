@@ -276,14 +276,14 @@
 <p>And using <code>port select</code> command to update <code>python3</code> and <code>pip</code> soft link in <code>/usr/local/bin</code>.</p>
 <p>PyInstaller can be installed by pip, but should install with "--user" flag.</p>
 <p>That's because of MacPorts will install executable scripts to <code>/opt/local</code>, which is protected by system, it cannot be done with "sudo".</p>
-<p>User folder <code>/Users/travis/Library/Python/$PYTHON/bin</code> is not in "PATH" variable, so add it after installation completed.</p>
+<p>The user folder <code>/Users/travis/Library/Python/x.y/bin</code> (where "x.y" is the Python version) is not in "PATH" variable, so add it using <code>$(python3 -c "import site; print(site.USER_BASE)")/bin</code> after installation completed.</p>
 <div class="highlight"><pre><span></span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">if [[ &quot;$TRAVIS_OS_NAME&quot; == &quot;osx&quot; ]]; then</span>
     <span class="l l-Scalar l-Scalar-Plain">yes | sudo port install python$PYTHON;</span>
     <span class="l l-Scalar l-Scalar-Plain">yes | sudo port install py$PYTHON-pip;</span>
     <span class="l l-Scalar l-Scalar-Plain">sudo port select --set python3 python$PYTHON;</span>
     <span class="l l-Scalar l-Scalar-Plain">sudo port select --set pip pip$PYTHON;</span>
     <span class="l l-Scalar l-Scalar-Plain">pip install pyinstaller --user;</span>
-    <span class="l l-Scalar l-Scalar-Plain">export PATH=$PATH:/Users/travis/Library/Python/$PYTHON/bin;</span>
+    <span class="l l-Scalar l-Scalar-Plain">export PATH=$PATH:$(python3 -c &quot;import site; print(site.USER_BASE)&quot;)/bin;</span>
     <span class="l l-Scalar l-Scalar-Plain">fi</span>
 </pre></div>
 

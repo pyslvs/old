@@ -73,14 +73,14 @@
 &lt;p&gt;And using &lt;code&gt;port select&lt;/code&gt; command to update &lt;code&gt;python3&lt;/code&gt; and &lt;code&gt;pip&lt;/code&gt; soft link in &lt;code&gt;/usr/local/bin&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;PyInstaller can be installed by pip, but should install with "--user" flag.&lt;/p&gt;
 &lt;p&gt;That's because of MacPorts will install executable scripts to &lt;code&gt;/opt/local&lt;/code&gt;, which is protected by system, it cannot be done with "sudo".&lt;/p&gt;
-&lt;p&gt;User folder &lt;code&gt;/Users/travis/Library/Python/$PYTHON/bin&lt;/code&gt; is not in "PATH" variable, so add it after installation completed.&lt;/p&gt;
+&lt;p&gt;The user folder &lt;code&gt;/Users/travis/Library/Python/x.y/bin&lt;/code&gt; (where "x.y" is the Python version) is not in "PATH" variable, so add it using &lt;code&gt;$(python3 -c "import site; print(site.USER_BASE)")/bin&lt;/code&gt; after installation completed.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install python$PYTHON;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install py$PYTHON-pip;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set python3 python$PYTHON;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set pip pip$PYTHON;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install pyinstaller --user;&lt;/span&gt;
-    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;export PATH=$PATH:/Users/travis/Library/Python/$PYTHON/bin;&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;export PATH=$PATH:$(python3 -c &amp;quot;import site; print(site.USER_BASE)&amp;quot;)/bin;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
