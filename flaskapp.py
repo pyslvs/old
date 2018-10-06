@@ -822,6 +822,8 @@ def get_page2(heading, head, edit):
     # 直接在此將 /images/ 換為 ./../images/, /downloads/ 換為 ./../downloads/, 以 content 為基準的相對目錄設定
     page = [w.replace('/images/', './../images/') for w in page]
     page = [w.replace('/downloads/', './../downloads/') for w in page]
+    # 假如有 /static/ace/ 則換為 ./../static/ace/
+    page = [w.replace('/static/', './../static/') for w in page]
     directory = render_menu2(head, level, page)
     if heading is None:
         heading = head[0]
@@ -1389,7 +1391,21 @@ def parse_config():
     return site_title, password
 
 
-def parse_content():
+def _remove_h123_attrs(soup):
+    for tag in soup.findAll(['h1', 'h2', 'h3']): 
+        # 去除標註中的所有 attributes
+        tag.attrs = {}
+        # 標註內容只留下字串, 必須要額外處理無字串的標題
+        # 例如: <p> 或 <img> 等標註, 若 h1, h2, h3 contents 中有 img, 則
+        # 利用 tag.replaceWithChildren() 只保留 img, 去除 h 標註
+        if (tag.string is not None) and (tag.get_text() is not None):
+            tag.string = tag.get_text()
+        else:
+            # 只保留標題內容,  去除 h1, h2 或 h3 標註
+            tag.replaceWithChildren()
+    return soup
+
+def good_parse_content():
     """use bs4 and re module functions to parse content.htm"""
     #from pybean import Store, SQLiteWriter
     # if no content.db, create database file with cms table
@@ -1467,6 +1483,115 @@ def parse_content():
     page_list.append(cut)
     return head_list, level_list, page_list
 
+def bad_parse_content():
+    """use bs4 and re module functions to parse content.htm"""
+    #from pybean import Store, SQLiteWriter
+    # if no content.db, create database file with cms table
+    '''
+    if not os.path.isfile(config_dir+"content.db"):
+        library = Store(SQLiteWriter(config_dir+"content.db", frozen=False))
+        cms = library.new("cms")
+        cms.follow = 0
+        cms.title = "head 1"
+        cms.content = "content 1"
+        cms.memo = "first memo"
+        library.save(cms)
+        library.commit()
+    '''
+    # if no content.htm, generate a head 1 and content 1 file
+    if not os.path.isfile(config_dir+"content.htm"):
+        # create content.htm if there is no content.htm
+        File = open(config_dir + "content.htm", "w", encoding="utf-8")
+        File.write("<h1>head 1</h1>content 1")
+        File.close()
+    subject = file_get_contents(config_dir+"content.htm")
+    # deal with content without content
+    if subject == "":
+        # create content.htm if there is no content.htm
+        File = open(config_dir + "content.htm", "w", encoding="utf-8")
+        File.write("<h1>head 1</h1>content 1")
+        File.close()
+        subject = "<h1>head 1</h1>content 1"
+    # initialize the return lists
+    head_list = []
+    level_list = []
+    page_list = []
+    # make the soup out of the html content
+    soup = BeautifulSoup(subject, 'html.parser')
+    # 嘗試移除 h 標註中的任何 attributes 設定
+    soup = _remove_h123_attrs(soup)
+    # 這裡還需要將 h1~h3 的內容中可能出現的各種標註去除
+    # 目前仍無法處理標題中的 <p> 標註
+    for title_tags in soup.find_all(['h1', 'h2', 'h3']):
+        title_text = title_tags.get_text()
+        title_tags.string.replace_with(title_text)
+    # 改寫 content.htm 後重新取 subject
+    with open(config_dir + "content.htm", "wb") as f:
+        f.write(soup.encode("utf-8"))
+    subject = file_get_contents(config_dir+"content.htm")
+    # get all h1, h2, h3 tags into list
+    htag= soup.find_all(['h1', 'h2', 'h3'])
+    n = len(htag)
+    # get all h tags
+    # g.es(soup.find_all(re.compile(r"^h\d$")))
+    # get the page content to split subject using each h tag
+    # i = 0
+    temp_data = subject.split(str(htag[0]))
+    if len(temp_data) > 2:
+        subject = str(htag[0]).join(temp_data[1:])
+    else:
+        subject = temp_data[1]
+    if n >1:
+            # i from 1 to i-1
+            for i in range(1, len(htag)):
+                # add the first page title
+                #soup = BeautifulSoup(htag[i-1].text.strip())
+                #title_text = soup.get_text()
+                # 原先只有下列一行, 改為上面兩行與下面一行
+                head_list.append(htag[i-1].text.strip())
+                #head_list.append(title_text)
+                # use name attribute of h* tag to get h1, h2 or h3
+                # the number of h1, h2 or h3 is the level of page menu
+                level_list.append(htag[i-1].name[1])
+                temp_data = subject.split(str(htag[i]))
+                if len(temp_data) > 2:
+                    subject = str(htag[i]).join(temp_data[1:])
+                else:
+                    subject = temp_data[1]
+                # cut the other page content out of htag from 1 to i-1
+                cut = temp_data[0]
+                # add the page content
+                page_list.append(cut)
+    # last i
+    # add the last page title
+    # 再利用 bs4 移除標題中可能的其他標註
+    #soup = BeautifulSoup(htag[n-1].text.strip())
+    #title_text = soup.get_text()
+    # 原先只有下列一行
+    head_list.append(htag[n-1].text.strip())
+    # 配合上上兩行, 改為下一行
+    #head_list.append(title_text)
+    # add the last level
+    level_list.append(htag[n-1].name[1])
+    temp_data = subject.split(str(htag[n-1]))
+    # the last subject
+    subject = temp_data[0]
+    # cut the last page content out
+    cut = temp_data[0]
+    # the last page content
+    page_list.append(cut)
+    return head_list, level_list, page_list
+
+
+def parse_content():
+    """只使用 bad_parse_content"""
+    return bad_parse_content()
+    '''
+    try:
+        return good_parse_content()
+    except:
+        return bad_parse_content()
+    '''
 
 def render_menu(head, level, page, sitemap=0):
     directory = ""
@@ -1728,7 +1853,7 @@ def set_admin_css():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>Pyslvs 使用手冊</title> \
+<title>計算機程式教材</title> \
 <link rel="stylesheet" type="text/css" href="/static/cmsimply.css">
 ''' + syntaxhighlight()
 
@@ -1779,8 +1904,9 @@ def set_css():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>Pyslvs 使用手冊</title> \
+<title>計算機程式教材</title> \
 <link rel="stylesheet" type="text/css" href="/static/cmsimply.css">
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
 ''' + syntaxhighlight()
 
     outstring += '''
@@ -1836,8 +1962,9 @@ def set_css2():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>Pyslvs 使用手冊</title> \
+<title>計算機程式教材</title> \
 <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
 ''' + syntaxhighlight2()
 
     outstring += '''
@@ -2007,6 +2134,11 @@ def syntaxhighlight():
 <script src="https://scrum-3.github.io/web/brython/brython.js"></script>
 <script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
 -->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
 '''
 
 
@@ -2058,6 +2190,11 @@ init_mathjax();
 <script src="https://scrum-3.github.io/web/brython/brython.js"></script>
 <script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
 -->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
 '''
 
 
