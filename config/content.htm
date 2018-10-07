@@ -34,6 +34,7 @@
 <p style="padding-left: 30px;"><a href="/downloads/Comparison_of_Methodologies_for_Conceptual_Design_of_Mechanisms.pdf">Comparison of Methodologies for Conceptual Design of Mechanisms.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/Design_and_Optimization_of_Slider_and_Crank_Mechanism_with_Multibody_Systems.pdf">Design and Optimization of Slider and Crank Mechanism with Multibody Systems.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/Dynamic_Analysis_of_Flexible_Mechanisms_by_Multibody_Dynamics.pdf">Dynamic Analysis of Flexible Mechanisms by Multibody Dynamics.pdf</a></p><h2>Pyslvs 介面</h2>
+<p>(以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  開啟)</span></p>
 <p><img alt="" height="524" src="/images/pyslvs-18.7.0-screenshot.png" width="600"/></p>
 <p>Pyslvs 主畫面的上方為功能表列 (Menu bar), 右側為畫布 (Canvas), 左方則有各式功能的分頁欄 (Tab widgets).</p>
 <p>功能表列涵蓋大部分的功能, 其中部分有關各項目的細部操作, 則必須在對應的分頁欄中選取或設定. </p>
@@ -57,24 +58,23 @@
 <p>F1 - 有關 Pyslvs</p>
 <p>Shift + F1 - Toggle 全螢幕</p>
 <p></p><h1>操作</h1>
-<p>Pyslvs 開啟 Crank-Rocker 機構畫面, under Mechanism 頁面:</p>
+<p>Pyslvs 開啟 Crank-Rocker 機構畫面, under Mechanism 頁面 (以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  開啟)</span>:</p>
 <p><img alt="" height="338" src="/images/crank_rocker-18.7.0.png" width="600"/></p>
-<p>Crank-Rocker under Inputs 頁面:</p>
+<p>Crank-Rocker under Inputs 頁面 (以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  開啟)</span>:</p>
 <p><img alt="" height="338" src="/images/crank_rocker_inputs-18.7.0.png" width="600"/></p>
-<p>Crank-Rocker 通過特定點尺寸合成畫面1:</p>
+<p>Crank-Rocker 通過特定點尺寸合成畫面1 (以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  開啟)</span>:</p>
 <p><img alt="" height="338" src="/images/crank_rocker_dimensional_synthesis1.png" width="600"/></p>
-<p>完成 1000 代 DE 演算法之後的結果畫面:</p>
-<p><img alt="" height="338" src="/images/crank_rocker_dimensional_synthesis2.png" width="600"/></p>
-<h2>模擬操作</h2>
+<p>完成 1000 代 DE 演算法之後的結果畫面 (以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  開啟)</span>:</p>
+<p><img alt="" height="338" src="/images/crank_rocker_dimensional_synthesis2.png" width="600"/></p><h2>模擬操作</h2>
 <p>Pyslvs 的模擬操作主要牽涉 Mechanism 與 Inputs 分頁, Mechanism 分頁用於定義機構各節點與連桿, 而 Inputs 分頁則可用來定義主動旋轉軸, 並利用自動或手動模式進行合理平面機構的運動模擬.</p><h3>曲柄滑塊</h3>
+<p>以下說明以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  為主.</span></p>
 <p>File -&gt; New Workbook</p>
 <p>選擇左側 Mechanism 子頁面.</p>
 <h4>建立固定點與移動點</h4>
 <p>利用滑鼠在右側畫布區, 按住滑鼠右鍵輸入兩個固定點與一個可運動點.</p>
 <h4>建立連桿</h4>
 <p>將其中一個固定點轉為滑塊, 即將 point2 之類型 (type) 由 pin 轉為 pin in slot, 採內建水平滑動面, 或更改滑動面的對應角度.</p>
-<p>在 Mechanism 完成機構定義後, 轉到 Inputs 子頁面, 定義 Driver point 後進行曲柄滑塊的運動模擬.</p>
-<h3>四連桿</h3>
+<p>在 Mechanism 完成機構定義後, 轉到 Inputs 子頁面, 定義 Driver point 後進行曲柄滑塊的運動模擬.</p><h3>四連桿</h3>
 <p>在 Mechanism 子頁面定義兩個固定點與兩個移動點後, 建立三根可運動連桿.</p>
 <p>接著進入 Inputs 頁面, 定義 driver points 後進行基本運動模擬.</p>
 <h2>尺寸合成操作</h2>
@@ -97,41 +97,45 @@
 <p></p>
 <h2>模擬範例</h2>
 <p><img alt="" height="338" src="/images/sam_sixbar.png" width="600"/></p>
+<p>以下畫面以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  製作.</span></p>
 <p><img alt="" height="338" src="/images/sam_sixbar-18.7.png" width="600"/></p>
+<p>以下畫面以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  製作.</span></p>
 <p><img alt="" height="315" src="/images/sixbar_r_slider.png" width="560"/></p>
-<p><a href="/downloads/sixbar_r_with_slider.pyslvs">sixbar_r_slider.pyslvs</a> (18.8.0 version)</p>
+<p><a href="/downloads/sixbar_r_with_slider.pyslvs">sixbar_r_slider.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><iframe allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/aBEfsdOycC8" width="560"></iframe></p>
 <h4>建立六連桿機構模型</h4>
+<p>以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  製作</span>)</p>
 <p><iframe allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/1BcjhYgvQtY" width="560"></iframe></p>
 <h4>八連桿機構</h4>
-<p><a href="/downloads/eight_bar1.pyslvs">eightbar1.pyslvs</a></p>
+<p><a href="/downloads/eight_bar1.pyslvs">eightbar1.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/eightbar1.png" width="600"/></p>
-<p><a href="/downloads/eight_bar2.pyslvs">eightbar2.pyslvs</a></p>
+<p><a href="/downloads/eight_bar2.pyslvs">eightbar2.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/eightbar2.png" width="600"/></p>
-<p><a href="/downloads/eight_bar3.pyslvs">eightbar3.pyslvs</a></p>
+<p><a href="/downloads/eight_bar3.pyslvs">eightbar3.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/eightbar3.png" width="600"/></p>
 <h4>十連桿機構</h4>
-<p><a href="/downloads/tenbar_linkage.pyslvs">tenbar_linkage.pyslvs</a></p>
+<p><a href="/downloads/tenbar_linkage.pyslvs">tenbar_linkage.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/tenbar_linkage.png" width="600"/></p><h2>尺寸合成範例</h2>
 <h2>結構合成範例</h2>
 <h2>產品設計範例</h2>
 <h4>健步機</h4>
 <p><a href="/downloads/2014_nsysu_design_linkage_type_foot_exercise_machine.pdf">連桿式健步機設計.pdf</a></p>
-<p><a href="/downloads/sixbar_foot_exercise_machine.pyslvs">sixbar_foot_exercise_machine.pyslvs</a></p>
+<p><a href="/downloads/sixbar_foot_exercise_machine.pyslvs">sixbar_foot_exercise_machine.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="338" src="/images/sixbar_foot_exercise_machine.png" width="600"/></p>
 <h4>汽車雨刷</h4>
-<p><a href="/downloads/windshield_design1.pyslvs">windshield_design1.pyslvs</a></p>
+<p><a href="/downloads/windshield_design1.pyslvs">windshield_design1.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="338" src="/images/windshield_design1.png" width="600"/></p>
 <h4>汽車引擎蓋</h4>
-<p><a href="/downloads/automobile_hood1.pyslvs">automobile_hood1.pyslvs</a></p>
+<p><a href="/downloads/automobile_hood1.pyslvs">automobile_hood1.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/automobile_hood1.png" width="600"/></p>
 <p>平開窗戶開合機構</p>
-<p><a href="/downloads/house_window.pyslvs">house_window.pyslvs</a></p>
+<p><a href="/downloads/house_window.pyslvs">house_window.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/casement_window.png" width="600"/></p>
 <p></p><h1>開發</h1>
 <p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
 <p><img alt="" height="338" src="/images/pyslvs_under_eric6.png" width="600"/></p><h2>Windows 開發</h2>
 <p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
+<p>使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a> (下載檔案約 5.3 GB, 解開壓縮約 14 GB)</p>
 <p>執行 start.bat</p>
 <p>取得 Pyslvs 原始碼:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
@@ -139,8 +143,8 @@
 <p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">mingw32-make clean
 mingw32-make</pre>
-<p>完成後, 以 2018.07 版次為例, dist 目錄中將得到可執行檔案:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.7.0.mscv1900-amd64.exe</pre>
+<p>完成後, 以 2018.09 版次為例, dist 目錄中將得到可執行檔案:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.9.0.mscv1900-amd64.exe</pre>
 <h4>編譯 no GUI 程式庫:</h4>
 <p>在命令列中更換目錄至 core\libs\pyslvs 後, 執行:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">mingw32-make clean
@@ -380,8 +384,7 @@ class CoreTest(TestCase):
 if __name__ == '__main__':
     unittest.main()
 </pre>
-<p></p>
-<h3>參考檔案</h3>
+<p></p><h3>參考檔案</h3>
 <p>從 <a href="https://drive.google.com/file/d/1DWtyoUhl8CycKJ8uulB3viRXE39KqpE1/view?usp=sharing">p37</a> 標準版升級能夠以 <a href="https://www.msys2.org/">Msys2</a> 編譯 Pyslvs-PyQt5</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
 pip install lark-parser
@@ -850,14 +853,36 @@ compiler=mingw32</pre>
 <p><a href="/downloads/Computer+Aided+Design+of+Eight-bar+Linkages.pdf">Computer Aided Design of Eight-bar Linkages.pdf</a></p>
 <p><a href="/downloads/Implementation%20of an Open Source Planar Linkage Mechanism Simulation and Dimensional Synthesis System.pdf">Implementation of an Open Source Planar Linkage Mechanism Simulation and Dimensional Synthesis System.pdf</a></p>
 <h4>自動拓樸結構合成</h4>
-<p><a href="https://link.springer.com/chapter/10.1007/978-981-10-2875-5_74">Automatic Synthesis of Planar Simple Joint Kinematic Chains by Single Kinematic Chain Adding Method</a></p>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/chapter/10.1007/978-981-10-2875-5_74">Automatic Synthesis of Planar Simple Joint Kinematic Chains by Single Kinematic Chain Adding Method</a></p>
 <h4>機構類型合成</h4>
-<p><a href="https://cimec.org.ar/ojs/index.php/mc/article/viewFile/170/154">TYPE SYNTHESIS OF PLANAR LINKAGE MECHANISMS WITH ROTOIDAL AND PRISMATIC JOINTS</a></p>
+<p style="padding-left: 30px;"><a href="https://cimec.org.ar/ojs/index.php/mc/article/viewFile/170/154">TYPE SYNTHESIS OF PLANAR LINKAGE MECHANISMS WITH ROTOIDAL AND PRISMATIC JOINTS</a></p>
 <h4>網際連桿合成</h4>
-<p><a href="https://link.springer.com/content/pdf/10.1007%2F978-1-4020-2212-8_65.pdf">A WEB-BASED OPTIMIZATION FOR FUNCTION SYNTHESIS OF PLANAR LINKAGE</a></p>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/content/pdf/10.1007%2F978-1-4020-2212-8_65.pdf">A WEB-BASED OPTIMIZATION FOR FUNCTION SYNTHESIS OF PLANAR LINKAGE</a></p>
 <h4>機構尺寸合成</h4>
-<p><a href="https://link.springer.com/content/pdf/10.1007%2F978-94-007-4902-3_29.pdf">Dimensional Synthesis of Six-Bar Linkage as a Constrained RPR Chain</a></p>
-<h2>Misc</h2>
+<p style="padding-left: 30px;"><a href="https://link.springer.com/content/pdf/10.1007%2F978-94-007-4902-3_29.pdf">Dimensional Synthesis of Six-Bar Linkage as a Constrained RPR Chain</a></p>
+<h4>C++ 程式轉為 Python 動態程式庫</h4>
+<p style="padding-left: 30px;"><a href="https://github.com/pyslvs/pyslvs.github.io/files/2441549/AutoWIG.-.automatic.generation.of.python.bindings.for.Cpp.libraries.pdf">AutoWIG - automatic generation of python bindings for Cpp libraries.pdf</a><br/><a href="https://github.com/StatisKit/AutoWIG">https://github.com/StatisKit/AutoWIG</a></p>
+<h4>其他</h4>
+<p style="padding-left: 30px;">1990:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/089571779090069Y" rel="nofollow">Number synthesis of kinematic chains based on permutation groups</a></p>
+<p style="padding-left: 30px;">1995:<span> </span><a href="http://www.airitilibrary.com/Publication/alDetailedMesh?DocID=10217940-199512-201306050024-201306050024-1-8" rel="nofollow">Structural Synthesis of Mechanisms</a></p>
+<p style="padding-left: 30px;">2007:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X06002205" rel="nofollow">A new theory for the topological structure analysis of kinematic chains and its applications</a></p>
+<p style="padding-left: 30px;">2008:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X08000025" rel="nofollow">Computer-aided structure decomposition theory of kinematic chains and its applications</a></p>
+<p style="padding-left: 30px;">2012:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X11001728" rel="nofollow">Synthesis of the whole family of planar 1-DOF kinematic chains and creation of their atlas database</a></p>
+<p style="padding-left: 30px;">2013:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X13000852" rel="nofollow">Automated sketching of non-fractionated kinematic chains</a></p>
+<p style="padding-left: 30px;">2014:<span> </span><a href="http://www.airitilibrary.com/Publication/alDetailedMesh1?DocID=U0026-2107201416312200" rel="nofollow">一般化運動鏈之數目合成</a></p>
+<p style="padding-left: 30px;">2015:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X14002092" rel="nofollow">On the number synthesis of kinematic chains</a></p>
+<p style="padding-left: 30px;">2015:<span> </span><a href="https://github.com/pyslvs/pyslvs.github.io/files/2452934/Automatic_Structural_Synthesis_of_Planar_Mechanisms_and_Its_Application_to_Creative_Design.pdf">Automatic_Structural_Synthesis_of_Planar_Mechanisms_and_Its_Application_to_Creative_Design.pdf</a></p>
+<p style="padding-left: 30px;">2016:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X15002207" rel="nofollow">Automatic generation of the complete set of planar kinematic chains with up to six independent loops and up to 19 links</a></p>
+<p style="padding-left: 30px;">2017:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X16303561" rel="nofollow">An automatic method for the connectivity calculation in planar closed kinematic chains</a></p>
+<p style="padding-left: 30px;">2018:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X17316932" rel="nofollow">A new atlas for 8-bar kinematic chains with up to 3 prismatic pairs using Joint Sorting Code</a></p>
+<p style="padding-left: 30px;">2018:<span> </span><a href="https://www.sciencedirect.com/science/article/pii/S0094114X17311126" rel="nofollow">A new method for the automatic sketching of planar kinematic chains</a></p>
+<h4>CAD</h4>
+<p style="padding-left: 30px;"><a href="https://freecadweb.org/">https://freecadweb.org/</a> </p>
+<p style="padding-left: 30px;"><a href="https://www.blender.org/">https://www.blender.org/</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/tpaviot/oce">https://github.com/tpaviot/oce</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/LaughlinResearch/pyOCCT">https://github.com/LaughlinResearch/pyOCCT</a> </p>
+<p></p>
+<p></p><h2>Misc</h2>
 <p><a href="https://www.iacr.org/archive/asiacrypt2003/08_invited_talk/28940325.pdf">The Secret and Beauty of Ancient Chinese Padlocks.pdf</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/aZ02DvXHa6k" width="560"></iframe></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/gCKc8OP9Azc" width="560"></iframe></p>
