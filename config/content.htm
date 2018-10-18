@@ -845,7 +845,51 @@ compiler=mingw32</pre>
 
     #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre>
 <p></p><h2>Ubuntu 開發</h2>
-<h1>參考</h1>
+<p>安裝 python3-dev 與 swig 套件：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
+sudo apt install python3-dev swig</pre>
+<p>取得 Pyslvs 原始碼：</p>
+<pre class="brush:html;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<p>安裝需要的 Python 模組：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirement.txt</pre>
+<p>完整編譯：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
+<p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔。</p>
+<p>編譯核心：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+make build-kernel
+
+# Pyslvs 程式庫
+make build-pyslvs
+
+# Python-Solvespace 程式庫
+make build-solvespace</pre>
+<p>執行腳本：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre><h2>Mac OS X 開發</h2>
+<p>建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 套件管理工具。</p>
+<p>安裝 Python 與 SWIG：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">brew install python@3
+brew install swig</pre>
+<p>安裝需要的 Python 模組：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirement.txt
+
+# 安裝 PyInstaller 打包成執行檔
+pip3 install pyinstaller</pre>
+<p>完整編譯：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
+<p>可以在倉儲目錄下的 dist 資料夾中取得 app 與 unix-style 可執行檔。</p>
+<p>編譯核心：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+make build-kernel
+ 
+# Pyslvs 程式庫
+make build-pyslvs
+ 
+# Python-Solvespace 程式庫
+make build-solvespace</pre>
+<p>執行腳本：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
+<p></p><h1>參考</h1>
 <p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
 <p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a> </p>
 <p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a> </p>

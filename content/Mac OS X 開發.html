@@ -73,14 +73,28 @@ $(function(){
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>下載 << <a href='下載.html'>Previous</a> <a href='模擬範例.html'>Next</a> >> 模擬範例<br /><h1>範例</h1>
-<p>展示利用 Pyslvs 解題</p>
-<p>參考資料:</p>
-<p>1977 - <a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
-<p><a href="https://www.researchgate.net/publication/304782762_MeKin2D_Suite_for_Planar_Mechanism_Kinematics">MeKin2d</a></p>
-<p><a href="https://www.amazon.com/Machines-Mechanisms-Applied-Kinematic-Analysis/dp/0132157802">MACHINES AND MECHANISMS APPLIED KINEMATIC ANALYSIS Fourth Edition by David H. Myszka</a></p>
-<p><a href="https://books.google.com.tw/books?id=0A1mDwAAQBAJ&amp;pg=PP1&amp;lpg=PP1&amp;dq=Introduction+to+Mechanism+Design:+with+Computer+Applications&amp;source=bl&amp;ots=WakYIZ-L93&amp;sig=tSRFX6Z9fhaT3Lzk3USgSb05PXA&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiPqeP4-sPcAhVHFYgKHbE_Ae4Q6AEwBHoECAUQAQ#v=onepage&amp;q=Introduction%20to%20Mechanism%20Design%3A%20with%20Computer%20Applications">Introduction to Mechanism Design: with Computer Applications by By Eric Constans and Karl B. Dyer</a></p>
-<p><a href="https://www.amazon.com/Theory-Machines-Mechanisms-John-Uicker/dp/0195371232">THEORY OF MACHINES AND MECHANISMS Fourth Edition by John Uicker, Gordon Pennock and  Joseph Shigley</a></p>
-<p></p>
-<p></p>
-<br />下載 << <a href='下載.html'>Previous</a> <a href='模擬範例.html'>Next</a> >> 模擬範例</section></div></body></html>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>Ubuntu 開發 << <a href='Ubuntu 開發.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考<br /><h1>Mac OS X 開發</h1>
+<p>建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 套件管理工具。</p>
+<p>安裝 Python 與 SWIG：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">brew install python@3
+brew install swig</pre>
+<p>安裝需要的 Python 模組：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirement.txt
+
+# 安裝 PyInstaller 打包成執行檔
+pip3 install pyinstaller</pre>
+<p>完整編譯：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
+<p>可以在倉儲目錄下的 dist 資料夾中取得 app 與 unix-style 可執行檔。</p>
+<p>編譯核心：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+make build-kernel
+ 
+# Pyslvs 程式庫
+make build-pyslvs
+ 
+# Python-Solvespace 程式庫
+make build-solvespace</pre>
+<p>執行腳本：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
+<p></p><br />Ubuntu 開發 << <a href='Ubuntu 開發.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考</section></div></body></html>

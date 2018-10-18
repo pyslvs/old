@@ -73,5 +73,25 @@ $(function(){
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>參考檔案 << <a href='參考檔案.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考<br /><h1>Ubuntu 開發</h1>
-<br />參考檔案 << <a href='參考檔案.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考</section></div></body></html>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>參考檔案 << <a href='參考檔案.html'>Previous</a> <a href='Mac OS X 開發.html'>Next</a> >> Mac OS X 開發<br /><h1>Ubuntu 開發</h1>
+<p>安裝 python3-dev 與 swig 套件：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
+sudo apt install python3-dev swig</pre>
+<p>取得 Pyslvs 原始碼：</p>
+<pre class="brush:html;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<p>安裝需要的 Python 模組：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirement.txt</pre>
+<p>完整編譯：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
+<p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔。</p>
+<p>編譯核心：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+make build-kernel
+
+# Pyslvs 程式庫
+make build-pyslvs
+
+# Python-Solvespace 程式庫
+make build-solvespace</pre>
+<p>執行腳本：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre><br />參考檔案 << <a href='參考檔案.html'>Previous</a> <a href='Mac OS X 開發.html'>Next</a> >> Mac OS X 開發</section></div></body></html>

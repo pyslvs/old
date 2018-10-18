@@ -716,16 +716,16 @@ def generate_pages():
         # 針對重複標題者, 附加目前重複標題出現數 +1, 未重複採原標題
         newhead.append(v + str(count + 1) if totalcount > 1 else v)
     # 刪除 content 目錄中所有 html 檔案
-    filelist = [ f for f in os.listdir(_curdir + "\\content\\") if f.endswith(".html") ]
+    filelist = [ f for f in os.listdir(_curdir + "/content/") if f.endswith(".html") ]
     for f in filelist:
-        os.remove(os.path.join(_curdir + "\\content\\", f))
+        os.remove(os.path.join(_curdir + "/content/", f))
     # 這裡需要建立專門寫出 html 的 write_page
     # index.html
-    file = open(_curdir + "\\content\\index.html", "w", encoding="utf-8")
+    file = open(_curdir + "/content/index.html", "w", encoding="utf-8")
     file.write(get_page2(None, newhead, 0))
     file.close()
     # sitemap
-    file = open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8")
+    file = open(_curdir + "/content/sitemap.html", "w", encoding="utf-8")
     # sitemap2 需要 newhead
     file.write(sitemap2(newhead))
     file.close()
@@ -734,7 +734,7 @@ def generate_pages():
         # 在此必須要將頁面中的 /images/ 字串換為 images/, /downloads/ 換為 downloads/
         # 因為 Flask 中靠 /images/ 取檔案, 但是一般 html 則採相對目錄取檔案
         # 此一字串置換在 get_page2 中進行
-        file = open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8")
+        file = open(_curdir + "/content/" + newhead[i] + ".html", "w", encoding="utf-8")
         # 增加以 newhead 作為輸入
         file.write(get_page2(newhead[i], newhead, 0))
         file.close()
