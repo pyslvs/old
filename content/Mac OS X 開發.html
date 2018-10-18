@@ -73,11 +73,22 @@ $(function(){
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>Ubuntu 開發 << <a href='Ubuntu 開發.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考<br /><h1>Mac OS X 開發</h1>
-<p>建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 套件管理工具。</p>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>AppImage 包裝 << <a href='AppImage 包裝.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考<br /><h1>Mac OS X 開發</h1>
+<p>Mac OS X 上的任何程式開發都不建議使用 sudo 指令（除非必要），也不要使用內建的 Python 以免系統故障。建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 或是 <a href="https://www.macports.org/">MacPort</a> 套件管理工具。</p>
 <p>安裝 Python 與 SWIG：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">brew install python@3
-brew install swig</pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
+brew install python@3
+brew install swig
+
+# MacPort 可支援任意 Python 版本
+# 安裝在 /opt 必須使用 sudo 指令
+yes | sudo part install python36
+yes | sudo port install py$PYTHON-pip
+sudo port select --set python3 python36
+sudo port select --set pip pip36</pre>
+<p>使用 MacPort 的 pip3 安裝時請加上 --user 免去 sudo 操作。</p>
+<p>取得 Pyslvs 原始碼：</p>
+<pre class="brush:html;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
 <p>安裝需要的 Python 模組：</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirement.txt
 
@@ -97,4 +108,4 @@ make build-pyslvs
 make build-solvespace</pre>
 <p>執行腳本：</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
-<p></p><br />Ubuntu 開發 << <a href='Ubuntu 開發.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考</section></div></body></html>
+<p></p><br />AppImage 包裝 << <a href='AppImage 包裝.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考</section></div></body></html>
