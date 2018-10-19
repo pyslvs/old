@@ -75,13 +75,11 @@ $(function(){
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>開發 << <a href='開發.html'>Previous</a> <a href='參考檔案.html'>Next</a> >> 參考檔案<br /><h1>Windows 開發</h1>
-<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
-<p>使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a> (下載檔案約 5.3 GB, 解開壓縮約 14 GB)</p>
-<p>執行 start.bat</p>
-<p>取得 Pyslvs 原始碼:</p>
-<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></li></ul></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>開發 << <a href='開發.html'>Previous</a> <a href='環境修正.html'>Next</a> >> 環境修正<br /><h1>Windows 開發</h1>
+<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a>（下載檔案約 8GB, 解開壓縮後約 21GB）或使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a>（下載檔案約 5.3 GB, 解開壓縮約 14 GB）執行 start.bat。</p>
 <p>其中所需要的套件已安裝在可攜程式當中，可參考模組需求清單 requirements.txt。</p>
+<p>若要完成獨立可執行檔案的發布，必須另外安裝 <a href="https://www.pyinstaller.org/">PyInstaller</a> 模組：</p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python -m pip install pyinstaller</pre>
 <h4>編譯 GUI 套件:</h4>
 <p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
@@ -101,4 +99,4 @@ rga.cp36-win_amd64.pyd
 tinycadlib.cp36-win_amd64.pyd
 topologic.cp36-win_amd64.pyd
 triangulation.cp36-win_amd64.pyd
-verify.cp36-win_amd64.pyd</pre><br />開發 << <a href='開發.html'>Previous</a> <a href='參考檔案.html'>Next</a> >> 參考檔案</section></div></body></html>
+verify.cp36-win_amd64.pyd</pre><br />開發 << <a href='開發.html'>Previous</a> <a href='環境修正.html'>Next</a> >> 環境修正</section></div></body></html>

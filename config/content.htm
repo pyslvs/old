@@ -132,6 +132,11 @@
 <p><a href="/downloads/house_window.pyslvs">house_window.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/casement_window.png" width="600"/></p>
 <p></p><h1>開發</h1>
+<p>取得 Pyslvs 原始碼:</p>
+<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<p>本倉儲有兩個主要分支：master 分支為當前穩定版本；dev 分支為開發中版本。每當切換分支時，請注意子倉儲的版次是否有變動，使用以下指令更新：</p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">git submodule update --recursive</pre>
+<p>若有更新，必須重新編譯核心。</p>
 <p>位於 pyslvs 目錄中的 unittest 程式:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># -*- coding: utf-8 -*-
 
@@ -357,12 +362,10 @@ if __name__ == '__main__':
 </pre>
 <p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
 <p><img alt="" height="338" src="/images/pyslvs_under_eric6.png" width="600"/></p><h2>Windows 開發</h2>
-<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
-<p>使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a> (下載檔案約 5.3 GB, 解開壓縮約 14 GB)</p>
-<p>執行 start.bat</p>
-<p>取得 Pyslvs 原始碼:</p>
-<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a>（下載檔案約 8GB, 解開壓縮後約 21GB）或使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a>（下載檔案約 5.3 GB, 解開壓縮約 14 GB）執行 start.bat。</p>
 <p>其中所需要的套件已安裝在可攜程式當中，可參考模組需求清單 requirements.txt。</p>
+<p>若要完成獨立可執行檔案的發布，必須另外安裝 <a href="https://www.pyinstaller.org/">PyInstaller</a> 模組：</p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python -m pip install pyinstaller</pre>
 <h4>編譯 GUI 套件:</h4>
 <p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
@@ -382,17 +385,9 @@ rga.cp36-win_amd64.pyd
 tinycadlib.cp36-win_amd64.pyd
 topologic.cp36-win_amd64.pyd
 triangulation.cp36-win_amd64.pyd
-verify.cp36-win_amd64.pyd</pre><h3>參考檔案</h3>
+verify.cp36-win_amd64.pyd</pre><h3>環境修正</h3>
 <p>從 <a href="https://drive.google.com/file/d/1DWtyoUhl8CycKJ8uulB3viRXE39KqpE1/view?usp=sharing">p37</a> 標準版升級能夠以 <a href="https://www.msys2.org/">Msys2</a> 編譯 Pyslvs-PyQt5</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
-pip install lark-parser
-pip install networkx
-pip install ezdxf
-pip install peewee
-pip install openpyxl
-pip install psutil
-pip install pyinstaller
-pip install cffi</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip install pyqtchart lark-parser networkx ezdxf peewee openpyxl psutil pyinstaller cffi pyyaml</pre>
 <h4><span>cygwinccompiler.py 修改</span></h4>
 <p><span>套用編譯器設定的補釘，其位於 Pyslvs 專案的 platform 目錄中。</span></p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
@@ -429,8 +424,13 @@ echo compiler = mingw32&gt;&gt; p37\Lib\distutils\distutils.cfg</pre>
 <p>蓋掉第 197 與 199 行</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#c_creds.CredentialBlobSize = \
 
-    #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre>
-<p></p><h2>Ubuntu 開發</h2>
+    #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre><h3>PyInstaller 對 Windows 的支援</h3>
+<p>官方說明：<a href="https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options">https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options</a></p>
+<ul>
+<li>預設包裝時採用不關閉主控台選項（不使用 -w），目的是顯示 Pyslvs 的版本資訊，關閉後將會無法使用 --help 或 --version 等不啟動 GUI 的顯示功能。</li>
+<li>在 Windows 中必須手動加入除了端口程式庫 pyd 以外的相依外部程式庫，如 SWIG 與 PyQt sip 的隱式導入。</li>
+<li>在 Windows 中的圖示格式為 ico。</li>
+</ul><h2>Ubuntu 開發</h2>
 <p>安裝 python3-dev 與 swig 套件：</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
 sudo apt install python3-dev swig</pre>
@@ -440,7 +440,7 @@ sudo apt install python3-dev swig</pre>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirements.txt</pre>
 <p>完整編譯：</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">make</pre>
-<p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔。</p>
+<p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔（詳見參閱下一節說明）。</p>
 <p>編譯核心：</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
 make build-kernel
@@ -458,8 +458,13 @@ make build-solvespace</pre>
 <p>使用的原理是 App Dir 壓縮包配上腳本檔案，執行時會解壓縮到帳戶的 /tmp 目錄（並且會附加 Hash code），而此一壓縮包會包含所有程式所需要的相依程式庫或套件。</p>
 <p>AppImage releases 標榜「不使用 sudo」、「選擇性安裝」以及支援版本升級功能。</p>
 <p>包裝的建立是透過 bash 腳本使用 AppImage tool kits，支援基本的自動「程式與程式庫相依性分析」的功能。不過在過度「客製化」的開發環境下，開發者必須手動將所需的檔案複製到 App Dir 中。</p>
-<p>Pyslvs 的包裝流程是透過 appimage_recipe.sh 腳本完成。使用的工具為 virtualenv，依照開發環境的安裝模式建立 App Dir，並安裝 Pyslvs 所需的模組，並經由手動複製一些 built-in scripts 之後，打造出完全獨立的 Python 執行環境。Pyslvs 便可在完全無 Python 3 的環境中執行（不過仍有 glib 的最低版本需求）。</p><h2>Mac OS X 開發</h2>
+<p>Pyslvs 的包裝流程是透過 appimage_recipe.sh 腳本完成。使用的工具為 virtualenv，依照開發環境的安裝模式建立 App Dir，並安裝 Pyslvs 所需的模組，並經由手動複製一些 built-in scripts 之後，打造出完全獨立的 Python 執行環境。Pyslvs 便可在完全無 Python 3 的環境中執行（不過仍有 glib 的最低版本需求）。</p>
+<ul>
+<li>App Dir 位置：ENV/</li>
+<li>包裝輸出位置：out/</li>
+</ul><h2>Mac OS X 開發</h2>
 <p>Mac OS X 上的任何程式開發都不建議使用 sudo 指令（除非必要），也不要使用內建的 Python 以免系統故障。建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 或是 <a href="https://www.macports.org/">MacPort</a> 套件管理工具。</p>
+<p>必須注意的是，平台上的編譯工具僅支援向下相容，較新的 xcode 版本無法在舊版運行。</p>
 <p>安裝 Python 與 SWIG：</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
 brew install python@3
@@ -475,10 +480,9 @@ sudo port select --set pip pip36</pre>
 <p>取得 Pyslvs 原始碼：</p>
 <pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
 <p>安裝需要的 Python 模組：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirements.txt
-
-# 安裝 PyInstaller 打包成執行檔
-pip3 install pyinstaller</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirements.txt</pre>
+<p>安裝 PyInstaller 模組打包成執行檔：</p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install pyinstaller</pre>
 <p>完整編譯：</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
 <p>可以在倉儲目錄下的 dist 資料夾中取得 app 與 unix-style 可執行檔。</p>
@@ -493,7 +497,14 @@ make build-pyslvs
 make build-solvespace</pre>
 <p>執行腳本：</p>
 <pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
-<p></p><h1>參考</h1>
+<h3>PyInstaller 對 Mac OS X 的支援</h3>
+<p>官方說明：<a href="https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options">https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options</a></p>
+<ul>
+<li>預設包裝時採用關閉主控台的選項（使用 -w），目的是為了產生標準 .app 格式的可執行檔，而非只有類 Unix 執行檔。啟用此選項後，會包裝出上述兩種格式的執行檔。</li>
+<li><span class="option">在 Mac OS X 中，對 .app 格式的可執行檔作網路傳輸時必須微壓縮成 .zip 檔案。<br/></span></li>
+<li>在 Mac OS X 中可以自動定位 SWIG 與 PyQt 等擁有外部程式庫的模組。</li>
+<li>在 Mac OS X 中的圖示格式為 icns。</li>
+</ul><h1>參考</h1>
 <p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
 <p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a> </p>
 <p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a> </p>
