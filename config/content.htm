@@ -868,7 +868,12 @@ make build-solvespace</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
 <h3>AppImage 包裝</h3>
 <p>官方網站：<a href="https://appimage.org/">https://appimage.org/</a></p>
-<p></p><h2>Mac OS X 開發</h2>
+<p>在不同的 Linux 作業系統下有著不一樣的程式庫版本，由於程式之間的「相依性」十分高，會造成程式編譯後無法移植到其他環境中使用，即使編譯端與客戶端的作業系統是一樣的。</p>
+<p>AppImage 的目標是將編譯端的程式可以編一到任何「目標作業系統」都可以執行。而「目標作業系統」必須符合對應的環境需求（相依程式庫版本必須滿足）。最差的情況是必須「完全符合或較新」；最完美的情況甚至是「不用安裝」。</p>
+<p>使用的原理是 App Dir 壓縮包配上腳本檔案，執行時會解壓縮到帳戶的 /tmp 目錄（並且會附加 Hash code），而此一壓縮包會包含所有程式所需要的相依程式庫或套件。</p>
+<p>AppImage releases 標榜「不使用 sudo」、「選擇性安裝」以及支援版本升級功能。</p>
+<p>包裝的建立是透過 bash 腳本使用 AppImage tool kits，支援基本的自動「程式與程式庫相依性分析」的功能。不過在過度「客製化」的開發環境下，開發者必須手動將所需的檔案複製到 App Dir 中。</p>
+<p>Pyslvs 的包裝流程是透過 appimage_recipe.sh 腳本完成。使用的工具為 virtualenv，依照開發環境的安裝模式建立 App Dir，並安裝 Pyslvs 所需的模組，並經由手動複製一些 built-in scripts 之後，打造出完全獨立的 Python 執行環境。Pyslvs 便可在完全無 Python 3 的環境中執行（不過仍有 glib 的最低版本需求）。</p><h2>Mac OS X 開發</h2>
 <p>Mac OS X 上的任何程式開發都不建議使用 sudo 指令（除非必要），也不要使用內建的 Python 以免系統故障。建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 或是 <a href="https://www.macports.org/">MacPort</a> 套件管理工具。</p>
 <p>安裝 Python 與 SWIG：</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
