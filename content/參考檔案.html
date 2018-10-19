@@ -75,9 +75,9 @@ $(function(){
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='結構合成操作.html'>結構合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>Windows 開發 << <a href='Windows 開發.html'>Previous</a> <a href='Ubuntu 開發.html'>Next</a> >> Ubuntu 開發<br /><h1>參考檔案</h1>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='參考檔案.html'>參考檔案</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>Windows 開發 << <a href='Windows 開發.html'>Previous</a> <a href='Ubuntu 開發.html'>Next</a> >> Ubuntu 開發<br /><h1>參考檔案</h1>
 <p>從 <a href="https://drive.google.com/file/d/1DWtyoUhl8CycKJ8uulB3viRXE39KqpE1/view?usp=sharing">p37</a> 標準版升級能夠以 <a href="https://www.msys2.org/">Msys2</a> 編譯 Pyslvs-PyQt5</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
 pip install lark-parser
 pip install networkx
 pip install ezdxf
@@ -87,8 +87,8 @@ pip install psutil
 pip install pyinstaller
 pip install cffi</pre>
 <h4><span>cygwinccompiler.py 修改</span></h4>
-<p><span>套用編譯器設定的補釘。</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
+<p><span>套用編譯器設定的補釘，其位於 Pyslvs 專案的 platform 目錄中。</span></p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
 <p>patch.diff 內容：</p>
 <pre class="brush:diff;auto-links:false;toolbar:false" contenteditable="false">--- cygwinccompiler.py
 +++ cygwinccompiler.py
@@ -113,27 +113,10 @@ pip install cffi</pre>
          else:
              raise ValueError("Unknown MS Compiler version %s " % msc_ver)
 </pre>
-<h4><span>pyconfig.h 修改</span></h4>
-<p><span>p37\include\pyconfig.h 檔案第 84 行:</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _MSC_VER</pre>
-<p>之前插入三行, 成為:</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _WIN64
-#define MS_WIN64
-#endif
-#ifdef _MSC_VER</pre>
-<p>並且將</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
-#define hypot _hypot</pre>
-<p>改為</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
-#ifndef _MATH_H_
-#define hypot _hypot
-#endif</pre>
 <h4>增加 distutils.cfg 檔案</h4>
 <p>在 p37\Lib\distutils 目錄中新增 distutils.cfg</p>
-<p>內容為</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[build]
-compiler=mingw32</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">echo [build]&gt;&gt; p37\Lib\distutils\distutils.cfg
+echo compiler = mingw32&gt;&gt; p37\Lib\distutils\distutils.cfg</pre>
 <h4>修改 _advapi32.py 檔案</h4>
 <p>修改 p37\Lib\site-packages\win32ctypes\core\cffi\_advapi32.py</p>
 <p>蓋掉第 197 與 199 行</p>

@@ -78,8 +78,8 @@
 <p>在 Mechanism 子頁面定義兩個固定點與兩個移動點後, 建立三根可運動連桿.</p>
 <p>接著進入 Inputs 頁面, 定義 driver points 後進行基本運動模擬.</p>
 <h2>尺寸合成操作</h2>
-<p>Pyslvs 的尺寸合成功能, 主要依賴 <a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span> 三角幾何函式程式庫與 </span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span> 演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>結構合成操作</h2>
-<p>Pyslvs 的結構合成包括平面機構的數目合成與類型合成等兩部分.</p>
+<p>Pyslvs 的尺寸合成功能, 主要依賴 <a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span> 三角幾何函式程式庫與 </span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span> 演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>構造合成操作</h2>
+<p>Pyslvs 的構造合成包括平面機構的數目合成與類型合成等兩部分.</p>
 <p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、接頭個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1>
 <p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
 <p>Windows 64 位元操作系統:</p>
@@ -361,18 +361,18 @@ if __name__ == '__main__':
 <p>使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a> (下載檔案約 5.3 GB, 解開壓縮約 14 GB)</p>
 <p>執行 start.bat</p>
 <p>取得 Pyslvs 原始碼:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
 <p>其中所需要的套件已安裝在可攜程式當中，可參考模組需求清單 requirements.txt。</p>
 <h4>編譯 GUI 套件:</h4>
 <p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
 <p>完成後, 以 2018.09 版次為例, dist 目錄中將得到可執行檔案:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.9.0.mscv1900-amd64.exe</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.9.0.mscv1900-amd64.exe</pre>
 <h4>編譯程式庫:</h4>
 <p>在命令列中更換目錄至 core\libs\pyslvs 後, 執行:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
 <p>建立下列動態連結程式庫 (pyd):</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">bfgs.cp36-win_amd64.pyd
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">bfgs.cp36-win_amd64.pyd
 de.cp36-win_amd64.pyd
 firefly.cp36-win_amd64.pyd
 number.cp36-win_amd64.pyd
@@ -384,7 +384,7 @@ topologic.cp36-win_amd64.pyd
 triangulation.cp36-win_amd64.pyd
 verify.cp36-win_amd64.pyd</pre><h3>參考檔案</h3>
 <p>從 <a href="https://drive.google.com/file/d/1DWtyoUhl8CycKJ8uulB3viRXE39KqpE1/view?usp=sharing">p37</a> 標準版升級能夠以 <a href="https://www.msys2.org/">Msys2</a> 編譯 Pyslvs-PyQt5</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
 pip install lark-parser
 pip install networkx
 pip install ezdxf
@@ -394,8 +394,8 @@ pip install psutil
 pip install pyinstaller
 pip install cffi</pre>
 <h4><span>cygwinccompiler.py 修改</span></h4>
-<p><span>套用編譯器設定的補釘。</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
+<p><span>套用編譯器設定的補釘，其位於 Pyslvs 專案的 platform 目錄中。</span></p>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
 <p>patch.diff 內容：</p>
 <pre class="brush:diff;auto-links:false;toolbar:false" contenteditable="false">--- cygwinccompiler.py
 +++ cygwinccompiler.py
@@ -420,27 +420,10 @@ pip install cffi</pre>
          else:
              raise ValueError("Unknown MS Compiler version %s " % msc_ver)
 </pre>
-<h4><span>pyconfig.h 修改</span></h4>
-<p><span>p37\include\pyconfig.h 檔案第 84 行:</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _MSC_VER</pre>
-<p>之前插入三行, 成為:</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _WIN64
-#define MS_WIN64
-#endif
-#ifdef _MSC_VER</pre>
-<p>並且將</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
-#define hypot _hypot</pre>
-<p>改為</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
-#ifndef _MATH_H_
-#define hypot _hypot
-#endif</pre>
 <h4>增加 distutils.cfg 檔案</h4>
 <p>在 p37\Lib\distutils 目錄中新增 distutils.cfg</p>
-<p>內容為</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[build]
-compiler=mingw32</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">echo [build]&gt;&gt; p37\Lib\distutils\distutils.cfg
+echo compiler = mingw32&gt;&gt; p37\Lib\distutils\distutils.cfg</pre>
 <h4>修改 _advapi32.py 檔案</h4>
 <p>修改 p37\Lib\site-packages\win32ctypes\core\cffi\_advapi32.py</p>
 <p>蓋掉第 197 與 199 行</p>
@@ -449,17 +432,17 @@ compiler=mingw32</pre>
     #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre>
 <p></p><h2>Ubuntu 開發</h2>
 <p>安裝 python3-dev 與 swig 套件：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
 sudo apt install python3-dev swig</pre>
 <p>取得 Pyslvs 原始碼：</p>
-<pre class="brush:html;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
 <p>安裝需要的 Python 模組：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirements.txt</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirements.txt</pre>
 <p>完整編譯：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">make</pre>
 <p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔。</p>
 <p>編譯核心：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
 make build-kernel
 
 # Pyslvs 程式庫
@@ -468,7 +451,7 @@ make build-pyslvs
 # Python-Solvespace 程式庫
 make build-solvespace</pre>
 <p>執行腳本：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre><h3>AppImage 包裝</h3>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre><h3>AppImage 包裝</h3>
 <p>官方網站：<a href="https://appimage.org/">https://appimage.org/</a></p>
 <p>在不同的 Linux 作業系統下有著不一樣的程式庫版本，由於程式之間的「相依性」十分高，會造成程式編譯後無法移植到其他環境中使用，即使編譯端與客戶端的作業系統是一樣的。</p>
 <p>AppImage 的目標是將編譯端的程式可以編一到任何「目標作業系統」都可以執行。而「目標作業系統」必須符合對應的環境需求（相依程式庫版本必須滿足）。最差的情況是必須「完全符合或較新」；最完美的情況甚至是「不用安裝」。</p>
@@ -478,7 +461,7 @@ make build-solvespace</pre>
 <p>Pyslvs 的包裝流程是透過 appimage_recipe.sh 腳本完成。使用的工具為 virtualenv，依照開發環境的安裝模式建立 App Dir，並安裝 Pyslvs 所需的模組，並經由手動複製一些 built-in scripts 之後，打造出完全獨立的 Python 執行環境。Pyslvs 便可在完全無 Python 3 的環境中執行（不過仍有 glib 的最低版本需求）。</p><h2>Mac OS X 開發</h2>
 <p>Mac OS X 上的任何程式開發都不建議使用 sudo 指令（除非必要），也不要使用內建的 Python 以免系統故障。建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 或是 <a href="https://www.macports.org/">MacPort</a> 套件管理工具。</p>
 <p>安裝 Python 與 SWIG：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
 brew install python@3
 brew install swig
 
@@ -490,9 +473,9 @@ sudo port select --set python3 python36
 sudo port select --set pip pip36</pre>
 <p>使用 MacPort 的 pip3 安裝時請加上 --user 免去 sudo 操作。</p>
 <p>取得 Pyslvs 原始碼：</p>
-<pre class="brush:html;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
 <p>安裝需要的 Python 模組：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirements.txt
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirements.txt
 
 # 安裝 PyInstaller 打包成執行檔
 pip3 install pyinstaller</pre>
@@ -500,7 +483,7 @@ pip3 install pyinstaller</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
 <p>可以在倉儲目錄下的 dist 資料夾中取得 app 與 unix-style 可執行檔。</p>
 <p>編譯核心：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
 make build-kernel
  
 # Pyslvs 程式庫
@@ -509,7 +492,7 @@ make build-pyslvs
 # Python-Solvespace 程式庫
 make build-solvespace</pre>
 <p>執行腳本：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
 <p></p><h1>參考</h1>
 <p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
 <p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a> </p>
