@@ -1,0 +1,119 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Pyslvs 使用手冊</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
+
+<script src="./../static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>Pyslvs 使用手冊</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解.html'>類型註解</a></li></li></ul></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section>命名規則 << <a href='命名規則.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考<br /><h1>類型註解</h1>
+<p>建議對任何 Functions 與 Methods 都加上類型註解（參見 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>），必要時在一般名稱也可做註記（回傳值無法推斷時）。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if not row &gt; -1:
+    return
+
+# Here is not None!
+item: MyItem = table.item(row)
+item.do_something()</pre>
+<p>若是回傳 None 值，可以不加上回傳值的註解。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(a: bool):
+    if a:
+        return
+    do_my_job()</pre>
+<p>序列的樣式為 Sequence[T]、List[T]、Iterator[T] 等，唯獨 Tuple[T] 為固定長度，應標示 Tuple[T, ...]。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def _join_more(iter_obj: Iterable[int]) -&gt; Tuple[int, ...]:
+    """Convert iterable object to tuple."""
+    return tuple(iter_obj) + (1,)</pre>
+<p>若是可能為多種非繼承類型，使用 Union。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s: Union[str, Sequence[bytes]] = s_func()</pre>
+<p>若是可能為 None 值，應加上 Optional。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(*, labels: Optional[Sequence[int]] = None):
+    ...</pre>
+<p>Functions 使用 Callable[[In_T1, InT2], Out_T]。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def danger(func: Callable[[Any], Any]) -&gt; Callable[[Any], Any]:
+    """My danger decorator."""
+
+    def wrapper_func(*args):
+        """Is danger function."""
+        print("Danger!")
+        return func(*args)
+
+    return wrapper_func
+
+
+@danger
+def foo():
+    ...</pre>
+<p>造成遞迴引用類型時應改為字串。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class MyClass:
+
+    def __add__(self, p: 'MyClass') -&gt; 'MyClass':
+        ...</pre><br />命名規則 << <a href='命名規則.html'>Previous</a> <a href='參考.html'>Next</a> >> 參考</section></div></body></html>

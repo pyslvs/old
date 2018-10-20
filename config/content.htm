@@ -504,7 +504,100 @@ make build-solvespace</pre>
 <li><span class="option">在 Mac OS X 中，對 .app 格式的可執行檔作網路傳輸時必須微壓縮成 .zip 檔案。<br/></span></li>
 <li>在 Mac OS X 中可以自動定位 SWIG 與 PyQt 等擁有外部程式庫的模組。</li>
 <li>在 Mac OS X 中的圖示格式為 icns。</li>
-</ul><h1>參考</h1>
+</ul>
+<h2>參與協同</h2>
+<p>若要參與 Pyslvs 的開發，基本編寫風格遵循 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>，主要規則請參閱子章節的資訊。</p><h3>註解規則</h3>
+<p>所有 Modules、Classes 與 Functions 都應該加上 doc string，一般 Methods 應比照 Functions，而 __init__ 等則視情況在程式碼中添加單行註解。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># -*- coding: utf-8 -*-
+
+"""Module doc string title
+
+Module decriptions ...
+"""
+
+
+def function():
+    """Single line doc string."""
+    ...
+
+
+class MyClass:
+
+    """MyClass doc string."""
+
+    def method():
+        """MyClass.method doc string."""
+        ...</pre>
+<p>使用單行註解多行程式碼時，為求功能明確，應在該區域使用單空行分隔。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def foo() -&gt; List[Set[int]]:
+    """foo doc string."""
+    a = 10
+    b = 20
+
+    # Let a plus b, and assign to c.
+    c = a + b
+
+    # Do another things ...
+    d = func_c2d(c)
+    e = func_c2e(c)
+    f = func_de2f(d, e)
+
+    # Convert f.
+    return list(f)</pre><h3>命名規則</h3>
+<ul>
+<li>Classes 使用字首大寫命名，如 RedApple。</li>
+<li>定值使用全部大寫並用底線連接，如 RED_APPLE。</li>
+<li>模組、變數等其他名稱一律使用小寫並用底線連接，如 red_apple。</li>
+<li>自用變數樣式（以表示絕對不會跨層級）：
+<ul>
+<li>模組層級的自用變數使用一個底線起始，如 _red_apple、_RedApple 或 _RED_APPLE。</li>
+<li>Class 層級的自用變數或 Methods 使用兩個底線起始，如 __red_apple。</li>
+</ul>
+</li>
+<li>必須複寫原始模組，如 Qt 使用小寫字首 redApple，則遵照原始模組。</li>
+</ul>
+<h3>類型註解</h3>
+<p>建議對任何 Functions 與 Methods 都加上類型註解（參見 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>），必要時在一般名稱也可做註記（回傳值無法推斷時）。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if not row &gt; -1:
+    return
+
+# Here is not None!
+item: MyItem = table.item(row)
+item.do_something()</pre>
+<p>若是回傳 None 值，可以不加上回傳值的註解。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(a: bool):
+    if a:
+        return
+    do_my_job()</pre>
+<p>序列的樣式為 Sequence[T]、List[T]、Iterator[T] 等，唯獨 Tuple[T] 為固定長度，應標示 Tuple[T, ...]。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def _join_more(iter_obj: Iterable[int]) -&gt; Tuple[int, ...]:
+    """Convert iterable object to tuple."""
+    return tuple(iter_obj) + (1,)</pre>
+<p>若是可能為多種非繼承類型，使用 Union。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s: Union[str, Sequence[bytes]] = s_func()</pre>
+<p>若是可能為 None 值，應加上 Optional。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(*, labels: Optional[Sequence[int]] = None):
+    ...</pre>
+<p>Functions 使用 Callable[[In_T1, InT2], Out_T]。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def danger(func: Callable[[Any], Any]) -&gt; Callable[[Any], Any]:
+    """My danger decorator."""
+
+    def wrapper_func(*args):
+        """Is danger function."""
+        print("Danger!")
+        return func(*args)
+
+    return wrapper_func
+
+
+@danger
+def foo():
+    ...</pre>
+<p>造成遞迴引用類型時應改為字串。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class MyClass:
+
+    def __add__(self, p: 'MyClass') -&gt; 'MyClass':
+        ...</pre><h1>參考</h1>
 <p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
 <p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a> </p>
 <p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a> </p>
