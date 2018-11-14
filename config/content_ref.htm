@@ -78,15 +78,14 @@
 <p>在 Mechanism 子頁面定義兩個固定點與兩個移動點後, 建立三根可運動連桿.</p>
 <p>接著進入 Inputs 頁面, 定義 driver points 後進行基本運動模擬.</p>
 <h2>尺寸合成操作</h2>
-<p>Pyslvs 的尺寸合成功能, 主要依賴 <a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span> 三角幾何函式程式庫與 </span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span> 演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>構造合成操作</h2>
-<p>Pyslvs 的構造合成包括平面機構的數目合成與類型合成等兩部分.</p>
+<p>Pyslvs 的尺寸合成功能, 主要依賴 <a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a><span> 三角幾何函式程式庫與 </span><a href="https://github.com/KmolYuan/Adesign">ADesign</a><span> 演算程式庫, 其中各平面機構範例進行尺寸合成的第一步必須先以三角幾何函式程式庫進行配置後, 再輸入特定機構節點所要通過的運行點座標, 最後再選擇 <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫中的 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 或 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 演算法進行尺寸合成運算.</span></p><h2>結構合成操作</h2>
+<p>Pyslvs 的結構合成包括平面機構的數目合成與類型合成等兩部分.</p>
 <p>在數目合成階段, 使用者可以選擇連桿個數 (Link number)、接頭個數 (Joint number), 以及機構的自由度.</p><h1>下載</h1>
 <p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
 <p>Windows 64 位元操作系統:</p>
 <p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p>
 <p><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p>
-<p><a href="https://drive.google.com/file/d/1gaX-_UfrbjObdATGvS00egfTW0uq3piP/view?usp=sharing">pyslvs-18.9.0.mscv1900-amd64.exe</a> (68337 KB)</p>
-<p><a href="https://drive.google.com/open?id=1YT49__LzaT_aFvhZdbmleqktZJEwDb5U">pyslvs-18.11.0.mscv1900-arm64.exe</a> (70875 KB)</p><h1>範例</h1>
+<p><a href="https://drive.google.com/file/d/1gaX-_UfrbjObdATGvS00egfTW0uq3piP/view?usp=sharing">pyslvs-18.9.0.mscv1900-amd64.exe</a> (68337 KB)</p><h1>範例</h1>
 <p>展示利用 Pyslvs 解題</p>
 <p>參考資料:</p>
 <p>1977 - <a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
@@ -133,11 +132,35 @@
 <p><a href="/downloads/house_window.pyslvs">house_window.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/casement_window.png" width="600"/></p>
 <p></p><h1>開發</h1>
+<p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
+<p><img alt="" height="338" src="/images/pyslvs_under_eric6.png" width="600"/></p><h2>Windows 開發</h2>
+<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a> (下載檔案約 8GB, 解開壓縮後約 21GB)</p>
+<p>使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a> (下載檔案約 5.3 GB, 解開壓縮約 14 GB)</p>
+<p>執行 start.bat</p>
 <p>取得 Pyslvs 原始碼:</p>
-<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
-<p>本倉儲有兩個主要分支：master 分支為當前穩定版本；dev 分支為開發中版本。每當切換分支時，請注意子倉儲的版次是否有變動，使用以下指令更新：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">git submodule update --recursive</pre>
-<p>若有更新，必須重新編譯核心。</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
+<h4>編譯 GUI 套件:</h4>
+<p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">mingw32-make clean
+mingw32-make</pre>
+<p>完成後, 以 2018.09 版次為例, dist 目錄中將得到可執行檔案:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.9.0.mscv1900-amd64.exe</pre>
+<h4>編譯 no GUI 程式庫:</h4>
+<p>在命令列中更換目錄至 core\libs\pyslvs 後, 執行:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">mingw32-make clean
+mingw32-make</pre>
+<p>建立下列動態連結程式庫 (pyd):</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">bfgs.cp36-win_amd64.pyd
+de.cp36-win_amd64.pyd
+firefly.cp36-win_amd64.pyd
+number.cp36-win_amd64.pyd
+planarlinkage.cp36-win_amd64.pyd
+pmks.cp36-win_amd64.pyd
+rga.cp36-win_amd64.pyd
+tinycadlib.cp36-win_amd64.pyd
+topologic.cp36-win_amd64.pyd
+triangulation.cp36-win_amd64.pyd
+verify.cp36-win_amd64.pyd</pre>
 <p>位於 pyslvs 目錄中的 unittest 程式:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># -*- coding: utf-8 -*-
 
@@ -361,244 +384,468 @@ class CoreTest(TestCase):
 if __name__ == '__main__':
     unittest.main()
 </pre>
-<p>以 Eric6 IDE 開啟 Pyslvs 專案:</p>
-<p><img alt="" height="338" src="/images/pyslvs_under_eric6.png" width="600"/></p><h2>Windows 開發</h2>
-<p>下載 <a href="https://drive.google.com/file/d/12BLN4daAPlO1KjCTDFi1kqJZ6f5k7Y5k/view?usp=sharing">Qt 可攜程式開發套件.7z </a>（下載檔案約 8GB, 解開壓縮後約 21GB）或使用 Python 3.7.0 與 Msys2  製作的 <a href="https://drive.google.com/file/d/1WOGsDH_rVWBJJ5QI6FSJ4kDVBgAeRkkg/view?usp=sharing">p37_adv</a>（下載檔案約 5.3 GB, 解開壓縮約 14 GB）執行 start.bat。</p>
-<p>其中所需要的套件已安裝在可攜程式當中，可參考模組需求清單 requirements.txt。</p>
-<p>若要完成獨立可執行檔案的發布，必須另外安裝 <a href="https://www.pyinstaller.org/">PyInstaller</a> 模組：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python -m pip install pyinstaller</pre>
-<h4>編譯 GUI 套件:</h4>
-<p>進入 Pyslvs-PyQt5 目錄後, 執行:</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
-<p>完成後, 以 2018.09 版次為例, dist 目錄中將得到可執行檔案:</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pyslvs-18.9.0.mscv1900-amd64.exe</pre>
-<h4>編譯程式庫:</h4>
-<p>在命令列中更換目錄至 core\libs\pyslvs 後, 執行:</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">mingw32-make</pre>
-<p>建立下列動態連結程式庫 (pyd):</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">bfgs.cp36-win_amd64.pyd
-de.cp36-win_amd64.pyd
-firefly.cp36-win_amd64.pyd
-number.cp36-win_amd64.pyd
-planarlinkage.cp36-win_amd64.pyd
-pmks.cp36-win_amd64.pyd
-rga.cp36-win_amd64.pyd
-tinycadlib.cp36-win_amd64.pyd
-topologic.cp36-win_amd64.pyd
-triangulation.cp36-win_amd64.pyd
-verify.cp36-win_amd64.pyd</pre><h3>環境修正</h3>
+<p></p><h3>參考檔案</h3>
 <p>從 <a href="https://drive.google.com/file/d/1DWtyoUhl8CycKJ8uulB3viRXE39KqpE1/view?usp=sharing">p37</a> 標準版升級能夠以 <a href="https://www.msys2.org/">Msys2</a> 編譯 Pyslvs-PyQt5</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip install pyqtchart lark-parser networkx ezdxf peewee openpyxl psutil pyinstaller cffi pyyaml</pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pip install PyQtChart
+pip install lark-parser
+pip install networkx
+pip install ezdxf
+pip install peewee
+pip install openpyxl
+pip install psutil
+pip install pyinstaller
+pip install cffi</pre>
 <h4><span>cygwinccompiler.py 修改</span></h4>
-<p><span>套用編譯器設定的補釘，其位於 Pyslvs 專案的 platform 目錄中。</span></p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">patch p37\lib\distutils\cygwinccompiler.py platform\patch.diff</pre>
-<p>patch.diff 內容：</p>
-<pre class="brush:diff;auto-links:false;toolbar:false" contenteditable="false">--- cygwinccompiler.py
-+++ cygwinccompiler.py
-@@ -82,7 +82,21 @@ def get_msvcr():
-         elif msc_ver == '1600':
-             # VS2010 / MSVC 10.0
-             return ['msvcr100']
-+        elif msc_ver == '1700':
-+            # Visual Studio 2012 / Visual C++ 11.0
-+            return ['msvcr110']
-+        elif msc_ver == '1800':
-+            # Visual Studio 2013 / Visual C++ 12.0
-+            return ['msvcr120']
-+        elif msc_ver == '1900':
-+            # Visual Studio 2015 / Visual C++ 14.0
-+            # "msvcr140.dll no longer exists" http://blogs.msdn.com/b/vcblog/archive/2014/06/03/visual-studio-14-ctp.aspx
-+            return ['vcruntime140']
-+        elif msc_ver == '1910':
-+            return ['vcruntime140']
-+        elif msc_ver == '1914':
-+            return ['vcruntime140']
-         else:
-             raise ValueError("Unknown MS Compiler version %s " % msc_ver)
+<p><span>p37\Lib\distutils\cygwinccompiler.py</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"""distutils.cygwinccompiler
+
+Provides the CygwinCCompiler class, a subclass of UnixCCompiler that
+handles the Cygwin port of the GNU C compiler to Windows.  It also contains
+the Mingw32CCompiler class which handles the mingw32 port of GCC (same as
+cygwin in no-cygwin mode).
+"""
+
+# problems:
+#
+# * if you use a msvc compiled python version (1.5.2)
+#   1. you have to insert a __GNUC__ section in its config.h
+#   2. you have to generate an import library for its dll
+#      - create a def-file for python??.dll
+#      - create an import library using
+#             dlltool --dllname python15.dll --def python15.def \
+#                       --output-lib libpython15.a
+#
+#   see also http://starship.python.net/crew/kernr/mingw32/Notes.html
+#
+# * We put export_symbols in a def-file, and don't use
+#   --export-all-symbols because it doesn't worked reliable in some
+#   tested configurations. And because other windows compilers also
+#   need their symbols specified this no serious problem.
+#
+# tested configurations:
+#
+# * cygwin gcc 2.91.57/ld 2.9.4/dllwrap 0.2.4 works
+#   (after patching python's config.h and for C++ some other include files)
+#   see also http://starship.python.net/crew/kernr/mingw32/Notes.html
+# * mingw32 gcc 2.95.2/ld 2.9.4/dllwrap 0.2.4 works
+#   (ld doesn't support -shared, so we use dllwrap)
+# * cygwin gcc 2.95.2/ld 2.10.90/dllwrap 2.10.90 works now
+#   - its dllwrap doesn't work, there is a bug in binutils 2.10.90
+#     see also http://sources.redhat.com/ml/cygwin/2000-06/msg01274.html
+#   - using gcc -mdll instead dllwrap doesn't work without -static because
+#     it tries to link against dlls instead their import libraries. (If
+#     it finds the dll first.)
+#     By specifying -static we force ld to link against the import libraries,
+#     this is windows standard and there are normally not the necessary symbols
+#     in the dlls.
+#   *** only the version of June 2000 shows these problems
+# * cygwin gcc 3.2/ld 2.13.90 works
+#   (ld supports -shared)
+# * mingw gcc 3.2/ld 2.13 works
+#   (ld supports -shared)
+
+import os
+import sys
+import copy
+from subprocess import Popen, PIPE, check_output
+import re
+
+from distutils.ccompiler import gen_preprocess_options, gen_lib_options
+from distutils.unixccompiler import UnixCCompiler
+from distutils.file_util import write_file
+from distutils.errors import (DistutilsExecError, CCompilerError,
+        CompileError, UnknownFileError)
+from distutils import log
+from distutils.version import LooseVersion
+from distutils.spawn import find_executable
+
+def get_msvcr():
+    """Include the appropriate MSVC runtime library if Python was built
+    with MSVC 7.0 or later.
+    """
+    msc_pos = sys.version.find('MSC v.')
+    if msc_pos != -1:
+        msc_ver = sys.version[msc_pos+6:msc_pos+10]
+        if msc_ver == '1300':
+            # MSVC 7.0
+            return ['msvcr70']
+        elif msc_ver == '1310':
+            # MSVC 7.1
+            return ['msvcr71']
+        elif msc_ver == '1400':
+            # VS2005 / MSVC 8.0
+            return ['msvcr80']
+        elif msc_ver == '1500':
+            # VS2008 / MSVC 9.0
+            return ['msvcr90']
+        elif msc_ver == '1600':
+            # VS2010 / MSVC 10.0
+            return ['msvcr100']
+        elif msc_ver == '1700':
+            # Visual Studio 2012 / Visual C++ 11.0
+            return ['msvcr110']
+        elif msc_ver == '1800':
+            # Visual Studio 2013 / Visual C++ 12.0
+            return ['msvcr120']
+        elif msc_ver == '1900':
+            # Visual Studio 2015 / Visual C++ 14.0
+            # "msvcr140.dll no longer exists"
+            return ['vcruntime140']
+        elif msc_ver == '1910':
+            return ['vcruntime140']
+        elif msc_ver == '1914':
+            return ['vcruntime140']
+        else:
+            raise ValueError("Unknown MS Compiler version %s " % msc_ver)
+
+
+class CygwinCCompiler(UnixCCompiler):
+    """ Handles the Cygwin port of the GNU C compiler to Windows.
+    """
+    compiler_type = 'cygwin'
+    obj_extension = ".o"
+    static_lib_extension = ".a"
+    shared_lib_extension = ".dll"
+    static_lib_format = "lib%s%s"
+    shared_lib_format = "%s%s"
+    exe_extension = ".exe"
+
+    def __init__(self, verbose=0, dry_run=0, force=0):
+
+        UnixCCompiler.__init__(self, verbose, dry_run, force)
+
+        status, details = check_config_h()
+        self.debug_print("Python's GCC status: %s (details: %s)" %
+                         (status, details))
+        if status is not CONFIG_H_OK:
+            self.warn(
+                "Python's pyconfig.h doesn't seem to support your compiler. "
+                "Reason: %s. "
+                "Compiling may fail because of undefined preprocessor macros."
+                % details)
+
+        self.gcc_version, self.ld_version, self.dllwrap_version = \
+            get_versions()
+        self.debug_print(self.compiler_type + ": gcc %s, ld %s, dllwrap %s\n" %
+                         (self.gcc_version,
+                          self.ld_version,
+                          self.dllwrap_version) )
+
+        # ld_version &gt;= "2.10.90" and &lt; "2.13" should also be able to use
+        # gcc -mdll instead of dllwrap
+        # Older dllwraps had own version numbers, newer ones use the
+        # same as the rest of binutils ( also ld )
+        # dllwrap 2.10.90 is buggy
+        if self.ld_version &gt;= "2.10.90":
+            self.linker_dll = "gcc"
+        else:
+            self.linker_dll = "dllwrap"
+
+        # ld_version &gt;= "2.13" support -shared so use it instead of
+        # -mdll -static
+        if self.ld_version &gt;= "2.13":
+            shared_option = "-shared"
+        else:
+            shared_option = "-mdll -static"
+
+        # Hard-code GCC because that's what this is all about.
+        # XXX optimization, warnings etc. should be customizable.
+        self.set_executables(compiler='gcc -mcygwin -O -Wall',
+                             compiler_so='gcc -mcygwin -mdll -O -Wall',
+                             compiler_cxx='g++ -mcygwin -O -Wall',
+                             linker_exe='gcc -mcygwin',
+                             linker_so=('%s -mcygwin %s' %
+                                        (self.linker_dll, shared_option)))
+
+        # cygwin and mingw32 need different sets of libraries
+        if self.gcc_version == "2.91.57":
+            # cygwin shouldn't need msvcrt, but without the dlls will crash
+            # (gcc version 2.91.57) -- perhaps something about initialization
+            self.dll_libraries=["msvcrt"]
+            self.warn(
+                "Consider upgrading to a newer version of gcc")
+        #else:
+            # Include the appropriate MSVC runtime library if Python was built
+            # with MSVC 7.0 or later.
+            #self.dll_libraries = get_msvcr()
+
+    def _compile(self, obj, src, ext, cc_args, extra_postargs, pp_opts):
+        """Compiles the source by spawning GCC and windres if needed."""
+        if ext == '.rc' or ext == '.res':
+            # gcc needs '.res' and '.rc' compiled to object files !!!
+            try:
+                self.spawn(["windres", "-i", src, "-o", obj])
+            except DistutilsExecError as msg:
+                raise CompileError(msg)
+        else: # for other files use the C-compiler
+            try:
+                self.spawn(self.compiler_so + cc_args + [src, '-o', obj] +
+                           extra_postargs)
+            except DistutilsExecError as msg:
+                raise CompileError(msg)
+
+    def link(self, target_desc, objects, output_filename, output_dir=None,
+             libraries=None, library_dirs=None, runtime_library_dirs=None,
+             export_symbols=None, debug=0, extra_preargs=None,
+             extra_postargs=None, build_temp=None, target_lang=None):
+        """Link the objects."""
+        # use separate copies, so we can modify the lists
+        extra_preargs = copy.copy(extra_preargs or [])
+        libraries = copy.copy(libraries or [])
+        objects = copy.copy(objects or [])
+
+        # Additional libraries
+        libraries.extend(self.dll_libraries)
+
+        # handle export symbols by creating a def-file
+        # with executables this only works with gcc/ld as linker
+        if ((export_symbols is not None) and
+            (target_desc != self.EXECUTABLE or self.linker_dll == "gcc")):
+            # (The linker doesn't do anything if output is up-to-date.
+            # So it would probably better to check if we really need this,
+            # but for this we had to insert some unchanged parts of
+            # UnixCCompiler, and this is not what we want.)
+
+            # we want to put some files in the same directory as the
+            # object files are, build_temp doesn't help much
+            # where are the object files
+            temp_dir = os.path.dirname(objects[0])
+            # name of dll to give the helper files the same base name
+            (dll_name, dll_extension) = os.path.splitext(
+                os.path.basename(output_filename))
+
+            # generate the filenames for these files
+            def_file = os.path.join(temp_dir, dll_name + ".def")
+            lib_file = os.path.join(temp_dir, 'lib' + dll_name + ".a")
+
+            # Generate .def file
+            contents = [
+                "LIBRARY %s" % os.path.basename(output_filename),
+                "EXPORTS"]
+            for sym in export_symbols:
+                contents.append(sym)
+            self.execute(write_file, (def_file, contents),
+                         "writing %s" % def_file)
+
+            # next add options for def-file and to creating import libraries
+
+            # dllwrap uses different options than gcc/ld
+            if self.linker_dll == "dllwrap":
+                extra_preargs.extend(["--output-lib", lib_file])
+                # for dllwrap we have to use a special option
+                extra_preargs.extend(["--def", def_file])
+            # we use gcc/ld here and can be sure ld is &gt;= 2.9.10
+            else:
+                # doesn't work: bfd_close build\...\libfoo.a: Invalid operation
+                #extra_preargs.extend(["-Wl,--out-implib,%s" % lib_file])
+                # for gcc/ld the def-file is specified as any object files
+                objects.append(def_file)
+
+        #end: if ((export_symbols is not None) and
+        #        (target_desc != self.EXECUTABLE or self.linker_dll == "gcc")):
+
+        # who wants symbols and a many times larger output file
+        # should explicitly switch the debug mode on
+        # otherwise we let dllwrap/ld strip the output file
+        # (On my machine: 10KB &lt; stripped_file &lt; ??100KB
+        #   unstripped_file = stripped_file + XXX KB
+        #  ( XXX=254 for a typical python extension))
+        if not debug:
+            extra_preargs.append("-s")
+
+        UnixCCompiler.link(self, target_desc, objects, output_filename,
+                           output_dir, libraries, library_dirs,
+                           runtime_library_dirs,
+                           None, # export_symbols, we do this in our def-file
+                           debug, extra_preargs, extra_postargs, build_temp,
+                           target_lang)
+
+    # -- Miscellaneous methods -----------------------------------------
+
+    def object_filenames(self, source_filenames, strip_dir=0, output_dir=''):
+        """Adds supports for rc and res files."""
+        if output_dir is None:
+            output_dir = ''
+        obj_names = []
+        for src_name in source_filenames:
+            # use normcase to make sure '.rc' is really '.rc' and not '.RC'
+            base, ext = os.path.splitext(os.path.normcase(src_name))
+            if ext not in (self.src_extensions + ['.rc','.res']):
+                raise UnknownFileError("unknown file type '%s' (from '%s')" % \
+                      (ext, src_name))
+            if strip_dir:
+                base = os.path.basename (base)
+            if ext in ('.res', '.rc'):
+                # these need to be compiled to object files
+                obj_names.append (os.path.join(output_dir,
+                                              base + ext + self.obj_extension))
+            else:
+                obj_names.append (os.path.join(output_dir,
+                                               base + self.obj_extension))
+        return obj_names
+
+# the same as cygwin plus some additional parameters
+class Mingw32CCompiler(CygwinCCompiler):
+    """ Handles the Mingw32 port of the GNU C compiler to Windows.
+    """
+    compiler_type = 'mingw32'
+
+    def __init__(self, verbose=0, dry_run=0, force=0):
+
+        CygwinCCompiler.__init__ (self, verbose, dry_run, force)
+
+        # ld_version &gt;= "2.13" support -shared so use it instead of
+        # -mdll -static
+        if self.ld_version &gt;= "2.13":
+            shared_option = "-shared"
+        else:
+            shared_option = "-mdll -static"
+
+        # A real mingw32 doesn't need to specify a different entry point,
+        # but cygwin 2.91.57 in no-cygwin-mode needs it.
+        if self.gcc_version &lt;= "2.91.57":
+            entry_point = '--entry _DllMain@12'
+        else:
+            entry_point = ''
+
+        if is_cygwingcc():
+            raise CCompilerError(
+                'Cygwin gcc cannot be used with --compiler=mingw32')
+
+        self.set_executables(compiler='gcc -O -Wall',
+                             compiler_so='gcc -mdll -O -Wall',
+                             compiler_cxx='g++ -O -Wall',
+                             linker_exe='gcc',
+                             linker_so='%s %s %s'
+                                        % (self.linker_dll, shared_option,
+                                           entry_point))
+        # Maybe we should also append -mthreads, but then the finished
+        # dlls need another dll (mingwm10.dll see Mingw32 docs)
+        # (-mthreads: Support thread-safe exception handling on `Mingw32')
+
+        # no additional libraries needed
+        self.dll_libraries=[]
+
+        # Include the appropriate MSVC runtime library if Python was built
+        # with MSVC 7.0 or later.
+        self.dll_libraries = get_msvcr()
+
+# Because these compilers aren't configured in Python's pyconfig.h file by
+# default, we should at least warn the user if he is using an unmodified
+# version.
+
+CONFIG_H_OK = "ok"
+CONFIG_H_NOTOK = "not ok"
+CONFIG_H_UNCERTAIN = "uncertain"
+
+def check_config_h():
+    """Check if the current Python installation appears amenable to building
+    extensions with GCC.
+
+    Returns a tuple (status, details), where 'status' is one of the following
+    constants:
+
+    - CONFIG_H_OK: all is well, go ahead and compile
+    - CONFIG_H_NOTOK: doesn't look good
+    - CONFIG_H_UNCERTAIN: not sure -- unable to read pyconfig.h
+
+    'details' is a human-readable string explaining the situation.
+
+    Note there are two ways to conclude "OK": either 'sys.version' contains
+    the string "GCC" (implying that this Python was built with GCC), or the
+    installed "pyconfig.h" contains the string "__GNUC__".
+    """
+
+    # XXX since this function also checks sys.version, it's not strictly a
+    # "pyconfig.h" check -- should probably be renamed...
+
+    from distutils import sysconfig
+
+    # if sys.version contains GCC then python was compiled with GCC, and the
+    # pyconfig.h file should be OK
+    if "GCC" in sys.version:
+        return CONFIG_H_OK, "sys.version mentions 'GCC'"
+
+    # let's see if __GNUC__ is mentioned in python.h
+    fn = sysconfig.get_config_h_filename()
+    try:
+        config_h = open(fn)
+        try:
+            if "__GNUC__" in config_h.read():
+                return CONFIG_H_OK, "'%s' mentions '__GNUC__'" % fn
+            else:
+                return CONFIG_H_NOTOK, "'%s' does not mention '__GNUC__'" % fn
+        finally:
+            config_h.close()
+    except OSError as exc:
+        return (CONFIG_H_UNCERTAIN,
+                "couldn't read '%s': %s" % (fn, exc.strerror))
+
+RE_VERSION = re.compile(br'(\d+\.\d+(\.\d+)*)')
+
+def _find_exe_version(cmd):
+    """Find the version of an executable by running `cmd` in the shell.
+
+    If the command is not found, or the output does not match
+    `RE_VERSION`, returns None.
+    """
+    executable = cmd.split()[0]
+    if find_executable(executable) is None:
+        return None
+    out = Popen(cmd, shell=True, stdout=PIPE).stdout
+    try:
+        out_string = out.read()
+    finally:
+        out.close()
+    result = RE_VERSION.search(out_string)
+    if result is None:
+        return None
+    # LooseVersion works with strings
+    # so we need to decode our bytes
+    return LooseVersion(result.group(1).decode())
+
+def get_versions():
+    """ Try to find out the versions of gcc, ld and dllwrap.
+
+    If not possible it returns None for it.
+    """
+    commands = ['gcc -dumpversion', 'ld -v', 'dllwrap --version']
+    return tuple([_find_exe_version(cmd) for cmd in commands])
+
+def is_cygwingcc():
+    '''Try to determine if the gcc that would be used is from cygwin.'''
+    out_string = check_output(['gcc', '-dumpmachine'])
+    return out_string.strip().endswith(b'cygwin')
 </pre>
+<h4><span>pyconfig.h 修改</span></h4>
+<p><span>p37\include\pyconfig.h 檔案第 84 行:</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _MSC_VER</pre>
+<p>之前插入三行, 成為:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#ifdef _WIN64
+#define MS_WIN64
+#endif
+#ifdef _MSC_VER</pre>
+<p>並且將</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
+#define hypot _hypot</pre>
+<p>改為</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define COMPILER "[gcc]"
+#ifndef _MATH_H_
+#define hypot _hypot
+#endif</pre>
 <h4>增加 distutils.cfg 檔案</h4>
 <p>在 p37\Lib\distutils 目錄中新增 distutils.cfg</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">echo [build]&gt;&gt; p37\Lib\distutils\distutils.cfg
-echo compiler = mingw32&gt;&gt; p37\Lib\distutils\distutils.cfg</pre>
+<p>內容為</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[build]
+compiler=mingw32</pre>
 <h4>修改 _advapi32.py 檔案</h4>
 <p>修改 p37\Lib\site-packages\win32ctypes\core\cffi\_advapi32.py</p>
 <p>蓋掉第 197 與 199 行</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#c_creds.CredentialBlobSize = \
 
-    #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre><h3>PyInstaller 對 Windows 的支援</h3>
-<p>官方說明：<a href="https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options">https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options</a></p>
-<ul>
-<li>預設包裝時採用不關閉主控台選項（不使用 -w），目的是顯示 Pyslvs 的版本資訊，關閉後將會無法使用 --help 或 --version 等不啟動 GUI 的顯示功能。</li>
-<li>在 Windows 中必須手動加入除了端口程式庫 pyd 以外的相依外部程式庫，如 SWIG 與 PyQt sip 的隱式導入。</li>
-<li>在 Windows 中的圖示格式為 ico。</li>
-</ul><h2>Ubuntu 開發</h2>
-<p>安裝 python3-dev 與 swig 套件：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo apt update
-sudo apt install python3-dev swig</pre>
-<p>取得 Pyslvs 原始碼：</p>
-<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
-<p>安裝需要的 Python 模組：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">sudo pip3 install -r requirements.txt</pre>
-<p>完整編譯：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">make</pre>
-<p>可以在倉儲目錄下的 out 資料夾中取得 AppImage 可執行檔（詳見下一節說明）。</p>
-<p>編譯核心：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
-make build-kernel
-
-# Pyslvs 程式庫
-make build-pyslvs
-
-# Python-Solvespace 程式庫
-make build-solvespace</pre>
-<p>執行腳本：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre><h3>AppImage 包裝</h3>
-<p>官方網站：<a href="https://appimage.org/">https://appimage.org/</a></p>
-<p>在不同的 Linux 作業系統下有著不一樣的程式庫版本，由於程式之間的「相依性」十分高，會造成程式編譯後無法移植到其他環境中使用，即使編譯端與客戶端的作業系統是一樣的。</p>
-<p>AppImage 的目標是將編譯端的程式可以編一到任何「目標作業系統」都可以執行。而「目標作業系統」必須符合對應的環境需求（相依程式庫版本必須滿足）。最差的情況是必須「完全符合或較新」；最完美的情況甚至是「不用安裝」。</p>
-<p>使用的原理是 App Dir 壓縮包配上腳本檔案，執行時會解壓縮到帳戶的 /tmp 目錄（並且會附加 Hash code），而此一壓縮包會包含所有程式所需要的相依程式庫或套件。</p>
-<p>AppImage releases 標榜「不使用 sudo」、「選擇性安裝」以及支援版本升級功能。</p>
-<p>包裝的建立是透過 bash 腳本使用 AppImage tool kits，支援基本的自動「程式與程式庫相依性分析」的功能。不過在過度「客製化」的開發環境下，開發者必須手動將所需的檔案複製到 App Dir 中。</p>
-<p>Pyslvs 的包裝流程是透過 appimage_recipe.sh 腳本完成。使用的工具為 virtualenv，依照開發環境的安裝模式建立 App Dir，並安裝 Pyslvs 所需的模組，並經由手動複製一些 built-in scripts 之後，打造出完全獨立的 Python 執行環境。Pyslvs 便可在完全無 Python 3 的環境中執行（不過仍有 glib 的最低版本需求）。</p>
-<ul>
-<li>App Dir 位置：ENV/</li>
-<li>包裝輸出位置：out/</li>
-</ul><h2>Mac OS X 開發</h2>
-<p>Mac OS X 上的任何程式開發都不建議使用 sudo 指令（除非必要），也不要使用內建的 Python 以免系統故障。建議使用 <a href="https://brew.sh/index_zh-tw">Homebrew</a> 或是 <a href="https://www.macports.org/">MacPort</a> 套件管理工具。</p>
-<p>必須注意的是，平台上的編譯工具僅支援向下相容，較新的 xcode 版本無法在舊版運行。</p>
-<p>安裝 Python 與 SWIG：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># Homebrew 的 Python 版本永遠是最新的穩定板
-brew install python@3
-brew install swig
-
-# MacPort 可支援任意 Python 版本
-# 安裝在 /opt 必須使用 sudo 指令
-yes | sudo part install python36
-yes | sudo port install py$PYTHON-pip
-sudo port select --set python3 python36
-sudo port select --set pip pip36</pre>
-<p>使用 MacPort 的 pip3 安裝時請加上 --user 免去 sudo 操作。</p>
-<p>取得 Pyslvs 原始碼：</p>
-<pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
-<p>安裝需要的 Python 模組：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install -r requirements.txt</pre>
-<p>安裝 PyInstaller 模組打包成執行檔：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">pip3 install pyinstaller</pre>
-<p>完整編譯：</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">make</pre>
-<p>可以在倉儲目錄下的 dist 資料夾中取得 app 與 unix-style 可執行檔。</p>
-<p>編譯核心：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false"># 所有程式庫
-make build-kernel
- 
-# Pyslvs 程式庫
-make build-pyslvs
- 
-# Python-Solvespace 程式庫
-make build-solvespace</pre>
-<p>執行腳本：</p>
-<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">python3 launch_pyslvs.py</pre>
-<h3>PyInstaller 對 Mac OS X 的支援</h3>
-<p>官方說明：<a href="https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options">https://pyinstaller.readthedocs.io/en/stable/man/pyi-makespec.html#windows-and-mac-os-x-specific-options</a></p>
-<ul>
-<li>預設包裝時採用關閉主控台的選項（使用 -w），目的是為了產生標準 .app 格式的可執行檔，而非只有類 Unix 執行檔。啟用此選項後，會包裝出上述兩種格式的執行檔。</li>
-<li><span class="option">在 Mac OS X 中，對 .app 格式的可執行檔作網路傳輸時必須微壓縮成 .zip 檔案。<br/></span></li>
-<li>在 Mac OS X 中可以自動定位 SWIG 與 PyQt 等擁有外部程式庫的模組。</li>
-<li>在 Mac OS X 中的圖示格式為 icns。</li>
-</ul>
-<h2>參與協同</h2>
-<p>若要參與 Pyslvs 的開發，基本編寫風格遵循 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>，主要規則請參閱子章節的資訊。</p><h3>註解規則</h3>
-<p>所有 Modules、Classes 與 Functions 都應該加上 doc string，一般 Methods 應比照 Functions，而 __init__ 等則視情況在程式碼中添加單行註解。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># -*- coding: utf-8 -*-
-
-"""Module doc string title
-
-Module decriptions ...
-"""
-
-
-def function():
-    """Single line doc string."""
-    ...
-
-
-class MyClass:
-
-    """MyClass doc string."""
-
-    def method():
-        """MyClass.method doc string."""
-        ...</pre>
-<p>使用單行註解多行程式碼時，為求功能明確，應在該區域使用單空行分隔。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def foo() -&gt; List[Set[int]]:
-    """foo doc string."""
-    a = 10
-    b = 20
-
-    # Let a plus b, and assign to c.
-    c = a + b
-
-    # Do another things ...
-    d = func_c2d(c)
-    e = func_c2e(c)
-    f = func_de2f(d, e)
-
-    # Convert f.
-    return list(f)</pre><h3>命名規則</h3>
-<ul>
-<li>Classes 使用字首大寫命名，如 RedApple。</li>
-<li>定值使用全部大寫並用底線連接，如 RED_APPLE。</li>
-<li>模組、變數等其他名稱一律使用小寫並用底線連接，如 red_apple。</li>
-<li>自用變數樣式（以表示絕對不會跨層級）：
-<ul>
-<li>模組層級的自用變數使用一個底線起始，如 _red_apple、_RedApple 或 _RED_APPLE。</li>
-<li>Class 層級的自用變數或 Methods 使用兩個底線起始，如 __red_apple。</li>
-</ul>
-</li>
-<li>必須複寫原始模組，如 Qt 使用小寫字首 redApple，則遵照原始模組。</li>
-</ul>
-<h3>類型註解</h3>
-<p>建議對任何 Functions 與 Methods 都加上類型註解（參見 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>），必要時在一般名稱也可做註記（回傳值無法推斷時）。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if not row &gt; -1:
-    return
-
-# Here is not None!
-item: MyItem = table.item(row)
-item.do_something()</pre>
-<p>若是回傳 None 值，可以不加上回傳值的註解。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(a: bool):
-    if a:
-        return
-    do_my_job()</pre>
-<p>序列的樣式為 Sequence[T]、List[T]、Iterator[T] 等，唯獨 Tuple[T] 為固定長度，應標示 Tuple[T, ...]。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def _join_more(iter_obj: Iterable[int]) -&gt; Tuple[int, ...]:
-    """Convert iterable object to tuple."""
-    return tuple(iter_obj) + (1,)</pre>
-<p>若是可能為多種非繼承類型，使用 Union。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s: Union[str, Sequence[bytes]] = s_func()</pre>
-<p>若是可能為 None 值，應加上 Optional。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(*, labels: Optional[Sequence[int]] = None):
-    ...</pre>
-<p>Functions 使用 Callable[[In_T1, InT2], Out_T]。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def danger(func: Callable[[Any], Any]) -&gt; Callable[[Any], Any]:
-    """My danger decorator."""
-
-    def wrapper_func(*args):
-        """Is danger function."""
-        print("Danger!")
-        return func(*args)
-
-    return wrapper_func
-
-
-@danger
-def foo():
-    ...</pre>
-<p>造成遞迴引用類型時應改為字串。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class MyClass:
-
-    def __add__(self, p: 'MyClass') -&gt; 'MyClass':
-        ...</pre><h1>參考</h1>
+    #ffi.sizeof(blob_data) - ffi.sizeof('wchar_t')</pre>
+<p></p><h2>Ubuntu 開發</h2>
+<h1>參考</h1>
 <p><a href="https://www.researchgate.net/profile/Jing-Shan_Zhao/publication/265747246_Design_of_Special_Planar_Linkages/links/55fc02db08ae07629e07d546/Design-of-Special-Planar-Linkages.pdf">Design of special planar linkages.pdf</a></p>
 <p><a href="https://designengrlab.github.io/PMKS/">https://designengrlab.github.io/PMKS/</a> </p>
 <p><a href="https://github.com/DesignEngrLab/PMKS">https://github.com/DesignEngrLab/PMKS</a> </p>
