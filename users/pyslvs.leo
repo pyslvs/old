@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
-<leo_header file_format="2"/>
-<globals/>
+<leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
+<globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
+	<global_window_position top="50" left="50" height="500" width="700"/>
+	<global_log_window_position top="0" left="0" height="0" width="0"/>
+</globals>
 <preferences/>
 <find_panel_settings/>
 <vnodes>
@@ -12,14 +15,14 @@
 </v>
 <v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
-<v t="amd.20160106095324.1"><vh>@path ./../</vh>
-<v t="leo.20151213173811.1"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
+<v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
+<v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
 <v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
 <v t="leo.20151213173830.1"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
-<v t="amd.20151215180106.1"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
 <v t="amd.20151216152209.1"><vh>@edit README.md</vh></v>
 <v t="leo.20171105093855.1"><vh>@edit CNAME</vh></v>
@@ -30,10 +33,10 @@
 <v t="amd.20151215170117.1"><vh>以下 pelicanconf.py 為近端與遠端的共同設定</vh>
 <v t="leo.20151212173725.1"><vh>@edit pelicanconf.py</vh></v>
 </v>
-<v t="amd.20151215170142.1"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
+<v t="amd.20151215170142.1" a="E"><vh>以下 publishconf.py 為遠端所使用的設定</vh>
 <v t="leo.20151212173803.1"><vh>@edit publishconf.py</vh></v>
 </v>
-<v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
+<v t="amd.20151215170221.1" a="E"><vh>以下 local_publishconf.py 為近端所使用的設定</vh>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
 <v t="amd.20151215121740.1"><vh>@path theme</vh>
@@ -62,15 +65,15 @@
 <v t="amd.20160106094844.1"><vh>@edit pyslvs_pages_1.md</vh></v>
 </v>
 </v>
-<v t="amd.20151215170031.1"><vh>@path ./../markdown</vh>
-<v t="ahshoe.20180107162303.1"><vh>2017</vh>
+<v t="amd.20151215170031.1" a="E"><vh>@path ./../markdown</vh>
+<v t="ahshoe.20180107162303.1" a="E"><vh>2017</vh>
 <v t="ahshoe.20171128212217.1"><vh>@edit 20171128.md</vh></v>
 <v t="ahshoe.20171203204922.1"><vh>@edit 20171203.md</vh></v>
 <v t="40323230.20171205231103.1"><vh>@edit 20171205.md</vh></v>
 <v t="ahshoe.20171211002738.1"><vh>@edit 20171210.md</vh></v>
 <v t="40323230.20171212225549.1"><vh>@edit 20171212.md</vh></v>
 </v>
-<v t="ahshoe.20180107162320.1"><vh>2018</vh>
+<v t="ahshoe.20180107162320.1" a="E"><vh>2018</vh>
 <v t="ahshoe.20180107161224.1"><vh>@edit 2018.md</vh></v>
 <v t="ahshoe.20180107163855.1"><vh>@edit 20180107.md</vh></v>
 <v t="ahshoe.20180125204903.1"><vh>@edit 20180125.md</vh></v>
@@ -85,6 +88,8 @@
 <v t="kmol.20180630151927.1"><vh>@edit 20180630.md</vh></v>
 <v t="leo.20180913125509.1"><vh>@edit 20180913.md</vh></v>
 <v t="leo.20180922122017.1"><vh>@edit 20180922.md</vh></v>
+<v t="leo.20181118173101.1"><vh>@edit 20181118.md</vh></v>
+<v t="leo.20181118173617.1"><vh>@edit 20181118-2.md</vh></v>
 </v>
 </v>
 </vnodes>

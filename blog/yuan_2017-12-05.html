@@ -23,7 +23,7 @@
   <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
 
   <!-- Code highlight color scheme -->
-      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
   
     <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
@@ -95,6 +95,8 @@
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushDiff.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
@@ -229,34 +231,34 @@ Answer count: 1
 </pre>
 
 <p>需要的模組有：</p>
-<pre class="brush: python">
-from anytree import Node, RenderTree
-from anytree.search import findall
-from itertools import permutations
-from typing import Tuple
-</pre>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">anytree</span> <span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">RenderTree</span>
+<span class="kn">from</span> <span class="nn">anytree.search</span> <span class="kn">import</span> <span class="n">findall</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+</pre></div>
+
 
 <p>接著是印出上面樹狀結構的函式，anytree 的 RenderTree 搜尋函式會朝下列出節點的階級字元。</p>
 <p>這邊用 <code>noname</code> 這個 bool 變數決定是否顯示名稱。</p>
-<pre class="brush: python">
-show_tree = lambda root: '\n'.join("{}{}({})".format(pre, n.name, n.limit) for pre, fill, n in RenderTree(root))
-</pre>
+<div class="highlight"><pre><span></span><span class="n">show_tree</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">root</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;{}{}({})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span> <span class="k">for</span> <span class="n">pre</span><span class="p">,</span> <span class="n">fill</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">RenderTree</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+</pre></div>
+
 
 <p>接下來是主函式，稱為 <code>make_link</code>，接收內含 int 的可迭代物件。</p>
-<pre class="brush: python">
-def make_link(iter: Tuple[int,]):
-    ...
-    return answer
-</pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_link</span><span class="p">(</span><span class="nb">iter</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,]):</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></div>
+
 
 <p>第一部分是創出連桿的數量，數字則是接頭數。</p>
-<pre class="brush: python">
-link_type = []
-  for i, num in enumerate(iter):
-    i += 2
-    for j in range(num):
-        link_type.append(i)
-</pre>
+<div class="highlight"><pre><span></span><span class="n">link_type</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="n">link_type</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
 
 <p>如輸入 <code>(4,)</code>，可以得到 <code>[2, 2, 2, 2]</code>；輸入 <code>(5, 4)</code> 可得 <code>[2, 2, 2, 2, 2, 3, 3, 3, 3]</code>。</p>
 <p>使用 Python 迭代工具模組的 <a href="https://docs.python.org/3/library/itertools.html#itertools.permutations">permutations</a> 函式來創造排列組合的迴圈。</p>
@@ -270,69 +272,69 @@ for all_link in list(set(permutations(link_type))):
 
 <p>首先轉換 <code>link_type</code> 的內容成為 anytree 模組的 Node 類型。</p>
 <p>其中 <code>limit</code> 屬性是此節點的接頭上限，僅用於比對，並無程式上的限制。</p>
-<pre class="brush: python">
-all_link = [Node("L{}".format(i), limit=v) for i, v in enumerate(all_link)]
-</pre>
+<div class="highlight"><pre><span></span><span class="n">all_link</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="s2">&quot;L{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">limit</span><span class="o">=</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_link</span><span class="p">)]</span>
+</pre></div>
+
 
 <p>接著將第一項當作 root 節點，加入 <code>links</code>。</p>
 <p>這裡 <code>links</code> 清單的最後一項 <code>links[-1]</code> 是接下來的搜索法準備填入的項目。</p>
-<pre class="brush: python">
-links = []
-links.append(all_link.pop(0))
-</pre>
+<div class="highlight"><pre><span></span><span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">all_link</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+
 
 <p>然後使用廣度優先搜索法 (Breadth-First-Search, BFS) 填入所有節點，使用 list 類型的 pop 方法配上 while 迴圈可以確保用光所有節點。</p>
 <p>當指派一個節點的 <code>parent</code> 屬性時，anytree 模組會自動將節點連上父節點，父節點可以透過 <code>children</code> 屬性取得一個裝有所有子節點指標的 tuple 物件。</p>
-<pre class="brush: python">
-while all_link:
-    link = all_link.pop(0)
-    if (len(links[-1].children) + bool(links[-1].parent))==links[-1].limit:
-        links.append(links[-1].children[0])
-    link.parent = links[-1]
-</pre>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">all_link</span><span class="p">:</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="n">all_link</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bool</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span><span class="o">==</span><span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">:</span>
+        <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">link</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
 
 <p>由於數學定義的「樹 (tree)」結構中，子節點只能擁有一個父項，否則為迴路 (Loop)，anytree 模組會在連接成迴路時自動回擲 <code>LoopError</code> 錯誤。</p>
 <p>但是我們的運動鍊為 close chain，因此必須再創立一個配對流程，這次使用類似連結的概念，同時為「主體」連結一個虛擬節點。</p>
 <p>虛擬節點的樣式使用中括弧 <code>[ ]</code> 辨識，不用指派名稱。</p>
 <p>創立 <code>get_no_done</code> 函式回傳使用 anytree 的 findall 模組過濾沒配對完成的節點。</p>
-<pre class="brush: python">
-get_no_done = lambda: findall(links[0], filter_=lambda n: '[' not in n.name and (len(n.children) + bool(links[-1].parent)) < n.limit)
-error = False
-while get_no_done():
-    nodes = get_no_done()
-    try:
-        l_1, l_2 = nodes[0], nodes[1]
-    except (ValueError, IndexError):
-        error = True
-        break
-    else:
-        Node("[{}]".format(l_1.name), limit=str(l_1.limit), parent=l_2)
-        Node("[{}]".format(l_2.name), limit=str(l_2.limit), parent=l_1)
-</pre>
+<div class="highlight"><pre><span></span><span class="n">get_no_done</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">findall</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">filter_</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="s1">&#39;[&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bool</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">while</span> <span class="n">get_no_done</span><span class="p">():</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">get_no_done</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">l_1</span><span class="p">,</span> <span class="n">l_2</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;[{}]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l_1</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="n">limit</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">l_1</span><span class="o">.</span><span class="n">limit</span><span class="p">),</span> <span class="n">parent</span><span class="o">=</span><span class="n">l_2</span><span class="p">)</span>
+        <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;[{}]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l_2</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="n">limit</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">l_2</span><span class="o">.</span><span class="n">limit</span><span class="p">),</span> <span class="n">parent</span><span class="o">=</span><span class="n">l_1</span><span class="p">)</span>
+</pre></div>
+
 
 <p>最後檢查是否在上述迴圈出現沒閉合狀況。</p>
-<pre class="brush: python">
-if error:
-    continue
-</pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+    <span class="k">continue</span>
+</pre></div>
+
 
 <p>或是兩對連桿之間有連到一個以上的接頭。</p>
-<pre class="brush: python">
-if findall(links[0], filter_=lambda n: len([c.name for c in n.children])!=len(set(c.name for c in n.children))):
-    continue
-</pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">findall</span><span class="p">(</span><span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">filter_</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">len</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">children</span><span class="p">])</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">children</span><span class="p">))):</span>
+    <span class="k">continue</span>
+</pre></div>
+
 
 <p>最後可以進行測試：</p>
-<pre class="brush: python">
-if __name__=='__main__':
-    print("Topologic test")
-    answer = topo([5, 4])
-    #Show tree
-    for root in answer:
-        print(show_tree(root))
-        print('-'*7)
-    print("Answer count: {}".format(len(answer)))
-</pre>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Topologic test&quot;</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">topo</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+    <span class="c1">#Show tree</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">show_tree</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Answer count: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)))</span>
+</pre></div>
+
 
 <p>可得：</p>
 <pre>

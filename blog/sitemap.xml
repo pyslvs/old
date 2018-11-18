@@ -5,35 +5,49 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/</loc>
-<lastmod>2018-10-03T17:12:10-00:00</lastmod>
+<lastmod>2018-11-18T17:52:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/archives.html</loc>
-<lastmod>2018-10-03T17:12:10-00:00</lastmod>
+<lastmod>2018-11-18T17:52:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/tags.html</loc>
-<lastmod>2018-10-03T17:12:10-00:00</lastmod>
+<lastmod>2018-11-18T17:52:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/categories.html</loc>
-<lastmod>2018-10-03T17:12:10-00:00</lastmod>
+<lastmod>2018-11-18T17:52:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/pages/about/</loc>
-<lastmod>2018-10-03T16:59:19+08:00</lastmod>
+<lastmod>2018-09-13T12:48:51+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pyslvs.github.io/blog/yuan_2018-11-18.html</loc>
+<lastmod>2018-11-18T21:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pyslvs.github.io/blog/yuan_2018-11-18-2.html</loc>
+<lastmod>2018-11-18T20:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -207,6 +221,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pyslvs.github.io/blog/category/xue-xi.html</loc>
+<lastmod>2018-11-18T21:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pyslvs.github.io/blog/tag/learn-python.html</loc>
+<lastmod>2018-11-18T21:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pyslvs.github.io/blog/tag/development.html</loc>
 <lastmod>2018-09-22T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -264,7 +292,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/author/yuan-chang.html</loc>
-<lastmod>2018-09-22T21:00:00+08:06</lastmod>
+<lastmod>2018-11-18T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

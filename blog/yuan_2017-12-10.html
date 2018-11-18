@@ -23,7 +23,7 @@
   <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
 
   <!-- Code highlight color scheme -->
-      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
   
     <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
@@ -95,6 +95,8 @@
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushDiff.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
@@ -220,19 +222,19 @@
 
 <h1>QIcon 透明背景繪製</h1>
 <p>使用 QImage 取代 QPixmap 可以繪製出具有透明背景的圖示或影像。</p>
-<pre class="brush: python">
-image = QImage(QSize(*rect), QImage.Format_ARGB32_Premultiplied)
-image.fill(Qt.transparent)
-painter = QPainter(image)
-painter.translate(image.width()/2, image.height()/2)
-painter.end()
-return QIcon(QPixmap.fromImage(image).scaledToWidth(width))
-</pre>
+<div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">QImage</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="o">*</span><span class="n">rect</span><span class="p">),</span> <span class="n">QImage</span><span class="o">.</span><span class="n">Format_ARGB32_Premultiplied</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">transparent</span><span class="p">)</span>
+<span class="n">painter</span> <span class="o">=</span> <span class="n">QPainter</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">painter</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">painter</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">QIcon</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">.</span><span class="n">fromImage</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">scaledToWidth</span><span class="p">(</span><span class="n">width</span><span class="p">))</span>
+</pre></div>
+
 
 <p>從 QIcon 轉為 QPixmap 可以用 <code>pixmap(size: QSize)</code> 或 <code>pixmap(w: float, h: float)</code> 方法。</p>
-<pre class="brush: python">
-listWidget.currentItem().icon().pixmap(listWidget.iconSize())
-</pre>
+<div class="highlight"><pre><span></span><span class="n">listWidget</span><span class="o">.</span><span class="n">currentItem</span><span class="p">()</span><span class="o">.</span><span class="n">icon</span><span class="p">()</span><span class="o">.</span><span class="n">pixmap</span><span class="p">(</span><span class="n">listWidget</span><span class="o">.</span><span class="n">iconSize</span><span class="p">())</span>
+</pre></div>
+
 
 <h1>Graphviz 引擎限制</h1>
 <p>NetworkX 透過 PyGraphviz 引入 Graphviz 的繪圖演算法，提供更好的節點位置在圖譜中表現。</p>
@@ -257,12 +259,12 @@ listWidget.currentItem().icon().pixmap(listWidget.iconSize())
 <p>其中較適合的為 shell，random 為隨機產生。</p>
 <p>很遺憾的是，Windows x64 的 Python 無法安裝 PyGraphviz，因此 Pyslvs 目前只有 Ubuntu 版本提供 Graphviz 引擎。</p>
 <p>而經測試，AppImage 技術由於只將 PyGraphviz 包入，端口程式庫仍然連接 Graphviz 程式庫，所以 <strong>Ubuntu 用戶必須安裝 Graphviz</strong>。</p>
-<pre class="brush: bash">
-sudo apt install graphviz
-</pre>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">graphviz</span>
+</pre></div>
+
 
 <p>以下是瓦特與史帝芬生鍊用 neato 引擎排佈的結果。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_12_10.png"></p>
+<p><img alt="" src="../data/images/17_12_10.png"></p>
             </section>
 
             <section class="post-info">

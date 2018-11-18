@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Python 複製與參照</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://pyslvs.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Full Atom Feed" />
+          <link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Categories Atom Feed" />
+
+  <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+  
+    <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="canonical" />
+
+
+        <meta name="author" content="Yuan Chang">
+
+        <meta name="tags" content="learn Python">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Pyslvs.com"/>
+<meta property="og:title" content="Python 複製與參照"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://pyslvs.github.io/blog/yuan_2018-11-18.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-11-18 21:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://pyslvs.github.io/blog/author/yuan-chang.html">
+  <meta property="article:publisher" content="https://facebook.com/myprofile" />
+<meta property="article:section" content="學習"/>
+<meta property="article:tag" content="learn Python"/>
+<meta property="og:image" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@myprofile">
+    <meta name="twitter:title" content="Python 複製與參照">
+    <meta name="twitter:url" content="https://pyslvs.github.io/blog/yuan_2018-11-18.html">
+
+        <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Python 複製與參照",
+  "headline": "Python 複製與參照",
+  "datePublished": "2018-11-18 21:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Yuan Chang",
+    "url": "https://pyslvs.github.io/blog/author/yuan-chang.html"
+  },
+  "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
+  "url": "https://pyslvs.github.io/blog/yuan_2018-11-18.html",
+  "description": ""
+}
+</script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="https://pyslvs.github.io/blog/pages/about/">About</a></li>
+
+            <li><a href="https://pyslvs.github.io/blog/archives.html">Archives</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/categories.html">Categories</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/tags.html">Tags</span></a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://pyslvs.github.io/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Python 複製與參照</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
+            | <time datetime="週日 18 十一月 2018">週日 18 十一月 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://pyslvs.github.io/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="https://pyslvs.github.io/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <!-- PELICAN_END_SUMMARY -->
+
+<p>這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。</p>
+<p>Python 的文法主要參考自 C 語言，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。</p>
+<p>請<strong>牢記</strong>以下關係：</p>
+<ul>
+<li>
+<p><a href="https://www.python.org">官方</a>提供的 Python 單機版直譯器稱為 CPython，因為<strong>該直譯器是純 C 語言編寫，達成 Python 所有功能</strong>。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 <code>__pycache__</code> 資料夾中。</p>
+</li>
+<li>
+<p>由於 Python 文法是由<a href="https://en.wikipedia.org/wiki/Regular_expression">正規表示式</a> (Regular Expression, RE) 定義的（<a href="https://docs.python.org/3/reference/expressions.html">詳見此</a>），因此<strong>理論上任何支援 RE 解析功能的程式語言都能寫成 Python 直譯器，包括 Python 本身</strong> (<a href="http://www.pypy.org">PyPy</a>)。</p>
+</li>
+</ul>
+<p>以下章節內容關於非 Python 部分可以斟酌吸收。</p>
+<h2>C 的指派</h2>
+<p>在 C 語言中，使用<strong>指派</strong>運算子來規劃記憶體存值，該符號為<strong>等於</strong>記號 <code>=</code>。</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+
+<p>上面 C 程式碼的意思為：使用最大為<strong>整數</strong> (<code>int</code>) 的記憶體空間<strong>存放</strong>數字 <code>10</code>，並且在本程式<strong>範圍</strong> (Scope) 中，這個記憶體空間的代號為 <code>a</code>。</p>
+<p>在 C 語言中<strong>記憶體空間的代號</strong>稱為<strong>變數</strong> (Variable)，透過「宣告」規定在<strong>範圍</strong>中有那些代號；「定義」可以做記憶體劃分和存值的動作。</p>
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">C 語言的單行註解使用雙斜線，多行使用斜線與星號。</span>
+<span class="cm">每「行」結尾為分號，會忽略重複空白和所有換行記號。</span>
+<span class="cm">因此，C 語言可以不用縮排、全部寫同一行，難以閱讀。</span>
+<span class="cm">*/</span>
+
+<span class="c1">// C 語言可以任意規劃「範圍」或巢狀範圍，使用大括弧即可。</span>
+<span class="p">{</span>
+    <span class="c1">// 宣告，沒有任何動作，只是給編譯器看的。</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+    <span class="c1">// 定義，規劃記憶體並存值。</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="c1">// 可以一起寫。</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="c1">// 如果巢狀範圍宣告撞名，會將外部範圍的名稱暫時「隱藏」。</span>
+    <span class="p">}</span>
+    <span class="c1">// 這裡不能用 b。</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>在宣告的範圍外，該變數會被自動刪除，以節省記憶體。因此，在 C 語言中，任何定義的動作都會花費記憶空間。「指派」的文法如下：</p>
+<div class="highlight"><pre><span></span>左值 = 右值
+</pre></div>
+
+
+<p>右值的計算結果為<strong>任意記憶體大小的值</strong>，而左值<strong>必須</strong>運算出<strong>相應大小</strong>的記憶體空間，透過指派運算子，可以將右值的值複製到左值。另外，一些運算類的指派運算子 <code>+=</code>、<code>-=</code> 等，是將計算結果存入相同記憶體位置的意思，如 <code>a += 10</code> 同於 <code>a = a + 10</code>。</p>
+<p>甚至在範圍外，也可以使用 C 語言的指標 (Pointer) 功能，攜帶記憶體空間的鑰匙，持有鑰匙，可以直接存取記憶體。以下為 C++ 語言的一個小範例。</p>
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">指標是一種變數！</span>
+
+<span class="cm">指標是一種二進位代號，代表記憶體區段的「第一個值」。</span>
+<span class="cm">指標的間隔數是該類型的空間大小，但是 C 語言中 +1 會自動幫忙跳號。</span>
+<span class="cm">*/</span>
+
+<span class="c1">// 假設有一把鑰匙（還沒定義）。</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="c1">// 使用 new 關鍵字初始化 50 個整數，並將第一把鑰匙交給 b。</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+    <span class="c1">// 將 b 鑰匙複製給 a。</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm">b 鑰匙被刪除，但是 50 個整數還在。</span>
+<span class="cm">如果剛才沒有複製給 a，會遺失 50 個整數的鑰匙，引發記憶體洩漏 (Memory leak)。</span>
+<span class="cm">*/</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// 顯示第三位整數的值（第一把鑰匙 +2）。</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// 同上，顯示第一位整數的值。</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// 使用 delete 關鍵字刪除 a 鑰匙的所有值。</span>
+</pre></div>
+
+
+<p>若不使用指標，C 語言也有參照物件，相當於取綽號：</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1">// 為 a 變數取綽號 b。</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// a = 2</span>
+</pre></div>
+
+
+<p>總結：除非特別設計，不然指派運算子都是使用<strong>複製</strong>，而非參照。</p>
+<p>上述流程是不是十分繁瑣且危險？在 Python 中，參考自其他程式語言，引入垃圾回收機制 (Garbage collection)，取代了指標和參照物件的功能。</p>
+<h2>Python 的指派</h2>
+<p>Python 的變數稱為<strong>名稱</strong> (Name)，可以視作一張<strong>範圍通行證</strong>，而非記憶體代號，已經跟 C 語言的意思不一樣了。而透過「指派」，可以發通行證給任何數值，不用管記憶體大小。<strong>一句話解釋規則</strong>：</p>
+<ul>
+<li>所有的數值會自動追蹤與管理，擁有一個或多個名稱的值<strong>可以在該作用範圍使用</strong>，失去所有名稱的值<strong>會被刪除</strong>。</li>
+</ul>
+<p>Python 的表達式 (Expression) 中有種數值稱為字面數值 (literal value)，意指寫出來就是該值，例如 <code>70</code> 的類型是 <code>int</code>；<code>(1, 2, 3)</code> 的類型是 <code>tuple</code>；<code>[1, 2, 3]</code> 的類型是 <code>list</code>；<code>{'a': 20, 'c': 80}</code> 的類型是 <code>dict</code>。不過只有部分字面數值，任何時候寫出來都<strong>永遠共享記憶體</strong>，特徵是<strong>不能改變值</strong>，所有 method 操作結果都回傳副本，不改原始值。<strong>只有</strong> <code>None</code>、<code>bool</code>、<code>int</code>、<code>float</code>、<code>complex</code>、所有字串 (string)、<code>tuple</code> 類型。</p>
+<div class="highlight"><pre><span></span><span class="c1"># 相同值的共享記憶體檢查</span>
+<span class="c1"># 用 is 運算子可以檢查是否為相同記憶體。</span>
+<span class="c1"># int</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">is</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="c1"># tuple</span>
+<span class="k">print</span><span class="p">(()</span> <span class="ow">is</span> <span class="p">())</span>  <span class="c1"># True</span>
+<span class="c1"># list</span>
+<span class="k">print</span><span class="p">([]</span> <span class="ow">is</span> <span class="p">[])</span>  <span class="c1"># False</span>
+<span class="c1"># dict</span>
+<span class="k">print</span><span class="p">({}</span> <span class="ow">is</span> <span class="p">{})</span>  <span class="c1"># False</span>
+</pre></div>
+
+
+<p>來段範例：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 發通行證 a 給數值 10。</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># 通行證 a 的持有者是 10，發通行證 b 給數值 10。</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
+
+<span class="c1"># b += 5 來自 C 語言，同於 b = b + 5。</span>
+<span class="c1"># 對通行證 b 的值做 +5 計算，並對該值發通行證 b。</span>
+<span class="c1"># 通行證 b 被拔除自 10，交給結果 15。</span>
+<span class="n">b</span> <span class="o">+=</span> <span class="mi">5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 15</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 10</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+
+
+<p>來一段容器的範例：</p>
+<div class="highlight"><pre><span></span><span class="c1"># list 容器</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True</span>
+
+<span class="c1"># 對通行證 b 的容器操作，在尾端加入 4。</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># 使用 del 關鍵字，對通行證 b 的容器操作，刪除第二位值 2。</span>
+<span class="k">del</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># [1, 3, 4]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># [1, 3, 4]</span>
+
+<span class="c1"># 幫當前的 a 值複製，重發通行證 b 給複製體。</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># 讓 a 刪除最後一項。</span>
+<span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># [1, 3]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># [1, 3, 4]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+
+
+<p>活用上述概念，可以輕鬆達成複製 (Copy) 與參照 (Reference) 功能。</p>
+<p>最後介紹範圍的規則：</p>
+<div class="highlight"><pre><span></span><span class="c1"># Python 中，唯二的範圍界線為 Function 與 Class 的定義，而非縮排。</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="c1"># 通行證 c 只有效於 func 中，回傳值計算完後通行證 c 會被移除（垃圾回收）。</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="c1"># 全域通行證 g</span>
+<span class="n">g</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+
+<span class="c1"># 主程式與 func 的範圍沒有巢狀關係。</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="c1"># a 進入 func 函數，獲得區域通行證 b。</span>
+    <span class="c1"># 回傳值 30 被丟出 func，獲得區域通行證 d。</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 30</span>
+
+    <span class="c1"># 巢狀函式有巢狀範圍界線。</span>
+    <span class="k">def</span> <span class="nf">nest_func</span><span class="p">():</span>
+        <span class="c1"># 使用 global 關鍵字指定全域通行證 g。</span>
+        <span class="k">global</span> <span class="n">g</span>
+        <span class="c1"># 全域通行證 g 重新發給 50。</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="c1"># 使用 nonlocal 關鍵字指定上層的區域通行證 d。</span>
+        <span class="n">nonlocal</span> <span class="n">d</span>
+        <span class="c1"># 上層的區域通行證 d 重新發給 20。</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="c1"># 執行巢狀函式。持有 d 的 30 被刪除；持有 g 的 &#39;abc&#39; 被刪除。</span>
+    <span class="n">nest_func</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>  <span class="c1"># 50</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 20</span>
+
+<span class="c1"># 執行 main</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Python 複製與參照&amp;url=https://pyslvs.github.io/blog/yuan_2018-11-18.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyslvs.github.io/blog/yuan_2018-11-18.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://pyslvs.github.io/blog/yuan_2018-11-18.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://pyslvs.github.io/blog/tag/learn-python.html">learn Python</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'pyslvs-com';
+                    var disqus_shortname = 'pyslvs-com';
+                    var disqus_identifier = '/yuan_2018-11-18.html';
+                    var disqus_url = 'https://pyslvs.github.io/blog/yuan_2018-11-18.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/yuan_2018-11-18.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-prev" href="https://pyslvs.github.io/blog/yuan_2018-11-18-2.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">Python 控制流程</h2>
+                            <p class="post-nav-excerpt"></p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+  
+  <script type="text/javascript" src="https://pyslvs.github.io/blog/theme/js/script.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'pyslvs-com';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+ 
+
+
+</body>
+</html>

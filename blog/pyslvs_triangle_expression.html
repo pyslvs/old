@@ -23,7 +23,7 @@
   <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
 
   <!-- Code highlight color scheme -->
-      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
   
     <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
@@ -95,6 +95,8 @@
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushDiff.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
@@ -274,71 +276,70 @@ def PLAP(A, L0, a0, B=None, inverse=False):
 </pre>
 
 <p><strong>PLLP</strong></p>
-<pre class="brush: c">
-tuple PLLP(Coordinate A, double L0, double L1, Coordinate B, bool inverse=false);
-</pre>
+<div class="highlight"><pre><span></span><span class="n">tuple</span> <span class="nf">PLLP</span><span class="p">(</span><span class="n">Coordinate</span> <span class="n">A</span><span class="p">,</span> <span class="kt">double</span> <span class="n">L0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">L1</span><span class="p">,</span> <span class="n">Coordinate</span> <span class="n">B</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">inverse</span><span class="o">=</span><span class="nb">false</span><span class="p">);</span>
+</pre></div>
 
-<pre class="brush: python">
-def PLLP(A, L0, L1, B, inverse=False):
-    """Two intersection points of two circles."""
-    dx = B.x - A.x
-    dy = B.y - A.y
-    d = A.distance(B)
 
-    #No solutions, the circles are separate.
-    if d > L0 + L1:
-        return (nan, nan)
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PLLP</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">L1</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Two intersection points of two circles.&quot;&quot;&quot;</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">A</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">A</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 
-    #No solutions because one circle is contained within the other.
-    if d < abs(L0 - L1):
-        return (nan, nan)
+    <span class="c1">#No solutions, the circles are separate.</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="n">L0</span> <span class="o">+</span> <span class="n">L1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span>
 
-    #Circles are coincident and there are an infinite number of solutions.
-    if (d == 0) and (L0 == L1):
-        return (nan, nan)
-    a = (L0*L0 - L1*L1 + d*d)/(2*d)
-    h = sqrt(L0*L0 - a*a)
-    xm = A.x + a*dx/d
-    ym = A.y + a*dy/d
+    <span class="c1">#No solutions because one circle is contained within the other.</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">L0</span> <span class="o">-</span> <span class="n">L1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span>
 
-    if inverse:
-        return (xm + h*dy/d, ym - h*dx/d)
-    else:
-        return (xm - h*dy/d, ym + h*dx/d)
-</pre>
+    <span class="c1">#Circles are coincident and there are an infinite number of solutions.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">L0</span> <span class="o">==</span> <span class="n">L1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">L0</span><span class="o">*</span><span class="n">L0</span> <span class="o">-</span> <span class="n">L1</span><span class="o">*</span><span class="n">L1</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">L0</span><span class="o">*</span><span class="n">L0</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">xm</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">dx</span><span class="o">/</span><span class="n">d</span>
+    <span class="n">ym</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">dy</span><span class="o">/</span><span class="n">d</span>
+
+    <span class="k">if</span> <span class="n">inverse</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">xm</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dy</span><span class="o">/</span><span class="n">d</span><span class="p">,</span> <span class="n">ym</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">dx</span><span class="o">/</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">xm</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">dy</span><span class="o">/</span><span class="n">d</span><span class="p">,</span> <span class="n">ym</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">dx</span><span class="o">/</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
 
 <p><strong>PLPP</strong></p>
-<pre class="brush: c">
-tuple PLPP(Coordinate A, double L0, Coordinate B, Coordinate C, bool inverse=false);
-</pre>
+<div class="highlight"><pre><span></span><span class="n">tuple</span> <span class="nf">PLPP</span><span class="p">(</span><span class="n">Coordinate</span> <span class="n">A</span><span class="p">,</span> <span class="kt">double</span> <span class="n">L0</span><span class="p">,</span> <span class="n">Coordinate</span> <span class="n">B</span><span class="p">,</span> <span class="n">Coordinate</span> <span class="n">C</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">inverse</span><span class="o">=</span><span class="nb">false</span><span class="p">);</span>
+</pre></div>
 
-<pre class="brush: python">
-def PLAP(A, L0, B, C, inverse=False):
-    """Two intersection points of a line and a circle."""
-    line_mag = B.distance(C)
-    dx = C.x - B.x
-    dy = C.y - B.y
-    u = ((A.x - B.x)*dx + (A.y - B.y)*dy) / (line_mag*line_mag)
-    I = Coordinate(B.x + u*dx, B.y + u*dy)
 
-    #Test distance between point A and intersection.
-    d = A.distance(I)
-    if d > L0:
-        #No intersection.
-        return (nan, nan)
-    elif d == L0:
-        #One intersection point.
-        return (I.x, I.y)
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PLAP</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">L0</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Two intersection points of a line and a circle.&quot;&quot;&quot;</span>
+    <span class="n">line_mag</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">B</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">B</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">B</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">B</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">dy</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">line_mag</span><span class="o">*</span><span class="n">line_mag</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">Coordinate</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">u</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">u</span><span class="o">*</span><span class="n">dy</span><span class="p">)</span>
 
-    #Two intersection points.
-    d = sqrt(L0*L0 - d*d) / line_mag
-    dx *= d
-    dy *= d
-    if inverse:
-        return (I.x - dx, I.y - dy)
-    else:
-        return (I.x + dx, I.y + dy)
-</pre>
+    <span class="c1">#Test distance between point A and intersection.</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="n">L0</span><span class="p">:</span>
+        <span class="c1">#No intersection.</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">d</span> <span class="o">==</span> <span class="n">L0</span><span class="p">:</span>
+        <span class="c1">#One intersection point.</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="c1">#Two intersection points.</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">L0</span><span class="o">*</span><span class="n">L0</span> <span class="o">-</span> <span class="n">d</span><span class="o">*</span><span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">line_mag</span>
+    <span class="n">dx</span> <span class="o">*=</span> <span class="n">d</span>
+    <span class="n">dy</span> <span class="o">*=</span> <span class="n">d</span>
+    <span class="k">if</span> <span class="n">inverse</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">dx</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">dy</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span>
+</pre></div>
             </section>
 
             <section class="post-info">
