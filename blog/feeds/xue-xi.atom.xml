@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 學習</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-11-18T21:00:00+08:00</updated><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 學習</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-11-18T21:00:00+08:00</updated><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 
-&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
+
 &lt;p&gt;Python 的文法主要參考自 C 語言，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。&lt;/p&gt;
 &lt;p&gt;請&lt;strong&gt;牢記&lt;/strong&gt;以下關係：&lt;/p&gt;
 &lt;ul&gt;
@@ -182,9 +183,10 @@
 
 &lt;span class="c1"&gt;# 執行 main&lt;/span&gt;
 &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="learn Python"></category></entry><entry><title>Python 控制流程</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18-2.html" rel="alternate"></link><published>2018-11-18T20:00:00+08:00</published><updated>2018-11-18T20:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18-2.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="learn Python"></category></entry><entry><title>Python 控制流程</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18-2.html" rel="alternate"></link><published>2018-11-18T20:00:00+08:00</published><updated>2018-11-18T20:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18-2.html</id><summary type="html">&lt;p&gt;請學員從下列圖片中的控制流程方法對應 Python 中的語法。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;請學員從下列圖片中的控制流程方法對應 Python 中的語法。&lt;/p&gt;
 
-&lt;p&gt;請學員從下列圖片中的控制流程方法對應 Python 中的語法。&lt;/p&gt;
+
 &lt;p&gt;&lt;img alt="condition" src="../data/images/condition.png"&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Condition statement&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;condition_1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
