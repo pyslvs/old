@@ -17,7 +17,7 @@ RELATIVE_URLS = False
 
 THEME = 'theme/attila'
 BOOTSTRAP_THEME = 'united'
-COLOR_SCHEME_CSS = 'darkly.css'
+COLOR_SCHEME_CSS = 'github.css'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
