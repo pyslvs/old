@@ -20,7 +20,7 @@
 
 
 &lt;p&gt;上面 C 程式碼的意思為：使用最大為&lt;strong&gt;整數&lt;/strong&gt; (&lt;code&gt;int&lt;/code&gt;) 的記憶體空間&lt;strong&gt;存放&lt;/strong&gt;數字 &lt;code&gt;10&lt;/code&gt;，並且在本程式&lt;strong&gt;範圍&lt;/strong&gt; (Scope) 中，這個記憶體空間的代號為 &lt;code&gt;a&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;在 C 語言中&lt;strong&gt;記憶體空間的代號&lt;/strong&gt;稱為&lt;strong&gt;變數&lt;/strong&gt; (Variable)，透過「宣告」規定在&lt;strong&gt;範圍&lt;/strong&gt;中有那些代號；「定義」可以做記憶體劃分和存值的動作。&lt;/p&gt;
+&lt;p&gt;在 C 語言中&lt;strong&gt;記憶體空間的代號&lt;/strong&gt;稱為&lt;strong&gt;變數&lt;/strong&gt; (Variable)，透過「宣告」規定在&lt;strong&gt;範圍&lt;/strong&gt;中有哪些代號；「定義」可以做記憶體劃分和存值的動作。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
 &lt;span class="cm"&gt;C 語言的單行註解使用雙斜線，多行使用斜線與星號。&lt;/span&gt;
 &lt;span class="cm"&gt;每「行」結尾為分號，會忽略重複空白和所有換行記號。&lt;/span&gt;
