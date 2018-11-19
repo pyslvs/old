@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Python 物件導向</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://pyslvs.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://pyslvs.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Full Atom Feed" />
+          <link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" type="application/atom+xml" rel="alternate" title="Pyslvs.com Categories Atom Feed" />
+
+  <link href="https://pyslvs.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://pyslvs.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+  
+    <link href="https://pyslvs.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="https://pyslvs.github.io/blog/yuan_2018-11-19.html" rel="canonical" />
+
+        <meta name="description" content="請學員瞭解關於物件導向的概念及特性。">
+
+        <meta name="author" content="Yuan Chang">
+
+        <meta name="tags" content="learn Python">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Pyslvs.com"/>
+<meta property="og:title" content="Python 物件導向"/>
+<meta property="og:description" content="請學員瞭解關於物件導向的概念及特性。"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://pyslvs.github.io/blog/yuan_2018-11-19.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-11-19 21:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://pyslvs.github.io/blog/author/yuan-chang.html">
+  <meta property="article:publisher" content="https://facebook.com/myprofile" />
+<meta property="article:section" content="學習"/>
+<meta property="article:tag" content="learn Python"/>
+<meta property="og:image" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@myprofile">
+    <meta name="twitter:title" content="Python 物件導向">
+    <meta name="twitter:url" content="https://pyslvs.github.io/blog/yuan_2018-11-19.html">
+
+        <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="請學員瞭解關於物件導向的概念及特性。">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Python 物件導向",
+  "headline": "Python 物件導向",
+  "datePublished": "2018-11-19 21:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Yuan Chang",
+    "url": "https://pyslvs.github.io/blog/author/yuan-chang.html"
+  },
+  "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
+  "url": "https://pyslvs.github.io/blog/yuan_2018-11-19.html",
+  "description": "請學員瞭解關於物件導向的概念及特性。"
+}
+</script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="https://pyslvs.github.io/blog/pages/about/">About</a></li>
+
+            <li><a href="https://pyslvs.github.io/blog/archives.html">Archives</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/categories.html">Categories</span></a></li>
+            
+            <li><a href="https://pyslvs.github.io/blog/tags.html">Tags</span></a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://pyslvs.github.io/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Python 物件導向</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://pyslvs.github.io/blog/author/yuan-chang.html">Yuan Chang</a>
+            | <time datetime="週一 19 十一月 2018">週一 19 十一月 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://pyslvs.github.io/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="https://pyslvs.github.io/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>請學員瞭解關於物件導向的概念及特性。</p>
+
+
+<h2>非物件導向</h2>
+<p>名詞解釋：</p>
+<ul>
+<li>變數 (Variable)：代表儲存一個或多個的<strong>單一資料</strong>或<strong>資料集</strong>，能夠被<strong>定義</strong> (Define) 與<strong>引用</strong> (Reference)。</li>
+<li>函式 (Function)：封裝的程式碼（在程式中定義），以能在特定需求時<strong>輸入</strong>資料與<strong>輸出</strong>結果。</li>
+</ul>
+<p>通常物件導向的程式語言會比較高階，也能夠支援非物件導向的操作。不過有些特例如 C# 語言，所有程式碼必須在物件導向概念中實現，非物件導向的實作則是「靜態函式」對應一般函式；「靜態類別」對應模組 (Module)，甚至連進入點 (Entry point) 都必須在類別中。</p>
+<h2>物件導向</h2>
+<p>名詞解釋：</p>
+<ul>
+<li>類別 / 類型 (Class)：定義<strong>資料形式</strong>與<strong>資料操作</strong>。</li>
+<li>物件 (Object)：是<strong>類別</strong>的<strong>實例</strong> (Instance)，可以被變數儲存。</li>
+</ul>
+<p>在擁有物件導向的程式語言中，<strong>函式也是一種物件</strong>，並且有自己的類別，如<a href="https://en.wikipedia.org/wiki/Anonymous_function">匿名函式</a> (Anonymous function, Function literal, Lambda expression)。</p>
+<p>程式中若要獲得物件，是<strong>由類別產生</strong>，或使用字面表示式 (Literal expression)。而某些能夠支援更抽象概念的程式語言中，類別也是一種物件，因此類別也有自己的類別，稱為<strong>元類</strong> (Meta Class)，如 Python。</p>
+<p>類別有以下特性：</p>
+<ul>
+<li>封裝性 (Encapsulation)：可以<strong>攜帶各種資料或資料集</strong>，並且由於物件是實例的關係，每個物件是獨立個體，其資料可以有著不同的內容。</li>
+<li>繼承 (Inheritance)：定義簡單的類別後，較複雜的類別可以從簡單的類別<strong>提取其功能</strong>。</li>
+<li>多形 (Polymorphism)：<strong>不同類別</strong>可能會有<strong>相同操作</strong>。程式碼在使用該物件時，<strong>強型別</strong>的程式語言（如 C++）必須特別規範，<strong>弱型別</strong>的程式語言（如 Python）會嘗試尋找並進行該操作。</li>
+<li>抽象性 (Abstraction)：</li>
+</ul>
+<p>以下將示範 Python 程式碼中如何呈現各種特性。</p>
+<h3>封裝性</h3>
+<p>Python 的基本類型定義語法如下：</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;定義 my class。&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;初始化函式。</span>
+<span class="sd">        類別中的 function 稱為方法 (Method)，</span>
+<span class="sd">        其中第一項參數 self 代表此物件。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;初始化！&quot;</span><span class="p">)</span>
+        <span class="c1"># 類別中的變數稱為屬性 (Attribute)。</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+        <span class="c1"># 私有屬性名稱前加上雙底線。</span>
+        <span class="c1"># 名稱會被編碼為 &quot;_MyClass__score&quot;。</span>
+        <span class="c1"># 除非用上述名稱呼叫，</span>
+        <span class="c1"># 只有本類別的 method 可以呼叫。</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">10</span>
+
+    <span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;一個公開的 method，</span>
+<span class="sd">        任何使用本物件的程式都可以呼叫。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;method 1:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__score</span><span class="p">)</span>
+        <span class="c1"># 呼叫一個私有 method。</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__method2</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__method2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;一個私有的 method。&quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;method 2:&quot;</span><span class="p">,</span> <span class="n">p0</span><span class="p">)</span>
+
+<span class="c1"># 初始化一個 MyClass 實例。</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># 初始化！</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>  <span class="c1"># 50</span>
+<span class="c1"># 強迫呼叫</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">_MyClass__score</span><span class="p">)</span>  <span class="c1"># 60</span>
+<span class="n">a</span><span class="o">.</span><span class="n">method1</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># method 1: 60</span>
+               <span class="c1"># method 2: 20</span>
+<span class="c1"># 強迫呼叫</span>
+<span class="n">a</span><span class="o">.</span><span class="n">_MyClass__method2</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># method 2: 30</span>
+</pre></div>
+
+
+<p>上面的類型中，呈現了封裝性的效果，一個 <code>MyClass</code> 物件中擁有公有與私有的 attribute 與 method，當使用 <code>a</code> 名稱傳送此物件時，隨時可以使用公開 attribute 與 method。</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Python 物件導向&amp;url=https://pyslvs.github.io/blog/yuan_2018-11-19.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyslvs.github.io/blog/yuan_2018-11-19.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://pyslvs.github.io/blog/yuan_2018-11-19.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://pyslvs.github.io/blog/tag/learn-python.html">learn Python</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'pyslvs-com';
+                    var disqus_shortname = 'pyslvs-com';
+                    var disqus_identifier = '/yuan_2018-11-19.html';
+                    var disqus_url = 'https://pyslvs.github.io/blog/yuan_2018-11-19.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/yuan_2018-11-19.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-prev" href="https://pyslvs.github.io/blog/yuan_2018-11-18.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">Python 複製與參照</h2>
+                            <p class="post-nav-excerpt">這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+  
+  <script type="text/javascript" src="https://pyslvs.github.io/blog/theme/js/script.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'pyslvs-com';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+ 
+
+
+</body>
+</html>

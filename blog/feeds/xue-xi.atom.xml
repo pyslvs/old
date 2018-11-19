@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 學習</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-11-18T21:00:00+08:00</updated><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 學習</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/xue-xi.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-11-19T21:00:00+08:00</updated><entry><title>Python 物件導向</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19.html" rel="alternate"></link><published>2018-11-19T21:00:00+08:00</published><updated>2018-11-19T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19.html</id><summary type="html">&lt;p&gt;請學員瞭解關於物件導向的概念及特性。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;請學員瞭解關於物件導向的概念及特性。&lt;/p&gt;
+
+
+&lt;h2&gt;非物件導向&lt;/h2&gt;
+&lt;p&gt;名詞解釋：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;變數 (Variable)：代表儲存一個或多個的&lt;strong&gt;單一資料&lt;/strong&gt;或&lt;strong&gt;資料集&lt;/strong&gt;，能夠被&lt;strong&gt;定義&lt;/strong&gt; (Define) 與&lt;strong&gt;引用&lt;/strong&gt; (Reference)。&lt;/li&gt;
+&lt;li&gt;函式 (Function)：封裝的程式碼（在程式中定義），以能在特定需求時&lt;strong&gt;輸入&lt;/strong&gt;資料與&lt;strong&gt;輸出&lt;/strong&gt;結果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通常物件導向的程式語言會比較高階，也能夠支援非物件導向的操作。不過有些特例如 C# 語言，所有程式碼必須在物件導向概念中實現，非物件導向的實作則是「靜態函式」對應一般函式；「靜態類別」對應模組 (Module)，甚至連進入點 (Entry point) 都必須在類別中。&lt;/p&gt;
+&lt;h2&gt;物件導向&lt;/h2&gt;
+&lt;p&gt;名詞解釋：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;類別 / 類型 (Class)：定義&lt;strong&gt;資料形式&lt;/strong&gt;與&lt;strong&gt;資料操作&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;物件 (Object)：是&lt;strong&gt;類別&lt;/strong&gt;的&lt;strong&gt;實例&lt;/strong&gt; (Instance)，可以被變數儲存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在擁有物件導向的程式語言中，&lt;strong&gt;函式也是一種物件&lt;/strong&gt;，並且有自己的類別，如&lt;a href="https://en.wikipedia.org/wiki/Anonymous_function"&gt;匿名函式&lt;/a&gt; (Anonymous function, Function literal, Lambda expression)。&lt;/p&gt;
+&lt;p&gt;程式中若要獲得物件，是&lt;strong&gt;由類別產生&lt;/strong&gt;，或使用字面表示式 (Literal expression)。而某些能夠支援更抽象概念的程式語言中，類別也是一種物件，因此類別也有自己的類別，稱為&lt;strong&gt;元類&lt;/strong&gt; (Meta Class)，如 Python。&lt;/p&gt;
+&lt;p&gt;類別有以下特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;封裝性 (Encapsulation)：可以&lt;strong&gt;攜帶各種資料或資料集&lt;/strong&gt;，並且由於物件是實例的關係，每個物件是獨立個體，其資料可以有著不同的內容。&lt;/li&gt;
+&lt;li&gt;繼承 (Inheritance)：定義簡單的類別後，較複雜的類別可以從簡單的類別&lt;strong&gt;提取其功能&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;多形 (Polymorphism)：&lt;strong&gt;不同類別&lt;/strong&gt;可能會有&lt;strong&gt;相同操作&lt;/strong&gt;。程式碼在使用該物件時，&lt;strong&gt;強型別&lt;/strong&gt;的程式語言（如 C++）必須特別規範，&lt;strong&gt;弱型別&lt;/strong&gt;的程式語言（如 Python）會嘗試尋找並進行該操作。&lt;/li&gt;
+&lt;li&gt;抽象性 (Abstraction)：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下將示範 Python 程式碼中如何呈現各種特性。&lt;/p&gt;
+&lt;h3&gt;封裝性&lt;/h3&gt;
+&lt;p&gt;Python 的基本類型定義語法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;定義 my class。&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;初始化函式。&lt;/span&gt;
+&lt;span class="sd"&gt;        類別中的 function 稱為方法 (Method)，&lt;/span&gt;
+&lt;span class="sd"&gt;        其中第一項參數 self 代表此物件。&lt;/span&gt;
+&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;初始化！&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c1"&gt;# 類別中的變數稱為屬性 (Attribute)。&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;score&lt;/span&gt;
+        &lt;span class="c1"&gt;# 私有屬性名稱前加上雙底線。&lt;/span&gt;
+        &lt;span class="c1"&gt;# 名稱會被編碼為 &amp;quot;_MyClass__score&amp;quot;。&lt;/span&gt;
+        &lt;span class="c1"&gt;# 除非用上述名稱呼叫，&lt;/span&gt;
+        &lt;span class="c1"&gt;# 只有本類別的 method 可以呼叫。&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;score&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;method1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;一個公開的 method，&lt;/span&gt;
+&lt;span class="sd"&gt;        任何使用本物件的程式都可以呼叫。&lt;/span&gt;
+&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;method 1:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__score&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c1"&gt;# 呼叫一個私有 method。&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__method2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__method2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;一個私有的 method。&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;method 2:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 初始化一個 MyClass 實例。&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MyClass&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 初始化！&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 50&lt;/span&gt;
+&lt;span class="c1"&gt;# 強迫呼叫&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_MyClass__score&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 60&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# method 1: 60&lt;/span&gt;
+               &lt;span class="c1"&gt;# method 2: 20&lt;/span&gt;
+&lt;span class="c1"&gt;# 強迫呼叫&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_MyClass__method2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# method 2: 30&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;上面的類型中，呈現了封裝性的效果，一個 &lt;code&gt;MyClass&lt;/code&gt; 物件中擁有公有與私有的 attribute 與 method，當使用 &lt;code&gt;a&lt;/code&gt; 名稱傳送此物件時，隨時可以使用公開 attribute 與 method。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 
 
@@ -150,7 +221,8 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Python 中，唯二的範圍界線為 Function 與 Class 的定義，而非縮排。&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="c1"&gt;# 通行證 c 只有效於 func 中，回傳值計算完後通行證 c 會被移除（垃圾回收）。&lt;/span&gt;
+    &lt;span class="c1"&gt;# 通行證 c 只有效於 func 中。&lt;/span&gt;
+    &lt;span class="c1"&gt;# 回傳值計算完後通行證 c 會被移除（垃圾回收）。&lt;/span&gt;
     &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;
 
@@ -234,7 +306,7 @@
 &lt;p&gt;&lt;img alt="function" src="../data/images/function.png"&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Define a function &amp;#39;func&amp;#39;.&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# Copy &amp;#39;a&amp;#39; and turn it to a integer, and save it to &amp;#39;c&amp;#39;.&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# Copy &amp;#39;a&amp;#39; and turn it to an integer, and save it to &amp;#39;c&amp;#39;.&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;# If &amp;#39;c&amp;#39; is over 30, set it to 30.&lt;/span&gt;
        &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;  &lt;span class="c1"&gt;# Return a value that obtained by &amp;#39;b&amp;#39; minus with &amp;#39;c&amp;#39;.&lt;/span&gt;
