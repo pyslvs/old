@@ -13,7 +13,7 @@
 &lt;h2&gt;物件導向&lt;/h2&gt;
 &lt;p&gt;名詞解釋：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;類別 / 類型 (Class)：定義&lt;strong&gt;資料形式&lt;/strong&gt;與&lt;strong&gt;資料操作&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;類別 / 類型 / 型別 (Class)：定義&lt;strong&gt;資料形式&lt;/strong&gt;與&lt;strong&gt;資料操作&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;物件 (Object)：是&lt;strong&gt;類別&lt;/strong&gt;的&lt;strong&gt;實例&lt;/strong&gt; (Instance)，可以被變數儲存。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在擁有物件導向的程式語言中，&lt;strong&gt;函式也是一種物件&lt;/strong&gt;，並且有自己的類別，如&lt;a href="https://en.wikipedia.org/wiki/Anonymous_function"&gt;匿名函式&lt;/a&gt; (Anonymous function, Function literal, Lambda expression)。&lt;/p&gt;
@@ -70,7 +70,115 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;上面的類型中，呈現了封裝性的效果，一個 &lt;code&gt;MyClass&lt;/code&gt; 物件中擁有公有與私有的 attribute 與 method，當使用 &lt;code&gt;a&lt;/code&gt; 名稱傳送此物件時，隨時可以使用公開 attribute 與 method。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
+&lt;p&gt;上面的類型中，呈現了封裝性的效果，一個 &lt;code&gt;MyClass&lt;/code&gt; 物件中擁有公有與私有的 attribute 與 method，當使用 &lt;code&gt;a&lt;/code&gt; 名稱傳送此物件時，隨時可以使用公開 attribute 與 method。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 簽章</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19-2.html" rel="alternate"></link><published>2018-11-19T20:00:00+08:00</published><updated>2018-11-19T20:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19-2.html</id><summary type="html">&lt;p&gt;學習辨認 Python 與 C / C++ 的函式呼叫方式。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;學習辨認 Python 與 C / C++ 的函式呼叫方式。&lt;/p&gt;
+
+
+&lt;h2&gt;簽章&lt;/h2&gt;
+&lt;p&gt;函式 (Function) 能在特定需求時&lt;strong&gt;輸入&lt;/strong&gt;資料與&lt;strong&gt;輸出&lt;/strong&gt;結果，輸入與輸出值稱為&lt;strong&gt;參數&lt;/strong&gt; (Argument)。&lt;/p&gt;
+&lt;p&gt;以強型別程式語言 C 來說，一個輸入 3 個參數，輸出 1 個參數的函式是這樣宣告的：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是 Python 沒有類型標示，因此函式會如此定義：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;函式 &lt;code&gt;func&lt;/code&gt; 的輸入與輸出類型（如「輸入 3 個參數、輸出 1 個參數」），稱為&lt;strong&gt;簽章&lt;/strong&gt; (Signature)。&lt;/p&gt;
+&lt;p&gt;Python 是弱型別語言，簽章只有強制規定參數&lt;strong&gt;數量&lt;/strong&gt;，而沒有規定參數類型。&lt;/p&gt;
+&lt;p&gt;另外，單一化的輸入需求不足以滿足函式應用範圍，而產生&lt;strong&gt;多載&lt;/strong&gt; (Overload) 的功能，以支援不同選項、不同類型的輸入。以強型別程式語言 C++ 為例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 注意：C 語言不支援多載。&lt;/span&gt;
+&lt;span class="c1"&gt;// C++ 多載宣告，編譯時會依照簽章自動生成四種函式。&lt;/span&gt;
+&lt;span class="c1"&gt;// 預設值也算是一種多載。&lt;/span&gt;
+&lt;span class="c1"&gt;// 撰寫程式時只需要寫 func 即可。&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// 會需要寫轉換型別的接繞函式。&lt;/span&gt;
+    &lt;span class="c1"&gt;// 如果簽章搞錯，會造成無限遞迴 (Recursive)。&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// 會需要調整設定。&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;上面的例子中，為了支援強型別的標記，函式必須製作多種不同類型的簽章，若有更多需求，則必須使用模板 (Template)：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 模板宣告，編譯時會自動生成多載簽章。&lt;/span&gt;
+&lt;span class="k"&gt;template&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;typename&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;// 如果要支援其他參數，又要混合多載。&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在 Python 中，&lt;strong&gt;沒有多載&lt;/strong&gt;、&lt;strong&gt;沒有模板&lt;/strong&gt;、&lt;strong&gt;沒有型別要求&lt;/strong&gt;，因此大幅簡化定義。唯一要解決的問題是滿足參數數量的變化。&lt;/p&gt;
+&lt;h3&gt;預設值&lt;/h3&gt;
+&lt;p&gt;預設值只能從最後開始使用等於 &lt;code&gt;=&lt;/code&gt; 符號&lt;strong&gt;連續&lt;/strong&gt;定義，不可以隨意指定其中的參數。&lt;/p&gt;
+&lt;p&gt;在呼叫時使用 &lt;code&gt;=&lt;/code&gt; 符號為&lt;strong&gt;關鍵字參數&lt;/strong&gt;，與定義時相同，只能從最後開始&lt;strong&gt;連續&lt;/strong&gt;填入。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 可以這樣使用：&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 全部填滿。&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 使用部分預設值。&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 名稱對應，使用部分預設值。&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 全部使用預設值。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;強制名稱對應&lt;/h3&gt;
+&lt;p&gt;使用特殊符號 &lt;code&gt;*&lt;/code&gt;，其後所有參數不分順序，強制使用名稱對應。如果有參數沒有填入或沒有預設值，會引發錯誤。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 可以這樣使用：&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 全部填滿。&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 名稱對應，全部使用預設值。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;順序收集與對應收集&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用星號 &lt;code&gt;*&lt;/code&gt;，該變數會收集多餘填入的&lt;strong&gt;位置參數&lt;/strong&gt; (Positional argument)。多餘的參數會收集成 &lt;code&gt;tuple&lt;/code&gt; 容器，若沒有多餘參數，該參數會是空的 &lt;code&gt;tuple&lt;/code&gt; 容器。&lt;/li&gt;
+&lt;li&gt;使用雙星號 &lt;code&gt;**&lt;/code&gt;，該變數會收集多餘填入的&lt;strong&gt;關鍵字參數&lt;/strong&gt; (Keyword argument)。多餘的參數會收集成 &lt;code&gt;dict&lt;/code&gt; 容器，若沒有多餘參數，該參數會是空的 &lt;code&gt;dict&lt;/code&gt; 容器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;兩者可以擇一或混合使用，但是定義時單星號參數一定要在前面，其後所有參數不分順序。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;p3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 可以這樣使用：&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p4&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 全部填滿。&lt;/span&gt;
+&lt;span class="c1"&gt;# p2 = ()&lt;/span&gt;
+&lt;span class="c1"&gt;# p3 = {}&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p4&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 全部使用預設值。&lt;/span&gt;
+&lt;span class="c1"&gt;# p2 = ()&lt;/span&gt;
+&lt;span class="c1"&gt;# p3 = {}&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p4&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 多餘值。&lt;/span&gt;
+&lt;span class="c1"&gt;# p2 = (b1, b2)&lt;/span&gt;
+&lt;span class="c1"&gt;# p3 = {&amp;#39;r&amp;#39;: b3, &amp;#39;s&amp;#39;: b4}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;針對「順序容器（如 &lt;code&gt;tuple&lt;/code&gt;、&lt;code&gt;list&lt;/code&gt;）」或「成對容器（如 &lt;code&gt;dict&lt;/code&gt;）」，填入時可以用 &lt;code&gt;*&lt;/code&gt;、&lt;code&gt;**&lt;/code&gt; 按關係填入。不過不符合簽章仍然會引發錯誤，應當注意。如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;b3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;s&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;b4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;p4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="c1"&gt;# 或用變數：&lt;/span&gt;
+&lt;span class="n"&gt;a_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;a1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;b_dict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;b3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;p4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a_list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;b_dict&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="learn Python"></category></entry><entry><title>Python 類型註解</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html" rel="alternate"></link><published>2018-11-19T19:00:00+08:00</published><updated>2018-11-19T19:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19-3.html</id><summary type="html">&lt;p&gt;基於協同開發，Python 引入了選擇性的類型註解。&lt;/p&gt;
+&lt;p&gt;學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;基於協同開發，Python 引入了選擇性的類型註解。&lt;/p&gt;
+&lt;p&gt;學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。&lt;/p&gt;
+
+
+&lt;h2&gt;類型註解&lt;/h2&gt;
+&lt;p&gt;類型註解 (Typing) 是一種&lt;strong&gt;註解&lt;/strong&gt;，可以為每種參數進行標示。由於文法問題，類型註解並不是強迫性的，不過仍有效用。可藉由每個範圍 (Scope) 的 &lt;code&gt;__annotations__&lt;/code&gt; 名稱取得，若有工具或 IDE 的功能，可以進行靜態分析。&lt;/p&gt;
+&lt;p&gt;根據 &lt;a href="https://www.python.org/dev/peps/pep-0484/"&gt;PEP 484&lt;/a&gt; 的內容，類型註解物件可以自行製作和定義，但是本節只會將常用容器列出。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 
 
