@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pyslvs.github.io/blog/</loc>
-<lastmod>2018-11-19T13:25:46-00:00</lastmod>
+<lastmod>2018-11-19T16:27:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/archives.html</loc>
-<lastmod>2018-11-19T13:25:46-00:00</lastmod>
+<lastmod>2018-11-19T16:27:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/tags.html</loc>
-<lastmod>2018-11-19T13:25:46-00:00</lastmod>
+<lastmod>2018-11-19T16:27:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/categories.html</loc>
-<lastmod>2018-11-19T13:25:46-00:00</lastmod>
+<lastmod>2018-11-19T16:27:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pyslvs.github.io/blog/pages/about/</loc>
-<lastmod>2018-09-13T12:48:51+08:00</lastmod>
+<lastmod>2018-09-22T18:51:35+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
