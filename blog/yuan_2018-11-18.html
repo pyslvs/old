@@ -213,11 +213,11 @@
                 <p>這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。</p>
 
 
-<p>Python 的文法主要參考自 C 語言，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。</p>
+<p>Python 的設計構想源自 <a href="https://en.wikipedia.org/wiki/ABC_(programming_language)">ABC</a>[<a href="https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place">1</a>]，採越位規格 (<a href="https://en.wikipedia.org/wiki/Off-side_rule">off-side rule</a>) 分隔程式區段，其表達式語法 (expression syntax)  與 C 語言類似[<a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=55E61F6DF3941177AB9945E14E0B5FAD?doi=10.1.1.38.2023&amp;rep=rep1&amp;type=pdf">2</a>]，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。</p>
 <p>請<strong>牢記</strong>以下關係：</p>
 <ul>
 <li>
-<p><a href="https://www.python.org">官方</a>提供的 Python 單機版直譯器稱為 CPython，因為<strong>該直譯器是純 C 語言編寫，達成 Python 所有功能</strong>。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 <code>__pycache__</code> 資料夾中。</p>
+<p><a href="https://www.python.org">官方</a>提供的 Python 單機版直譯器稱為 CPython，因為<strong>該直譯器是純 C 語言編寫，達成 Python 所有功能</strong>。除了 CPython 外，還有以 Java 編寫的 <a href="https://github.com/jythontools/jython">Jython</a>，以 .net 技術編寫的 <a href="http://ironpython.net/">Ironpython</a>，以 Python 編寫的 <a href="https://pypy.org/">PyPy</a>, 以 Javascript 編寫的 <a href="https://brython.info/">Brython</a>，進階版的 <a href="https://github.com/stackless-dev/stackless">Stackless Python</a> 以及專用於微控制器的 <a href="https://github.com/micropython/micropython">Micropython</a> 等。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 <code>__pycache__</code> 資料夾中。</p>
 </li>
 <li>
 <p>由於 Python 文法是由<a href="https://en.wikipedia.org/wiki/Regular_expression">正規表示式</a> (Regular Expression, RE) 定義的（<a href="https://docs.python.org/3/reference/expressions.html">詳見此</a>），因此<strong>理論上任何支援 RE 解析功能的程式語言都能寫成 Python 直譯器，包括 Python 本身</strong> (<a href="http://www.pypy.org">PyPy</a>)。</p>

@@ -74,11 +74,11 @@
 </summary><content type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 
 
-&lt;p&gt;Python 的文法主要參考自 C 語言，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。&lt;/p&gt;
+&lt;p&gt;Python 的設計構想源自 &lt;a href="https://en.wikipedia.org/wiki/ABC_(programming_language)"&gt;ABC&lt;/a&gt;[&lt;a href="https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place"&gt;1&lt;/a&gt;]，採越位規格 (&lt;a href="https://en.wikipedia.org/wiki/Off-side_rule"&gt;off-side rule&lt;/a&gt;) 分隔程式區段，其表達式語法 (expression syntax)  與 C 語言類似[&lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=55E61F6DF3941177AB9945E14E0B5FAD?doi=10.1.1.38.2023&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;2&lt;/a&gt;]，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。&lt;/p&gt;
 &lt;p&gt;請&lt;strong&gt;牢記&lt;/strong&gt;以下關係：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.python.org"&gt;官方&lt;/a&gt;提供的 Python 單機版直譯器稱為 CPython，因為&lt;strong&gt;該直譯器是純 C 語言編寫，達成 Python 所有功能&lt;/strong&gt;。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 &lt;code&gt;__pycache__&lt;/code&gt; 資料夾中。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.python.org"&gt;官方&lt;/a&gt;提供的 Python 單機版直譯器稱為 CPython，因為&lt;strong&gt;該直譯器是純 C 語言編寫，達成 Python 所有功能&lt;/strong&gt;。除了 CPython 外，還有以 Java 編寫的 &lt;a href="https://github.com/jythontools/jython"&gt;Jython&lt;/a&gt;，以 .net 技術編寫的 &lt;a href="http://ironpython.net/"&gt;Ironpython&lt;/a&gt;，以 Python 編寫的 &lt;a href="https://pypy.org/"&gt;PyPy&lt;/a&gt;, 以 Javascript 編寫的 &lt;a href="https://brython.info/"&gt;Brython&lt;/a&gt;，進階版的 &lt;a href="https://github.com/stackless-dev/stackless"&gt;Stackless Python&lt;/a&gt; 以及專用於微控制器的 &lt;a href="https://github.com/micropython/micropython"&gt;Micropython&lt;/a&gt; 等。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 &lt;code&gt;__pycache__&lt;/code&gt; 資料夾中。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;由於 Python 文法是由&lt;a href="https://en.wikipedia.org/wiki/Regular_expression"&gt;正規表示式&lt;/a&gt; (Regular Expression, RE) 定義的（&lt;a href="https://docs.python.org/3/reference/expressions.html"&gt;詳見此&lt;/a&gt;），因此&lt;strong&gt;理論上任何支援 RE 解析功能的程式語言都能寫成 Python 直譯器，包括 Python 本身&lt;/strong&gt; (&lt;a href="http://www.pypy.org"&gt;PyPy&lt;/a&gt;)。&lt;/p&gt;
