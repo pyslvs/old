@@ -42,7 +42,7 @@
 
     <link href="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html" rel="canonical" />
 
-        <meta name="description" content="基於協同開發，Python 引入了選擇性的類型註解。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
+        <meta name="description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
 
         <meta name="author" content="Yuan Chang">
 
@@ -54,7 +54,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Pyslvs.com"/>
 <meta property="og:title" content="Python 類型註解"/>
-<meta property="og:description" content="基於協同開發，Python 引入了選擇性的類型註解。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"/>
+<meta property="og:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html"/>
 <meta property="og:type" content="article"/>
@@ -74,7 +74,7 @@
 
         <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
 
-      <meta name="twitter:description" content="基於協同開發，Python 引入了選擇性的類型註解。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
+      <meta name="twitter:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
 
 <script type="application/ld+json">
 {
@@ -91,7 +91,7 @@
   },
   "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
   "url": "https://pyslvs.github.io/blog/yuan_2018-11-19-3.html",
-  "description": "基於協同開發，Python 引入了選擇性的類型註解。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"
+  "description": "基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
@@ -211,12 +211,49 @@
         <div class="inner">
             <section class="post-content">
                 <p>基於協同開發，Python 引入了選擇性的類型註解。</p>
+<p>建議先看過<strong>物件導向概念</strong>與<strong>簽章</strong>。</p>
 <p>學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。</p>
 
 
 <h2>類型註解</h2>
 <p>類型註解 (Typing) 是一種<strong>註解</strong>，可以為每種參數進行標示。由於文法問題，類型註解並不是強迫性的，不過仍有效用。可藉由每個範圍 (Scope) 的 <code>__annotations__</code> 名稱取得，若有工具或 IDE 的功能，可以進行靜態分析。</p>
 <p>根據 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a> 的內容，類型註解物件可以自行製作和定義，但是本節只會將常用容器列出。</p>
+<h3>基本文法</h3>
+<p>Python 為<strong>弱型別</strong> (Weak typing) 語言，又稱<strong>鴨子型別</strong> (Duck type)，相較於<strong>強型別</strong> (Strong typing) 語言，只要<strong>變數能用</strong>即可，不能用就引發錯誤。當然這只能在相對安全的直譯式語言 (Interpreted language) 中，因為這裡只要使用 <code>try</code> 語句即可：</p>
+<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># 測試 a 能不能執行 test_method。</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">test_method</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="c1"># 沒有 test_method。</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+
+
+<p>但是因為執行效能與開發效率問題，一直測試顯然不是好方法，因此 Python 在簽章上引入了類型註解的文法。</p>
+<div class="highlight"><pre><span></span><span class="c1"># 只能從預設值或參數名稱猜測。</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># 直接規定型別。</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">p0</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">p1</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># 若是太長可以利用括弧換行。</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span>
+    <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">reverse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+
+<p>在 Python 3.6 新增單一變數的類型註解文法 (<a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>)。</p>
+<div class="highlight"><pre><span></span><span class="c1"># 等等會裝入整數。</span>
+<span class="n">a</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
             </section>
 
             <section class="post-info">
