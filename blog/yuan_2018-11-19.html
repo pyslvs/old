@@ -233,12 +233,14 @@
 <li>封裝性 (Encapsulation)：可以<strong>攜帶各種資料或資料集</strong>，並且由於物件是實例的關係，每個物件是獨立個體，其資料可以有著不同的內容。</li>
 <li>繼承 (Inheritance)：定義簡單的類別後，較複雜的類別可以從簡單的類別<strong>提取其功能</strong>。</li>
 <li>多形 (Polymorphism)：<strong>不同類別</strong>可能會有<strong>相同操作</strong>。程式碼在使用該物件時，<strong>強型別</strong>的程式語言（如 C++）必須特別規範，<strong>弱型別</strong>的程式語言（如 Python）會嘗試尋找並進行該操作。</li>
-<li>抽象性 (Abstraction)：</li>
+<li>抽象性 (Abstraction)：透過<strong>繼承</strong>和<strong>元類</strong>概念可以表達更抽象的物件概念。</li>
 </ul>
-<p>以下將示範 Python 程式碼中如何呈現各種特性。</p>
+<p>以下將示範 Python 程式碼中如何用<strong>封裝性</strong>與<strong>繼承</strong>呈現各種特性。</p>
 <h3>封裝性</h3>
 <p>Python 的基本類型定義語法如下：</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="c1"># Python 中的類型名稱使用 Camal case（單字首大寫）。</span>
+<span class="c1"># 每個類型與函式定義之間空兩行。</span>
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
 
     <span class="sd">&quot;&quot;&quot;定義 my class。&quot;&quot;&quot;</span>
 
@@ -246,11 +248,15 @@
         <span class="sd">&quot;&quot;&quot;初始化函式。</span>
 <span class="sd">        類別中的 function 稱為方法 (Method)，</span>
 <span class="sd">        其中第一項參數 self 代表此物件。</span>
+<span class="sd">        實際呼叫時會自動填入。</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">print</span><span class="p">(</span><span class="s2">&quot;初始化！&quot;</span><span class="p">)</span>
-        <span class="c1"># 類別中的變數稱為屬性 (Attribute)。</span>
+        <span class="c1"># 類別中的「變數」稱為成員 (Member)。</span>
+        <span class="c1"># 類別中的「名稱」稱為屬性 (Attribute)。</span>
+        <span class="c1"># members 和 methods 都是 attributes。</span>
+        <span class="c1"># attributes 使用「點」運算子取得。</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
-        <span class="c1"># 私有屬性名稱前加上雙底線。</span>
+        <span class="c1"># 私有 attributes 名稱前加上雙底線。</span>
         <span class="c1"># 名稱會被編碼為 &quot;_MyClass__score&quot;。</span>
         <span class="c1"># 除非用上述名稱呼叫，</span>
         <span class="c1"># 只有本類別的 method 可以呼叫。</span>
@@ -268,19 +274,138 @@
         <span class="sd">&quot;&quot;&quot;一個私有的 method。&quot;&quot;&quot;</span>
         <span class="k">print</span><span class="p">(</span><span class="s2">&quot;method 2:&quot;</span><span class="p">,</span> <span class="n">p0</span><span class="p">)</span>
 
+
 <span class="c1"># 初始化一個 MyClass 實例。</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># 初始化！</span>
 <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>  <span class="c1"># 50</span>
-<span class="c1"># 強迫呼叫</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">_MyClass__score</span><span class="p">)</span>  <span class="c1"># 60</span>
 <span class="n">a</span><span class="o">.</span><span class="n">method1</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># method 1: 60</span>
                <span class="c1"># method 2: 20</span>
+<span class="c1"># 強迫呼叫</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">_MyClass__score</span><span class="p">)</span>  <span class="c1"># 60</span>
 <span class="c1"># 強迫呼叫</span>
 <span class="n">a</span><span class="o">.</span><span class="n">_MyClass__method2</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># method 2: 30</span>
 </pre></div>
 
 
-<p>上面的類型中，呈現了封裝性的效果，一個 <code>MyClass</code> 物件中擁有公有與私有的 attribute 與 method，當使用 <code>a</code> 名稱傳送此物件時，隨時可以使用公開 attribute 與 method。</p>
+<p>上面的類型中，呈現了<strong>封裝性</strong>的效果，一個 <code>MyClass</code> 物件中擁有公有與私有的 attributes，當使用 <code>a</code> 名稱傳送此物件時，隨時可以使用公開 attributes。</p>
+<h3>繼承</h3>
+<p>繼承可以將較小類型的 attributes 全部拿來用。在 Python 中，有個類型叫做 <code>object</code>，提供一些預設特性，所有類型如果沒指定都會繼承它。</p>
+<p>繼承語法如下：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 引用斜邊公式 hypotenuse。</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">hypot</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;點資料集。&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;初始化時設定兩座標並顯示。&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;印出 x 和 y。&quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;回傳兩點的距離。&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">hypot</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;移動座標。&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+
+<span class="k">class</span> <span class="nc">PointView</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;檢視用的類型，繼承自點。&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># 引用上一個繼承項的 __init__ 函式。</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Coordinate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Point view&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">distance_with_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;此點與原點的距離。&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">hypot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;覆寫預設函式 __repr__。</span>
+<span class="sd">        此函式可以定義物件轉成字串時的樣式。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s2">&quot;&lt;Point x={self.x} y={self.y}&gt;&quot;</span>
+
+
+<span class="c1"># 建立點資料 p1。</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># 20 30</span>
+<span class="c1"># 建立點資料 p2。</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">PointView</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>  <span class="c1"># 50 70</span>
+                        <span class="c1"># Point view</span>
+<span class="c1"># 顯示距離。</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>  <span class="c1"># 50</span>
+<span class="c1"># 顯示 p2 與原點的距離。</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">distance_with_origin</span><span class="p">())</span>  <span class="c1"># 86.02325267042627</span>
+<span class="c1"># 印出 p1 和 p2。</span>
+<span class="c1"># 印的時候會呼叫預設函式 __repr__。</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>  <span class="c1"># &lt;Point object at 一段記憶體位址&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>  <span class="c1"># &lt;Point x=50 y=70&gt;</span>
+</pre></div>
+
+
+<p>上面的範例中，<code>PointView</code> 繼承自 <code>Point</code>，因此會擁有所有 <code>Point</code> 的公有與私有 attributes，但是私有 attributes 會被編成 <code>_Point__show</code> 的樣式，因此不能直接使用。</p>
+<p>另外，當 <code>PointView</code> 的屬性名稱與 <code>Point</code> 重複時（如 <code>__init__</code>），會直接覆蓋，因此必須使用 <code>super</code> 函式搜尋到 <code>Point</code> 類型，將 <code>PointView</code> 實體帶入 <code>Point.__init__</code> 執行。</p>
+<h3>靜態方法</h3>
+<p>靜態方法 (static method) 只是掛上類別名稱的函式 (static method)。在 Python 中，靜態方法可以有兩種定義法，稱為 static method 與 class method。</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;實做相等運算子 ==。&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">s_method</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Static method.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">c_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="o">.</span><span class="n">s_method</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="o">.</span><span class="n">c_method</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># True</span>
+</pre></div>
+
+
+<p>兩者的差異只在於 class method 的會傳入當前類型，所以在繼承上有差別。</p>
+<h3>延伸閱讀 - 類別與實體的關係</h3>
+<p>類別也有 attributes，稱為 class attributes。如 <code>Point.__init__</code>、<code>Point._Point__show</code> 等。而 <code>p1.x</code> 是因為上面的範例使用 <code>self.x = x</code> 的語法產生，這是後天賦予物件的，又稱 object attributes。物件可以使用 class attributes，但是類別沒有 object attributes。</p>
+<p>關於 class attributes，每個 object 的 class member 其實是使用相同名稱，但是 class method 是複製過來的，如下：</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">method</span> <span class="ow">is</span> <span class="n">b</span><span class="o">.</span><span class="n">method</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+
+
+<p>是因為下列程式是相同結果的：</p>
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Python 內建的 <code>type</code> 函式會回傳實體的類型。而事實上 <code>type</code> 是一種類型，而且是所有類型的元類，因此初始化時可以「作出」實體的類型。</p>
             </section>
 
             <section class="post-info">
