@@ -42,7 +42,7 @@
 
     <link href="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html" rel="canonical" />
 
-        <meta name="description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
+        <meta name="description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先瞭解： 物件導向概念 簽章 自行閱讀 Python 的撰寫風格規定 PEP 8 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
 
         <meta name="author" content="Yuan Chang">
 
@@ -54,7 +54,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Pyslvs.com"/>
 <meta property="og:title" content="Python 類型註解"/>
-<meta property="og:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"/>
+<meta property="og:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先瞭解： 物件導向概念 簽章 自行閱讀 Python 的撰寫風格規定 PEP 8 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html"/>
 <meta property="og:type" content="article"/>
@@ -74,7 +74,7 @@
 
         <meta name="twitter:image:src" content="https://pyslvs.github.io/blog/theme/images/post-bg.jpg">
 
-      <meta name="twitter:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
+      <meta name="twitter:description" content="基於協同開發，Python 引入了選擇性的類型註解。 建議先瞭解： 物件導向概念 簽章 自行閱讀 Python 的撰寫風格規定 PEP 8 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。">
 
 <script type="application/ld+json">
 {
@@ -91,7 +91,7 @@
   },
   "image": "https://pyslvs.github.io/blog/theme/images/post-bg.jpg",
   "url": "https://pyslvs.github.io/blog/yuan_2018-11-19-3.html",
-  "description": "基於協同開發，Python 引入了選擇性的類型註解。 建議先看過物件導向概念與簽章。 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"
+  "description": "基於協同開發，Python 引入了選擇性的類型註解。 建議先瞭解： 物件導向概念 簽章 自行閱讀 Python 的撰寫風格規定 PEP 8 學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。"
 }
 </script>
 <script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
@@ -211,7 +211,12 @@
         <div class="inner">
             <section class="post-content">
                 <p>基於協同開發，Python 引入了選擇性的類型註解。</p>
-<p>建議先看過<strong>物件導向概念</strong>與<strong>簽章</strong>。</p>
+<p>建議先瞭解：</p>
+<ul>
+<li><strong>物件導向概念</strong></li>
+<li><strong>簽章</strong></li>
+<li>自行閱讀 Python 的<strong>撰寫風格規定 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a></strong></li>
+</ul>
 <p>學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。</p>
 
 
@@ -232,6 +237,7 @@
 
 
 <p>但是因為執行效能與開發效率問題，一直測試顯然不是好方法，因此 Python 在簽章上引入了類型註解的文法。</p>
+<p>簽章的參數中，使用 <code>:</code> 符號後連接類型名稱；回傳值則是使用 <code>-&gt;</code> 記號連接。參照於一般英文符號以及<strong>運算子必須由空白環繞</strong>的規定，<code>:</code> 符號會連接前一個表示式，與下一個表示式間隔空白；<code>-&gt;</code> 記號則是必須由空白環繞。</p>
 <div class="highlight"><pre><span></span><span class="c1"># 只能從預設值或參數名稱猜測。</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">pass</span>
@@ -251,8 +257,73 @@
 
 
 <p>在 Python 3.6 新增單一變數的類型註解文法 (<a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>)。</p>
+<p>不過一般可直接辨識的變數就不會使用，例如直接賦予類型的初始化物件。</p>
 <div class="highlight"><pre><span></span><span class="c1"># 等等會裝入整數。</span>
 <span class="n">a</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># 這麼明顯就不用了。</span>
+<span class="n">a</span><span class="p">:</span> <span class="n">MyClass</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Python 的類型註解一般也是用<strong>鴨子型別</strong>的概念標示，提醒開發者「需要這樣使用」，而非「一定需要這種類型」。如：</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;w 是一個會進行疊代與檢索的物件。&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+
+<span class="c1"># 應該標示成序列：</span>
+<span class="n">w</span><span class="p">:</span> <span class="n">Secquence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<span class="c1"># 而非強迫成某種型態：</span>
+<span class="n">w</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<span class="n">w</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+
+
+<h3>容器</h3>
+<p>自 Python 3.5 起支援，型別中支援<strong>放入</strong>或<strong>回傳</strong>的型別必須由標準模組 <code>typing</code> 提供。容器的類型註解名稱會跟一般容器名稱不一樣，改成字首大寫。</p>
+<p>通常排列習慣將相同性質的容器一起擺放。</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="c1"># 序列</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Secquence</span><span class="p">,</span>
+    <span class="c1"># 二元搜尋樹</span>
+    <span class="n">Set</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="c1"># 迭代器（產出）</span>
+    <span class="n">Iterator</span><span class="p">,</span>
+    <span class="c1"># 生產器（接收、產出）</span>
+    <span class="n">Generator</span><span class="p">,</span>
+    <span class="c1"># 可呼叫物（函式）</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="c1"># 邏輯判斷</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>使用單一項目的容器：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 其實 tuple 容器是固定長度的。</span>
+<span class="n">my_tuple</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="c1"># 不限長度的容器。</span>
+<span class="n">my_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.</span><span class="p">,</span> <span class="mf">50.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.006</span><span class="p">]</span>
+<span class="c1"># 不限長度的 tuple 容器（其他變數決定）。</span>
+<span class="n">my_tuple</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="c1"># 巢狀標示。</span>
+<span class="n">w</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)}</span>
+</pre></div>
+
+
+<p>使用成對項目的容器：</p>
+<div class="highlight"><pre><span></span><span class="n">d</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">77</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">44</span><span class="p">],</span>
+<span class="p">}</span>
 </pre></div>
             </section>
 
@@ -294,7 +365,7 @@
                     <a class="post-nav-next" href="https://pyslvs.github.io/blog/yuan_2018-11-19-2.html">
                         <section class="post-nav-teaser">
                             <i class="ic ic-arrow-left"></i>
-                                <h2 class="post-nav-title">Python 簽章</h2>
+                                <h2 class="post-nav-title">Python 與 C / C++ 簽章</h2>
                             <p class="post-nav-excerpt">學習辨認 Python 與 C / C++ 的函式呼叫方式。</p>
                         </section>
                     </a>

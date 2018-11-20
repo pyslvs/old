@@ -195,7 +195,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Python 內建的 &lt;code&gt;type&lt;/code&gt; 函式會回傳實體的類型。而事實上 &lt;code&gt;type&lt;/code&gt; 是一種類型，而且是所有類型的元類，因此初始化時可以「作出」實體的類型。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 簽章</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19-2.html" rel="alternate"></link><published>2018-11-19T20:00:00+08:00</published><updated>2018-11-19T20:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19-2.html</id><summary type="html">&lt;p&gt;學習辨認 Python 與 C / C++ 的函式呼叫方式。&lt;/p&gt;
+&lt;p&gt;Python 內建的 &lt;code&gt;type&lt;/code&gt; 函式會回傳實體的類型。而事實上 &lt;code&gt;type&lt;/code&gt; 是一種類型，而且是所有類型的元類，因此初始化時可以「作出」實體的類型。&lt;/p&gt;</content><category term="learn Python"></category></entry><entry><title>Python 與 C / C++ 簽章</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19-2.html" rel="alternate"></link><published>2018-11-19T20:00:00+08:00</published><updated>2018-11-19T20:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19-2.html</id><summary type="html">&lt;p&gt;學習辨認 Python 與 C / C++ 的函式呼叫方式。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;學習辨認 Python 與 C / C++ 的函式呼叫方式。&lt;/p&gt;
 
 
@@ -296,10 +296,20 @@
 &lt;span class="n"&gt;b_dict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;b3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;p4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a_list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;b_dict&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="learn Python"></category></entry><entry><title>Python 類型註解</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-19-3.html" rel="alternate"></link><published>2018-11-19T19:00:00+08:00</published><updated>2018-11-19T19:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-19:/blog/yuan_2018-11-19-3.html</id><summary type="html">&lt;p&gt;基於協同開發，Python 引入了選擇性的類型註解。&lt;/p&gt;
-&lt;p&gt;建議先看過&lt;strong&gt;物件導向概念&lt;/strong&gt;與&lt;strong&gt;簽章&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;建議先瞭解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;物件導向概念&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;簽章&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;自行閱讀 Python 的&lt;strong&gt;撰寫風格規定 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;基於協同開發，Python 引入了選擇性的類型註解。&lt;/p&gt;
-&lt;p&gt;建議先看過&lt;strong&gt;物件導向概念&lt;/strong&gt;與&lt;strong&gt;簽章&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;建議先瞭解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;物件導向概念&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;簽章&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;自行閱讀 Python 的&lt;strong&gt;撰寫風格規定 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。&lt;/p&gt;
 
 
@@ -320,6 +330,7 @@
 
 
 &lt;p&gt;但是因為執行效能與開發效率問題，一直測試顯然不是好方法，因此 Python 在簽章上引入了類型註解的文法。&lt;/p&gt;
+&lt;p&gt;簽章的參數中，使用 &lt;code&gt;:&lt;/code&gt; 符號後連接類型名稱；回傳值則是使用 &lt;code&gt;-&amp;gt;&lt;/code&gt; 記號連接。參照於一般英文符號以及&lt;strong&gt;運算子必須由空白環繞&lt;/strong&gt;的規定，&lt;code&gt;:&lt;/code&gt; 符號會連接前一個表示式，與下一個表示式間隔空白；&lt;code&gt;-&amp;gt;&lt;/code&gt; 記號則是必須由空白環繞。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 只能從預設值或參數名稱猜測。&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;pass&lt;/span&gt;
@@ -339,14 +350,79 @@
 
 
 &lt;p&gt;在 Python 3.6 新增單一變數的類型註解文法 (&lt;a href="https://www.python.org/dev/peps/pep-0526/"&gt;PEP 526&lt;/a&gt;)。&lt;/p&gt;
+&lt;p&gt;不過一般可直接辨識的變數就不會使用，例如直接賦予類型的初始化物件。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 等等會裝入整數。&lt;/span&gt;
 &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="c1"&gt;# 這麼明顯就不用了。&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;MyClass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MyClass&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Python 的類型註解一般也是用&lt;strong&gt;鴨子型別&lt;/strong&gt;的概念標示，提醒開發者「需要這樣使用」，而非「一定需要這種類型」。如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;w 是一個會進行疊代與檢索的物件。&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;z&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 應該標示成序列：&lt;/span&gt;
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Secquence&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# 而非強迫成某種型態：&lt;/span&gt;
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;容器&lt;/h3&gt;
+&lt;p&gt;自 Python 3.5 起支援，型別中支援&lt;strong&gt;放入&lt;/strong&gt;或&lt;strong&gt;回傳&lt;/strong&gt;的型別必須由標準模組 &lt;code&gt;typing&lt;/code&gt; 提供。容器的類型註解名稱會跟一般容器名稱不一樣，改成字首大寫。&lt;/p&gt;
+&lt;p&gt;通常排列習慣將相同性質的容器一起擺放。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="c1"&gt;# 序列&lt;/span&gt;
+    &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;Secquence&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="c1"&gt;# 二元搜尋樹&lt;/span&gt;
+    &lt;span class="n"&gt;Set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;Dict&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="c1"&gt;# 迭代器（產出）&lt;/span&gt;
+    &lt;span class="n"&gt;Iterator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="c1"&gt;# 生產器（接收、產出）&lt;/span&gt;
+    &lt;span class="n"&gt;Generator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="c1"&gt;# 可呼叫物（函式）&lt;/span&gt;
+    &lt;span class="n"&gt;Callable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="c1"&gt;# 邏輯判斷&lt;/span&gt;
+    &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;Union&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;Any&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用單一項目的容器：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 其實 tuple 容器是固定長度的。&lt;/span&gt;
+&lt;span class="n"&gt;my_tuple&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# 不限長度的容器。&lt;/span&gt;
+&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;20.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;50.02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;3.006&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# 不限長度的 tuple 容器（其他變數決定）。&lt;/span&gt;
+&lt;span class="n"&gt;my_tuple&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="c1"&gt;# 巢狀標示。&lt;/span&gt;
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Set&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;)}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用成對項目的容器：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;s&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[],&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;f&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;77&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;66&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="learn Python"></category></entry><entry><title>Python 複製與參照</title><link href="https://pyslvs.github.io/blog/yuan_2018-11-18.html" rel="alternate"></link><published>2018-11-18T21:00:00+08:00</published><updated>2018-11-18T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-11-18:/blog/yuan_2018-11-18.html</id><summary type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。&lt;/p&gt;
 
 
 &lt;p&gt;Python 的設計構想源自 &lt;a href="https://en.wikipedia.org/wiki/ABC_(programming_language)"&gt;ABC&lt;/a&gt;[&lt;a href="https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place"&gt;1&lt;/a&gt;]，採越位規格 (&lt;a href="https://en.wikipedia.org/wiki/Off-side_rule"&gt;off-side rule&lt;/a&gt;) 分隔程式區段，其表達式語法 (expression syntax)  與 C 語言類似[&lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=55E61F6DF3941177AB9945E14E0B5FAD?doi=10.1.1.38.2023&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;2&lt;/a&gt;]，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。&lt;/p&gt;
-&lt;p&gt;請&lt;strong&gt;牢記&lt;/strong&gt;以下關係：&lt;/p&gt;
+&lt;p&gt;請牢記以下關係：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://www.python.org"&gt;官方&lt;/a&gt;提供的 Python 單機版直譯器稱為 CPython，因為&lt;strong&gt;該直譯器是純 C 語言編寫，達成 Python 所有功能&lt;/strong&gt;。除了 CPython 外，還有以 Java 編寫的 &lt;a href="https://github.com/jythontools/jython"&gt;Jython&lt;/a&gt;，以 .net 技術編寫的 &lt;a href="http://ironpython.net/"&gt;Ironpython&lt;/a&gt;，以 Python 編寫的 &lt;a href="https://pypy.org/"&gt;PyPy&lt;/a&gt;, 以 Javascript 編寫的 &lt;a href="https://brython.info/"&gt;Brython&lt;/a&gt;，進階版的 &lt;a href="https://github.com/stackless-dev/stackless"&gt;Stackless Python&lt;/a&gt; 以及專用於微控制器的 &lt;a href="https://github.com/micropython/micropython"&gt;Micropython&lt;/a&gt; 等。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 &lt;code&gt;__pycache__&lt;/code&gt; 資料夾中。&lt;/p&gt;
