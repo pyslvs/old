@@ -77,59 +77,266 @@ $(document).ready(function() {
 });
 </script>
 
-</head><header><h1>Pyslvs 使用手冊</h1> <confmenu>
+</head><header><h1>Pyslvs 使用手冊</h1>
+<confmenu>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="sitemap.html">Site Map</a></li>
 <li><a href="./../reveal/index.html">reveal</a></li>
 <li><a href="./../blog/index.html">blog</a></li>
-
 </ul>
 </confmenu></header>
 <div class='container'><nav>
 <ul id='css3menu1' class='topmenu'>
 <div class="tipue_search_group">
 <input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required>
-</div><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解.html'>類型註解</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section><div id="tipue_search_content">命名規則 << <a href='命名規則.html'>Previous</a> <a href='Kmol-editor.html'>Next</a> >> Kmol-editor<br /><h1>類型註解</h1>
-<p>建議對任何 Functions 與 Methods 都加上類型註解（參見 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>），必要時在一般名稱也可做註記（回傳值無法推斷時）。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if not row &gt; -1:
-    return
+</div><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='Python 教學.html'>Python 教學</a><ul><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section><div id="tipue_search_content">物件導向 << <a href='物件導向.html'>Previous</a> <a href='開發.html'>Next</a> >> 開發<br /><h1>類型註解</h1>
+<p>基於協同開發，Python 引入了選擇性的類型註解。</p>
+<p>學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。</p>
+<p><strong>類型註解</strong></p>
+<p>類型註解 (Typing) 是一種<strong>註解</strong>，可以為每種參數進行標示。由於文法問題，類型註解並不是強迫性的，不過仍有效用。可藉由每個範圍 (Scope) 的 __annotations__ 名稱取得，若有工具或 IDE 的功能，可以進行靜態分析。</p>
+<p>以下內容依據為 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>。</p>
+<p><strong>省略記號</strong></p>
+<p>省略記號 (Ellipsis)「...」在 Python 中是一種佔位符號，可以在註解中代表多個類似物件，也能取代 pass 關鍵字。</p>
+<p><strong>等價表示</strong></p>
+<p>預設該值如果為 Any 或可以明確推斷，可以選擇不標示。</p>
+<p>其中：</p>
+<ul>
+<li>type(None) 標示為 None。</li>
+<li>object 標示為 Any。</li>
+<li>會導致錯誤時標示為 NoReturn，僅可用於回傳值。</li>
+</ul>
+<p><strong>基本文法</strong></p>
+<p>Python 為<strong>弱型別</strong> (Weak typing) 語言，又稱<strong>鴨子型別</strong> (Duck type)，相較於<strong>強型別</strong> (Strong typing) 語言，只要變數能用即可，不能用就引發錯誤。當然這只能在相對安全的直譯式語言 (Interpreted language) 中，因為這裡只要使用 try 語句即可：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">try:
+    # 測試 a 能不能執行 test_method。
+    b = a.test_method()
+except AttributeError:
+    # 沒有 test_method。
+    c = 20
+else:
+    c = b * 2</pre>
+<p>但是因為執行效能與開發效率問題，一直測試顯然不是好方法，因此 Python 在簽章上引入了類型註解的文法。</p>
+<p>簽章的參數中，使用「:」符號後連接類型名稱；回傳值則是使用「-&gt;」記號連接。參照於一般英文符號以及<strong>運算子必須由空白環繞</strong> (<a href="https://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements">PEP 8</a>) 的規定，「:」符號會連接前一個表示式，與下一個表示式間隔空白；「-&gt;」記號則是必須由空白環繞。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 只能從預設值或參數名稱猜測。
+def func(p0, p1=20, p2=True):
+    ...
 
-# Here is not None!
-item: MyItem = table.item(row)
-item.do_something()</pre>
-<p>若是回傳 None 值，可以不加上回傳值的註解。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(a: bool):
-    if a:
-        return
-    do_my_job()</pre>
-<p>序列的樣式為 Sequence[T]、List[T]、Iterator[T] 等，唯獨 Tuple[T] 為固定長度，應標示 Tuple[T, ...]。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def _join_more(iter_obj: Iterable[int]) -&gt; Tuple[int, ...]:
-    """Convert iterable object to tuple."""
-    return tuple(iter_obj) + (1,)</pre>
-<p>若是可能為多種非繼承類型，使用 Union。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s: Union[str, Sequence[bytes]] = s_func()</pre>
-<p>若是可能為 None 值，應加上 Optional。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def func(*, labels: Optional[Sequence[int]] = None):
+# 直接規定型別。
+def func(p0: int, p1: int = 20, p2: bool = True) -&gt; List[str]:
+    ...
+
+# 若是太長可以利用括弧換行。
+def func(
+    number: int,
+    size: int = 20,
+    reverse: bool = True
+) -&gt; List[str]:
     ...</pre>
-<p>Functions 使用 Callable[[In_T1, InT2], Out_T]。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def danger(func: Callable[[Any], Any]) -&gt; Callable[[Any], Any]:
-    """My danger decorator."""
+<p>在 Python 3.6 新增單一變數的類型註解文法 (<a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>)。</p>
+<p>不過一般可直接辨識的變數就不會使用，例如直接賦予類型的初始化物件。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 等等會裝入整數。
+a: List[int] = []
+# 這麼明顯就不用了。
+a: MyClass = MyClass()</pre>
+<p>類型註解也支援名稱替換：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Point = Tuple[float, float]
+PointPair = Tuple[Point, Point]
+graphics: Dict[str, List[PointPair]] = {}</pre>
+<p>參數輸入值的類型註解一般也是用**鴨子型別**的概念標示，提醒開發者「需要這樣使用」，而非「一定需要這種類型」。如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(w) -&gt; bool:
+    """w 是一個會進行疊代與檢索的物件。"""
+    for i in range(20):
+        for k in w:
+            if w[i + 2] == 'z':
+                return True
 
-    def wrapper_func(*args):
-        """Is danger function."""
-        print("Danger!")
-        return func(*args)
+# 應該標示成序列：
+w: Secquence[int]
+# 而非強迫成某種型態：
+w: List[int]
+w: Tuple[int, ...]</pre>
+<p>自 Python 3.5 起支援，支援<strong>放入</strong>或<strong>回傳</strong>的型別必須由標準模組 typing 提供。類型中的類型註解名稱會跟一般內建類型名稱不一樣，改成字首大寫。</p>
+<p>通常 typing 模組的導入習慣將相同性質的類型一起擺放。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from typing import (
+    # 狀態變數
+    TYPE_CHECKING,
+    # 序列
+    Tuple,
+    List,
+    Secquence,
+    # 二元搜尋樹
+    Set,
+    Dict,
+    # 可呼叫物（函式）
+    Callable,
+    # 迭代器與生產器
+    Iterator,
+    Generator,
+    # 邏輯判斷
+    Optional,
+    Union,
+    Any,
+    # 泛型
+    Generic,
+    # 函式或裝飾器
+    TypeVar,
+    overload,
+)</pre>
+<p>以下將介紹上述常用的類型標示。</p>
+<p><strong>容器</strong></p>
+<p>使用單一項目的容器：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 其實 tuple 容器是固定長度的。
+my_tuple: Tuple[int, int] = (20, 20)
+# 不限長度的容器。
+my_list: List[float] = [20., 50.02, -3.006]
+# 不限長度的 tuple 容器（其他變數決定）。
+my_tuple: Tuple[int, ...] = tuple(i for i in range(s))
+# 巢狀標示。
+w: Set[Tuple[int, int]] = {(10, 20), (30, 40), (50, 60)}</pre>
+<p>使用成對項目的容器：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">d: Dict[str, List[int]] = {
+    's': [10, 20, 30],
+    'b': [],
+    'f': [77, 66, 55, 44],
+}</pre>
+<p><strong>函式物件</strong></p>
+<p>函式物件使用 Callable 來標示：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Callable[[input_type, ...], return_type]</pre>
+<p>範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(n: int) -&gt; int:
+    """一般函式"""
+    return n * 6
 
-    return wrapper_func
+# 匿名函式
+k = lambda s, end: s.replace('gen', 'time') + end
 
+func: Callable[[int], int]
+k: Callable[[str, str], str]</pre>
+<p><strong>迭代器與生產器</strong></p>
+<p>使用 yield 關鍵字可以搭配 def 關鍵字定義一個<strong>迭代器</strong> (Iterator) 或<strong>生產器</strong> (Generator) 函式：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_range(n):
+    """這個 double_range 是一個函式
+    但是可以產生以下程式碼的迭帶器物件。
 
-@danger
-def foo():
+    若當中使用 return 關鍵字，會引發 StopIteration 錯誤。
+    不過也可以是無限迴圈。
+    """
+    for i in range(n):
+        yield i * 2
+
+# 建立迭帶器物件 "ten_double_range"。
+ten_double_range = double_range(10)
+# 使用用內建函式 next 可以產生下一個值。
+print(next(ten_double_range))  # 0
+print(next(ten_double_range))  # 2
+print(next(ten_double_range))  # 4
+# 或是使用 for 迴圈連續取值，
+# 直到引發 StopIteration 錯誤（不會引發實際 Error）。
+for factor in ten_double_range:
+    print(factor)  # 6 8 10 12 14 16 18 20
+# 當取完值後，再次呼叫會引發 StopIteration 錯誤。
+# 此時迭帶器物件無法再使用，必須丟棄。
+# next(ten_double_range)</pre>
+<p>生產器範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_inputs():
+    """這個 double_inputs 是一個函式
+    但是可以產生以下程式碼的生產器物件。
+
+    生產器可以接收值。
+    """
+    while True:
+         # 當 yield 擺在右值時可以接收值。
+         x = yield
+         # 當 yield 右邊有值時可以產生值。
+         yield x * 2
+         # 不使用名稱可以這樣寫。
+         yield (yield) * 2
+
+gen = double_inputs()
+next(gen)  # 跳至第一個 yield，不過會回傳 None。
+print(gen.send(10))  # 輸入 10，回傳 20。
+next(gen)  # 跳至下一個 yield，不過會回傳 None。
+print(gen.send(6))  # 輸入 6，回傳 12。</pre>
+<p>類型標註如下：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Iterator[yield_type]
+# Python 3.6 增加
+Generator[yield_type, input_type, return_type]</pre>
+<p>上述製造迭代器與生產器的函式應標註為：</p>
+<p></p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_range(n: int) -&gt; Iterator[int]:
+    ...
+
+def double_inputs() -&gt; Generator[int, int, None]:
+    ...
+
+ten_double_range: Iterator[int]
+gen: Generator[int, int, None]</pre>
+<p><strong>邏輯判斷</strong></p>
+<p>類型註解包含<strong>被繼承</strong>類型，因此其實每個物件都適用 object 類型。</p>
+<p>若是沒有繼承關係，但是可以進行相同操作，因此 typing 模組提供方便的邏輯標示。</p>
+<p>聯集 (Union) 類型能夠代表多個不同的類型：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Union[T1, T2, ...]</pre>
+<p>選擇性 (Optional) 類型能夠代表該類型可能會為 None：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Optional[T]
+# 同於 Union
+Union[T, None]</pre>
+<p>可以用在簽章的預設值：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(w: List[int] = []):
+    """這樣會導致預設值的指標被共用。"""
+    ...
+
+def func(w: Optional[List[int]] = None):
+    """這樣就不會共用。"""
+    if w is None:
+        w = []
     ...</pre>
-<p>造成遞迴引用類型時應改為字串。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class MyClass:
+<p><strong>泛型</strong></p>
+<p>自訂類型中有客製化的類型選擇時，就可以用泛型標示。</p>
+<p>例如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from abc import abstractmethod
+from typing import Iterator, Generic, TypeVar
 
-    def __add__(self, p: 'MyClass') -&gt; 'MyClass':
+_T = TypeVar('_T')
+
+class BaseTable(OtherTable, Generic[_T]):
+    @abstractmethod
+    def data(self, row: int) -&gt; _T:
+        ...
+
+    def data_iter(self) -&gt; Iterator[_T]:
+        for row in range(self.row_count()):
+            yield self.data(row)
+
+class MyTable(BaseTable[float]):
+    def data(self, row: int) -&gt; float:
+        """實作此方法。"""
         ...</pre>
-<br />命名規則 << <a href='命名規則.html'>Previous</a> <a href='Kmol-editor.html'>Next</a> >> Kmol-editor</div></section></div></body></html>
+<p>上述的 MyTable 類型的 data_iter 方法就會回傳 Iterator[float] 類型了。</p>
+<p><strong>遞迴引用</strong></p>
+<p>遞迴引用類型註解時，直接使用字串即可：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Node: Dict[str, Optional[List['Node']]]</pre>
+<p>在類型定義中引用自己：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">class MyClass:
+    def return_me(self, friend: 'MyClass') -&gt; 'MyClass':
+        """實例 self 可能是子類型，因此不會標示。"""
+        ...</pre>
+<p>無法導入的名稱或模組：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from core import MyClass
+
+class LocalClass:
+    def __init__(self, parent: 'MyClass'):
+        """想要取得父項的屬性。"""
+        self.my_list = parent.parent_list
+        ...</pre>
+<p>而在 Python 3.7 中，引入了新的延遲分析行為 (<a href="https://www.python.org/dev/peps/pep-0563/">PEP 563</a>: Postponed Evaluation of Annotations)，將會強制將類型註解轉為字串再分析，並且這將是 Python 4 的預設作為。不過此行為牽涉到文法問題，因此使用向下相容模組 __future__ 來開啟。</p>
+<p>這樣一來，在「舊版」的 Python 中就可以使用遞迴引用了。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from __future__ import annotations
+
+class MyClass:
+    def return_me(self, friend: MyClass) -&gt; MyClass:
+        ...</pre>
+<p></p><br />物件導向 << <a href='物件導向.html'>Previous</a> <a href='開發.html'>Next</a> >> 開發</div></section></div></body></html>

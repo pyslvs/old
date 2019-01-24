@@ -1,0 +1,159 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Pyslvs 使用手冊</title>
+<link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
+});
+</script>
+
+</head><header><h1>Pyslvs 使用手冊</h1>
+<confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+</ul>
+</confmenu></header>
+<div class='container'><nav>
+<ul id='css3menu1' class='topmenu'>
+<div class="tipue_search_group">
+<input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required>
+</div><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='Python 教學.html'>Python 教學</a><ul><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section><div id="tipue_search_content">Python 教學 << <a href='Python 教學.html'>Previous</a> <a href='簽章.html'>Next</a> >> 簽章<br /><h1>控制流程</h1>
+<p>請學員從下列圖片中的控制流程方法對應 Python 中的語法。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Condition statement
+if condition_1:
+    # Do for condition 1.
+elif condition_2:
+    # Do for condition 2.
+else:
+    # Do for other case.</pre>
+<p><img alt="" height="500" src="./../images/loop.png" width="800"/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Loops
+for i in range(10):
+    if i == 4:
+        continue
+    # Do for 0~9 except 4.
+
+k = 'b'
+w = ['a', 'b', 'c', 'd', 'e']
+while w:  # Condition: 'w' is not empty.
+    if k == w.pop():  # Remove last one and compare it with 'k'.
+        break  # Stop the loop if k is equal with last one.
+print(w)  # w = ['a']</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># note: "for" loop is syntactic sugar based on "while" loop.
+for c in ['a', 'b', 'c']:
+    if c == 'b':
+        continue
+    # Do for 'a'~'c' except 'b'.
+
+i = 0
+c_list = ['a', 'b', 'c']
+while i &lt; len(c_list):  # 'i' is in the range of length of 'c_list'.
+    c = c_list[i]  # Get the value from 'c_list'.
+    if c == 'b':
+        continue
+    # Do for 'a'~'c' except 'b'.
+    i += 1  # 'i' increase 1.</pre>
+<p><img alt="" height="500" src="./../images/function.png" width="800"/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Define a function 'func'.
+def func(a, b):
+    c = int(a)  # Copy 'a' and turn it to an integer, and save it to 'c'.
+    if c &gt; 30:  # If 'c' is over 30, set it to 30.
+       c = 30
+    return b - c  # Return a value that obtained by 'b' minus with 'c'.
+    # Garbage collecting for 'a', 'b', 'c'. Except 'b' - 'c'.
+
+# Use the function.
+d = func(27.9705, 50)  # 'd' is 23.
+d -= func('70', d)  # 'd' minus -7, so 'd' will be set to 30.
+func(30.5, d)  # Return value is 0, but it will be discarded and deleted.</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># The following statements are the same in the last line of function.
+def f(w):
+    w.append(w.pop(0))
+    # No return statement.
+
+def f(w):
+    w.append(w.pop(0))
+    return
+
+def f():
+    w.append(w.pop(0))
+    return None
+
+# The first is recommended.</pre>
+<p>延伸閱讀 - <strong>執行緒</strong>：</p>
+<p>Qt 中的 <strong>signal</strong> 與 <strong>slot</strong> 為透過多執行緒配置實現的功能。</p>
+<p><br/><br/><img alt="" height="500" src="./../images/threading.png" width="800"/></p>
+<br />Python 教學 << <a href='Python 教學.html'>Previous</a> <a href='簽章.html'>Next</a> >> 簽章</div></section></div></body></html>

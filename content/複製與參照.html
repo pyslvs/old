@@ -1,0 +1,263 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Pyslvs 使用手冊</title>
+<link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
+});
+</script>
+
+</head><header><h1>Pyslvs 使用手冊</h1>
+<confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+</ul>
+</confmenu></header>
+<div class='container'><nav>
+<ul id='css3menu1' class='topmenu'>
+<div class="tipue_search_group">
+<input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required>
+</div><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='Python 教學.html'>Python 教學</a><ul><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section><div id="tipue_search_content">簽章 << <a href='簽章.html'>Previous</a> <a href='物件導向.html'>Next</a> >> 物件導向<br /><h1>複製與參照</h1>
+<p>這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。</p>
+<p>Python 的設計構想源自 <a href="https://en.wikipedia.org/wiki/ABC_(programming_language)">ABC</a> [<a href="https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place">1</a>]，採越位規格 (<a href="https://en.wikipedia.org/wiki/Off-side_rule">off-side rule</a>) 分隔程式區段，其表達式語法 (expression syntax) 與 C 語言類似 [<a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=55E61F6DF3941177AB9945E14E0B5FAD?doi=10.1.1.38.2023&amp;rep=rep1&amp;type=pdf">2</a>]，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。</p>
+<p><a href="https://www.python.org">官方</a>提供的 Python 單機版直譯器稱為 CPython，因為該直譯器是純 C 語言編寫，達成 Python 所有功能。除了 CPython 外，還有以 Java 編寫的 <a href="https://github.com/jythontools/jython">Jython</a>，以 .net 技術編寫的 <a href="http://ironpython.net/">Ironpython</a>，以 Python 編寫的 <a href="https://pypy.org/">PyPy</a>，以 Javascript 編寫的 <a href="https://brython.info/">Brython</a>，進階版的 <a href="https://github.com/stackless-dev/stackless">Stackless Python</a> 以及專用於微控制器的 <a href="https://github.com/micropython/micropython">Micropython</a> 等。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 __pycache__ 資料夾中。</p>
+<p>由於 Python 文法是由<a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">擴展巴克斯範式</a> (Extended Backus–Naur form, EBNF) 定義的（<a href="https://docs.python.org/3/reference/expressions.html">詳見此</a>），因此理論上任何支援 EBNF 解析功能的程式語言都能寫成 Python 直譯器，包括 Python 本身 (PyPy)。</p>
+<p>以下章節內容關於非 Python 部分可以斟酌吸收。</p>
+<p><strong>C 的指派</strong></p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int a = 10;</pre>
+<p>上面 C 程式碼的意思為：使用最大為<strong>整數</strong> (int) 的記憶體空間<strong>存放</strong>數字 10，並且在本程式<strong>範圍</strong> (Scope) 中，這個記憶體空間的代號為 a。</p>
+<p>在 C 語言中<strong>記憶體空間的代號</strong>稱為<strong>變數</strong> (Variable)，透過「宣告」規定在<strong>範圍</strong>中有哪些代號；「定義」可以做記憶體劃分和存值的動作。</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">/*
+C 語言的單行註解使用雙斜線，多行使用斜線與星號。
+每「行」結尾為分號，會忽略重複空白和所有換行記號。
+因此，C 語言可以不用縮排、全部寫同一行，難以閱讀。
+*/
+
+// C 語言可以任意規劃「範圍」或巢狀範圍，使用大括弧即可。
+{
+    // 宣告，沒有任何動作，只是給編譯器看的。
+    int a;
+    // 定義，規劃記憶體並存值。
+    a = 10;
+    {
+        // 可以一起寫。
+        int b = 20;
+        // 如果巢狀範圍宣告撞名，會將外部範圍的名稱暫時「隱藏」。
+    }
+    // 這裡不能用 b。
+}</pre>
+<p>在宣告的範圍外，該變數會被自動刪除，以節省記憶體。因此，在 C 語言中，任何定義的動作都會花費記憶空間。「指派」的文法如下：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">左值 = 右值</pre>
+<p>右值的計算結果為<strong>任意記憶體大小的值</strong>，而左值<strong>必須</strong>運算出<strong>相應大小</strong>的記憶體空間，透過指派運算子，可以將右值的值複製到左值。另外，一些運算類的指派運算子 +=、-= 等，是將計算結果存入相同記憶體位置的意思，如 a += 10 同於 a = a + 10。</p>
+<p>甚至在範圍外，也可以使用 C 語言的指標 (Pointer) 功能，攜帶記憶體空間的鑰匙，持有鑰匙，可以直接存取記憶體。以下為 C++ 語言的一個小範例。</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">/*
+指標是一種變數！
+
+指標是一種二進位代號，代表記憶體區段的「第一個值」。
+指標的間隔數是該類型的空間大小，但是 C 語言中 +1 會自動幫忙跳號。
+*/
+
+// 假設有一把鑰匙（還沒定義）。
+int *a;
+{
+    // 使用 new 關鍵字初始化 50 個整數，並將第一把鑰匙交給 b。
+    int *b = new int[50];
+    // 將 b 鑰匙複製給 a。
+    a = b;
+}
+/*
+b 鑰匙被刪除，但是 50 個整數還在。
+如果剛才沒有複製給 a，會遺失 50 個整數的鑰匙，引發記憶體洩漏 (Memory leak)。
+*/
+cout &lt;&lt; *(a + 2) &lt;&lt; endl;  // 顯示第三位整數的值（第一把鑰匙 +2）。
+cout &lt;&lt; a[0] &lt;&lt; endl;  // 同上，顯示第一位整數的值。
+delete[] a;  // 使用 delete 關鍵字刪除 a 鑰匙的所有值。</pre>
+<p>若不使用指標，C 語言也有參照物件，相當於取綽號：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int a = 10;
+// 為 a 變數取綽號 b。
+// 不會增加記憶體空間。
+int &amp;b = a;</pre>
+<p>總結：除非特別設計，不然指派運算子都是使用<strong>複製</strong>，而非參照。例如 C++ 中的「函式成本」是由於下列文法：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 函式是將程式碼封裝後嵌入於主程式中。
+int plus(int a, int b) { return a + b; }
+// 使用 plus
+int a = 10;
+int b = 20;
+int c = plus(a, b);</pre>
+<p>等價於：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 轉換後：
+int a = 10;
+int b = 20;
+int c;
+{
+    int _a = a;
+    int _b = b;
+    int _r = _a + _b;
+    c = _r;
+}</pre>
+<p>這樣每個參數都會造成龐大的傳輸成本，假如參數是攜帶龐大資料的容器，就更不得了了。因此使用 inline 函式、參照參數，或指標傳入、傳出，以節省執行時間、記憶空間。</p>
+<p>上述流程是不是十分繁瑣且危險？在 Python 中，參考自其他程式語言，引入垃圾回收機制 (Garbage collection)，取代了指標和參照物件的功能。</p>
+<p><strong>Python 的指派</strong></p>
+<p>Python 的變數稱為<strong>名稱</strong> (Name)，可以視作一張<strong>範圍通行證</strong>，而非記憶體代號，已經跟 C 語言的意思不一樣了。而透過「指派」，可以發通行證給任何數值，不用管記憶體大小。一句話解釋規則：</p>
+<ul>
+<li>所有的數值會自動追蹤與管理，擁有一個或多個名稱的值<strong>可以在該作用範圍使用</strong>，失去所有名稱的值<strong>會被刪除</strong>。</li>
+</ul>
+<p>Python 的表達式 (Expression) 中有種數值稱為字面數值 (literal value)，意指寫出來就是該值，例如 70 的類型是 int；(1, 2, 3) 的類型是 tuple；[1, 2, 3] 的類型是 list；{'a': 20, 'c': 80} 的類型是 dict。不過只有部分字面數值，任何時候寫出來都<strong>永遠共享記憶體</strong>，特徵是不能改變值 (Mutable)，所有 method 操作結果都回傳副本，不改原始值。<strong>只有</strong> None、bool、int、float、complex、所有字串 (string)、tuple 類型。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 相同值的共享記憶體檢查
+# 用 is 運算子可以檢查是否為相同記憶體。
+# int
+print(10 is 10)  # True
+# tuple
+print(() is ())  # True
+# list
+print([] is [])  # False
+# dict
+print({} is {})  # False</pre>
+<p>來段範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 發通行證 a 給數值 10。
+a = 10
+# 通行證 a 的持有者是 10，發通行證 b 給數值 10。
+b = a
+print(a is b)  # True
+
+# b += 5 來自 C 語言，同於 b = b + 5。
+# 對通行證 b 的值做 +5 計算，並對該值發通行證 b。
+# 通行證 b 被拔除自 10，交給結果 15。
+b += 5
+print(b)  # 15
+print(a)  # 10
+print(a is b)  # False</pre>
+<p>來一段容器的範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># list 容器
+a = [1, 2, 3]
+b = a
+print(a is b)  # True
+
+# 對通行證 b 的容器操作，在尾端加入 4。
+b.append(4)
+# 使用 del 關鍵字，對通行證 b 的容器操作，刪除第二位值 2。
+del b[1]
+print(b)  # [1, 3, 4]
+print(a)  # [1, 3, 4]
+
+# 幫當前的 a 值複製，重發通行證 b 給複製體。
+b = a.copy()
+# 讓 a 刪除最後一項。
+a.pop()
+print(a)  # [1, 3]
+print(b)  # [1, 3, 4]
+print(a is b)  # False</pre>
+<p>活用上述概念，可以輕鬆達成複製 (Copy) 與參照 (Reference) 功能。</p>
+<p>最後介紹範圍的規則：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># Python 中，唯二的範圍界線為 Function 與 Class 的定義，而非縮排。
+
+def func(b):
+    # 通行證 c 只有效於 func 中。
+    # 回傳值計算完後通行證 c 會被移除（垃圾回收）。
+    c = 20
+    return b + c
+
+# 全域通行證 g
+g = 'abc'
+
+# 主程式與 func 的範圍沒有巢狀關係。
+def main():
+    a = 10
+    # a 進入 func 函數，獲得區域通行證 b。
+    # 回傳值 30 被丟出 func，獲得區域通行證 d。
+    d = func(a)
+    print(d)  # 30
+
+    # 巢狀函式有巢狀範圍界線。
+    def nest_func():
+        # 使用 global 關鍵字指定全域通行證 g。
+        global g
+        # 全域通行證 g 重新發給 50。
+        g = 50
+        # 使用 nonlocal 關鍵字指定上層的區域通行證 d。
+        nonlocal d
+        # 上層的區域通行證 d 重新發給 20。
+        d = 20
+
+    # 執行巢狀函式。持有 d 的 30 被刪除；持有 g 的 'abc' 被刪除。
+    nest_func()
+    print(g)  # 50
+    print(d)  # 20
+
+# 執行 main
+if __name__ == '__main__':
+    main()</pre>
+<br />簽章 << <a href='簽章.html'>Previous</a> <a href='物件導向.html'>Next</a> >> 物件導向</div></section></div></body></html>

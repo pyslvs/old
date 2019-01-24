@@ -1,0 +1,166 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Pyslvs 使用手冊</title>
+<link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img {
+    border: 3px solid red;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
+});
+</script>
+
+</head><header><h1>Pyslvs 使用手冊</h1>
+<confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+</ul>
+</confmenu></header>
+<div class='container'><nav>
+<ul id='css3menu1' class='topmenu'>
+<div class="tipue_search_group">
+<input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required>
+</div><li><a href='簡介.html'>簡介</a><ul><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li><a href='操作.html'>操作</a><ul><li><a href='模擬操作.html'>模擬操作</a><ul><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a></li></ul><li><a href='下載.html'>下載</a><li><a href='範例.html'>範例</a><ul><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li><a href='Python 教學.html'>Python 教學</a><ul><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li><a href='開發.html'>開發</a><ul><li><a href='Windows 開發.html'>Windows 開發</a><ul><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li><a href='參與協同.html'>參與協同</a><ul><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li><a href='參考.html'>參考</a><ul><li><a href='Misc.html'>Misc</a></li></ul></nav><section><div id="tipue_search_content">控制流程 << <a href='控制流程.html'>Previous</a> <a href='複製與參照.html'>Next</a> >> 複製與參照<br /><h1>簽章</h1>
+<p><strong>簽章</strong></p>
+<p>函式 (Function) 能在特定需求時<strong>輸入</strong>資料與<strong>輸出</strong>結果，輸入與輸出值稱為<strong>參數</strong> (Argument)。</p>
+<p>以強型別程式語言 C 來說，一個輸入 3 個參數，輸出 1 個參數的函式是這樣宣告的：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int func(int p0, int p1, float p2);</pre>
+<p>但是 Python 沒有類型標示，因此函式會如此定義：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, p2):
+    ...</pre>
+<p>函式 func 的輸入與輸出類型（如「輸入 3 個參數、輸出 1 個參數」），稱為<strong>簽章</strong> (Signature)。</p>
+<p>Python 是弱型別語言，簽章只有強制規定參數<strong>數量</strong>，而沒有規定參數類型。</p>
+<p>另外，單一化的輸入需求不足以滿足函式應用範圍，而產生<strong>多載</strong> (Overload) 的功能，以支援不同選項、不同類型的輸入。以強型別程式語言 C++ 為例：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 注意：C 語言不支援多載。
+// C++ 多載宣告，編譯時會依照簽章自動生成四種函式。
+// 預設值也算是一種多載。
+// 撰寫程式時只需要寫 func 即可。
+int func(int p0, int p1, long double p2, bool p3 = false);
+int func(int p0, int p1, double p2) {
+    // 會需要寫轉換型別的接繞函式。
+    // 如果簽章搞錯，會造成無限遞迴 (Recursive)。
+    return func(p0, p1, (long double) p2);
+}
+int func(int p0, int p1, float p2) {
+    // 會需要調整設定。
+    return func(p0, p1, (long double) p2, true);
+}</pre>
+<p>上面的例子中，為了支援強型別的標記，函式必須製作多種不同類型的簽章，若有更多需求，則必須使用模板 (Template)：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 模板宣告，編譯時會自動生成多載簽章。
+template &lt;typename T&gt;
+int func(int p0, int p1, T p2);
+// 如果要支援其他參數，又要混合多載。
+int func(int p0, int p1, long double p2, bool p3 = false);</pre>
+<p>在 Python 中，<strong>沒有多載</strong>、<strong>沒有模板</strong>、<strong>沒有型別要求</strong>，因此大幅簡化定義。唯一要解決的問題是滿足參數數量的變化。</p>
+<p><strong>預設值</strong></p>
+<p>預設值只能從最後開始使用等於 = 符號<strong>連續</strong>定義，不可以隨意指定其中的參數。</p>
+<p>在呼叫時使用 = 符號為<strong>關鍵字參數</strong>，與定義時相同，只能從最後開始<strong>連續</strong>填入。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, p2=20, p3=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, a2, a3)  # 全部填滿。
+func(a0, a1, a2)  # 使用部分預設值。
+func(a0, a1, p3=a3)  # 名稱對應，使用部分預設值。
+func(a0, a1)  # 全部使用預設值。</pre>
+<p><strong>強制名稱對應</strong></p>
+<p>使用特殊符號 *，其後所有參數不分順序，強制使用名稱對應。如果有參數沒有填入或沒有預設值，會引發錯誤。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, *, p2, p3=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, p2=a2, p3=a3)  # 全部填滿。
+func(a0, a1, p2=a2)  # 名稱對應，全部使用預設值。</pre>
+<p><strong>順序收集與對應收集</strong></p>
+<p>使用星號 *，該變數會收集多餘填入的<strong>位置參數</strong> (Positional argument)。多餘的參數會收集成 tuple 容器，若沒有多餘參數，該參數會是空的 tuple 容器。</p>
+<p>使用雙星號 **，該變數會收集多餘填入的<strong>關鍵字參數</strong> (Keyword argument)。多餘的參數會收集成 dict 容器，若沒有多餘參數，該參數會是空的 dict 容器。</p>
+<p>兩者可以擇一或混合使用，但是定義時單星號參數一定要在前面，其後所有參數不分順序。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, *p2, **p3, p4, p5=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, p4=a4, p5=a5)  # 全部填滿。
+# p2 = ()
+# p3 = {}
+func(a0, a1, p4=a4)  # 全部使用預設值。
+# p2 = ()
+# p3 = {}
+func(a0, a1, b1, b2, r=b3, s=b4, p4=a3)  # 多餘值。
+# p2 = (b1, b2)
+# p3 = {'r': b3, 's': b4}</pre>
+<p>針對「順序容器（如 tuple、list）」或「成對容器（如 dict）」，填入時可以用 *、** 按關係填入。不過不符合簽章仍然會引發錯誤，應當注意。如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">func(*[a0, a1, b1, b2], **{'r':b3, 's': b4, 'p4': a3})
+# 或用變數：
+a_list = [a1, b1, b2]
+b_dict = {'r':b3, 'p4': a3}
+func(a0, s=b4, *a_list, **b_dict)</pre><br />控制流程 << <a href='控制流程.html'>Previous</a> <a href='複製與參照.html'>Next</a> >> 複製與參照</div></section></div></body></html>

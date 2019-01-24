@@ -132,6 +132,746 @@
 <p>平開窗戶開合機構</p>
 <p><a href="/downloads/house_window.pyslvs">house_window.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="/images/casement_window.png" width="600"/></p>
+<p></p><h1>Python 教學</h1>
+<p>本章節將列出基本的 Python3 教學，供學員參考。</p>
+<h2>控制流程</h2>
+<p>請學員從下列圖片中的控制流程方法對應 Python 中的語法。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Condition statement
+if condition_1:
+    # Do for condition 1.
+elif condition_2:
+    # Do for condition 2.
+else:
+    # Do for other case.</pre>
+<p><img alt="" height="500" src="/images/loop.png" width="800"/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Loops
+for i in range(10):
+    if i == 4:
+        continue
+    # Do for 0~9 except 4.
+
+k = 'b'
+w = ['a', 'b', 'c', 'd', 'e']
+while w:  # Condition: 'w' is not empty.
+    if k == w.pop():  # Remove last one and compare it with 'k'.
+        break  # Stop the loop if k is equal with last one.
+print(w)  # w = ['a']</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># note: "for" loop is syntactic sugar based on "while" loop.
+for c in ['a', 'b', 'c']:
+    if c == 'b':
+        continue
+    # Do for 'a'~'c' except 'b'.
+
+i = 0
+c_list = ['a', 'b', 'c']
+while i &lt; len(c_list):  # 'i' is in the range of length of 'c_list'.
+    c = c_list[i]  # Get the value from 'c_list'.
+    if c == 'b':
+        continue
+    # Do for 'a'~'c' except 'b'.
+    i += 1  # 'i' increase 1.</pre>
+<p><img alt="" height="500" src="/images/function.png" width="800"/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Define a function 'func'.
+def func(a, b):
+    c = int(a)  # Copy 'a' and turn it to an integer, and save it to 'c'.
+    if c &gt; 30:  # If 'c' is over 30, set it to 30.
+       c = 30
+    return b - c  # Return a value that obtained by 'b' minus with 'c'.
+    # Garbage collecting for 'a', 'b', 'c'. Except 'b' - 'c'.
+
+# Use the function.
+d = func(27.9705, 50)  # 'd' is 23.
+d -= func('70', d)  # 'd' minus -7, so 'd' will be set to 30.
+func(30.5, d)  # Return value is 0, but it will be discarded and deleted.</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># The following statements are the same in the last line of function.
+def f(w):
+    w.append(w.pop(0))
+    # No return statement.
+
+def f(w):
+    w.append(w.pop(0))
+    return
+
+def f():
+    w.append(w.pop(0))
+    return None
+
+# The first is recommended.</pre>
+<p>延伸閱讀 - <strong>執行緒</strong>：</p>
+<p>Qt 中的 <strong>signal</strong> 與 <strong>slot</strong> 為透過多執行緒配置實現的功能。</p>
+<p><br/><br/><img alt="" height="500" src="/images/threading.png" width="800"/></p>
+<h2>簽章</h2>
+<p><strong>簽章</strong></p>
+<p>函式 (Function) 能在特定需求時<strong>輸入</strong>資料與<strong>輸出</strong>結果，輸入與輸出值稱為<strong>參數</strong> (Argument)。</p>
+<p>以強型別程式語言 C 來說，一個輸入 3 個參數，輸出 1 個參數的函式是這樣宣告的：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int func(int p0, int p1, float p2);</pre>
+<p>但是 Python 沒有類型標示，因此函式會如此定義：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, p2):
+    ...</pre>
+<p>函式 func 的輸入與輸出類型（如「輸入 3 個參數、輸出 1 個參數」），稱為<strong>簽章</strong> (Signature)。</p>
+<p>Python 是弱型別語言，簽章只有強制規定參數<strong>數量</strong>，而沒有規定參數類型。</p>
+<p>另外，單一化的輸入需求不足以滿足函式應用範圍，而產生<strong>多載</strong> (Overload) 的功能，以支援不同選項、不同類型的輸入。以強型別程式語言 C++ 為例：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 注意：C 語言不支援多載。
+// C++ 多載宣告，編譯時會依照簽章自動生成四種函式。
+// 預設值也算是一種多載。
+// 撰寫程式時只需要寫 func 即可。
+int func(int p0, int p1, long double p2, bool p3 = false);
+int func(int p0, int p1, double p2) {
+    // 會需要寫轉換型別的接繞函式。
+    // 如果簽章搞錯，會造成無限遞迴 (Recursive)。
+    return func(p0, p1, (long double) p2);
+}
+int func(int p0, int p1, float p2) {
+    // 會需要調整設定。
+    return func(p0, p1, (long double) p2, true);
+}</pre>
+<p>上面的例子中，為了支援強型別的標記，函式必須製作多種不同類型的簽章，若有更多需求，則必須使用模板 (Template)：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 模板宣告，編譯時會自動生成多載簽章。
+template &lt;typename T&gt;
+int func(int p0, int p1, T p2);
+// 如果要支援其他參數，又要混合多載。
+int func(int p0, int p1, long double p2, bool p3 = false);</pre>
+<p>在 Python 中，<strong>沒有多載</strong>、<strong>沒有模板</strong>、<strong>沒有型別要求</strong>，因此大幅簡化定義。唯一要解決的問題是滿足參數數量的變化。</p>
+<p><strong>預設值</strong></p>
+<p>預設值只能從最後開始使用等於 = 符號<strong>連續</strong>定義，不可以隨意指定其中的參數。</p>
+<p>在呼叫時使用 = 符號為<strong>關鍵字參數</strong>，與定義時相同，只能從最後開始<strong>連續</strong>填入。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, p2=20, p3=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, a2, a3)  # 全部填滿。
+func(a0, a1, a2)  # 使用部分預設值。
+func(a0, a1, p3=a3)  # 名稱對應，使用部分預設值。
+func(a0, a1)  # 全部使用預設值。</pre>
+<p><strong>強制名稱對應</strong></p>
+<p>使用特殊符號 *，其後所有參數不分順序，強制使用名稱對應。如果有參數沒有填入或沒有預設值，會引發錯誤。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, *, p2, p3=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, p2=a2, p3=a3)  # 全部填滿。
+func(a0, a1, p2=a2)  # 名稱對應，全部使用預設值。</pre>
+<p><strong>順序收集與對應收集</strong></p>
+<p>使用星號 *，該變數會收集多餘填入的<strong>位置參數</strong> (Positional argument)。多餘的參數會收集成 tuple 容器，若沒有多餘參數，該參數會是空的 tuple 容器。</p>
+<p>使用雙星號 **，該變數會收集多餘填入的<strong>關鍵字參數</strong> (Keyword argument)。多餘的參數會收集成 dict 容器，若沒有多餘參數，該參數會是空的 dict 容器。</p>
+<p>兩者可以擇一或混合使用，但是定義時單星號參數一定要在前面，其後所有參數不分順序。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(p0, p1, *p2, **p3, p4, p5=True):
+    ...
+
+# 可以這樣使用：
+func(a0, a1, p4=a4, p5=a5)  # 全部填滿。
+# p2 = ()
+# p3 = {}
+func(a0, a1, p4=a4)  # 全部使用預設值。
+# p2 = ()
+# p3 = {}
+func(a0, a1, b1, b2, r=b3, s=b4, p4=a3)  # 多餘值。
+# p2 = (b1, b2)
+# p3 = {'r': b3, 's': b4}</pre>
+<p>針對「順序容器（如 tuple、list）」或「成對容器（如 dict）」，填入時可以用 *、** 按關係填入。不過不符合簽章仍然會引發錯誤，應當注意。如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">func(*[a0, a1, b1, b2], **{'r':b3, 's': b4, 'p4': a3})
+# 或用變數：
+a_list = [a1, b1, b2]
+b_dict = {'r':b3, 'p4': a3}
+func(a0, s=b4, *a_list, **b_dict)</pre><h2>複製與參照</h2>
+<p>這邊整理關於 Python 程式語言中的「命名」規則，請學員閱讀。</p>
+<p>Python 的設計構想源自 <a href="https://en.wikipedia.org/wiki/ABC_(programming_language)">ABC</a> [<a href="https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place">1</a>]，採越位規格 (<a href="https://en.wikipedia.org/wiki/Off-side_rule">off-side rule</a>) 分隔程式區段，其表達式語法 (expression syntax) 與 C 語言類似 [<a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=55E61F6DF3941177AB9945E14E0B5FAD?doi=10.1.1.38.2023&amp;rep=rep1&amp;type=pdf">2</a>]，因此會提到其相關規則。在其他類似 C 的程式語言（C++、C#、Java 等，其中 C++ 文法的相似度最高）可能會使用相同的規則處理。</p>
+<p><a href="https://www.python.org">官方</a>提供的 Python 單機版直譯器稱為 CPython，因為該直譯器是純 C 語言編寫，達成 Python 所有功能。除了 CPython 外，還有以 Java 編寫的 <a href="https://github.com/jythontools/jython">Jython</a>，以 .net 技術編寫的 <a href="http://ironpython.net/">Ironpython</a>，以 Python 編寫的 <a href="https://pypy.org/">PyPy</a>，以 Javascript 編寫的 <a href="https://brython.info/">Brython</a>，進階版的 <a href="https://github.com/stackless-dev/stackless">Stackless Python</a> 以及專用於微控制器的 <a href="https://github.com/micropython/micropython">Micropython</a> 等。CPython 的原理是將 Python script 翻譯成字節碼 (Bytecode)，並透過解析字節碼來執行，字節碼存放在 __pycache__ 資料夾中。</p>
+<p>由於 Python 文法是由<a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">擴展巴克斯範式</a> (Extended Backus–Naur form, EBNF) 定義的（<a href="https://docs.python.org/3/reference/expressions.html">詳見此</a>），因此理論上任何支援 EBNF 解析功能的程式語言都能寫成 Python 直譯器，包括 Python 本身 (PyPy)。</p>
+<p>以下章節內容關於非 Python 部分可以斟酌吸收。</p>
+<p><strong>C 的指派</strong></p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int a = 10;</pre>
+<p>上面 C 程式碼的意思為：使用最大為<strong>整數</strong> (int) 的記憶體空間<strong>存放</strong>數字 10，並且在本程式<strong>範圍</strong> (Scope) 中，這個記憶體空間的代號為 a。</p>
+<p>在 C 語言中<strong>記憶體空間的代號</strong>稱為<strong>變數</strong> (Variable)，透過「宣告」規定在<strong>範圍</strong>中有哪些代號；「定義」可以做記憶體劃分和存值的動作。</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">/*
+C 語言的單行註解使用雙斜線，多行使用斜線與星號。
+每「行」結尾為分號，會忽略重複空白和所有換行記號。
+因此，C 語言可以不用縮排、全部寫同一行，難以閱讀。
+*/
+
+// C 語言可以任意規劃「範圍」或巢狀範圍，使用大括弧即可。
+{
+    // 宣告，沒有任何動作，只是給編譯器看的。
+    int a;
+    // 定義，規劃記憶體並存值。
+    a = 10;
+    {
+        // 可以一起寫。
+        int b = 20;
+        // 如果巢狀範圍宣告撞名，會將外部範圍的名稱暫時「隱藏」。
+    }
+    // 這裡不能用 b。
+}</pre>
+<p>在宣告的範圍外，該變數會被自動刪除，以節省記憶體。因此，在 C 語言中，任何定義的動作都會花費記憶空間。「指派」的文法如下：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">左值 = 右值</pre>
+<p>右值的計算結果為<strong>任意記憶體大小的值</strong>，而左值<strong>必須</strong>運算出<strong>相應大小</strong>的記憶體空間，透過指派運算子，可以將右值的值複製到左值。另外，一些運算類的指派運算子 +=、-= 等，是將計算結果存入相同記憶體位置的意思，如 a += 10 同於 a = a + 10。</p>
+<p>甚至在範圍外，也可以使用 C 語言的指標 (Pointer) 功能，攜帶記憶體空間的鑰匙，持有鑰匙，可以直接存取記憶體。以下為 C++ 語言的一個小範例。</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">/*
+指標是一種變數！
+
+指標是一種二進位代號，代表記憶體區段的「第一個值」。
+指標的間隔數是該類型的空間大小，但是 C 語言中 +1 會自動幫忙跳號。
+*/
+
+// 假設有一把鑰匙（還沒定義）。
+int *a;
+{
+    // 使用 new 關鍵字初始化 50 個整數，並將第一把鑰匙交給 b。
+    int *b = new int[50];
+    // 將 b 鑰匙複製給 a。
+    a = b;
+}
+/*
+b 鑰匙被刪除，但是 50 個整數還在。
+如果剛才沒有複製給 a，會遺失 50 個整數的鑰匙，引發記憶體洩漏 (Memory leak)。
+*/
+cout &lt;&lt; *(a + 2) &lt;&lt; endl;  // 顯示第三位整數的值（第一把鑰匙 +2）。
+cout &lt;&lt; a[0] &lt;&lt; endl;  // 同上，顯示第一位整數的值。
+delete[] a;  // 使用 delete 關鍵字刪除 a 鑰匙的所有值。</pre>
+<p>若不使用指標，C 語言也有參照物件，相當於取綽號：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">int a = 10;
+// 為 a 變數取綽號 b。
+// 不會增加記憶體空間。
+int &amp;b = a;</pre>
+<p>總結：除非特別設計，不然指派運算子都是使用<strong>複製</strong>，而非參照。例如 C++ 中的「函式成本」是由於下列文法：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 函式是將程式碼封裝後嵌入於主程式中。
+int plus(int a, int b) { return a + b; }
+// 使用 plus
+int a = 10;
+int b = 20;
+int c = plus(a, b);</pre>
+<p>等價於：</p>
+<pre class="brush:cpp;auto-links:false;gutter:false;toolbar:false" contenteditable="false">// 轉換後：
+int a = 10;
+int b = 20;
+int c;
+{
+    int _a = a;
+    int _b = b;
+    int _r = _a + _b;
+    c = _r;
+}</pre>
+<p>這樣每個參數都會造成龐大的傳輸成本，假如參數是攜帶龐大資料的容器，就更不得了了。因此使用 inline 函式、參照參數，或指標傳入、傳出，以節省執行時間、記憶空間。</p>
+<p>上述流程是不是十分繁瑣且危險？在 Python 中，參考自其他程式語言，引入垃圾回收機制 (Garbage collection)，取代了指標和參照物件的功能。</p>
+<p><strong>Python 的指派</strong></p>
+<p>Python 的變數稱為<strong>名稱</strong> (Name)，可以視作一張<strong>範圍通行證</strong>，而非記憶體代號，已經跟 C 語言的意思不一樣了。而透過「指派」，可以發通行證給任何數值，不用管記憶體大小。一句話解釋規則：</p>
+<ul>
+<li>所有的數值會自動追蹤與管理，擁有一個或多個名稱的值<strong>可以在該作用範圍使用</strong>，失去所有名稱的值<strong>會被刪除</strong>。</li>
+</ul>
+<p>Python 的表達式 (Expression) 中有種數值稱為字面數值 (literal value)，意指寫出來就是該值，例如 70 的類型是 int；(1, 2, 3) 的類型是 tuple；[1, 2, 3] 的類型是 list；{'a': 20, 'c': 80} 的類型是 dict。不過只有部分字面數值，任何時候寫出來都<strong>永遠共享記憶體</strong>，特徵是不能改變值 (Mutable)，所有 method 操作結果都回傳副本，不改原始值。<strong>只有</strong> None、bool、int、float、complex、所有字串 (string)、tuple 類型。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 相同值的共享記憶體檢查
+# 用 is 運算子可以檢查是否為相同記憶體。
+# int
+print(10 is 10)  # True
+# tuple
+print(() is ())  # True
+# list
+print([] is [])  # False
+# dict
+print({} is {})  # False</pre>
+<p>來段範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 發通行證 a 給數值 10。
+a = 10
+# 通行證 a 的持有者是 10，發通行證 b 給數值 10。
+b = a
+print(a is b)  # True
+
+# b += 5 來自 C 語言，同於 b = b + 5。
+# 對通行證 b 的值做 +5 計算，並對該值發通行證 b。
+# 通行證 b 被拔除自 10，交給結果 15。
+b += 5
+print(b)  # 15
+print(a)  # 10
+print(a is b)  # False</pre>
+<p>來一段容器的範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># list 容器
+a = [1, 2, 3]
+b = a
+print(a is b)  # True
+
+# 對通行證 b 的容器操作，在尾端加入 4。
+b.append(4)
+# 使用 del 關鍵字，對通行證 b 的容器操作，刪除第二位值 2。
+del b[1]
+print(b)  # [1, 3, 4]
+print(a)  # [1, 3, 4]
+
+# 幫當前的 a 值複製，重發通行證 b 給複製體。
+b = a.copy()
+# 讓 a 刪除最後一項。
+a.pop()
+print(a)  # [1, 3]
+print(b)  # [1, 3, 4]
+print(a is b)  # False</pre>
+<p>活用上述概念，可以輕鬆達成複製 (Copy) 與參照 (Reference) 功能。</p>
+<p>最後介紹範圍的規則：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># Python 中，唯二的範圍界線為 Function 與 Class 的定義，而非縮排。
+
+def func(b):
+    # 通行證 c 只有效於 func 中。
+    # 回傳值計算完後通行證 c 會被移除（垃圾回收）。
+    c = 20
+    return b + c
+
+# 全域通行證 g
+g = 'abc'
+
+# 主程式與 func 的範圍沒有巢狀關係。
+def main():
+    a = 10
+    # a 進入 func 函數，獲得區域通行證 b。
+    # 回傳值 30 被丟出 func，獲得區域通行證 d。
+    d = func(a)
+    print(d)  # 30
+
+    # 巢狀函式有巢狀範圍界線。
+    def nest_func():
+        # 使用 global 關鍵字指定全域通行證 g。
+        global g
+        # 全域通行證 g 重新發給 50。
+        g = 50
+        # 使用 nonlocal 關鍵字指定上層的區域通行證 d。
+        nonlocal d
+        # 上層的區域通行證 d 重新發給 20。
+        d = 20
+
+    # 執行巢狀函式。持有 d 的 30 被刪除；持有 g 的 'abc' 被刪除。
+    nest_func()
+    print(g)  # 50
+    print(d)  # 20
+
+# 執行 main
+if __name__ == '__main__':
+    main()</pre>
+<h2>物件導向</h2>
+<p>請學員瞭解關於物件導向的概念及特性。</p>
+<p><strong>非物件導向</strong></p>
+<p>名詞解釋：</p>
+<ul>
+<li>變數 (Variable)：代表儲存一個或多個的<strong>單一資料</strong>或<strong>資料集</strong>，能夠被<strong>定義</strong> (Define) 與<strong>引用</strong> (Reference)。</li>
+<li>函式 (Function)：封裝的程式碼（在程式中定義），以能在特定需求時<strong>輸入</strong>資料與<strong>輸出</strong>結果。</li>
+</ul>
+<p>通常物件導向的程式語言會比較高階，也能夠支援非物件導向的操作。不過有些特例如 C# 語言，所有程式碼必須在物件導向概念中實現，非物件導向的實作則是「靜態函式」對應一般函式；「靜態類別」對應模組 (Module)，甚至連進入點 (Entry point) 都必須在類別中。</p>
+<p><strong>物件導向</strong></p>
+<p>名詞解釋：</p>
+<ul>
+<li>類別 / 類型 / 型別 (Type / Class / Identifier)：定義<strong>資料形式</strong>與<strong>資料操作</strong>。類別 (Type) 一般是指簡單二進位可表達的資料型態；類型 (Class) 是指特別定義過的資料結構或資料集；型別 (Identifier) 則是強型別 (Strong typed) 程式語言用來標記資料格式的名稱。</li>
+<li>物件 (Object)：是<strong>類別</strong>的<strong>實例</strong> (Instance)，可以被變數儲存。</li>
+</ul>
+<p>在擁有物件導向的程式語言中，<strong>函式也是一種物件</strong>，並且有自己的類別，如<a href="https://en.wikipedia.org/wiki/Anonymous_function">匿名函式</a> (Anonymous function, Function literal, Lambda expression)。</p>
+<p>程式中若要獲得物件，是<strong>由類別產生</strong>，或使用字面表示式 (Literal expression)。而某些能夠支援更抽象概念的程式語言中，類別也是一種物件，因此類別也有自己的類別，稱為<strong>元類</strong> (Meta Class)，如 Python。</p>
+<p>類別有以下特性：</p>
+<ul>
+<li>封裝性 (Encapsulation)：可以<strong>攜帶各種資料或資料集</strong>，並且由於物件是實例的關係，每個物件是獨立個體，其資料可以有著不同的內容。</li>
+<li>繼承 (Inheritance)：定義簡單的類別後，較複雜的類別可以從簡單的類別<strong>提取其功能</strong>。</li>
+<li>多形 (Polymorphism)：<strong>不同類別</strong>可能會有<strong>相同操作</strong>。程式碼在使用該物件時，<strong>強型別</strong>的程式語言（如 C++）必須特別規範，<strong>弱型別</strong>的程式語言（如 Python）會嘗試尋找並進行該操作。</li>
+<li>抽象性 (Abstraction)：透過<strong>繼承</strong>和<strong>元類</strong>概念可以表達更抽象的物件概念。</li>
+</ul>
+<p>以下將示範 Python 程式碼中如何用<strong>封裝性</strong>與<strong>繼承</strong>呈現各種特性。</p>
+<p><strong>封裝性</strong></p>
+<p>Python 的基本類型定義語法如下：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># Python 中的類型名稱使用 Camal case（單字首大寫）。
+# 每個類型與函式定義之間空兩行。
+class MyClass:
+
+    """定義 my class。"""
+
+    def __init__(self, score):
+        """初始化函式。
+        類別中的 function 稱為方法 (Method)，
+        其中第一項參數 self 代表此物件。
+        實際呼叫時會自動填入。
+        """
+        print("初始化！")
+        # 類別中的「變數」稱為成員 (Member)。
+        # 類別中的「名稱」稱為屬性 (Attribute)。
+        # members 和 methods 都是 attributes。
+        # attributes 使用「點」運算子取得。
+        self.score = score
+        # 私有 attributes 名稱前加上雙底線。
+        # 名稱會被編碼為 "_MyClass__score"。
+        # 除非用上述名稱呼叫，
+        # 只有本類別的 method 可以呼叫。
+        self.__score = score + 10
+
+    def method1(self, p0):
+        """一個公開的 method，
+        任何使用本物件的程式都可以呼叫。
+        """
+        print("method 1:", self.__score)
+        # 呼叫一個私有 method。
+        self.__method2(p0)
+
+    def __method2(self, p0):
+        """一個私有的 method。"""
+        print("method 2:", p0)
+
+
+# 初始化一個 MyClass 實例。
+a = MyClass(50)  # 初始化！
+print(a.score)  # 50
+a.method1(20)  # method 1: 60
+               # method 2: 20
+# 強迫呼叫
+print(a._MyClass__score)  # 60
+# 強迫呼叫
+a._MyClass__method2(30)  # method 2: 30</pre>
+<p>上面的類型中，呈現了<strong>封裝性</strong>的效果，一個 MyClass 物件中擁有公有與私有的 attributes，當使用 a 名稱傳送此物件時，隨時可以使用公開 attributes。</p>
+<p><strong>繼承</strong></p>
+<p>繼承可以將較小類型的 attributes 全部拿來用。在 Python 中，有個類型叫做 object，提供一些預設特性，所有類型如果沒指定都會繼承它。</p>
+<p>繼承語法如下：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 引用斜邊公式 hypotenuse。
+from math import hypot
+
+class Point:
+
+    """點資料集。"""
+
+    def __init__(self, x, y):
+        """初始化時設定兩座標並顯示。"""
+        self.x = x
+        self.y = y
+        self.__show()
+
+    def __show(self):
+        """印出 x 和 y。"""
+        print(self.x, self.y)
+
+    def distance(self, c):
+        """回傳兩點的距離。"""
+        return hypot(c.x - self.x, c.y - self.y)
+
+    def move(self, x, y):
+        """移動座標。"""
+        self.x = x
+        self.y = y
+
+
+class PointView(Point):
+
+    """檢視用的類型，繼承自點。"""
+
+    def __init__(self, x, y):
+        # 引用上一個繼承項的 __init__ 函式。
+        super(Coordinate, self).__init__(x, y)
+        print("Point view")
+
+    def distance_with_origin(self):
+        """此點與原點的距離。"""
+        return hypot(self.x, self.y)
+
+    def __repr__(self):
+        """覆寫預設函式 __repr__。
+        此函式可以定義物件轉成字串時的樣式。
+        """
+        return f"&lt;Point x={self.x} y={self.y}&gt;"
+
+
+# 建立點資料 p1。
+p1 = Point(20, 30)  # 20 30
+# 建立點資料 p2。
+p2 = PointView(50, 70)  # 50 70
+                        # Point view
+# 顯示距離。
+print(p2.distance(p1))  # 50
+# 顯示 p2 與原點的距離。
+print(p2.distance_with_origin())  # 86.02325267042627
+# 印出 p1 和 p2。
+# 印的時候會呼叫預設函式 __repr__。
+print(p1)  # &lt;Point object at 一段記憶體位址&gt;
+print(p2)  # &lt;Point x=50 y=70&gt;</pre>
+<p>上面的範例中，PointView 繼承自 Point，因此會擁有所有 Point 的公有與私有 attributes，但是私有 attributes 會被編成 _Point__show 的樣式，因此不能直接使用。</p>
+<p>另外，當 PointView 的屬性名稱與 Point 重複時（如 __init__），會直接覆蓋，因此必須使用 super 函式搜尋到 Point 類型，將 PointView 實體帶入 Point.__init__ 執行。</p>
+<p><strong>靜態方法</strong></p>
+<p>靜態方法 (static method) 只是掛上類別名稱的函式 (static method)。在 Python 中，靜態方法可以有兩種定義法，稱為 static method 與 class method。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, p):
+        """實做相等運算子 ==。"""
+        return self.x == p.x and self.y == p.y
+
+    @staticmethod
+    def s_method(x, y):
+        """Static method."""
+        return Point(x + 10, y + 10)
+
+    @classmethod
+    def c_method(cls, x, y):
+        return cls(x + 10, y + 10)
+
+
+p1 = Point.s_method(20, 30)
+p2 = Point.c_method(20, 30)
+print(p1 == p2)  # True</pre>
+<p>兩者的差異只在於 class method 的會傳入當前類型，所以在繼承上有差別。</p>
+<p><strong>延伸閱讀 - 類別與實體的關係</strong></p>
+<p>類別也有 attributes，稱為 class attributes。如 Point.__init__、Point._Point__show 等。而 p1.x 是因為上面的範例使用 self.x = x 的語法產生，這是後天賦予物件的，又稱 object attributes。物件可以使用 class attributes，但是類別沒有 object attributes。</p>
+<p>關於 class attributes，每個 object 的 class member 其實是使用相同名稱，但是 class method 是複製過來的，如下：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">class A:
+    a = 10
+    def method(self, p0, p1):
+        pass
+
+a = A()
+b = A()
+print(a.a is b.a)  # True
+print(a.method is b.method)  # False</pre>
+<p>是因為下列程式是相同結果的：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">a.method(p0, p1)
+A.method(a, p0, p1)</pre>
+<p>Python 內建的 type 函式會回傳實體的類型。而事實上 type 是一種類型，而且是所有類型的元類，因此初始化時可以「作出」實體的類型。</p>
+<h2>類型註解</h2>
+<p>基於協同開發，Python 引入了選擇性的類型註解。</p>
+<p>學員可以藉由類型註解，在程式碼協同時較快辨認變數類型。</p>
+<p><strong>類型註解</strong></p>
+<p>類型註解 (Typing) 是一種<strong>註解</strong>，可以為每種參數進行標示。由於文法問題，類型註解並不是強迫性的，不過仍有效用。可藉由每個範圍 (Scope) 的 __annotations__ 名稱取得，若有工具或 IDE 的功能，可以進行靜態分析。</p>
+<p>以下內容依據為 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>。</p>
+<p><strong>省略記號</strong></p>
+<p>省略記號 (Ellipsis)「...」在 Python 中是一種佔位符號，可以在註解中代表多個類似物件，也能取代 pass 關鍵字。</p>
+<p><strong>等價表示</strong></p>
+<p>預設該值如果為 Any 或可以明確推斷，可以選擇不標示。</p>
+<p>其中：</p>
+<ul>
+<li>type(None) 標示為 None。</li>
+<li>object 標示為 Any。</li>
+<li>會導致錯誤時標示為 NoReturn，僅可用於回傳值。</li>
+</ul>
+<p><strong>基本文法</strong></p>
+<p>Python 為<strong>弱型別</strong> (Weak typing) 語言，又稱<strong>鴨子型別</strong> (Duck type)，相較於<strong>強型別</strong> (Strong typing) 語言，只要變數能用即可，不能用就引發錯誤。當然這只能在相對安全的直譯式語言 (Interpreted language) 中，因為這裡只要使用 try 語句即可：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">try:
+    # 測試 a 能不能執行 test_method。
+    b = a.test_method()
+except AttributeError:
+    # 沒有 test_method。
+    c = 20
+else:
+    c = b * 2</pre>
+<p>但是因為執行效能與開發效率問題，一直測試顯然不是好方法，因此 Python 在簽章上引入了類型註解的文法。</p>
+<p>簽章的參數中，使用「:」符號後連接類型名稱；回傳值則是使用「-&gt;」記號連接。參照於一般英文符號以及<strong>運算子必須由空白環繞</strong> (<a href="https://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements">PEP 8</a>) 的規定，「:」符號會連接前一個表示式，與下一個表示式間隔空白；「-&gt;」記號則是必須由空白環繞。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 只能從預設值或參數名稱猜測。
+def func(p0, p1=20, p2=True):
+    ...
+
+# 直接規定型別。
+def func(p0: int, p1: int = 20, p2: bool = True) -&gt; List[str]:
+    ...
+
+# 若是太長可以利用括弧換行。
+def func(
+    number: int,
+    size: int = 20,
+    reverse: bool = True
+) -&gt; List[str]:
+    ...</pre>
+<p>在 Python 3.6 新增單一變數的類型註解文法 (<a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>)。</p>
+<p>不過一般可直接辨識的變數就不會使用，例如直接賦予類型的初始化物件。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 等等會裝入整數。
+a: List[int] = []
+# 這麼明顯就不用了。
+a: MyClass = MyClass()</pre>
+<p>類型註解也支援名稱替換：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Point = Tuple[float, float]
+PointPair = Tuple[Point, Point]
+graphics: Dict[str, List[PointPair]] = {}</pre>
+<p>參數輸入值的類型註解一般也是用**鴨子型別**的概念標示，提醒開發者「需要這樣使用」，而非「一定需要這種類型」。如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(w) -&gt; bool:
+    """w 是一個會進行疊代與檢索的物件。"""
+    for i in range(20):
+        for k in w:
+            if w[i + 2] == 'z':
+                return True
+
+# 應該標示成序列：
+w: Secquence[int]
+# 而非強迫成某種型態：
+w: List[int]
+w: Tuple[int, ...]</pre>
+<p>自 Python 3.5 起支援，支援<strong>放入</strong>或<strong>回傳</strong>的型別必須由標準模組 typing 提供。類型中的類型註解名稱會跟一般內建類型名稱不一樣，改成字首大寫。</p>
+<p>通常 typing 模組的導入習慣將相同性質的類型一起擺放。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from typing import (
+    # 狀態變數
+    TYPE_CHECKING,
+    # 序列
+    Tuple,
+    List,
+    Secquence,
+    # 二元搜尋樹
+    Set,
+    Dict,
+    # 可呼叫物（函式）
+    Callable,
+    # 迭代器與生產器
+    Iterator,
+    Generator,
+    # 邏輯判斷
+    Optional,
+    Union,
+    Any,
+    # 泛型
+    Generic,
+    # 函式或裝飾器
+    TypeVar,
+    overload,
+)</pre>
+<p>以下將介紹上述常用的類型標示。</p>
+<p><strong>容器</strong></p>
+<p>使用單一項目的容器：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false"># 其實 tuple 容器是固定長度的。
+my_tuple: Tuple[int, int] = (20, 20)
+# 不限長度的容器。
+my_list: List[float] = [20., 50.02, -3.006]
+# 不限長度的 tuple 容器（其他變數決定）。
+my_tuple: Tuple[int, ...] = tuple(i for i in range(s))
+# 巢狀標示。
+w: Set[Tuple[int, int]] = {(10, 20), (30, 40), (50, 60)}</pre>
+<p>使用成對項目的容器：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">d: Dict[str, List[int]] = {
+    's': [10, 20, 30],
+    'b': [],
+    'f': [77, 66, 55, 44],
+}</pre>
+<p><strong>函式物件</strong></p>
+<p>函式物件使用 Callable 來標示：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Callable[[input_type, ...], return_type]</pre>
+<p>範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(n: int) -&gt; int:
+    """一般函式"""
+    return n * 6
+
+# 匿名函式
+k = lambda s, end: s.replace('gen', 'time') + end
+
+func: Callable[[int], int]
+k: Callable[[str, str], str]</pre>
+<p><strong>迭代器與生產器</strong></p>
+<p>使用 yield 關鍵字可以搭配 def 關鍵字定義一個<strong>迭代器</strong> (Iterator) 或<strong>生產器</strong> (Generator) 函式：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_range(n):
+    """這個 double_range 是一個函式
+    但是可以產生以下程式碼的迭帶器物件。
+
+    若當中使用 return 關鍵字，會引發 StopIteration 錯誤。
+    不過也可以是無限迴圈。
+    """
+    for i in range(n):
+        yield i * 2
+
+# 建立迭帶器物件 "ten_double_range"。
+ten_double_range = double_range(10)
+# 使用用內建函式 next 可以產生下一個值。
+print(next(ten_double_range))  # 0
+print(next(ten_double_range))  # 2
+print(next(ten_double_range))  # 4
+# 或是使用 for 迴圈連續取值，
+# 直到引發 StopIteration 錯誤（不會引發實際 Error）。
+for factor in ten_double_range:
+    print(factor)  # 6 8 10 12 14 16 18 20
+# 當取完值後，再次呼叫會引發 StopIteration 錯誤。
+# 此時迭帶器物件無法再使用，必須丟棄。
+# next(ten_double_range)</pre>
+<p>生產器範例：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_inputs():
+    """這個 double_inputs 是一個函式
+    但是可以產生以下程式碼的生產器物件。
+
+    生產器可以接收值。
+    """
+    while True:
+         # 當 yield 擺在右值時可以接收值。
+         x = yield
+         # 當 yield 右邊有值時可以產生值。
+         yield x * 2
+         # 不使用名稱可以這樣寫。
+         yield (yield) * 2
+
+gen = double_inputs()
+next(gen)  # 跳至第一個 yield，不過會回傳 None。
+print(gen.send(10))  # 輸入 10，回傳 20。
+next(gen)  # 跳至下一個 yield，不過會回傳 None。
+print(gen.send(6))  # 輸入 6，回傳 12。</pre>
+<p>類型標註如下：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Iterator[yield_type]
+# Python 3.6 增加
+Generator[yield_type, input_type, return_type]</pre>
+<p>上述製造迭代器與生產器的函式應標註為：</p>
+<p></p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def double_range(n: int) -&gt; Iterator[int]:
+    ...
+
+def double_inputs() -&gt; Generator[int, int, None]:
+    ...
+
+ten_double_range: Iterator[int]
+gen: Generator[int, int, None]</pre>
+<p><strong>邏輯判斷</strong></p>
+<p>類型註解包含<strong>被繼承</strong>類型，因此其實每個物件都適用 object 類型。</p>
+<p>若是沒有繼承關係，但是可以進行相同操作，因此 typing 模組提供方便的邏輯標示。</p>
+<p>聯集 (Union) 類型能夠代表多個不同的類型：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Union[T1, T2, ...]</pre>
+<p>選擇性 (Optional) 類型能夠代表該類型可能會為 None：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Optional[T]
+# 同於 Union
+Union[T, None]</pre>
+<p>可以用在簽章的預設值：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">def func(w: List[int] = []):
+    """這樣會導致預設值的指標被共用。"""
+    ...
+
+def func(w: Optional[List[int]] = None):
+    """這樣就不會共用。"""
+    if w is None:
+        w = []
+    ...</pre>
+<p><strong>泛型</strong></p>
+<p>自訂類型中有客製化的類型選擇時，就可以用泛型標示。</p>
+<p>例如：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from abc import abstractmethod
+from typing import Iterator, Generic, TypeVar
+
+_T = TypeVar('_T')
+
+class BaseTable(OtherTable, Generic[_T]):
+    @abstractmethod
+    def data(self, row: int) -&gt; _T:
+        ...
+
+    def data_iter(self) -&gt; Iterator[_T]:
+        for row in range(self.row_count()):
+            yield self.data(row)
+
+class MyTable(BaseTable[float]):
+    def data(self, row: int) -&gt; float:
+        """實作此方法。"""
+        ...</pre>
+<p>上述的 MyTable 類型的 data_iter 方法就會回傳 Iterator[float] 類型了。</p>
+<p><strong>遞迴引用</strong></p>
+<p>遞迴引用類型註解時，直接使用字串即可：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">Node: Dict[str, Optional[List['Node']]]</pre>
+<p>在類型定義中引用自己：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">class MyClass:
+    def return_me(self, friend: 'MyClass') -&gt; 'MyClass':
+        """實例 self 可能是子類型，因此不會標示。"""
+        ...</pre>
+<p>無法導入的名稱或模組：</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from core import MyClass
+
+class LocalClass:
+    def __init__(self, parent: 'MyClass'):
+        """想要取得父項的屬性。"""
+        self.my_list = parent.parent_list
+        ...</pre>
+<p>而在 Python 3.7 中，引入了新的延遲分析行為 (<a href="https://www.python.org/dev/peps/pep-0563/">PEP 563</a>: Postponed Evaluation of Annotations)，將會強制將類型註解轉為字串再分析，並且這將是 Python 4 的預設作為。不過此行為牽涉到文法問題，因此使用向下相容模組 __future__ 來開啟。</p>
+<p>這樣一來，在「舊版」的 Python 中就可以使用遞迴引用了。</p>
+<pre class="brush:py;auto-links:false;gutter:false;toolbar:false" contenteditable="false">from __future__ import annotations
+
+class MyClass:
+    def return_me(self, friend: MyClass) -&gt; MyClass:
+        ...</pre>
 <p></p><h1>開發</h1>
 <p>取得 Pyslvs 原始碼:</p>
 <pre class="brush:bash;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/KmolYuan/Pyslvs-PyQt5</pre>
@@ -557,7 +1297,7 @@ class MyClass:
 </li>
 <li>必須複寫原始模組，如 Qt 使用小寫字首 redApple，則遵照原始模組。</li>
 </ul>
-<h3>類型註解</h3>
+<h3>類型註解規則</h3>
 <p>建議對任何 Functions 與 Methods 都加上類型註解（參見 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>），必要時在一般名稱也可做註記（回傳值無法推斷時）。</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if not row &gt; -1:
     return
@@ -598,8 +1338,7 @@ def foo():
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class MyClass:
 
     def __add__(self, p: 'MyClass') -&gt; 'MyClass':
-        ...</pre>
-<h2>Kmol-editor</h2>
+        ...</pre><h2>Kmol-editor</h2>
 <p><a href="https://github.com/KmolYuan/kmol-editor">https://github.com/KmolYuan/kmol-editor</a> 是一個輕量的工程用編輯器, 主要用來開發自己 (意即以 kmol-editor 開發 kmol-editor), 以及應用於協同 Markdown 文件編輯, 可結合 <a href="https://pandoc.org/">Pandoc</a> 與 <a href="https://miktex.org/">MikTeX</a>, 將 Markdown 資料轉換為 html 與 pdf 或 epub 格式.</p>
 <p><a href="http://lab.kmol.info">http://lab.kmol.info</a>  目前使用可攜 <a href="https://drive.google.com/open?id=1lH3J-EETOpNruAz86Mi8A4PcKkgJOsh2">miktex_portable_and_pandoc.7z</a>, 使用者下載後與先前的 Python 可攜系統結合, 在原有的 start.bat 啟動批次檔案中的 path 設定, 加入:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">%Disk%:\pandoc-2.4-windows-x86_64;%Disk%:\miktex_portable\texmfs\install\miktex\bin;</pre>
