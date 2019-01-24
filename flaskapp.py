@@ -716,28 +716,43 @@ def generate_pages():
         # 針對重複標題者, 附加目前重複標題出現數 +1, 未重複採原標題
         newhead.append(v + str(count + 1) if totalcount > 1 else v)
     # 刪除 content 目錄中所有 html 檔案
-    filelist = [ f for f in os.listdir(_curdir + "/content/") if f.endswith(".html") ]
-    for f in filelist:
-        os.remove(os.path.join(_curdir + "/content/", f))
+    for f in os.listdir(_curdir + "/content/"):
+        if f.endswith(".html"):
+            os.remove(os.path.join(_curdir + "/content/", f))
     # 這裡需要建立專門寫出 html 的 write_page
     # index.html
-    file = open(_curdir + "/content/index.html", "w", encoding="utf-8")
-    file.write(get_page2(None, newhead, 0))
-    file.close()
+    with open(_curdir + "/content/index.html", "w", encoding="utf-8") as f:
+        f.write(get_page2(None, newhead, 0))
     # sitemap
-    file = open(_curdir + "/content/sitemap.html", "w", encoding="utf-8")
-    # sitemap2 需要 newhead
-    file.write(sitemap2(newhead))
-    file.close()
+    with open(_curdir + "/content/sitemap.html", "w", encoding="utf-8") as f:
+        # sitemap2 需要 newhead
+        f.write(sitemap2(newhead))
+
+    def visible(element):
+        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+            return False
+        elif re.match('<!--.*-->', str(element.encode('utf-8'))):
+            return False
+        return True
+
     # 以下轉檔, 改用 newhead 數列
+    search_content = []
     for i in range(len(newhead)):
         # 在此必須要將頁面中的 /images/ 字串換為 images/, /downloads/ 換為 downloads/
         # 因為 Flask 中靠 /images/ 取檔案, 但是一般 html 則採相對目錄取檔案
         # 此一字串置換在 get_page2 中進行
         file = open(_curdir + "/content/" + newhead[i] + ".html", "w", encoding="utf-8")
         # 增加以 newhead 作為輸入
-        file.write(get_page2(newhead[i], newhead, 0))
+        get_page_content = []
+        doc = get_page2(newhead[i], newhead, 0, get_page_content)
+        soup = bs4.BeautifulSoup(" ".join(get_page_content), "html.parser")
+        search_content.append({"title": newhead[i], "text": " ".join(filter(visible, soup.findAll(text=True))), "tags": "", "url": newhead[i] + ".html"})
+        file.write(doc)
         file.close()
+
+    with open(_curdir + "/content/tipuesearch_content.js", "w", encoding="utf-8") as f:
+        f.write("var tipuesearch = {\"pages\": " + str(search_content) + "};")
+
     # generate each page html under content directory
     return "已經將網站轉為靜態網頁. <a href='/'>Home</a>"
 # seperate page need heading and edit variables, if edit=1, system will enter edit mode
@@ -764,34 +779,25 @@ def get_page(heading, edit):
         if page_order == 0:
             last_page = ""
         else:
-            last_page = head[page_order-1] + " << <a href='/get_page/" + \
-                             head[page_order-1] + "'>Previous</a>"
+            last_page = head[page_order-1] + " << <a href='/get_page/" + head[page_order-1] + "'>Previous</a>"
         if page_order == len(head) - 1:
             # no next page
             next_page = ""
         else:
-            next_page = "<a href='/get_page/"+ head[page_order+1] + \
-                              "'>Next</a> >> " + head[page_order+1]
+            next_page = "<a href='/get_page/"+ head[page_order+1] + "'>Next</a> >> " + head[page_order+1]
         if len(page_order_list) > 1:
-            return_content += last_page + " " + next_page + \
-                                      "<br /><h1>" + heading + "</h1>" + \
-                                      page_content_list[i] + "<br />"+ \
-                                      last_page + " " + next_page + "<br /><hr>"
-            pagedata_duplicate = "<h"+level[page_order] + ">" + heading + \
-                                          "</h"+level[page_order] + ">" + page_content_list[i]
+            return_content += last_page + " " + next_page + "<br /><h1>" + heading + "</h1>" + page_content_list[i] + "<br />"+ last_page + " " + next_page + "<br /><hr>"
+            pagedata_duplicate = "<h"+level[page_order] + ">" + heading + "</h"+level[page_order] + ">" + page_content_list[i]
             outstring_list.append(last_page + " " + next_page + "<br />" + tinymce_editor(directory, cgi.escape(pagedata_duplicate), page_order))
         else:
-            return_content += last_page + " " + next_page + "<br /><h1>" +\
-                                      heading + "</h1>" + page_content_list[i] + "<br />" + last_page + " " + next_page
-            
+            return_content += last_page + " " + next_page + "<br /><h1>" + heading + "</h1>" + page_content_list[i] + "<br />" + last_page + " " + next_page
         pagedata += "<h"+level[page_order] + ">" + heading + "</h" + level[page_order] + ">" + page_content_list[i]
         # 利用 cgi.escape() 將 specialchar 轉成只能顯示的格式
         outstring += last_page + " " + next_page + "<br />" + tinymce_editor(directory, cgi.escape(pagedata), page_order)
     
     # edit=0 for viewpage
     if edit == 0:
-        return set_css() + "<div class='container'><nav>" + \
-                 directory + "</nav><section>" + return_content + "</section></div></body></html>"
+        return set_css() + "<div class='container'><nav>" + directory + "</nav><section>" + return_content + "</section></div></body></html>"
     # enter edit mode
     else:
         # check if administrator
@@ -805,8 +811,6 @@ def get_page(heading, edit):
                     outstring_duplicate += outstring_list[i] + "<br /><hr>"
                 return outstring_duplicate
             else:
-            #pagedata = "<h"+level[page_order]+">"+heading+"</h"+level[page_order]+">"+search_content(head, page, heading)
-            #outstring = last_page+" "+next_page+"<br />"+ tinymce_editor(directory, cgi.escape(pagedata), page_order)
                 return outstring
 
 
@@ -817,7 +821,7 @@ def get_page(heading, edit):
 @app.route('/get_page2/<heading>', defaults={'edit': 0})
 @app.route('/get_page2/<heading>/<int:edit>')
 '''
-def get_page2(heading, head, edit):
+def get_page2(heading, head, edit, get_page_content = None):
     not_used_head, level, page = parse_content()
     # 直接在此將 /images/ 換為 ./../images/, /downloads/ 換為 ./../downloads/, 以 content 為基準的相對目錄設定
     page = [w.replace('/images/', './../images/') for w in page]
@@ -829,6 +833,8 @@ def get_page2(heading, head, edit):
         heading = head[0]
     # 因為同一 heading 可能有多頁, 因此不可使用 head.index(heading) 搜尋 page_order
     page_order_list, page_content_list = search_content(head, page, heading)
+    if get_page_content is not None:
+        get_page_content.extend(page_content_list)
     return_content = ""
     pagedata = ""
     outstring = ""
@@ -850,25 +856,20 @@ def get_page2(heading, head, edit):
             #next_page = "<a href='/get_page/"+head[page_order+1]+"'>Next</a> >> "+ head[page_order+1]
             next_page = "<a href='" + head[page_order+1] + ".html'>Next</a> >> " + head[page_order+1]
         if len(page_order_list) > 1:
-            return_content += last_page + " " + next_page + "<br /><h1>" + \
-                                      heading + "</h1>" + page_content_list[i] + \
-                                      "<br />" + last_page + " "+ next_page + "<br /><hr>"
+            return_content += last_page + " " + next_page + "<br /><h1>" + heading + "</h1>" + page_content_list[i] + "<br />" + last_page + " "+ next_page + "<br /><hr>"
             pagedata_duplicate = "<h"+level[page_order] + ">" + heading + "</h" + level[page_order]+">"+page_content_list[i]
             outstring_list.append(last_page + " " + next_page + "<br />" + tinymce_editor(directory, cgi.escape(pagedata_duplicate), page_order))
         else:
-            return_content += last_page + " " + next_page + "<br /><h1>" + \
-                                      heading + "</h1>" + page_content_list[i] + \
-                                      "<br />" + last_page + " " + next_page
-            
+            return_content += last_page + " " + next_page + "<br /><h1>" + heading + "</h1>" + page_content_list[i] + "<br />" + last_page + " " + next_page
+
         pagedata += "<h" + level[page_order] + ">" + heading + \
                           "</h" + level[page_order] + ">" + page_content_list[i]
         # 利用 cgi.escape() 將 specialchar 轉成只能顯示的格式
         outstring += last_page + " " + next_page + "<br />" + tinymce_editor(directory, cgi.escape(pagedata), page_order)
-    
+
     # edit=0 for viewpage
     if edit == 0:
-        return set_css2() + "<div class='container'><nav>"+ \
-        directory + "</nav><section>" + return_content + "</section></div></body></html>"
+        return set_css2() + "<div class='container'><nav>" + directory + "</nav><section><div id=\"tipue_search_content\">" + return_content + "</div></section></div></body></html>"
     # enter edit mode
     else:
         # check if administrator
@@ -882,11 +883,7 @@ def get_page2(heading, head, edit):
                     outstring_duplicate += outstring_list[i] + "<br /><hr>"
                 return outstring_duplicate
             else:
-            #pagedata = "<h"+level[page_order]+">"+heading+"</h"+level[page_order]+">"+search_content(head, page, heading)
-            #outstring = last_page+" "+next_page+"<br />"+ tinymce_editor(directory, cgi.escape(pagedata), page_order)
                 return outstring
-
-
 @app.route('/image_delete_file', methods=['POST'])
 def image_delete_file():
     if not isAdmin():
@@ -1573,7 +1570,11 @@ def render_menu2(head, level, page, sitemap=0):
     if sitemap:
         directory += "<ul>"
     else:
-        directory += "<ul id='css3menu1' class='topmenu'>"
+        directory += """
+<ul id='css3menu1' class='topmenu'>
+<div class="tipue_search_group">
+<input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required>
+</div>"""
     for index in range(len(head)):
         this_level = level[index]
         # 若處理中的層級比上一層級高超過一層, 則將處理層級升級 (處理 h1 後直接接 h3 情況)
@@ -1884,44 +1885,48 @@ def set_css2():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>Pyslvs 使用手冊</title> \
+<title>Pyslvs 使用手冊</title>
 <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
-<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
-''' + syntaxhighlight2()
-
-    outstring += '''
+<script src="tipuesearch_content.js"></script>
 <script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+<link rel="icon" href="./../static/favicon.ico" type="image/x-icon" />
+''' + syntaxhighlight2() + '''
 <script type="text/javascript">
 $(function(){
     $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
     $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
 });
 </script>
 '''
     if uwsgi:
         outstring += '''
 <script type="text/javascript">
-if ((location.href.search(/http:/) != -1) && (location.href.search(/login/) != -1)) \
-window.location= 'https://' + location.host + location.pathname + location.search;
+if ((location.href.search(/http:/) != -1) && (location.href.search(/login/) != -1))
+    window.location = 'https://' + location.host + location.pathname + location.search;
 </script>
 '''
     site_title, password = parse_config()
     outstring += '''
-</head><header><h1>''' + site_title + '''</h1> \
+</head><header><h1>''' + site_title + '''</h1>
 <confmenu>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="sitemap.html">Site Map</a></li>
 <li><a href="./../reveal/index.html">reveal</a></li>
 <li><a href="./../blog/index.html">blog</a></li>
-'''
-    outstring += '''
 </ul>
 </confmenu></header>
 '''
     return outstring
-
-
 def set_footer():
     """footer for page"""
     return "<footer> \

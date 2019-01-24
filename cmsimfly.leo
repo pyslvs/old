@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
-<leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
-<globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
-	<global_window_position top="50" left="50" height="500" width="700"/>
-	<global_log_window_position top="0" left="0" height="0" width="0"/>
-</globals>
+<leo_header file_format="2"/>
+<globals/>
 <preferences/>
 <find_panel_settings/>
 <vnodes>
@@ -22,22 +19,22 @@
 <v t="leo.20180702145458.1"><vh>@button stop http.server</vh></v>
 </v>
 <v t="leo.20180703102027.1"><vh>@edit README.md</vh></v>
-<v t="amd.20160714225245.2" a="E"><vh>about cmsimfly</vh>
+<v t="amd.20160714225245.2"><vh>about cmsimfly</vh>
 <v t="amd.20160714225847.1"><vh>@edit README.md</vh></v>
 <v t="amd.20160714230137.1"><vh>@edit .gitignore</vh></v>
 <v t="amd.20160714230155.1"><vh>@edit LICENSE</vh></v>
-<v t="amd.20160715000709.1" a="E"><vh>註解</vh>
+<v t="amd.20160715000709.1"><vh>註解</vh>
 <v t="amd.20160715211540.1"><vh>處理 url 與 edit</vh></v>
 <v t="amd.20160715213810.1"><vh>必須處理 downloads 與 images 目錄</vh></v>
-<v t="leo.20180625155103.1" a="E"><vh>改為 pybean based</vh>
+<v t="leo.20180625155103.1"><vh>改為 pybean based</vh>
 <v t="leo.20180625155310.1"><vh>資料庫設計</vh></v>
 </v>
-<v t="leo.20180630135634.1" a="E"><vh>新增 generate_pages 功能</vh>
+<v t="leo.20180630135634.1"><vh>新增 generate_pages 功能</vh>
 <v t="leo.20180630211407.1"><vh>必須修改頁面內容</vh></v>
 <v t="leo.20180712144340.1"><vh>改回手動轉靜態網頁</vh></v>
 </v>
 </v>
-<v t="leo.20180701102916.1" a="E"><vh>2018Summer 改版</vh>
+<v t="leo.20180701102916.1"><vh>2018Summer 改版</vh>
 <v t="leo.20180702104314.1"><vh>整合設定檔案</vh></v>
 <v t="leo.20180701205822.1"><vh>editorhead 修改</vh></v>
 <v t="leo.20180701212101.1"><vh>有關 Cango library</vh></v>
@@ -53,18 +50,18 @@
 <v t="leo.20180625155248.1"><vh>@edit pybean.py</vh></v>
 <v t="leo.20180625155728.1"><vh>@edit schema.sql</vh></v>
 <v t="amd.20160718130611.1"><vh>@edit .gitignore</vh></v>
-<v t="amd.20160717222221.1" a="E"><vh>@path static</vh>
+<v t="amd.20160717222221.1"><vh>@path static</vh>
 <v t="leo.20180718091411.1"><vh>@edit cmsimply.css</vh></v>
 <v t="amd.20160717222242.1"><vh>@edit axuploader.js</vh></v>
 <v t="amd.20160718125932.1"><vh>@edit viewstl.html</vh></v>
 <v t="amd.20160718125943.1"><vh>@edit stlviewer.js</vh></v>
 <v t="amd.20160718212341.1"><vh>@edit jsc3d.js</vh></v>
 </v>
-<v t="amd.20160714230058.1" a="E"><vh>@clean wsgi.py</vh>
+<v t="amd.20160714230058.1"><vh>@clean wsgi.py</vh>
 <v t="amd.20160714230122.1"><vh>wsgi declarations</vh></v>
 </v>
-<v t="amd.20160714230833.1" a="E"><vh>編輯 flaskapp.py</vh>
-<v t="leo.20181007084334.1" a="E"><vh>@clean flaskapp.py</vh>
+<v t="amd.20160714230833.1"><vh>編輯 flaskapp.py</vh>
+<v t="leo.20181007084334.1"><vh>@clean flaskapp.py</vh>
 <v t="leo.20181007084349.1"><vh>Declarations </vh></v>
 <v t="leo.20181007084349.2"><vh>checkLogin </vh></v>
 <v t="leo.20181007084349.3"><vh>delete_file </vh></v>
@@ -132,28 +129,28 @@
 <v t="leo.20181007084349.67"><vh>unique </vh></v>
 </v>
 </v>
-<v t="leo.20180711113847.1" a="E"><vh>編輯 reveal</vh>
-<v t="leo.20180711113949.1" a="E"><vh>@path reveal</vh>
-<v t="leo.20180711113902.1" a="E"><vh>@clean index.html</vh>
-<v t="leo.20180711113902.2" a="E"><vh>html</vh>
+<v t="leo.20180711113847.1"><vh>編輯 reveal</vh>
+<v t="leo.20180711113949.1"><vh>@path reveal</vh>
+<v t="leo.20180711113902.1"><vh>@clean index.html</vh>
+<v t="leo.20180711113902.2"><vh>html</vh>
 <v t="leo.20180711113902.3"><vh>head</vh></v>
-<v t="leo.20180711113902.4" a="E"><vh>body</vh>
-<v t="leo.20180711113902.5" a="E"><vh>reveal div</vh>
-<v t="leo.20180711113902.6" a="E"><vh>slides div</vh>
-<v t="leo.20180711113902.7" a="E"><vh>封面投影片</vh>
+<v t="leo.20180711113902.4"><vh>body</vh>
+<v t="leo.20180711113902.5"><vh>reveal div</vh>
+<v t="leo.20180711113902.6"><vh>slides div</vh>
+<v t="leo.20180711113902.7"><vh>封面投影片</vh>
 <v t="leo.20180711113902.8"><vh>封面投影片內容</vh></v>
 </v>
-<v t="leo.20180711113902.9" a="E"><vh>快捷鍵</vh>
+<v t="leo.20180711113902.9"><vh>快捷鍵</vh>
 <v t="leo.20180711113902.10"><vh>投影片快捷鍵</vh></v>
 </v>
 <v t="leo.20180711113902.11"><vh>各式內容引用範例</vh>
-<v t="leo.20180711113902.12" a="E"><vh>導入數學符號與方程式</vh>
+<v t="leo.20180711113902.12"><vh>導入數學符號與方程式</vh>
 <v t="leo.20180711113902.13"><vh>LaTeX 格式方程式</vh></v>
 </v>
-<v t="leo.20180711113902.14" a="E"><vh>導入縮排程式碼</vh>
+<v t="leo.20180711113902.14"><vh>導入縮排程式碼</vh>
 <v t="leo.20180711113902.15"><vh>引用程式碼</vh></v>
 </v>
-<v t="leo.20180711113902.16" a="E"><vh>導入影片</vh>
+<v t="leo.20180711113902.16"><vh>導入影片</vh>
 <v t="leo.20180711113902.17"><vh>iframe 導入影片</vh></v>
 </v>
 </v>
@@ -235,7 +232,7 @@ QTextEdit#richTextEdit {
     selection-background-color: red;
     /*font-family: DejaVu Sans Mono;*/
     /* font-family: Courier New; */
-    font-family:YaHei Mono;
+    font-family: Courier New;
     /* 內文字型大小 */
     font-size: 22px;
     font-weight: normal; /* normal,bold,100,..,900 */
@@ -1304,28 +1301,43 @@ def generate_pages():
         # 針對重複標題者, 附加目前重複標題出現數 +1, 未重複採原標題
         newhead.append(v + str(count + 1) if totalcount &gt; 1 else v)
     # 刪除 content 目錄中所有 html 檔案
-    filelist = [ f for f in os.listdir(_curdir + "\\content\\") if f.endswith(".html") ]
-    for f in filelist:
-        os.remove(os.path.join(_curdir + "\\content\\", f))
+    for f in os.listdir(_curdir + "/content/"):
+        if f.endswith(".html"):
+            os.remove(os.path.join(_curdir + "/content/", f))
     # 這裡需要建立專門寫出 html 的 write_page
     # index.html
-    file = open(_curdir + "\\content\\index.html", "w", encoding="utf-8")
-    file.write(get_page2(None, newhead, 0))
-    file.close()
+    with open(_curdir + "/content/index.html", "w", encoding="utf-8") as f:
+        f.write(get_page2(None, newhead, 0))
     # sitemap
-    file = open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8")
-    # sitemap2 需要 newhead
-    file.write(sitemap2(newhead))
-    file.close()
+    with open(_curdir + "/content/sitemap.html", "w", encoding="utf-8") as f:
+        # sitemap2 需要 newhead
+        f.write(sitemap2(newhead))
+
+    def visible(element):
+        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+            return False
+        elif re.match('&lt;!--.*--&gt;', str(element.encode('utf-8'))):
+            return False
+        return True
+
     # 以下轉檔, 改用 newhead 數列
+    search_content = []
     for i in range(len(newhead)):
         # 在此必須要將頁面中的 /images/ 字串換為 images/, /downloads/ 換為 downloads/
         # 因為 Flask 中靠 /images/ 取檔案, 但是一般 html 則採相對目錄取檔案
         # 此一字串置換在 get_page2 中進行
-        file = open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8")
+        file = open(_curdir + "/content/" + newhead[i] + ".html", "w", encoding="utf-8")
         # 增加以 newhead 作為輸入
-        file.write(get_page2(newhead[i], newhead, 0))
+        get_page_content = []
+        doc = get_page2(newhead[i], newhead, 0, get_page_content)
+        soup = bs4.BeautifulSoup(" ".join(get_page_content), "html.parser")
+        search_content.append({"title": newhead[i], "text": " ".join(filter(visible, soup.findAll(text=True))), "tags": "", "url": newhead[i] + ".html"})
+        file.write(doc)
         file.close()
+
+    with open(_curdir + "/content/tipuesearch_content.js", "w", encoding="utf-8") as f:
+        f.write("var tipuesearch = {\"pages\": " + str(search_content) + "};")
+
     # generate each page html under content directory
     return "已經將網站轉為靜態網頁. &lt;a href='/'&gt;Home&lt;/a&gt;"
 # seperate page need heading and edit variables, if edit=1, system will enter edit mode
@@ -1353,34 +1365,25 @@ def get_page(heading, edit):
         if page_order == 0:
             last_page = ""
         else:
-            last_page = head[page_order-1] + " &lt;&lt; &lt;a href='/get_page/" + \
-                             head[page_order-1] + "'&gt;Previous&lt;/a&gt;"
+            last_page = head[page_order-1] + " &lt;&lt; &lt;a href='/get_page/" + head[page_order-1] + "'&gt;Previous&lt;/a&gt;"
         if page_order == len(head) - 1:
             # no next page
             next_page = ""
         else:
-            next_page = "&lt;a href='/get_page/"+ head[page_order+1] + \
-                              "'&gt;Next&lt;/a&gt; &gt;&gt; " + head[page_order+1]
+            next_page = "&lt;a href='/get_page/"+ head[page_order+1] + "'&gt;Next&lt;/a&gt; &gt;&gt; " + head[page_order+1]
         if len(page_order_list) &gt; 1:
-            return_content += last_page + " " + next_page + \
-                                      "&lt;br /&gt;&lt;h1&gt;" + heading + "&lt;/h1&gt;" + \
-                                      page_content_list[i] + "&lt;br /&gt;"+ \
-                                      last_page + " " + next_page + "&lt;br /&gt;&lt;hr&gt;"
-            pagedata_duplicate = "&lt;h"+level[page_order] + "&gt;" + heading + \
-                                          "&lt;/h"+level[page_order] + "&gt;" + page_content_list[i]
+            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + heading + "&lt;/h1&gt;" + page_content_list[i] + "&lt;br /&gt;"+ last_page + " " + next_page + "&lt;br /&gt;&lt;hr&gt;"
+            pagedata_duplicate = "&lt;h"+level[page_order] + "&gt;" + heading + "&lt;/h"+level[page_order] + "&gt;" + page_content_list[i]
             outstring_list.append(last_page + " " + next_page + "&lt;br /&gt;" + tinymce_editor(directory, cgi.escape(pagedata_duplicate), page_order))
         else:
-            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" +\
-                                      heading + "&lt;/h1&gt;" + page_content_list[i] + "&lt;br /&gt;" + last_page + " " + next_page
-            
+            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + heading + "&lt;/h1&gt;" + page_content_list[i] + "&lt;br /&gt;" + last_page + " " + next_page
         pagedata += "&lt;h"+level[page_order] + "&gt;" + heading + "&lt;/h" + level[page_order] + "&gt;" + page_content_list[i]
         # 利用 cgi.escape() 將 specialchar 轉成只能顯示的格式
         outstring += last_page + " " + next_page + "&lt;br /&gt;" + tinymce_editor(directory, cgi.escape(pagedata), page_order)
     
     # edit=0 for viewpage
     if edit == 0:
-        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + \
-                 directory + "&lt;/nav&gt;&lt;section&gt;" + return_content + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + directory + "&lt;/nav&gt;&lt;section&gt;" + return_content + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
     # enter edit mode
     else:
         # check if administrator
@@ -1394,8 +1397,6 @@ def get_page(heading, edit):
                     outstring_duplicate += outstring_list[i] + "&lt;br /&gt;&lt;hr&gt;"
                 return outstring_duplicate
             else:
-            #pagedata = "&lt;h"+level[page_order]+"&gt;"+heading+"&lt;/h"+level[page_order]+"&gt;"+search_content(head, page, heading)
-            #outstring = last_page+" "+next_page+"&lt;br /&gt;"+ tinymce_editor(directory, cgi.escape(pagedata), page_order)
                 return outstring
 
 
@@ -1407,7 +1408,7 @@ def get_page(heading, edit):
 @app.route('/get_page2/&lt;heading&gt;/&lt;int:edit&gt;')
 '''
 </t>
-<t tx="leo.20181007084349.25">def get_page2(heading, head, edit):
+<t tx="leo.20181007084349.25">def get_page2(heading, head, edit, get_page_content = None):
     not_used_head, level, page = parse_content()
     # 直接在此將 /images/ 換為 ./../images/, /downloads/ 換為 ./../downloads/, 以 content 為基準的相對目錄設定
     page = [w.replace('/images/', './../images/') for w in page]
@@ -1419,6 +1420,8 @@ def get_page(heading, edit):
         heading = head[0]
     # 因為同一 heading 可能有多頁, 因此不可使用 head.index(heading) 搜尋 page_order
     page_order_list, page_content_list = search_content(head, page, heading)
+    if get_page_content is not None:
+        get_page_content.extend(page_content_list)
     return_content = ""
     pagedata = ""
     outstring = ""
@@ -1440,25 +1443,20 @@ def get_page(heading, edit):
             #next_page = "&lt;a href='/get_page/"+head[page_order+1]+"'&gt;Next&lt;/a&gt; &gt;&gt; "+ head[page_order+1]
             next_page = "&lt;a href='" + head[page_order+1] + ".html'&gt;Next&lt;/a&gt; &gt;&gt; " + head[page_order+1]
         if len(page_order_list) &gt; 1:
-            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + \
-                                      heading + "&lt;/h1&gt;" + page_content_list[i] + \
-                                      "&lt;br /&gt;" + last_page + " "+ next_page + "&lt;br /&gt;&lt;hr&gt;"
+            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + heading + "&lt;/h1&gt;" + page_content_list[i] + "&lt;br /&gt;" + last_page + " "+ next_page + "&lt;br /&gt;&lt;hr&gt;"
             pagedata_duplicate = "&lt;h"+level[page_order] + "&gt;" + heading + "&lt;/h" + level[page_order]+"&gt;"+page_content_list[i]
             outstring_list.append(last_page + " " + next_page + "&lt;br /&gt;" + tinymce_editor(directory, cgi.escape(pagedata_duplicate), page_order))
         else:
-            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + \
-                                      heading + "&lt;/h1&gt;" + page_content_list[i] + \
-                                      "&lt;br /&gt;" + last_page + " " + next_page
-            
+            return_content += last_page + " " + next_page + "&lt;br /&gt;&lt;h1&gt;" + heading + "&lt;/h1&gt;" + page_content_list[i] + "&lt;br /&gt;" + last_page + " " + next_page
+
         pagedata += "&lt;h" + level[page_order] + "&gt;" + heading + \
                           "&lt;/h" + level[page_order] + "&gt;" + page_content_list[i]
         # 利用 cgi.escape() 將 specialchar 轉成只能顯示的格式
         outstring += last_page + " " + next_page + "&lt;br /&gt;" + tinymce_editor(directory, cgi.escape(pagedata), page_order)
-    
+
     # edit=0 for viewpage
     if edit == 0:
-        return set_css2() + "&lt;div class='container'&gt;&lt;nav&gt;"+ \
-        directory + "&lt;/nav&gt;&lt;section&gt;" + return_content + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+        return set_css2() + "&lt;div class='container'&gt;&lt;nav&gt;" + directory + "&lt;/nav&gt;&lt;section&gt;&lt;div id=\"tipue_search_content\"&gt;" + return_content + "&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
     # enter edit mode
     else:
         # check if administrator
@@ -1472,11 +1470,7 @@ def get_page(heading, edit):
                     outstring_duplicate += outstring_list[i] + "&lt;br /&gt;&lt;hr&gt;"
                 return outstring_duplicate
             else:
-            #pagedata = "&lt;h"+level[page_order]+"&gt;"+heading+"&lt;/h"+level[page_order]+"&gt;"+search_content(head, page, heading)
-            #outstring = last_page+" "+next_page+"&lt;br /&gt;"+ tinymce_editor(directory, cgi.escape(pagedata), page_order)
                 return outstring
-
-
 </t>
 <t tx="leo.20181007084349.26">@app.route('/image_delete_file', methods=['POST'])
 def image_delete_file():
@@ -2104,7 +2098,9 @@ def doDelete():
                 tag.replaceWithChildren()
         tag_order = tag_order + 1
 
-    return soup</t>
+    return soup
+
+</t>
 <t tx="leo.20181007084349.43">def parse_content():
     """use bs4 and re module functions to parse content.htm"""
     #from pybean import Store, SQLiteWriter
@@ -2245,7 +2241,11 @@ def doDelete():
     if sitemap:
         directory += "&lt;ul&gt;"
     else:
-        directory += "&lt;ul id='css3menu1' class='topmenu'&gt;"
+        directory += """
+&lt;ul id='css3menu1' class='topmenu'&gt;
+&lt;div class="tipue_search_group"&gt;
+&lt;input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required&gt;
+&lt;/div&gt;"""
     for index in range(len(head)):
         this_level = level[index]
         # 若處理中的層級比上一層級高超過一層, 則將處理層級升級 (處理 h1 後直接接 h3 情況)
@@ -2590,44 +2590,48 @@ window.location= 'https://' + location.host + location.pathname + location.searc
     outstring = '''&lt;!doctype html&gt;
 &lt;html&gt;&lt;head&gt;
 &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;Pyslvs 使用手冊&lt;/title&gt; \
+&lt;title&gt;Pyslvs 使用手冊&lt;/title&gt;
 &lt;link rel="stylesheet" type="text/css" href="./../static/cmsimply.css"&gt;
-&lt;link rel="icon" href="./../static/favicon.ico" type="image/x-icon" /&gt;
-''' + syntaxhighlight2()
-
-    outstring += '''
+&lt;script src="tipuesearch_content.js"&gt;&lt;/script&gt;
 &lt;script src="./../static/jquery.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="./../static/tipuesearch/tipuesearch.css"&gt;
+&lt;script src="./../static/tipuesearch/tipuesearch_set.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/tipuesearch/tipuesearch.min.js"&gt;&lt;/script&gt;
+&lt;link rel="icon" href="./../static/favicon.ico" type="image/x-icon" /&gt;
+''' + syntaxhighlight2() + '''
 &lt;script type="text/javascript"&gt;
 $(function(){
     $("ul.topmenu&gt; li:has(ul) &gt; a").append('&lt;div class="arrow-right"&gt;&lt;/div&gt;');
     $("ul.topmenu &gt; li ul li:has(ul) &gt; a").append('&lt;div class="arrow-right"&gt;&lt;/div&gt;');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
 });
 &lt;/script&gt;
 '''
     if uwsgi:
         outstring += '''
 &lt;script type="text/javascript"&gt;
-if ((location.href.search(/http:/) != -1) &amp;&amp; (location.href.search(/login/) != -1)) \
-window.location= 'https://' + location.host + location.pathname + location.search;
+if ((location.href.search(/http:/) != -1) &amp;&amp; (location.href.search(/login/) != -1))
+    window.location = 'https://' + location.host + location.pathname + location.search;
 &lt;/script&gt;
 '''
     site_title, password = parse_config()
     outstring += '''
-&lt;/head&gt;&lt;header&gt;&lt;h1&gt;''' + site_title + '''&lt;/h1&gt; \
+&lt;/head&gt;&lt;header&gt;&lt;h1&gt;''' + site_title + '''&lt;/h1&gt;
 &lt;confmenu&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="sitemap.html"&gt;Site Map&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="./../reveal/index.html"&gt;reveal&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="./../blog/index.html"&gt;blog&lt;/a&gt;&lt;/li&gt;
-'''
-    outstring += '''
 &lt;/ul&gt;
 &lt;/confmenu&gt;&lt;/header&gt;
 '''
     return outstring
-
-
 </t>
 <t tx="leo.20181007084349.59">def set_footer():
     """footer for page"""
@@ -2738,6 +2742,8 @@ def ssavePage():
 <t tx="leo.20181007084349.64">def syntaxhighlight():
     return '''
 &lt;script type="text/javascript" src="/static/syntaxhighlighter/shCore.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/static/syntaxhighlighter/shBrushBash.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/static/syntaxhighlighter/shBrushDiff.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="/static/syntaxhighlighter/shBrushJScript.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="/static/syntaxhighlighter/shBrushJava.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="/static/syntaxhighlighter/shBrushPython.js"&gt;&lt;/script&gt;
@@ -2795,6 +2801,8 @@ img {
 <t tx="leo.20181007084349.65">def syntaxhighlight2():
     return '''
 &lt;script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../static/syntaxhighlighter/shBrushBash.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../static/syntaxhighlighter/shBrushDiff.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"&gt;&lt;/script&gt;
