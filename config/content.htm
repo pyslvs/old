@@ -1,6 +1,9 @@
 <h1>簡介</h1>
 <h4>改版:</h4>
 <p style="padding-left: 30px;">2020.05.11</p>
+<p>Pyslvs 英文手冊: <a href="https://pyslvs-ui.readthedocs.io/en/stable/">https://pyslvs-ui.readthedocs.io/en/stable/</a></p>
+<hr/>
+<h4>舊版資料 (2019.07 之前):</h4>
 <p><a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 是一套利用 Python 3 與 PyQt5 建立的平面機構模擬與合成系統.  機構模擬與合成的主要核心包括 <a href="https://github.com/KmolYuan/python-solvespace">Python-Solvespace</a> 幾何約束求解程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/tinycadlib.pyx">tinycadlib</a> 三角幾何函式程式庫、<a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/bfgs.pyx">bgfs</a> 幾何約束求解程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/topologic.pyx">topologic</a> 類型合成程式庫、<a href="https://github.com/KmolYuan/pyslvs/blob/master/src/number.pyx">number</a> 數目合成程式庫等.</p>
 <p>其中, <a href="https://github.com/KmolYuan/Adesign">ADesign</a> 演算程式庫包含 Real-coded Genetic Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/rga.pyx">RGA</a>)、Differential Evolution (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/de.pyx">DE</a>) 與 Firefly Algorithm (<a href="https://github.com/KmolYuan/Adesign/blob/master/src/firefly.pyx">Firefly</a>) 等三種, 用於平面機構尺寸合成演算.</p>
 <h4>源起</h4>
@@ -23,8 +26,7 @@
 <p>2017 年 11 月 - <a href="http://pyslvs.com">http://pyslvs.com</a> 上線.</p>
 <p>2018 年 1 月 - 推出 <a href="https://github.com/KmolYuan/Pyslvs-PyQt5">Pyslvs</a> 18.01  版, 自此改為以年月序作為版次.</p>
 <p>2018 年 7 月 - <a href="http://pyslvs.com/content/">http://pyslvs.com/content/</a> 使用手冊上線.</p>
-<p></p>
-<h2>機構與機器</h2>
+<p></p><h2>機構與機器</h2>
 <h4>機構 (Mechanism)</h4>
 <p>機構是由剛體 (Rigid) 或撓性 (Flexible) 體機械元件所組成, 這些元件透過接頭 (Joint) 連接, 並以特定的運動相互移動.</p>
 <h4>機器 (Machine)</h4>
@@ -92,13 +94,17 @@
 <h2>由現有設計進行尺寸合成</h2>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="269" src="//www.youtube.com/embed/L55kriGU4HU" width="600"></iframe></p>
 <h1>下載</h1>
-<p>利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
-<p>Windows 64 位元操作系統:</p>
-<p><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p>
-<p><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p>
-<p><a href="https://drive.google.com/file/d/1gaX-_UfrbjObdATGvS00egfTW0uq3piP/view?usp=sharing">pyslvs-18.9.0.mscv1900-amd64.exe</a> (68337 KB)</p>
-<p><a href="https://drive.google.com/open?id=1YT49__LzaT_aFvhZdbmleqktZJEwDb5U">pyslvs-18.11.0.mscv1900-amd64.exe</a> (70875 KB)</p>
-<h1>範例</h1>
+<p>請至 <a href="https://github.com/KmolYuan/Pyslvs-UI/releases">https://github.com/KmolYuan/Pyslvs-UI/releases</a> 下載最新版本</p>
+<p>或從 pyslvs At mde Gdrive 中下載:</p>
+<p style="padding-left: 30px;"><a class="d-flex flex-items-center min-width-0" href="https://drive.google.com/file/d/1bIbIZKoKr5rWG8cSeGPw_66EBY3Na4Hb/view?usp=sharing" rel="nofollow"><span class="pl-2 flex-auto min-width-0 text-bold">pyslvs-20.04.0.mscv1900-amd64.zip</span></a></p>
+<hr/>
+<h4>舊版本:</h4>
+<p style="padding-left: 30px;">利用 pyslvs At mde 登錄 Gdrive 提供各版次下載.</p>
+<p style="padding-left: 30px;">Windows 64 位元操作系統:</p>
+<p style="padding-left: 30px;"><a href="https://drive.google.com/file/d/1YdgFsFwFMmYvB0wi56OInl-0crUJPFlh/view?usp=sharing">pyslvs-18.7.0.mscv1900-amd64.exe</a> (53446 KB)</p>
+<p style="padding-left: 30px;"><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p>
+<p style="padding-left: 30px;"><a href="https://drive.google.com/file/d/1gaX-_UfrbjObdATGvS00egfTW0uq3piP/view?usp=sharing">pyslvs-18.9.0.mscv1900-amd64.exe</a> (68337 KB)</p>
+<p style="padding-left: 30px;"><a href="https://drive.google.com/open?id=1YT49__LzaT_aFvhZdbmleqktZJEwDb5U">pyslvs-18.11.0.mscv1900-amd64.exe</a> (70875 KB)</p><h1>範例</h1>
 <p>展示利用 Pyslvs 解題</p>
 <p>參考資料:</p>
 <p>1977 - <a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
