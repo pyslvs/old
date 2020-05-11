@@ -3,6 +3,7 @@
   <div class="nav-wrapper">
     <p class="nav-label">Menu</p>
     <ul>
+    <!--
       {% for title, link in MENUITEMS %}
           <li><a href="{{ link }}" role="presentation">{{ title }}</a></li>
       {% endfor %}
@@ -18,7 +19,10 @@
               {% endfor %}
           {% endif %}
       {% endif %}
+      -->
 
+            <li><a href="{{ SITEURL }}/{{ ABOUT_URL | default('pages/about/index.html') }}">About</span></a></li>
+            
             <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">Archives</span></a></li>
             
             <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL | default('categories.html') }}">Categories</span></a></li>

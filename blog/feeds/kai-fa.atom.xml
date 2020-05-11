@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="https://pyslvs.github.io/blog/" rel="alternate"></link><link href="https://pyslvs.github.io/blog/feeds/kai-fa.atom.xml" rel="self"></link><id>https://pyslvs.github.io/blog/</id><updated>2018-09-22T21:00:00+08:00</updated><entry><title>Testing Mac OS X with specific Python version in Travis CI</title><link href="https://pyslvs.github.io/blog/yuan_2018-09-22.html" rel="alternate"></link><published>2018-09-22T21:00:00+08:00</published><updated>2018-09-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-09-22:/blog/yuan_2018-09-22.html</id><summary type="html">&lt;p&gt;How to test Python executable file with specific version in Mac OS X?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pyslvs.com - 開發</title><link href="./" rel="alternate"></link><link href=".%5Cfeeds/kai-fa.atom.xml" rel="self"></link><id>./</id><updated>2018-09-22T21:00:00+08:00</updated><entry><title>Testing Mac OS X with specific Python version in Travis CI</title><link href=".%5Cyuan_2018-09-22.html" rel="alternate"></link><published>2018-09-22T21:00:00+08:00</published><updated>2018-09-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-09-22:.\yuan_2018-09-22.html</id><summary type="html">&lt;p&gt;How to test Python executable file with specific version in Mac OS X?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Travis CI basic options&lt;/li&gt;
 &lt;li&gt;MacPorts&lt;/li&gt;
@@ -18,37 +18,37 @@
 &lt;p&gt;Because of Travis CI are not provide Python language in "osx" platform, so we choose "generic".&lt;/p&gt;
 &lt;p&gt;With "matrix" option, the Linux and OS X platform can test at same time.&lt;/p&gt;
 &lt;p&gt;In OS X platform, set a "PYTHON" environment variable to represent specific version of Python.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# .travis.yml&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# .travis.yml&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;matrix&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;include&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;include&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="nt"&gt;sudo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="nt"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
+      &lt;span class="nt"&gt;dist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="nt"&gt;sudo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="nt"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
+      &lt;span class="nt"&gt;dist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx_image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;env&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
+      &lt;span class="nt"&gt;osx_image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
+      &lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
+      &lt;span class="nt"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Then, use "addons" option to install packages in Ubuntu platform with "apt" option.&lt;/p&gt;
 &lt;p&gt;For example, install SWIG.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;addons&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;apt&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;packages&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;addons&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;apt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nt"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;swig&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;MacPorts&lt;/h1&gt;
@@ -56,15 +56,15 @@
 &lt;p&gt;With "TRAVIS_OS_NAME" variable, the bash command will only execute in OS X platform.&lt;/p&gt;
 &lt;p&gt;Homebrew is already installed by Travis CI, so you can install dependency directly.&lt;/p&gt;
 &lt;p&gt;Download MacPort from &lt;a href="https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci"&gt;https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci&lt;/a&gt; and install it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# For OSX&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_install&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# For OSX&lt;/span&gt;
+&lt;span class="nt"&gt;before_install&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;brew install swig;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;source ./macports-ci install;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Python, pip and PyInstaller&lt;/h1&gt;
@@ -74,7 +74,7 @@
 &lt;p&gt;PyInstaller can be installed by pip, but should install with "--user" flag.&lt;/p&gt;
 &lt;p&gt;That's because of MacPorts will install executable scripts to &lt;code&gt;/opt/local&lt;/code&gt;, which is protected by system, it cannot be done with "sudo".&lt;/p&gt;
 &lt;p&gt;The user folder &lt;code&gt;/Users/travis/Library/Python/x.y/bin&lt;/code&gt; (where "x.y" is the Python version) is not in "PATH" variable, so add it using &lt;code&gt;$(python3 -c "import site; print(site.USER_BASE)")/bin&lt;/code&gt; after installation completed.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install python$PYTHON;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;yes | sudo port install py$PYTHON-pip;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo port select --set python3 python$PYTHON;&lt;/span&gt;
@@ -82,61 +82,61 @@
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install pyinstaller --user;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;export PATH=$PATH:$(python3 -c &amp;quot;import site; print(site.USER_BASE)&amp;quot;)/bin;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Check the versions.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python3 --version;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip --version;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pyinstaller --version;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Install Python modules from &lt;code&gt;requirements.txt&lt;/code&gt;. This step is also recommand using "--user" flag without "sudo".&lt;/p&gt;
 &lt;p&gt;This step will automatically executed in Linux platform.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt --user;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;The final version of configuration file looks like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Travis-Ci for Pyslvs-PyQt5&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Travis-Ci for Pyslvs-PyQt5&lt;/span&gt;
+&lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;matrix&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;include&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;include&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="nt"&gt;sudo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="nt"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.6&lt;/span&gt;
+      &lt;span class="nt"&gt;dist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sudo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;dist&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linux&lt;/span&gt;
+      &lt;span class="nt"&gt;sudo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;required&lt;/span&gt;
+      &lt;span class="nt"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;3.7&lt;/span&gt;
+      &lt;span class="nt"&gt;dist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xenial&lt;/span&gt;
 
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;os&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx_image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;env&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;os&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;osx&lt;/span&gt;
+      &lt;span class="nt"&gt;osx_image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;xcode10&lt;/span&gt;
+      &lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;generic&lt;/span&gt;
+      &lt;span class="nt"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PYTHON=36&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;branches&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;only&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;only&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/^dev\d*[.]?\d*$/&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;addons&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;apt&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;packages&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;addons&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;apt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nt"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;swig&lt;/span&gt;
 
 &lt;span class="c1"&gt;# For OS X&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_install&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;before_install&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;if [[ &amp;quot;$TRAVIS_OS_NAME&amp;quot; == &amp;quot;osx&amp;quot; ]]; then&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;brew install swig;&lt;/span&gt;
@@ -163,16 +163,16 @@
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt --user;&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;fi&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;script&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;make&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;before_cache&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;before_cache&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rm -rf $HOME/.cache/pip/log&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cache&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;directories&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;directories&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;$HOME/.cache/pip&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.09 - 09/13</title><link href="https://pyslvs.github.io/blog/yuan_2018-09-13.html" rel="alternate"></link><published>2018-09-13T21:00:00+08:00</published><updated>2018-09-13T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-09-13:/blog/yuan_2018-09-13.html</id><summary type="html">&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.09 - 09/13</title><link href=".%5Cyuan_2018-09-13.html" rel="alternate"></link><published>2018-09-13T21:00:00+08:00</published><updated>2018-09-13T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-09-13:.\yuan_2018-09-13.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Mac OS platform supported.&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -188,7 +188,7 @@
 &lt;li&gt;Unix-like executable file can execute in command line, but it will open external shell window when using "open" command.&lt;/li&gt;
 &lt;li&gt;Common "app" format can execute with "open" command, but cannot pass arguments directly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="../data/images/18_09_13.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.06 - 06/30</title><link href="https://pyslvs.github.io/blog/yuan_2018-06-30.html" rel="alternate"></link><published>2018-06-30T21:00:00+08:00</published><updated>2018-06-30T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-06-30:/blog/yuan_2018-06-30.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_09_13.png"&gt;&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.06 - 06/30</title><link href=".%5Cyuan_2018-06-30.html" rel="alternate"></link><published>2018-06-30T21:00:00+08:00</published><updated>2018-06-30T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-06-30:.\yuan_2018-06-30.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Three kernel of Pyslvs&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -211,7 +211,7 @@
 &lt;p&gt;&lt;a href="https://github.com/KmolYuan/Adesign"&gt;Adesign&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;Independent framework of three algorithms.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.06 - 06/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-06-07.html" rel="alternate"></link><published>2018-06-07T21:00:00+08:00</published><updated>2018-06-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-06-07:/blog/yuan_2018-06-07.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.06 - 06/07</title><link href=".%5Cyuan_2018-06-07.html" rel="alternate"></link><published>2018-06-07T21:00:00+08:00</published><updated>2018-06-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-06-07:.\yuan_2018-06-07.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Enhanced DXF format exporting function.&lt;/p&gt;
 &lt;/li&gt;
@@ -246,7 +246,7 @@
 &lt;h1&gt;Demo video&lt;/h1&gt;
 &lt;p&gt;Now expression table widget finally has a selection mode.&lt;/p&gt;
 &lt;p&gt;Choose a length parameter to change linkage dimension by slide bar or spin box.&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/uJ5pj4JgoLw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.05 - 05/21</title><link href="https://pyslvs.github.io/blog/yuan_2018-05-21.html" rel="alternate"></link><published>2018-05-21T21:00:00+08:00</published><updated>2018-05-21T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-05-21:/blog/yuan_2018-05-21.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/uJ5pj4JgoLw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.05 - 05/21</title><link href=".%5Cyuan_2018-05-21.html" rel="alternate"></link><published>2018-05-21T21:00:00+08:00</published><updated>2018-05-21T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-05-21:.\yuan_2018-05-21.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Simple reading function of Solvespace format.&lt;/li&gt;
 &lt;li&gt;Linkage select function.&lt;/li&gt;
 &lt;li&gt;New planar solving kernel "Pyslvs".&lt;/li&gt;
@@ -273,7 +273,7 @@
 &lt;p&gt;在Pyslvs 18.05中，一個獨立的Cython模塊從舊的 "algorithm" 和 "topologic" 模塊組裝在一起。&lt;/p&gt;
 &lt;p&gt;這個模塊可以在沒有用戶界面的情況下工作，它只需要兩個依賴模塊 - "Cython" 來編譯，解析表達式的 "lark-parser"。 如果有亮顯的需求，可以提供可選的相關模塊 "Pygments"。&lt;/p&gt;
 &lt;p&gt;現在 "Pyslvs" 內核可以用作Pyslvs GUI程序或外部API的平面解算器。&lt;/p&gt;
-&lt;p&gt;在新版本中，Pyslvs將使用 "Pyslvs" 模塊作為默認的平面解決內核，"Python-Solvespace" 仍然是設置界面的一個選項。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.04 - 04/09</title><link href="https://pyslvs.github.io/blog/yuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-04-09:/blog/yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;在新版本中，Pyslvs將使用 "Pyslvs" 模塊作為默認的平面解決內核，"Python-Solvespace" 仍然是設置界面的一個選項。&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.04 - 04/09</title><link href=".%5Cyuan_2018-04-09.html" rel="alternate"></link><published>2018-04-09T21:00:00+08:00</published><updated>2018-04-09T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-04-09:.\yuan_2018-04-09.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Application of auto configuration algorithm&lt;/p&gt;
 &lt;/li&gt;
@@ -298,7 +298,7 @@
 &lt;p&gt;我們可以利用&lt;a href="http://www.pyslvs.com/blog/yuan_2018-02-28.html"&gt;自動配置功能&lt;/a&gt;來預覽任何機構的運動路徑（極限範圍）。&lt;/p&gt;
 &lt;p&gt;這個功能是透過擴充後的「tinycadlib」實現的，多了一些 Cython 函式來計算路徑數據。&lt;/p&gt;
 &lt;p&gt;但是我們仍保留 &lt;a href="http://solvespace.com/index.pl"&gt;Solvespace&lt;/a&gt; 作為第三方驗證工具。因此主畫布的計算仍會使用 Python-Solvespace 核心。&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Flow charts of Pyslvs synthesis function</title><link href="https://pyslvs.github.io/blog/yuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-03-26:/blog/yuan_2018-03-26.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/XPfK5aO95BI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Flow charts of Pyslvs synthesis function</title><link href=".%5Cyuan_2018-03-26.html" rel="alternate"></link><published>2018-03-26T21:00:00+08:00</published><updated>2018-03-26T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-03-26:.\yuan_2018-03-26.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Flow charts&lt;/p&gt;
 &lt;/li&gt;
@@ -320,7 +320,7 @@
 &lt;p&gt;Number and type synthesis&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;Dimensional synthesis&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.03 - 02/28</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-28:/blog/yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/18_03_26_02.png"&gt;&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.03 - 02/28</title><link href=".%5Cyuan_2018-02-28.html" rel="alternate"></link><published>2018-02-28T21:00:00+08:00</published><updated>2018-02-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-28:.\yuan_2018-02-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Auto configuration algorithm&lt;/p&gt;
 &lt;/li&gt;
@@ -341,7 +341,7 @@
 &lt;h1&gt;Auto configuration algorithm&lt;/h1&gt;
 &lt;p&gt;A function that can auto configure the solutions.&lt;/p&gt;
 &lt;p&gt;一個可以自動配置解決方案的功能。&lt;/p&gt;
-&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/22</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-22:/blog/yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="345" src="https://www.youtube.com/embed/2WNBDhVDWYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/22</title><link href=".%5Cyuan_2018-02-22.html" rel="alternate"></link><published>2018-02-22T21:00:00+08:00</published><updated>2018-02-22T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-22:.\yuan_2018-02-22.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Update information&lt;/p&gt;
 &lt;/li&gt;
@@ -362,7 +362,7 @@
 &lt;h1&gt;Update information&lt;/h1&gt;
 &lt;p&gt;Update information about dimensional synthesis function.&lt;/p&gt;
 &lt;p&gt;尺寸合成功能的更新資訊。&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/11</title><link href="https://pyslvs.github.io/blog/yuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-02-11:/blog/yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ysris9uON4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.02 - 02/11</title><link href=".%5Cyuan_2018-02-11.html" rel="alternate"></link><published>2018-02-11T21:00:00+08:00</published><updated>2018-02-11T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-02-11:.\yuan_2018-02-11.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Ball lifter mechanism synthesis test&lt;/p&gt;
 &lt;/li&gt;
@@ -388,7 +388,7 @@
 &lt;p&gt;提球機構的變數較多，導致演算適應值至 100 以下的所需時間為 6 分鐘到 20 分鐘不等。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/18_02_11_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;In addition, the staggered position of two target paths will also affect the result.&lt;/p&gt;
-&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/25</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-25:/blog/yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;另外，兩段目標路徑的交錯位置也會影結果。&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/25</title><link href=".%5Cyuan_2018-01-25.html" rel="alternate"></link><published>2018-01-25T21:00:00+08:00</published><updated>2018-01-25T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-25:.\yuan_2018-01-25.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Triangular iteration&lt;/p&gt;
 &lt;/li&gt;
@@ -416,7 +416,7 @@
 &lt;p&gt;Triangular iteration function will be update in version 18.1.&lt;/p&gt;
 &lt;p&gt;But the profile can not apply in dimensional synthesis function currently.&lt;/p&gt;
 &lt;p&gt;三角迭代功能將會於 18.1 版更新。&lt;/p&gt;
-&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/07</title><link href="https://pyslvs.github.io/blog/yuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;但是目前的配置資訊不能應用於尺寸合成功能。&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v18.01 - 01/07</title><link href=".%5Cyuan_2018-01-07.html" rel="alternate"></link><published>2018-01-07T21:00:00+08:00</published><updated>2018-01-07T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-07:.\yuan_2018-01-07.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Topological library&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Atlas function&lt;/p&gt;
@@ -493,7 +493,7 @@
 &lt;p&gt;You can also load text files into Pyslvs for processing.&lt;/p&gt;
 &lt;p&gt;使用文字文件儲存圖譜，表示式為 &lt;code&gt;Graph&lt;/code&gt; 類型的 &lt;code&gt;edges&lt;/code&gt; 屬性。&lt;/p&gt;
 &lt;p&gt;另外還可以將文字文件載入 Pyslvs 中處理。&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href="https://pyslvs.github.io/blog/yuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2018-01-07:/blog/yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RzD6_WKJjVM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs 2018 Plan</title><link href=".%5Cyuan_2018_plan.html" rel="alternate"></link><published>2018-01-07T12:00:00+08:00</published><updated>2018-01-07T12:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2018-01-07:.\yuan_2018_plan.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;About release&lt;/p&gt;
 &lt;/li&gt;
@@ -517,7 +517,7 @@
 &lt;p&gt;The "開發" category in this blog will refer to questions (concepts) that Pyslvs faces and how to use the existing knowledge collation to reach a solution to the problem.&lt;/p&gt;
 &lt;p&gt;自 2018 年開始，Pyslvs 將會採取每月釋出的方式進行版本更新。版本格式將以 &lt;code&gt;{year}.{month}.{patch}&lt;/code&gt; 的方式編號。&lt;/p&gt;
 &lt;p&gt;更新進度將以英文與繁體中文的方式全部更新在本網誌。&lt;/p&gt;
-&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/12</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-12:/blog/yuan_2017-12-12.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;本網誌的「開發」類別中將會提及 Pyslvs 面臨的問題（概念），並如何使用現有的知識歸類，達成問題的解決途徑。&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/12</title><link href=".%5Cyuan_2017-12-12.html" rel="alternate"></link><published>2017-12-12T21:00:00+08:00</published><updated>2017-12-12T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-12:.\yuan_2017-12-12.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Graphviz 引擎限制（已解決）&lt;/p&gt;
 &lt;/li&gt;
@@ -549,7 +549,7 @@
 &lt;li&gt;矩形選取模式。&lt;/li&gt;
 &lt;li&gt;類型合成圖譜。&lt;/li&gt;
 &lt;li&gt;更多範例。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/10</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-10:/blog/yuan_2017-12-10.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/10</title><link href=".%5Cyuan_2017-12-10.html" rel="alternate"></link><published>2017-12-10T21:00:00+08:00</published><updated>2017-12-10T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-10:.\yuan_2017-12-10.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;QIcon 透明背景繪製&lt;/p&gt;
 &lt;/li&gt;
@@ -569,18 +569,18 @@
 
 &lt;h1&gt;QIcon 透明背景繪製&lt;/h1&gt;
 &lt;p&gt;使用 QImage 取代 QPixmap 可以繪製出具有透明背景的圖示或影像。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;QImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QSize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;rect&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;QImage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Format_ARGB32_Premultiplied&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;QImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QSize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;rect&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;QImage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Format_ARGB32_Premultiplied&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fill&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Qt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transparent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;painter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;QPainter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;painter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;painter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;QIcon&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QPixmap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fromImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scaledToWidth&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;從 QIcon 轉為 QPixmap 可以用 &lt;code&gt;pixmap(size: QSize)&lt;/code&gt; 或 &lt;code&gt;pixmap(w: float, h: float)&lt;/code&gt; 方法。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;listWidget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;currentItem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pixmap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;listWidget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iconSize&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;listWidget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;currentItem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pixmap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;listWidget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iconSize&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Graphviz 引擎限制&lt;/h1&gt;
@@ -606,12 +606,12 @@
 &lt;p&gt;其中較適合的為 shell，random 為隨機產生。&lt;/p&gt;
 &lt;p&gt;很遺憾的是，Windows x64 的 Python 無法安裝 PyGraphviz，因此 Pyslvs 目前只有 Ubuntu 版本提供 Graphviz 引擎。&lt;/p&gt;
 &lt;p&gt;而經測試，AppImage 技術由於只將 PyGraphviz 包入，端口程式庫仍然連接 Graphviz 程式庫，所以 &lt;strong&gt;Ubuntu 用戶必須安裝 Graphviz&lt;/strong&gt;。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;graphviz&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;graphviz&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;以下是瓦特與史帝芬生鍊用 neato 引擎排佈的結果。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="../data/images/17_12_10.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/05</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-05:/blog/yuan_2017-12-05.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/17_12_10.png"&gt;&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/05</title><link href=".%5Cyuan_2017-12-05.html" rel="alternate"></link><published>2017-12-05T21:00:00+08:00</published><updated>2017-12-05T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-05:.\yuan_2017-12-05.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;拓樸排列程式&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -635,33 +635,33 @@ Answer count: 1
 &lt;/pre&gt;
 
 &lt;p&gt;需要的模組有：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;anytree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RenderTree&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;anytree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RenderTree&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;anytree.search&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;permutations&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;接著是印出上面樹狀結構的函式，anytree 的 RenderTree 搜尋函式會朝下列出節點的階級字元。&lt;/p&gt;
 &lt;p&gt;這邊用 &lt;code&gt;noname&lt;/code&gt; 這個 bool 變數決定是否顯示名稱。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;show_tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{}{}({})&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fill&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;RenderTree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;show_tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{}{}&lt;/span&gt;&lt;span class="s2"&gt;(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fill&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;RenderTree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;接下來是主函式，稱為 &lt;code&gt;make_link&lt;/code&gt;，接收內含 int 的可迭代物件。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,]):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,]):&lt;/span&gt;
     &lt;span class="o"&gt;...&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;第一部分是創出連桿的數量，數字則是接頭數。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;link_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;link_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;link_type&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;如輸入 &lt;code&gt;(4,)&lt;/code&gt;，可以得到 &lt;code&gt;[2, 2, 2, 2]&lt;/code&gt;；輸入 &lt;code&gt;(5, 4)&lt;/code&gt; 可得 &lt;code&gt;[2, 2, 2, 2, 2, 3, 3, 3, 3]&lt;/code&gt;。&lt;/p&gt;
@@ -676,68 +676,68 @@ for all_link in list(set(permutations(link_type))):
 
 &lt;p&gt;首先轉換 &lt;code&gt;link_type&lt;/code&gt; 的內容成為 anytree 模組的 Node 類型。&lt;/p&gt;
 &lt;p&gt;其中 &lt;code&gt;limit&lt;/code&gt; 屬性是此節點的接頭上限，僅用於比對，並無程式上的限制。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;all_link&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;L{}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;all_link&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;L&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;接著將第一項當作 root 節點，加入 &lt;code&gt;links&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;這裡 &lt;code&gt;links&lt;/code&gt; 清單的最後一項 &lt;code&gt;links[-1]&lt;/code&gt; 是接下來的搜索法準備填入的項目。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;然後使用廣度優先搜索法 (Breadth-First-Search, BFS) 填入所有節點，使用 list 類型的 pop 方法配上 while 迴圈可以確保用光所有節點。&lt;/p&gt;
 &lt;p&gt;當指派一個節點的 &lt;code&gt;parent&lt;/code&gt; 屬性時，anytree 模組會自動將節點連上父節點，父節點可以透過 &lt;code&gt;children&lt;/code&gt; 屬性取得一個裝有所有子節點指標的 tuple 物件。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;all_link&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
     &lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;由於數學定義的「樹 (tree)」結構中，子節點只能擁有一個父項，否則為迴路 (Loop)，anytree 模組會在連接成迴路時自動回擲 &lt;code&gt;LoopError&lt;/code&gt; 錯誤。&lt;/p&gt;
 &lt;p&gt;但是我們的運動鍊為 close chain，因此必須再創立一個配對流程，這次使用類似連結的概念，同時為「主體」連結一個虛擬節點。&lt;/p&gt;
 &lt;p&gt;虛擬節點的樣式使用中括弧 &lt;code&gt;[ ]&lt;/code&gt; 辨識，不用指派名稱。&lt;/p&gt;
 &lt;p&gt;創立 &lt;code&gt;get_no_done&lt;/code&gt; 函式回傳使用 anytree 的 findall 模組過濾沒配對完成的節點。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;get_no_done&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;filter_&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;error&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;get_no_done&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;filter_&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;error&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;get_no_done&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;nodes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_no_done&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;l_2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ne"&gt;IndexError&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;error&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+        &lt;span class="n"&gt;error&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
         &lt;span class="k"&gt;break&lt;/span&gt;
     &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[{}]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[{}]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l_2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;l_1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;最後檢查是否在上述迴圈出現沒閉合狀況。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;或是兩對連桿之間有連到一個以上的接頭。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;filter_&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;))):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;filter_&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;))):&lt;/span&gt;
     &lt;span class="k"&gt;continue&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;最後可以進行測試：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Topologic test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Topologic test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
     &lt;span class="c1"&gt;#Show tree&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;show_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Answer count: {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;show_tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Answer count: &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;可得：&lt;/p&gt;
@@ -763,7 +763,7 @@ L0(2)
 Answer count: 60
 &lt;/pre&gt;
 
-&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/03</title><link href="https://pyslvs.github.io/blog/yuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-12-03:/blog/yuan_2017-12-03.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 12/03</title><link href=".%5Cyuan_2017-12-03.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-12-03:.\yuan_2017-12-03.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;PMKS 轉換式更新&lt;/li&gt;
 &lt;li&gt;機構範例&lt;/li&gt;
 &lt;/ul&gt;
@@ -781,7 +781,7 @@ Answer count: 60
 &lt;p&gt;&lt;strong&gt;曲柄滑塊&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="../data/images/17_12_03_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;雙臂接球機構&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="../data/images/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 11/28</title><link href="https://pyslvs.github.io/blog/yuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:pyslvs.github.io,2017-11-28:/blog/yuan_2017-11-28.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;img alt="" src="../data/images/17_12_03_02.png"&gt;&lt;/p&gt;</content><category term="開發"></category><category term="development"></category></entry><entry><title>Pyslvs v0.9 - 11/28</title><link href=".%5Cyuan_2017-11-28.html" rel="alternate"></link><published>2017-11-28T21:00:00+08:00</published><updated>2017-11-28T21:00:00+08:00</updated><author><name>Yuan Chang</name></author><id>tag:None,2017-11-28:.\yuan_2017-11-28.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;介面操作重大更新&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -800,4 +800,4 @@ Answer count: 60
 &lt;p&gt;另外有一個重大突破：矩形窗選功能。&lt;/p&gt;
 &lt;p&gt;在非自由移動模式下可靠滑鼠拖拉矩形線框，選取畫布上的點。&lt;/p&gt;
 &lt;p&gt;自由移動模式下拖拉將會移動並修改選擇的點座標。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/-pdUPiUBOfA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="development"></category></entry></feed>
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/-pdUPiUBOfA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="開發"></category><category term="development"></category></entry></feed>

@@ -10,8 +10,8 @@ def domake():
     httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket,
                                    server_side=True,
-                                   certfile='localhost.crt',
-                                   keyfile='localhost.key',
+                                   certfile='./cmsimde/localhost.crt',
+                                   keyfile='./cmsimde/localhost.key',
                                    ssl_version=ssl.PROTOCOL_TLSv1)
     print(os.getcwd())
     print("8444 https server started")
