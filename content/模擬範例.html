@@ -68,29 +68,6 @@
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
 <link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
-
-<!-- 啟用 LaTeX equations 編輯 -->
-<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
-<script type="text/javascript">
-init_mathjax = function() {
-    if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-            },
-            displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-    }
-}
-init_mathjax();
-</script>
-
 <!-- 暫時不用
 <script src="./../cmsimde/static/fengari-web.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
@@ -145,7 +122,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li class='has-children'><a href='操作.html'>操作</a><ul class='dropdown'><li class='has-children'><a href='模擬操作.html'>模擬操作</a><ul class='dropdown'><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a><li><a href='由現有設計進行尺寸合成.html'>由現有設計進行尺寸合成</a></li></ul><li><a href='下載.html'>下載</a><li class='has-children'><a href='範例.html'>範例</a><ul class='dropdown'><li><a href='模擬範例.html'>模擬範例</a><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li class='has-children'><a href='Python 教學.html'>Python 教學</a><ul class='dropdown'><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li class='has-children'><a href='開發.html'>開發</a><ul class='dropdown'><li class='has-children'><a href='Windows 開發.html'>Windows 開發</a><ul class='dropdown'><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li class='has-children'><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul class='dropdown'><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li class='has-children'><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul class='dropdown'><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li class='has-children'><a href='參與協同.html'>參與協同</a><ul class='dropdown'><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li class='has-children'><a href='參考.html'>參考</a><ul class='dropdown'><li><a href='Misc.html'>Misc</a></li>
+                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='機構與機器.html'>機構與機器</a><li><a href='Pyslvs 介面.html'>Pyslvs 介面</a></li></ul><li class='has-children'><a href='操作.html'>操作</a><ul class='dropdown'><li class='has-children'><a href='模擬操作.html'>模擬操作</a><ul class='dropdown'><li><a href='曲柄滑塊.html'>曲柄滑塊</a><li><a href='四連桿.html'>四連桿</a></li></ul><li><a href='尺寸合成操作.html'>尺寸合成操作</a><li><a href='構造合成操作.html'>構造合成操作</a><li><a href='由現有設計進行尺寸合成.html'>由現有設計進行尺寸合成</a></li></ul><li><a href='下載.html'>下載</a><li class='has-children'><a href='範例.html'>範例</a><ul class='dropdown'><li class='has-children'><a href='模擬範例.html'>模擬範例</a><ul class='dropdown'><li><a href='Watt six-bar linkage.html'>Watt six-bar linkage</a></li></ul><li><a href='尺寸合成範例.html'>尺寸合成範例</a><li><a href='結構合成範例.html'>結構合成範例</a><li><a href='產品設計範例.html'>產品設計範例</a></li></ul><li class='has-children'><a href='Python 教學.html'>Python 教學</a><ul class='dropdown'><li><a href='控制流程.html'>控制流程</a><li><a href='簽章.html'>簽章</a><li><a href='複製與參照.html'>複製與參照</a><li><a href='物件導向.html'>物件導向</a><li><a href='類型註解.html'>類型註解</a></li></ul><li class='has-children'><a href='開發.html'>開發</a><ul class='dropdown'><li class='has-children'><a href='Windows 開發.html'>Windows 開發</a><ul class='dropdown'><li><a href='環境修正.html'>環境修正</a><li><a href='PyInstaller 對 Windows 的支援.html'>PyInstaller 對 Windows 的支援</a></li></ul><li class='has-children'><a href='Ubuntu 開發.html'>Ubuntu 開發</a><ul class='dropdown'><li><a href='AppImage 包裝.html'>AppImage 包裝</a></li></ul><li class='has-children'><a href='Mac OS X 開發.html'>Mac OS X 開發</a><ul class='dropdown'><li><a href='PyInstaller 對 Mac OS X 的支援.html'>PyInstaller 對 Mac OS X 的支援</a></li></ul><li class='has-children'><a href='參與協同.html'>參與協同</a><ul class='dropdown'><li><a href='註解規則.html'>註解規則</a><li><a href='命名規則.html'>命名規則</a><li><a href='類型註解規則.html'>類型註解規則</a></li></ul><li><a href='Kmol-editor.html'>Kmol-editor</a></li></ul><li class='has-children'><a href='參考.html'>參考</a><ul class='dropdown'><li><a href='Misc.html'>Misc</a></li>
                       </ul>
                 </nav>
               </div>
@@ -156,7 +133,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">範例 << <a href='範例.html'>Previous</a> <a href='尺寸合成範例.html'>Next</a> >> 尺寸合成範例<br /><h1>模擬範例</h1>
+    <div id="tipue_search_content">範例 << <a href='範例.html'>Previous</a> <a href='Watt six-bar linkage.html'>Next</a> >> Watt six-bar linkage<br /><h1>模擬範例</h1>
 <p><img alt="" height="338" src="./../images/sam_sixbar.png" width="600"/></p>
 <p>以下畫面以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  製作.</span></p>
 <p><img alt="" height="338" src="./../images/sam_sixbar-18.7.png" width="600"/></p>
@@ -164,20 +141,20 @@ img.add_border {
 <p><img alt="" height="315" src="./../images/sixbar_r_slider.png" width="560"/></p>
 <p><a href="./../downloads/sixbar_r_with_slider.pyslvs">sixbar_r_slider.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><iframe allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/aBEfsdOycC8" width="560"></iframe></p>
-<h4>建立六連桿機構模型</h4>
+<p><strong>建立六連桿機構模型</strong></p>
 <p>以 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span>  製作</span>)</p>
 <p><iframe allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/1BcjhYgvQtY" width="560"></iframe></p>
-<h4>八連桿機構</h4>
+<p><strong>八連桿機構</strong></p>
 <p><a href="./../downloads/eight_bar1.pyslvs">eightbar1.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="./../images/eightbar1.png" width="600"/></p>
 <p><a href="./../downloads/eight_bar2.pyslvs">eightbar2.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="./../images/eightbar2.png" width="600"/></p>
 <p><a href="./../downloads/eight_bar3.pyslvs">eightbar3.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="./../images/eightbar3.png" width="600"/></p>
-<h4>十連桿機構</h4>
+<p><strong>十連桿機構</strong></p>
 <p><a href="./../downloads/tenbar_linkage.pyslvs">tenbar_linkage.pyslvs</a> (只適用於 <a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a><span> 版本</span>)</p>
 <p><img alt="" height="322" src="./../images/tenbar_linkage.png" width="600"/></p>
-<br />範例 << <a href='範例.html'>Previous</a> <a href='尺寸合成範例.html'>Next</a> >> 尺寸合成範例</div>
+<br />範例 << <a href='範例.html'>Previous</a> <a href='Watt six-bar linkage.html'>Next</a> >> Watt six-bar linkage</div>
         
     <!-- footer -->
       <div class="container">
@@ -218,5 +195,13 @@ img.add_border {
                     </script>
             -->
             <script src="../cmsimde/static/chimper/js/main.js"></script>
-        </body></html>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
         
