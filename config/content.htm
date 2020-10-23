@@ -80,7 +80,8 @@
 <li>ternary link: It consist of three points.</li>
 <li>quaternary link: It consist of four points.</li>
 </ul>
-<p><strong></strong></p><h3>Inputs</h3>
+<p><strong></strong></p>
+<h3>Inputs</h3>
 <h3>Synthesis</h3>
 <p></p>
 <h1>操作</h1>
@@ -125,7 +126,33 @@
 <p style="padding-left: 30px;"><a href="https://drive.google.com/file/d/1VZ9uW1lWkZyYBpxDBqCjBii1aGdHPTKj/view?usp=sharing">pyslvs-18.8.0.mscv1900-amd64.exe</a> (53458 KB)</p>
 <p style="padding-left: 30px;"><a href="https://drive.google.com/file/d/1gaX-_UfrbjObdATGvS00egfTW0uq3piP/view?usp=sharing">pyslvs-18.9.0.mscv1900-amd64.exe</a> (68337 KB)</p>
 <p style="padding-left: 30px;"><a href="https://drive.google.com/open?id=1YT49__LzaT_aFvhZdbmleqktZJEwDb5U">pyslvs-18.11.0.mscv1900-amd64.exe</a> (70875 KB)</p>
-<h1>範例</h1>
+<h1>分析</h1>
+<h2>三角形表示式</h2>
+<p><strong>PLLP</strong>:</p>
+<p><span>The PLLP function through the known two points (<span style="background-color: #ccffff;">A</span>, <span style="background-color: #ccffff;">B</span>) and two distances(<span style="background-color: #ccffff;">L0</span>, <span style="background-color: #ccffff;">L1</span>) to obtain the position of third point.</span></p>
+<p><img alt="" height="270" src="/images/PLLP/1.png" width="480"/></p>
+<p>First, use <em>Pythagorean theorem </em>to find out the length <span style="color: #000000; background-color: #ccffff;">d.</span></p>
+<p><img alt="" height="270" src="/images/PLLP/2.png" width="480"/></p>
+<p>Draw a line perpendicular to line <span style="background-color: #ccffff;">AB</span> and connect to the intersection of <span style="background-color: #ccffff;">L0</span> and <span style="background-color: #ccffff;">L1<span style="background-color: #ffffff;">. Then we can get two lines,<span style="background-color: #ccffff;"><span style="background-color: #ffffff;"> line <span style="background-color: #ccffff;">a</span></span></span> and <span style="background-color: #ccffff;"><span style="background-color: #ffffff;">line </span>(d-a)</span>.</span></span></p>
+<p><img alt="" height="270" src="/images/PLLP/3.png" width="480"/></p>
+<p>According to <em>Pythagorean theorem</em> that can find out the line <span style="background-color: #ccffff;">h.</span></p>
+<p><img alt="" height="270" src="/images/PLLP/4.png" width="480"/></p>
+<p>Use <em>inverse trigonometric function</em> to find out <span style="background-color: #ccffff;">θ<sub>1</sub></span>.</p>
+<p><img alt="" height="270" src="/images/PLLP/5.png" width="480"/></p>
+<p>Due to alternate-interior angle, <span style="background-color: #ccffff;">θ<sub>1</sub> = θ<sub>2</sub></span>. Also, it has the similar triangles. As the result, we get <span style="background-color: #ccffff;">θ<sub>2</sub> = θ<sub>3</sub></span><span>.</span></p>
+<p><img alt="" height="270" src="/images/PLLP/6.png" width="480"/></p>
+<p>Ultimately, we get target point <span style="background-color: #ccffff;">C(Cx , Cy)</span>.</p>
+<ul>
+<li>C<sub>x</sub> = a<sub>x</sub> - h<sub>y</sub></li>
+<li>C<sub>y</sub> = a<sub>y</sub> + h<sub>x</sub><sub></sub></li>
+</ul>
+<p>If the mechanism is inverse:</p>
+<ul>
+<li>C<sub>x</sub><span> </span>= a<sub>x</sub><span> +</span> h<sub>y</sub></li>
+<li>C<sub>y</sub><span> </span>= a<sub>y</sub><span> -</span> h<sub>x</sub></li>
+</ul>
+<p><img alt="" height="270" src="/images/PLLP/7.png" width="480"/></p>
+<p></p><h1>範例</h1>
 <p>展示利用 Pyslvs 解題</p>
 <p>參考資料:</p>
 <p>1977 - <a href="https://theses.ncl.ac.uk/dspace/bitstream/10443/567/1/Oldham77.pdf">THE KINEMATICS AND VIBRATION OF PLANAR LINKAGE MECHANISMS</a></p>
@@ -162,7 +189,8 @@
 <p><img alt="" height="434" src="/images/Watt six-bar linkage I.gif" width="640"/></p>
 <p><strong>Watt II <a href="https://drive.google.com/file/d/1o0uxbmzw_uADomYrRSvwy79f8R0B5CJQ/view?usp=sharing">(Download)</a></strong></p>
 <p><img alt="" height="434" src="/images/Watt six-bar linkage II.gif" width="640"/></p>
-<p>Version: <a href="https://github.com/KmolYuan/Pyslvs-UI/releases/tag/v20.08.0">Pyslvs v20.08.0 </a></p><h3>Stephenson six-bar linkage</h3>
+<p>Version: <a href="https://github.com/KmolYuan/Pyslvs-UI/releases/tag/v20.08.0">Pyslvs v20.08.0 </a></p>
+<h3>Stephenson six-bar linkage</h3>
 <p>The Stephenson six-bar linkage contains two loops. One is five-bar loop and the other is four-bar loop. In the example, if it has two ternary links, those should be separated by a binary link.</p>
 <p></p>
 <p><strong>Stephenson I <a href="https://drive.google.com/file/d/15HLUYQA0bs-5fasLtaoQJ9IRg_plb-ws/view?usp=sharing">(Download)</a></strong></p>
@@ -171,7 +199,8 @@
 <p><strong><img alt="" height="432" src="/images/Stephenson six-bar II.gif" width="640"/></strong></p>
 <p><strong>Stephenson III <a href="https://drive.google.com/file/d/1CXWYyAWB1DXQK23rLmumkT3vWHTDIeEs/view?usp=sharing">(Download)</a></strong></p>
 <p><strong><img alt="" height="432" src="/images/Stephenson six-bar III.gif" width="640"/></strong></p>
-<p>Version: <a href="https://github.com/KmolYuan/Pyslvs-UI/releases/tag/v20.08.0">Pyslvs v20.08.0</a></p><h2>尺寸合成範例</h2>
+<p>Version: <a href="https://github.com/KmolYuan/Pyslvs-UI/releases/tag/v20.08.0">Pyslvs v20.08.0</a></p>
+<h2>尺寸合成範例</h2>
 <h2>結構合成範例</h2>
 <h2>產品設計範例</h2>
 <h4>健步機</h4>
