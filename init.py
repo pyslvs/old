@@ -9,8 +9,10 @@ _curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
 config_dir = _curdir + "/config/"
 class Init(object):
     # uwsgi as static class variable, can be accessed by Init.uwsgi
-    uwsgi = False
-    site_title = "Pyslvs.com"
+    uwsgi = True 
+    site_title = "pyslvs.com"
+    ip = "127.0.0.1"
+    port = 9443
     def __init__(self):
         # hope to create downloads and images directories　
         if not os.path.isdir(_curdir + "/downloads"):
