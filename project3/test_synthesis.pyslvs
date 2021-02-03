@@ -1,0 +1,107 @@
+algorithm:
+- algorithm: Real-coded Genetic Algorithm
+  cus:
+    4: 3
+  expression: M[J[R, P[-60, -60], L[ground, L1]], J[R, P[60.0089, -60.0045], L[ground,
+    L2]], J[R, P[-3.6163, 22.5886], L[L1, L3]], J[R, P[93.7563, -0.1827], L[L2, L3]],
+    J[R, P[51.8541, 105.7934], L[L3]]]
+  graph:
+  - - 0
+    - 1
+  - &id001
+    - 0
+    - 2
+  - - 1
+    - 3
+  - - 2
+    - 3
+  hardware_info:
+    cpu: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+    os: Windows 10 AMD64
+  input:
+  - - *id001
+    - - 0
+      - 360
+  interrupted: 'False'
+  last_fitness: 14.942547188317146
+  last_gen: 1000
+  lower: 0
+  placement:
+    0:
+    - -70.0
+    - -70.0
+    - 10.0
+    1:
+    - 70.0
+    - -70.0
+    - 10.0
+  same: {}
+  settings:
+    CR: 0.9
+    F: 0.6
+    NP: 400
+    max_gen: 1000
+    report: 50
+    strategy: 1
+  shape_only: false
+  target:
+    4:
+    - - 60.3
+      - 118.12
+    - - 31.02
+      - 115.62
+    - - 3.52
+      - 110.62
+  time: 7.375
+  upper: 100
+background:
+  background: ''
+  background_opacity: 1.0
+  background_scale: 1.0
+  background_x: 0.0
+  background_y: 0.0
+collection:
+- &id002
+  - - 0
+    - 1
+  - - 1
+    - 2
+  - - 2
+    - 3
+  - - 0
+    - 3
+links:
+  ground: White
+mechanism: M[]
+pyslvs_ver: 20.11.0
+storage:
+  dimen: M[J[R, color[green], P[-71.3431, -71.0617], L[ground, L1]], J[R, color[green],
+    P[74.5048, -69.3521], L[ground, L2]], J[R, color[green], P[8.3514, -32.6358],
+    L[L1, L3]], J[R, color[green], P[81.2376, 16.9882], L[L2, L3]], J[R, color[green],
+    P[26.1255, 35.236], L[L3]]]
+  dimen_2: M[J[R, color[green], P[-67.8903, -71.4951], L[ground, L1]], J[R, color[green],
+    P[62.5239, -72.1125], L[ground, L2]], J[R, color[green], P[-22.7811, 7.1171],
+    L[L1, L3]], J[R, color[green], P[42.7789, 23.3959], L[L2, L3]], J[R, color[green],
+    P[9.819, 80.9406], L[L3]]]
+  origin: M[J[R, color[green], P[0, 0], L[ground, L1]], J[R, color[green], P[90, 0],
+    L[ground, L2]], J[R, color[green], P[12.92, 32.53], L[L1, L3]], J[R, color[green],
+    P[73.28, 67.97], L[L2, L3]], J[R, color[green], P[33.3, 66.95], L[L3]]]
+triangle:
+  '0':
+    cus:
+      4: 2
+    expression: M[J[R, P[-75, -75], L[ground, L1]], J[R, P[75, -75], L[ground, L3]],
+      J[R, P[-75, 75], L[L1, L2]], J[R, P[75, 75], L[L2, L3]], J[R, P[-7.7523, 127.156],
+      L[L2]]]
+    graph: *id002
+    input:
+    - - - 0
+        - 2
+      - - 0
+        - 360
+    placement:
+      0: null
+      1: null
+    same: {}
+    target:
+      3: null
