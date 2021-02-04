@@ -14,7 +14,15 @@ class settings:
         self.cus = cus
         self.same = same
         self.collection = self.collection()
+        # self.graph = self.graph()
         
+        
+    """  ### incompletely function ### 
+    def graph(self, nl=4, j2=0, dof=1):
+        # dof = 3 * (nl - 1) - (2 * j1) - j2        # j1 = nj
+        nj = (dof - 3 * (nl-1) + j2 ) / (-2)
+        # print(nj)
+    """
         
     def collection(self) -> dict:
         format = {
@@ -77,4 +85,5 @@ def run() -> str:
 if __name__ == "__main__":
     run()
     # print(set.collection())
+    
     
