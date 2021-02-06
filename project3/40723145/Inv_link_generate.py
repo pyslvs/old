@@ -22,16 +22,15 @@ class inv:
         for key, value in kwargs.items():
             # print(key, value)
             par = self.oDoc.ComponentDefinition.Parameters.Item(str(key))
-            par.Value = value
+            # Convert the unit from "cm" to "mm"
+            par.Value = value * (10**-1)
             
-        
-    def update(self):
-        """     Update the dimension of the part     """
         is_update = self.oDoc.Update()
         if is_update == None:
             print("The part is updated.")
         else:
             print("Fail !")
+
 
 
     def save_as(self, newfilename: str):
@@ -47,8 +46,7 @@ class inv:
 
 inv = inv()
 inv.open('Y:/pyslvs.io/project3/40723145/test.ipt')
-inv.parameter(center_length=20, diameter=5)
-inv.update()
+inv.parameter(center_length=250, diameter=50, hole=20)
 
 
 
