@@ -1,6 +1,5 @@
 from pyslvs.graph import *
-import tkinter
-from tkinter import messagebox 
+
  
 def test():
     #dof=3*(NL-1)-2*(J1)-J2
@@ -32,43 +31,32 @@ print(f"ALL: {test()}",
     sep="\n")
 
 
+######修改######
+graph1=test()[0][0]
+graph2=test()[1][0]
 
-def isomorphic():
+def isomorphic(graph1,graph2):
     #Determine whether it is isomorphic
-    g1=test()[0][0]
-    g2=test()[1][0]
-    result = Graph.is_isomorphic(g1,g2)
+    result = Graph.is_isomorphic(graph1,graph2)
     
-    if result:
-        root = tkinter .Tk()
-        root.withdraw()#隱藏視窗
-        tkinter.messagebox.showerror('Isomorphic Error','Graph.is isomorphic.')
+    if result == True:
+        print(f"Isomorphic Warning: The graphs are isomorphic.")
     else:
-        root = tkinter .Tk()
-        root.withdraw()#隱藏視窗
-        tkinter.messagebox.showinfo('Isomorphic warning','Graph.is not isomorphic.')
-print(isomorphic())
+       pass
+       
+isomorphic(graph1,graph2)#呼叫函式
 
 
-    
-def triangle():
+def triangle(graph1,graph2):
     #Determine  whether Graph has triangle
-    g1=test()[0][0]
-    g2=test()[1][0]
-    result1= Graph.has_triangle(g1)
-    result2= Graph.has_triangle(g2)
-    if result1:
-        root = tkinter .Tk()
-        root.withdraw()#隱藏視窗
-        tkinter.messagebox.showerror('Tiangle Error','g1 hatriangle.')
-    elif result2:
-        root = tkinter .Tk()
-        root.withdraw()#隱藏視窗
-        tkinter.messagebox.showerror('Triangle Error','g2 has triangle.')
+    result1= Graph.has_triangle(graph1)
+    result2= Graph.has_triangle(graph2)
+    if result1== True:
+        print(f"Triangle Warning: graph2 has triangle.")
+    elif result2== True:
+        print(f"Triangle Warning: graph2 has triangle.")
     else:
-        root = tkinter .Tk()
-        root.withdraw()#隱藏視窗
-        tkinter.messagebox.showinfo('Triangle warning','g1&g2 do not have triangles.')
-print(triangle())
-
+        #print("YES")
+        pass
+triangle(graph1,graph2)#呼叫函式
 
