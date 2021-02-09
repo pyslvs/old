@@ -18,15 +18,15 @@ class settings:
         
     def collection(self) -> dict:
         format = {
-        'expression': self.expr,
-        'input': [self.input],
-        'graph': self.graph,
-        'placement': self.placement,
-        'target': {self.track_point: self.pass_point},
-        'cus': self.cus,
-        'same': self.same,
-        'upper': 100,
-        'lower': 0,
+            'expression': self.expr,
+            'input': [self.input],
+            'graph': self.graph,
+            'placement': self.placement,
+            'target': {self.track_point: self.pass_point},
+            'cus': self.cus,
+            'same': self.same,
+            'upper': 100,
+            'lower': 0,
         }
         return format
         
@@ -65,8 +65,17 @@ def run() -> str:
         VPoint(["L1", "L3"], 0, 0, "green", 12.92, 32.53),
         VPoint(["L2", "L3"], 0, 0, "green", 73.28, 67.97),
         VPoint(["L3"], 0, 0, "green", 33.3, 66.95),
-    )
-    set = settings(expr, [(0, 2), (0, 360)], ((0, 1), (0, 2), (1, 3), (2, 3)), {0: (-70, -70, 10), 1: (70, -70, 10)}, 4, [(60.3, 118.12), (31.02, 115.62), (3.52, 110.62)])
+        )
+    
+    # define the parameters
+    input = [(0, 2), (0, 360)]
+    graph = ((0, 1), (0, 2), (1, 3), (2, 3))
+    placement = {0: (-70, -70, 10), 1: (70, -70, 10)}
+    track_point = 4
+    pass_point = [(60.3, 118.12), (31.02, 115.62), (3.52, 110.62)]
+    
+    
+    set = settings(expr, input, graph, placement, track_point, pass_point)
     four_bar = set.collection
     # print(type(four_bar))
     result = algorithm_RGA(four_bar)

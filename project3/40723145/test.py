@@ -81,9 +81,64 @@ def run() -> str:
     print(f"The expression of synthesis result:\n {result}")
     # print(f"four_bar: {four_bar}")
 
+
+def structural_synthesis(nl, j2=0, dof=1):
+    # [dof,J2]=[1,0]
+    # nl=6 #Input
+    nj=( dof-3*(nl-1)+j2 )/-2
+    type1= link_synthesis(nl , nj)
+    #print(type(type1))
+
+    cg_list =contracted_graph(type1[0]) 
+    c_j_list=contracted_link_synthesis(type1[0])
+
+    L=[]
+    for  x in range(3):
+        answer = conventional_graph(cg_list, c_j_list[x])
+        if answer == []:
+            continue
+        L.append(answer)
+    #print(L)
+    return L
+    
+    
+def test_graph2vpoints():
+    # Not finish.
+    graph1 = structural_synthesis(nl=6)[0][0]
+    graph2 = structural_synthesis(nl=6)[1][0]
+    coord = Coord(12.3, 15.6)
+    '''
+    ed = edges_view(graph1)
+    print(ed)
+    print(graph1)
+    print(type(ed))
+    '''
+    
+    print(graph1)
+    # pos = {1: coord}
+    # print(pos.keys())
+    # print(pos.values())
+    
+    #x, y = pos[0]
+    #print(x)
+    #print(y)
+    #print(pos[0])
+    g2v = graph2vpoints(graph1, {1: coord})
+    print(g2v)
+    
+    
     
 if __name__ == "__main__":
-    run()
+    # run()
     # print(set.collection())
+    # print(structural_synthesis(nl=6))
+    test_graph2vpoints()
+    
+    """
+    tt = Graph(((2,2), (3, 3)))    #Graph(Tuple[Tuple[int, int], ...])
+    print(tt)
+    print(type(tt))
+    """
+    
     
     
