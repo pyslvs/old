@@ -26,12 +26,10 @@ def test():
     return L
 
 print(f"ALL: {test()}",
-    "-" * 80,
-    f"第2維: {test()[0][0]}",
-    sep="\n")
+    "-" * 80,  sep="\n")
 
 
-######修改######
+###########
 graph1=test()[0][0]
 graph2=test()[1][0]
 
@@ -58,5 +56,26 @@ def triangle(graph1,graph2):
     else:
         #print("YES")
         pass
-triangle(graph1,graph2)#呼叫函式
+triangle(graph1,graph2)
 
+def cutlink(graph1,graph2):
+    result3= Graph.has_cut_link(graph1)
+    result4= Graph.has_cut_link(graph2)
+    if result3== True:
+        print(f"Cut Link Warning: graph2 has cut link.")
+    elif result4== True:
+        print(f"Cut Link Warning: graph2 has cut link.")
+    else:
+        pass
+cutlink(graph1,graph2)
+
+def degenerate(graph1,graph2):
+    result5= Graph.is_degenerate(graph1)
+    result6= Graph.is_degenerate(graph2)
+    if result5== True:
+        print(f"Degenerate Warning: The graphs is degenerate.")
+    elif result6== True:
+        print(f"Degenerate Warning:  The graphs is degenerate.")
+    else:
+        pass
+degenerate(graph1,graph2)

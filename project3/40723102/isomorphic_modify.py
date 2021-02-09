@@ -46,7 +46,7 @@ def isomorphic(graph1, graph2):
         # print("OK")
         pass
         
-print isomorphic(g1, g2)
+print isomorphic(graph1, graph2)
 
 ###################### modify ##############################
 
