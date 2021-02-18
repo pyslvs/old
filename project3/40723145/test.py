@@ -106,26 +106,27 @@ def test_graph2vpoints():
     # Not finish.
     graph1 = structural_synthesis(nl=6)[0][0]
     graph2 = structural_synthesis(nl=6)[1][0]
-    coord = Coord(12.3, 15.6)
-    '''
+   
+    
     ed = edges_view(graph1)
     print(ed)
-    print(graph1)
     print(type(ed))
-    '''
-    
     print(graph1)
-    # pos = {1: coord}
-    # print(pos.keys())
+    
+    pos = {0: 50}
+    # pos = {1: (12.3, 15.6), 2: (15.2, 10.23), 3: (15.2, 10.23), 4: (15.2, 10.23), 5: (15.2, 10.23), 6:(15.2, 10.23)}
+    print(pos.keys())
+    print(pos[1])
+    x, y = pos[1]
+    print(x, y)
     # print(pos.values())
     
     #x, y = pos[0]
     #print(x)
     #print(y)
     #print(pos[0])
-    g2v = graph2vpoints(graph1, {1: coord})
+    g2v = graph2vpoints(graph1, pos)
     print(g2v)
-    
     
     
 if __name__ == "__main__":
