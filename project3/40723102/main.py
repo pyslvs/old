@@ -1,14 +1,14 @@
 from pyslvs.graph import *
 
  
-def test():
+def test(nl):
     #dof=3*(NL-1)-2*(J1)-J2
     #nl=NL=Number of links.
     #nj=J1=Number of joints. 
     ##J2=Two degree of freedom
 
     [dof,J2]=[1,0]
-    nl=6 #Input
+  # nl=8 #Input
     nj=( dof-3*(nl-1)+J2 )/-2
     type1= link_synthesis(nl , nj)
     #print(type(type1))
@@ -25,13 +25,13 @@ def test():
     #print(L)
     return L
 
-print(f"ALL: {test()}",
+print(f"ALL: {test(6)}",
     "-" * 80,  sep="\n")
 
 
 ###########
 graph1=test()[0][0]
-graph2=test()[1][0]
+graph2=test()[0][1]
 
 def isomorphic(graph1,graph2):
     #Determine whether it is isomorphic

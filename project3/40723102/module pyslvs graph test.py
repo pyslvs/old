@@ -1,4 +1,4 @@
-
+'''
 from pyslvs import example_list, parse_vpoints, t_config, expr_solving
 
 # Get example with name
@@ -257,21 +257,33 @@ print(result)
 Graph.is_connected()
 Graph.is_degenerate()
  
- 
- 
- 
+'''
+#new#
+ ####Graph.add_edge()####
+from pyslvs.graph import *
 
- 
- 
- 
- 
- 
- 
- 
+g1 = Graph([(0, 1), (1, 2), (2, 3), (0, 3)])
+n1=2
+n2=4
+result = g1.add_edge(n1,n2)
+print(result)
+print(type(result))
 
+####Graph.add_vertices()####
+from pyslvs.graph import *
+g1 = Graph([(0, 1), (1, 2), (2, 3), (0, 3)])
+vertices= [2,3]
+result = g1.add_vertices(vertices)
+print(result)
 
+ ####Graph.duplicate()####
+from pyslvs.graph import *
 
-
+g1 = Graph([(0, 1), (1, 2), (2, 3), (0, 3)])
+vertices = [1,2]
+times = 1
+result = g1.duplicate(vertices,times)
+print(result)
 
 
 
