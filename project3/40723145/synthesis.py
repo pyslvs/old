@@ -15,7 +15,6 @@ class settings:
         self.same = same
         self.collection = self.collection()
         
-        
     def collection(self) -> dict:
         format = {
             'expression': self.expr,
@@ -39,14 +38,17 @@ def PMKS_expr(*args: VPoint) -> list:
     return vp_list
     
     
-def mech_expr(*args: VPoint) -> str:
+def mech_expr(list_vpoints: list([VPoint])) -> str:
     mech_exprs = ""
-    for vp in args:
+    for vp in list_vpoints:
         mech_expr = vp.expr()
         mech_exprs += mech_expr + "," + "\n"
     result = "M[" + "\n" + mech_exprs + "]"
     # print(result)
     return result
+    
+
+def graph2vpoints(graph, pos)
 
 
 def algorithm_RGA(collection: settings.collection) -> str:

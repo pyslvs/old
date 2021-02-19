@@ -47,7 +47,7 @@ class inv:
 
 inv = inv()
 # inv.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
-inv.open('C:/kmol/project code/inventorAPI/ternary_link.ipt')
+inv.open('Y:/pyslvs.io/project3/40723145/ternary_link.ipt')
 # inv.parameter(center_length=250, diameter=50, hole=15)
 inv.parameter(center_length=200, hole=20)
 
