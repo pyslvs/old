@@ -1,4 +1,4 @@
-# The example of PMKS expression
+# The example of Mechanism expression
 M[
     J[R, color[Green], P[0.0, 0.0], L[ground, link_0]],
     J[R, color[Green], P[12.92, 32.53], L[link_0, link_1]],
@@ -8,13 +8,21 @@ M[
 ]
 
 
+# The example of PMKS expression
+ VPoint(["ground", "L1"], 0, 0, "green", 0, 0),
+ VPoint(["ground", "L2"], 0, 0, "green", 90, 0),
+ VPoint(["L1", "L3"], 0, 0, "green", 12.92, 32.53),
+ VPoint(["L2", "L3"], 0, 0, "green", 73.28, 67.97),
+ VPoint(["L3"], 0, 0, "green", 33.3, 66.95),
+
+
 # Test for none space-key
 M[J[R, color[Green], P[0.0, 0.0], L[ground, link_0]],J[R, color[Green], P[12.92, 32.53], L[link_0, link_1]],J[R, color[Green], P[73.28, 67.97], L[link_1, link_2]],J[R, color[Green], P[33.3, 66.95], L[link_1]],J[R, color[Green], P[90.0, 0.0], L[ground, link_2]],]
 
 
 
 
-### Self-generated PMKS expression ###
+### Self-generated Mechanism expression ###
 
 
 # Surplus symbols
