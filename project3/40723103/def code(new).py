@@ -4,15 +4,15 @@ import sim
 import simConst
 
 sim.simxFinish(-1)
-
 clientID = sim.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
 print("Connection success")
 
-if clientID!=-1:
-    print ('Connected to remote API server')
-else:
-    print('cant not to connnected')
-    
+def connectedAPI():
+    if clientID!=-1:
+        print ('Connected to remote API server')
+    else:
+        print('cant not to connnected')
+            
     
 def simulation() :
     sim.simxSynchronous(clientID,1)
@@ -51,6 +51,9 @@ def sleeptime(sec):
 #sim.simxStopSimulation(clientID, sim.simx_opmode_oneshot)
 #sim.simxFinish(clientID)
 
+#call code section!!!!!
+
+
 simulation()
 velocity(20,20)
 sectime=sleeptime(5)
@@ -68,25 +71,3 @@ def main_position()
             print('cant found main_position')
 '''
         
-        
-        
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
