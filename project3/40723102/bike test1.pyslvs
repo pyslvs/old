@@ -1,0 +1,21 @@
+background:
+  background: ''
+  background_opacity: 1.0
+  background_scale: 1.0
+  background_x: 0.0
+  background_y: 0.0
+input:
+- - 3
+  - 1
+links:
+  ground: White
+  link_1: Blue
+  link_2: Blue
+  link_3: Blue
+  link_4: Blue
+mechanism: M[J[R, color[Blue], P[-0.6, -0.6], L[link_1, link_3]], J[R, color[Green],
+  P[1.8, 11.95], L[link_1, link_2, link_4]], J[R, color[Green], P[-28.2, 4.65], L[link_1]],
+  J[R, color[Blue], P[-0.15, 7.7], L[ground, link_2]], J[R, color[Blue], P[-0.6, -1.1],
+  L[ground, link_3]], J[RP, A[30.0], color[(170, 85, 255)], P[6.95, 14], L[ground,
+  link_4]]]
+pyslvs_ver: 20.12.0.dev0
