@@ -8,7 +8,7 @@ def test(nl):
     ##J2=Two degree of freedom
 
     [dof,J2]=[1,0]
-  # nl=8 #Input
+  # nl=6 #Input
     nj=( dof-3*(nl-1)+J2 )/-2
     type1= link_synthesis(nl , nj)
     #print(type(type1))
@@ -30,8 +30,8 @@ print(f"ALL: {test(6)}",
 
 
 ###########
-graph1=test()[0][0]
-graph2=test()[0][1]
+graph1=test(6)[0][0]
+graph2=test(6)[1][0]
 
 def isomorphic(graph1,graph2):
     #Determine whether it is isomorphic
@@ -44,8 +44,8 @@ def isomorphic(graph1,graph2):
        
 isomorphic(graph1,graph2)#呼叫函式
 
-
-def triangle(graph1,graph2):
+##只需一個參數修改未完成
+def triangle():
     #Determine  whether Graph has triangle
     result1= Graph.has_triangle(graph1)
     result2= Graph.has_triangle(graph2)
@@ -54,10 +54,10 @@ def triangle(graph1,graph2):
     elif result2== True:
         print(f"Triangle Warning: graph2 has triangle.")
     else:
-        #print("YES")
-        pass
-triangle(graph1,graph2)
-
+        print("YES")
+        #pass
+triangle()
+'''
 def cutlink(graph1,graph2):
     result3= Graph.has_cut_link(graph1)
     result4= Graph.has_cut_link(graph2)
@@ -79,3 +79,4 @@ def degenerate(graph1,graph2):
     else:
         pass
 degenerate(graph1,graph2)
+'''
