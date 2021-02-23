@@ -1,24 +1,25 @@
 from pyslvs import *
 from pyslvs.graph import *
 from pyslvs.metaheuristics import *
+import os.path
 
 
 class settings:
-    def __init__(self, num_links, pos, PMKSexpr, input, placement, track_point, pass_point, cus={}, same={}):
+    def __init__(self, num_links, pos, input, placement, pass_point, cus={}, same={}):
         self.num_links = num_links
         self.pos = pos
-        self.expr = PMKSexpr
+        # self.expr = PMKSexpr
         self.input = input
         self.graph = graph
         self.placement = placement
-        self.track_point = track_point
+        # self.track_point = track_point
         self.pass_point = pass_point
         self.cus = cus
         self.same = same
-        self.collection = self.collection()
+        # self.collection = self.collection()
         # self.graph = self.graph()
         
-    def structural_synthesis(self, j2=0, dof=1):
+    def structural_synthesis(self, j2=0, dof=1) -> list([Graph]):
         nj=(dof - 3*(self.num_links - 1) + j2) / (-2)
         link_list= link_synthesis(self.num_links , nj)
         # print(type(link_list))
@@ -55,7 +56,7 @@ class settings:
         'input': [self.input],
         'graph': self.graph,
         'placement': self.placement,
-        'target': {self.track_point: self.pass_point},
+        'target': self.pass_point,
         # 'cus': self.cus,
         # 'same': self.same,
         'upper': 100,
@@ -91,7 +92,7 @@ def algorithm_RGA(collection: settings.collection) -> str:
     return result
     
     
-def run() -> str:
+def _run() -> str:
     ### define the parameters ###
     num_links = 4
     pos = {0: (0, 0), 1: (90, 0), 2: (12.92, 32.53), 3: (73.28, 67.97), 4: (33.3, 66.95)}
@@ -108,21 +109,26 @@ def run() -> str:
     input = [(0, 2), (0, 360)]
     # graph = [(0, 1), (0, 2), (1, 3), (2, 3)]
     placement = {0: (-70, -70, 10), 1: (70, -70, 10)}
-    track_point = 4
-    pass_point = [(60.3, 118.12), (31.02, 115.62), (3.52, 110.62)]
+    pass_point = {4: [(60.3, 118.12), (31.02, 115.62), (3.52, 110.62)]}
     cus = {4: 2}
     ### define the parameters ###
     
-    set = settings(num_links, pos, expr, input, placement, track_point, pass_point, cus)
+    set = settings(num_links, pos, input, placement, pass_point, cus)
     # set.graph2vpoints()
-    four_bar = set.collection
+    four_bar = set.collection()
     # print(type(four_bar))
     result = algorithm_RGA(four_bar)
     print(f"The expression of synthesis result:\n {result}")
     # print(f"four_bar: {four_bar}")
 
+
+def synthesis_import_test():
+    filename = os.path.basename(__file__)
+    return filename + " import successfully !"
     
+
 if __name__ == "__main__":
-    run()
+    # _run()
+    synthesis_import_test()
     # print(set.collection())
     
