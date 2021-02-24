@@ -1,7 +1,10 @@
-import os
 from lib.synthesis import *
+from lib.link_gen import *
+import re
 
 # print(synthesis_import_test())
+# print(link_gen_import_test())
+
 num_links = 4
 pos = {
     0: (0, 0),
@@ -33,5 +36,27 @@ cus = {4: 2}
 set = settings(num_links, pos, input, placement, pass_point, cus)
 mechanism = set.collection()
 result = algorithm_RGA(mechanism)
-print(f"The expression of synthesis result:\n{result}")
+print(result)
+# print(f"The expression of synthesis result:\n{result}")
 
+
+
+# organize mechanism expression of the joint coordinate and let it be the type of tuple in the list that we can call it later.
+coord_list = []
+XorY_coord_list = re.findall("[-]*\d*[.]\d*", result)
+for index in range(len(XorY_coord_list)):
+    if index % 2 != 0:
+        continue
+    else:
+        coord = (float(XorY_coord_list[index]), float(XorY_coord_list[index + 1]))
+        coord_list.append(coord)
+
+print(coord_list)
+print(coord_list[4][1])
+print(type(coord_list[4][1]))
+
+
+
+
+
+        
