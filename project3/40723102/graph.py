@@ -16,14 +16,14 @@ def test(nl):
     cg_list =contracted_graph(type1[0]) 
     c_j_list=contracted_link_synthesis(type1[0])
 
-    L=[]
+    Graph_List=[]
     for  x in range(3):
         answer = conventional_graph(cg_list, c_j_list[x])
         if answer == []:
             continue
-        L.append(answer)
+        Graph_List.append(answer)
     #print(L)
-    return L
+    return Graph_List
 
 print(f"ALL: {test(6)}",
     "-" * 80,  sep="\n")
@@ -42,22 +42,24 @@ def isomorphic(graph1,graph2):
     else:
        pass
        
-isomorphic(graph1,graph2)#呼叫函式
 
-##只需一個參數修改未完成
-def triangle():
+
+##錯誤未完全修正
+def triangle(graph):
     #Determine  whether Graph has triangle
-    result1= Graph.has_triangle(graph1)
-    result2= Graph.has_triangle(graph2)
-    if result1== True:
-        print(f"Triangle Warning: graph2 has triangle.")
-    elif result2== True:
-        print(f"Triangle Warning: graph2 has triangle.")
-    else:
-        print("YES")
-        #pass
-triangle()
+    for i in range(10):
+        graph(i)= graph
+        result1= Graph.has_triangle(graph)
+        if result1== True:
+            print(f"Triangle Warning: graph2 has triangle.")
+        else:
+            #print("YES")
+            pass
+    a = triangle(graph)
+    return a
+
 '''
+
 def cutlink(graph1,graph2):
     result3= Graph.has_cut_link(graph1)
     result4= Graph.has_cut_link(graph2)
@@ -67,7 +69,7 @@ def cutlink(graph1,graph2):
         print(f"Cut Link Warning: graph2 has cut link.")
     else:
         pass
-cutlink(graph1,graph2)
+
 
 def degenerate(graph1,graph2):
     result5= Graph.is_degenerate(graph1)
@@ -78,5 +80,12 @@ def degenerate(graph1,graph2):
         print(f"Degenerate Warning:  The graphs is degenerate.")
     else:
         pass
-degenerate(graph1,graph2)
+
+print(__name__)
 '''
+if __name__ == "__main__":
+    isomorphic(graph1,graph2)
+    triangle(graph)
+    cutlink(graph1,graph2)
+    degenerate(graph1,graph2)
+

@@ -263,17 +263,22 @@ Graph.is_degenerate()
 from pyslvs.graph import *
 
 g1 = Graph([(0, 1), (1, 2), (2, 3), (0, 3)])
+print("g1_origin: ", g1)
 n1=2
 n2=4
 result = g1.add_edge(n1,n2)
+print("g1_after: ", g1)
 print(result)
 print(type(result))
+print("-"*50)
 
 ####Graph.add_vertices()####
 from pyslvs.graph import *
 g1 = Graph([(0, 1), (1, 2), (2, 3), (0, 3)])
-vertices= [2,3]
+print("g1_origin: ", g1)
+vertices= [n1,n2]
 result = g1.add_vertices(vertices)
+print("g1_after: ", g1)
 print(result)
 
  ####Graph.duplicate()####
