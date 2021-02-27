@@ -27,7 +27,7 @@ class inv:
             # Convert the unit from "cm" to "mm"
                 par.Value = value * (10**-1)
             except:
-                print("The parameter doesn't include in part.")
+                print(f"\"{key}\" is not the parameter in part")
                 break
             
         is_update = self.oDoc.Update()
@@ -38,7 +38,7 @@ class inv:
 
     def save_as(self, newfilename: str):
         """     Save as the new part     """
-        self.Doc.SaveAs(newfilename)
+        self.oDoc.SaveAs(newfilename)
         
     def close(self):
         """     Close Inventor     """
@@ -52,7 +52,7 @@ def link_gen_import_test():
 
 if __name__ == "__main__":
     inv = inv()
-    
+
     """
     inv.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
     inv.parameter(
@@ -63,6 +63,7 @@ if __name__ == "__main__":
         thickness=3
     )
     """
+    # inv.save_as("D:\kmol\fall2020_v4_pyslvs\data\pyslvs.io\project3\lib\test.ipt")
     
     
     """

@@ -13,9 +13,10 @@ def synthesis(set: settings) -> str:
     return mech_expr
 
 
-def get_joint_coord(mech_expr: str) -> list([(float, float)]):
+def get_joint_coord(mech_expr: str) -> list([tuple([float, float])]):
     coord_list = []
     XorY_coord_list = re.findall("[-]*\d*[.]\d*", mech_expr)
+    # print(XorY_coord_list)
     for index in range(len(XorY_coord_list)):
         if index % 2 != 0:
             continue
@@ -25,6 +26,50 @@ def get_joint_coord(mech_expr: str) -> list([(float, float)]):
     # print(coord_list)
     return coord_list
 
+
+def get_link_point(mech_expr: str) -> list([tuple([int, int])]):
+    link_point_list = []
+    vlink = parse_vlinks(mech_expr)
+    # The regular expression, the seeked characters may be shorten.
+    link_num = re.findall("[(]\d[,{1}]\s\d[)$]|[(]\d[,{1}]\s\d[,]\s\d[)$]", str(vlink))
+    
+    # convert the data type which come from the regular expression and the build the "link point list"
+    for str_link_point in link_num:
+        str_link_point_cha_list = []
+        for str_link_point_cha in str_link_point:
+            if str_link_point_cha.isdigit():
+                str_link_point_cha_list.append(int(str_link_point_cha))
+        link_point_list.append(tuple(str_link_point_cha_list))
+    return link_point_list
+    
+    
+def link_gen(joint_coord, link_point):
+    part = inv()
+    for index, link in enumerate(link_point):
+        # print(link)
+        
+        if len(link) == 2:
+            part.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
+            part.parameter(
+                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
+                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
+                hole=3,
+                thickness=10
+            )
+        elif len(link) == 3:
+            part.open('Y:/pyslvs.io/project3/40723145/ternary_link.ipt')
+            part.parameter(
+                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
+                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
+                x3=joint_coord[link[2]][0], y3=joint_coord[link[2]][1],
+                hole=3,
+                thickness=10
+            )
+        else:
+            print(f"The template doesn't support the {len(link)}-joints-link")
+        tag = str(link)
+        part.save_as("test.ipt")
+    
     
 if __name__ == "__main__":
 ### define the parameters ###
@@ -59,11 +104,20 @@ if __name__ == "__main__":
     # print(type(set))
     ### define the parameters ###
     
+    
     mech_expr = synthesis(set)
-    print(mech_expr)
+    print("mech_expr:\n", mech_expr, "\n")
     joint_coord = get_joint_coord(mech_expr)
-    print(joint_coord)
-
+    print("joint_coord:\n", joint_coord, "\n")
+    link_point = get_link_point(mech_expr)
+    print("link_point:\n", link_point, "\n")
+    
+    
+    # print(link_point[0][0])
+    link_gen(joint_coord, link_point)
+    # print(joint_coord[link_point[0][0]][0])
+    # print(joint_coord[link_point[0][1]])
+    
 
 
 

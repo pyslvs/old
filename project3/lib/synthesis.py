@@ -12,25 +12,22 @@ class settings:
         self.input = input
         self.graph = graph
         self.placement = placement
-        # self.track_point = track_point
         self.pass_point = pass_point
         self.cus = cus
         self.same = same
-        # self.collection = self.collection()
-        # self.graph = self.graph()
         
     def structural_synthesis(self, j2=0, dof=1) -> list([Graph]):
-        nj=(dof - 3*(self.num_links - 1) + j2) / (-2)
-        link_list= link_synthesis(self.num_links , nj)
+        nj = (dof - 3*(self.num_links - 1) + j2) / (-2)
+        link_list = link_synthesis(self.num_links, nj)
         # print(type(link_list))
         # print(link_list)
 
-        contracted_graph_list =contracted_graph(link_list[0]) 
-        contracted_link_list=contracted_link_synthesis(link_list[0])
+        contracted_graph_list = contracted_graph(link_list[0]) 
+        contracted_link_list = contracted_link_synthesis(link_list[0])
         # print("contracted_graph_list: ", contracted_graph_list)
         # print("contracted_link_list: ", contracted_link_list)
         
-        list_graphs=[]
+        list_graphs = []
         for x in range(len(contracted_link_list)):
             answer = conventional_graph(contracted_graph_list, contracted_link_list[x])
             if answer == []:
@@ -42,8 +39,7 @@ class settings:
     def graph2vpoints(self) -> list([VPoint]):
         graph = self.structural_synthesis()
         # print("gragh: ", graph)
-        pos = self.pos
-        list_vpoints = graph2vpoints(graph[0][0], pos, grounded=0, cus=self.cus)
+        list_vpoints = graph2vpoints(graph[0][0], self.pos, grounded=0, cus=self.cus)
         # print(list_vpoints)
         # print(self.expr)
         return list_vpoints
@@ -114,13 +110,11 @@ def _run() -> str:
     ### define the parameters ###
     
     set = settings(num_links, pos, input, placement, pass_point, cus)
-    # set.graph2vpoints()
     four_bar = set.collection()
     # print(type(four_bar))
-    result = algorithm_RGA(four_bar)
-    print(f"The expression of synthesis result:\n {result}")
-    # print(f"four_bar: {four_bar}")
-
+    mech_expr = algorithm_RGA(four_bar)
+    # print(f"The expression of synthesis result:\n {result}")
+    return mech_expr
 
 def synthesis_import_test():
     filename = os.path.basename(__file__)
@@ -128,7 +122,9 @@ def synthesis_import_test():
     
 
 if __name__ == "__main__":
-    # _run()
-    synthesis_import_test()
+    print(_run(), "\n")
+    # print(synthesis_import_test())
     # print(set.collection())
+    
+    
     
