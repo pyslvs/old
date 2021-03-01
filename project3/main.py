@@ -1,5 +1,6 @@
 from lib.synthesis import *
 from lib.link_gen import *
+from math import sqrt
 import re
 
 # print(synthesis_import_test())
@@ -43,7 +44,7 @@ def get_link_point(mech_expr: str) -> list([tuple([int, int])]):
     return link_point_list
     
     
-def link_gen(joint_coord, link_point):
+def link_gen(joint_coord, link_point: list):
     part = inv()
     for index, link in enumerate(link_point):
         # print(link)
@@ -51,26 +52,25 @@ def link_gen(joint_coord, link_point):
         if len(link) == 2:
             part.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
             part.parameter(
-                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
-                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
+                center_distance = abs(joint_coord[link[0]][0] -  joint_coord[link[1]][0]),
                 hole=3,
                 thickness=10
             )
         elif len(link) == 3:
             part.open('Y:/pyslvs.io/project3/40723145/ternary_link.ipt')
             part.parameter(
-                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
-                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
-                x3=joint_coord[link[2]][0], y3=joint_coord[link[2]][1],
+                center_distance1 = sqrt((joint_coord[link[0]][0] - joint_coord[link[1]][0])**2 + (joint_coord[link[0]][1] - joint_coord[link[1]][1])**2),    #1,2
+                center_distance2 = sqrt((joint_coord[link[0]][0] - joint_coord[link[2]][0])**2 + (joint_coord[link[0]][1] - joint_coord[link[2]][1])**2),    #1,3
+                center_distance3 = sqrt((joint_coord[link[1]][0] - joint_coord[link[2]][0])**2 + (joint_coord[link[1]][1] - joint_coord[link[2]][1])**2),    #2,3
                 hole=3,
                 thickness=10
             )
         else:
             print(f"The template doesn't support the {len(link)}-joints-link")
         tag = str(link)
-        part.save_as("test.ipt")
-    
-    
+        part.save_as("Y:/pyslvs.io/project3/40723145/test.ipt")
+
+
 if __name__ == "__main__":
 ### define the parameters ###
     num_links = 4
@@ -111,12 +111,8 @@ if __name__ == "__main__":
     print("joint_coord:\n", joint_coord, "\n")
     link_point = get_link_point(mech_expr)
     print("link_point:\n", link_point, "\n")
-    
-    
-    # print(link_point[0][0])
     link_gen(joint_coord, link_point)
-    # print(joint_coord[link_point[0][0]][0])
-    # print(joint_coord[link_point[0][1]])
+    
     
 
 

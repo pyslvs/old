@@ -1,5 +1,3 @@
-# The file is testing the "Class Vlinks" parse from the mechanism expression.
-
 import sys
 import os
 sys.path.append("..")    # add the directory path as "project3"
@@ -52,6 +50,38 @@ def test_parse_func(mech_expr):
     print(pos, "\n")
     vlinks = parse_vlinks(mech_expr)
     print(vlinks, "\n")
+    
+
+def test_link_gen(joint_coord, link_point):
+    # generate the links by the coordinate.
+    part = inv()
+    for index, link in enumerate(link_point):
+        # print(link)
+        
+        if len(link) == 2:
+            part.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
+            part.parameter(
+                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
+                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
+                hole=3,
+                thickness=10
+            )
+        elif len(link) == 3:
+            part.open('Y:/pyslvs.io/project3/40723145/ternary_link.ipt')
+            part.parameter(
+                x1=joint_coord[link[0]][0], y1=joint_coord[link[0]][1],
+                x2=joint_coord[link[1]][0], y2=joint_coord[link[1]][1],
+                x3=joint_coord[link[2]][0], y3=joint_coord[link[2]][1],
+                hole=3,
+                thickness=10
+            )
+        else:
+            print(f"The template doesn't support the {len(link)}-joints-link")
+
+
+def dis_func(x1, x2, y1, y2):
+    result = sqrt((x1-x2)**2 + (y1-y2)**2)
+    print(result)
 
 
 if __name__ == "__main__":

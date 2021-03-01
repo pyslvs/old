@@ -38,7 +38,9 @@ class inv:
 
     def save_as(self, newfilename: str):
         """     Save as the new part     """
-        self.oDoc.SaveAs(newfilename)
+        # Use the absolute path is better.
+        self.oDoc.SaveAs(newfilename, True)
+        print("Save succuessfully !")
         
     def close(self):
         """     Close Inventor     """
@@ -57,27 +59,22 @@ if __name__ == "__main__":
     inv.open('Y:/pyslvs.io/project3/40723145/binary_link.ipt')
     inv.parameter(
         # binary link
-        x1=40, y1=55,
-        x2=80, y2=85,
+        center_distance=140,
         hole=3,
         thickness=3
     )
     """
-    # inv.save_as("D:\kmol\fall2020_v4_pyslvs\data\pyslvs.io\project3\lib\test.ipt")
-    
     
     """
     inv.open('Y:/pyslvs.io/project3/40723145/ternary_link.ipt')
     inv.parameter(
         # ternary link
-        x1=140, y1=138,
-        x2=210, y2=225,
-        x3=234, y3=125,
+        center_distance1=80,
+        center_distance2=120,
+        center_distance3=135,
         hole=10,
         thickness=3
     )
     """
+    # inv.save_as("Y:/pyslvs.io/project3/40723145/test.ipt")
     
-
-
-
