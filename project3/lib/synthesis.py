@@ -40,8 +40,8 @@ class settings:
         graph = self.structural_synthesis()
         # print("gragh: ", graph)
         list_vpoints = graph2vpoints(graph[0][0], self.pos, grounded=0, cus=self.cus)
-        # print(list_vpoints)
         # print(self.expr)
+        # print(list_vpoints, "\n")
         return list_vpoints
         
     def collection(self) -> dict:

@@ -73,34 +73,30 @@ def link_gen(joint_coord, link_point: list):
 
 if __name__ == "__main__":
 ### define the parameters ###
-    num_links = 4
+    num_links = 6
     pos = {
-        0: (0, 0),
-        1: (90, 0),
-        2: (12.92, 32.53),
-        3: (73.28, 67.97),
-        4: (33.3, 66.95)
+        0: (-33.62, -19),
+        1: (-48.37, 12.12),
+        2: (17.12, 33.87),
+        3: (51.38, -12.63),
+        4: (50.35, 53.11),
+        5: (143.45, 65.96),
+        6: (99.24, 20.447)
     }
-    input = [(0, 2), (0, 360)]
-    placement = {0: (-70, -70, 10), 1: (70, -70, 10)}
+    input = [(0, 3), (0, 360)]
+    placement = {2: (51.38, -12.63, 10), 1: (99.24, 20.447, 10), 0: (-33.62, -19, 10)}
     pass_point = {
-        4: [
-            (60.3, 118.12),
-            (31.02, 115.62),
-            (3.52, 110.62),
-            (-25.77, 104.91),
-            (-81.49, 69.19),
-            (-96.47, 54.906),
-            (-109.34, 35.98),
-            (-121.84, 13.83),
-            (-127.56, -20.09),
-            (-128.63, -49.74),
-            (-117.56, -65.45),
+        5: [
+            [93.18042299933363, 85.07324618729241],
+            [114.39254421145483, 81.28536739941362],
+            [137.11981693872755, 72.19445830850454],
+            [154.54405936297, 51.739912853959076],
+            [161.3622411811518, 31.285367399413623],
         ]
     }
-    cus = {4: 2}
+    # cus = {4: 2}
 
-    set = settings(num_links, pos, input, placement, pass_point, cus)
+    set = settings(num_links, pos, input, placement, pass_point)
     # print(type(set))
     ### define the parameters ###
     
@@ -111,7 +107,7 @@ if __name__ == "__main__":
     print("joint_coord:\n", joint_coord, "\n")
     link_point = get_link_point(mech_expr)
     print("link_point:\n", link_point, "\n")
-    link_gen(joint_coord, link_point)
+    # link_gen(joint_coord, link_point)
     
     
 
