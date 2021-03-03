@@ -256,8 +256,7 @@ print(result)
 
 Graph.is_connected()
 Graph.is_degenerate()
- 
-'''
+
 #new#
  ####Graph.add_edge()####
 from pyslvs.graph import *
@@ -290,12 +289,16 @@ times = 1
 result = g1.duplicate(vertices,times)
 print(result)
 
+'''
 
 
+#####Graph.is_isomorphic_degree_code()#####
+from pyslvs.graph import *
+g1 = Graph([(0, 1), (0, 4), (1, 5), (2, 3), (2, 4), (3, 5), (4, 5)])
 
 
-
-
+result =is_planar(g1)
+print(result)
 
 
 

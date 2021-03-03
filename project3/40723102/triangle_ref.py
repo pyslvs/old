@@ -49,7 +49,8 @@ if __name__ == "__main__":
     graph1=test(6)[0][0]
     graph2=test(6)[1][0]
     graph_list = test(6)
+    print(test(6))
     
-    # single_triangle(graph1)
-    # multiple_triangle(graph_list)
+    single_triangle(graph1)
+    multiple_triangle(graph_list)
 

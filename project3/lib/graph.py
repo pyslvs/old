@@ -8,7 +8,7 @@ def test(nl):
     ##J2=Two degree of freedom
 
     [dof,J2]=[1,0]
-  # nl=6 #Input
+    # nl=6 #Input
     nj=( dof-3*(nl-1)+J2 )/-2
     type1= link_synthesis(nl , nj)
     #print(type(type1))
@@ -16,22 +16,15 @@ def test(nl):
     cg_list =contracted_graph(type1[0]) 
     c_j_list=contracted_link_synthesis(type1[0])
 
-    L=[]
+    Graph_List=[]
     for  x in range(3):
         answer = conventional_graph(cg_list, c_j_list[x])
         if answer == []:
             continue
-        L.append(answer)
+        Graph_List.append(answer)
     #print(L)
-    return L
+    return Graph_List
 
-print(f"ALL: {test(6)}",
-    "-" * 80,  sep="\n")
-
-
-###########
-graph1=test(6)[0][0]
-graph2=test(6)[1][0]
 
 def isomorphic(graph1,graph2):
     #Determine whether it is isomorphic
@@ -41,52 +34,57 @@ def isomorphic(graph1,graph2):
         print(f"Isomorphic Warning: The graphs are isomorphic.")
     else:
        pass
-       
 
 
-##錯誤未完全修正
-def triangle(graph):
+def multiple_triangle(graph_list):
     #Determine  whether Graph has triangle
-    for i in range(10):
-        graph=graph(i)
-        print(i)
-        result1= Graph.has_triangle(graph)
-        if result1== True:
-            print(f"Triangle Warning: graph2 has triangle.")
-        else:
-            print("YES")
-    a = triangle(graph)
-    return a
+    for graph in graph_list:
+        check_triangle=graph[0].has_triangle()
+    if check_triangle== True:
+        print(f"Triangle Warning: {graph} has triangle.")
+    else:
         #pass
+        print("YES")
 
-'''
 
-def cutlink(graph1,graph2):
-    result3= Graph.has_cut_link(graph1)
-    result4= Graph.has_cut_link(graph2)
-    if result3== True:
-        print(f"Cut Link Warning: graph2 has cut link.")
-    elif result4== True:
-        print(f"Cut Link Warning: graph2 has cut link.")
+def multiple_cutlink(graph_list):
+    for graph in graph_list:
+        check_cutlink=graph[0].has_cut_link()
+    if check_cutlink== True:
+        print(f"Cut Link Warning: {graph} has cut link.")
     else:
-        pass
+        #pass
+        print("YES1")
 
 
-def degenerate(graph1,graph2):
-    result5= Graph.is_degenerate(graph1)
-    result6= Graph.is_degenerate(graph2)
-    if result5== True:
-        print(f"Degenerate Warning: The graphs is degenerate.")
-    elif result6== True:
-        print(f"Degenerate Warning:  The graphs is degenerate.")
+def multiple_degenerate(graph_list):
+    for graph in graph_list:
+        check_degenerate=graph[0].is_degenerate()
+    if check_degenerate== True:
+        print(f"Degenerate Warning: {graph} is degenerate.")
     else:
-        pass
+        #pass
+        print("YES2")
 
-print(__name__)
-'''
+
+def multiple_isplanar(graph_list):
+    for graph in graph_list:
+        check_isplanar=is_planar(graph[0])
+    if check_isplanar== True:
+        print("YES3")
+        #pass
+    else:
+        print(f"Degenerate Warning: {graph} is degenerate.")
+
+
 if __name__ == "__main__":
-    isomorphic(graph1,graph2)#呼叫函式
-    triangle(graph)
-    cutlink(graph1,graph2)
-    degenerate(graph1,graph2)
-    print("gggg")
+    graph1=test(6)[0][0]
+    graph2=test(6)[1][0]
+    graph_list=test(6)
+    print(test(6))
+    
+    isomorphic(graph1,graph2)
+    multiple_triangle(graph_list)
+    multiple_cutlink(graph_list)
+    multiple_degenerate(graph_list)
+    multiple_isplanar(graph_list)
