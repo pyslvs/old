@@ -3,6 +3,7 @@ import time
 import sim 
 import simConst
 
+
 class  ConnectedremoteAPI:
     def __init__(self):
         sim.simxFinish(-1)
@@ -10,11 +11,16 @@ class  ConnectedremoteAPI:
         print("Connection success")
           
     def connectedAPI(self):
-        if self!=-1:
+        if self.clientID!=-1:
             print ('Connected to remote API server')
         else:
             print('cant not to connnected')
-
+            
+    def inputxmlfile(self):
+        #number returnCode=simxLoadScene(number clientID,string scenePathAndName,number options,number operationMode)
+        file_input=sim.simxLoadScene(self.clientID,"Y:\home\Desktop\0126.ttt",0x00,sim.simx_opmode_blocking)
+        print("successful input file")
+        
     def simulation(self) :
         sim.simxSynchronous(self.clientID,1)
         #同步模式
@@ -58,11 +64,11 @@ class  ConnectedremoteAPI:
 
 connected = ConnectedremoteAPI( )
 connected. connectedAPI()
+connected.inputxmlfile()
 connected.simulation()
-connected.velocity(20,20)
-connected.settime=sleep.time(5)
+#connected.velocity(20,20)
+#connected.settime=sleep.time(5)
 #settime(2)
-
 
 print('finish entire code')
 
