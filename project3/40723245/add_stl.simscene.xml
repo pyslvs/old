@@ -1,0 +1,387 @@
+<CoppeliaSim>
+  <filetype>simpleScene</filetype>
+  <xmlSerializationNb>1</xmlSerializationNb>
+  <environment>
+  </environment>
+  <settings>
+  </settings>
+  <dynamics>
+  </dynamics>
+  <simulation> 
+  </simulation>
+  <dummy>
+    <camera>
+     <common>
+      <localFrame>
+        <euler>0 0 0</euler>
+      </localFrame>
+     </common>
+     <mainCamera>true</mainCamera>
+    </camera>
+  </dummy>
+  <light>
+    <common>
+      <name>light1</name>
+      <localFrame>
+        <position>2.5 0 3</position>
+        <euler>100 -50 0</euler>
+      </localFrame>
+      <layer>0</layer>
+    </common>
+    <type>directional</type>
+    <color>
+      <light>
+        <ambientDiffuse>127 127 127</ambientDiffuse>
+      </light>
+    </color>
+ </light>
+  <light>
+    <common>
+      <name>light2</name>
+      <localFrame>
+        <position>0 2.5 3</position>
+        <euler>100 -50 0</euler>
+      </localFrame>
+      <layer>0</layer>
+    </common>
+    <type>directional</type>
+    <color>
+      <light>
+        <ambientDiffuse>127 127 127</ambientDiffuse>
+      </light>
+    </color>
+ </light>
+  <light>
+    <common>
+      <name>light3</name>
+      <localFrame>
+        <position>0 -2.5 3</position>
+        <euler>-100 -50 0</euler>
+      </localFrame>
+      <layer>0</layer>
+    </common>
+    <type>directional</type>
+    <color>
+      <light>
+        <ambientDiffuse>127 127 127</ambientDiffuse>
+      </light>
+    </color>
+ </light>
+  <light>
+  <common>
+      <name>light4</name>
+      <localFrame>
+        <position>-2.5 0 3</position>
+        <euler>100 -50 0</euler>
+      </localFrame>
+      <layer>0</layer>
+    </common>
+    <type>directional</type>
+    <color>
+      <light>
+        <ambientDiffuse>127 127 127</ambientDiffuse>
+      </light>
+    </color>
+  </light>
+  <shape>
+  <common>
+  </common>
+  <mesh>
+    <fileName>curiosity_from_ss.stl</fileName>
+    <localFrame>
+      <position>0.000000 0.000000 0.000000</position>
+      <euler>-0.000000 0.000000 -0.000000</euler>
+    </localFrame>
+  </mesh>
+  <dynamics>
+  </dynamics>
+  </shape>
+<!--
+  <shape>
+  <common>
+    <name>first_member</name>
+    <localFrame>
+      <position>0 0 0.12</position>
+    </localFrame>
+    <localObjectSpecialProperty>
+      <collidable>true</collidable>
+      <measurable>true</measurable>
+      <renderable>true</renderable>
+      <detectable>true</detectable>
+    </localObjectSpecialProperty>
+    <switches>
+      <modelBase>true</modelBase>
+    </switches>
+  </common>
+ <compound>
+  <primitive>
+    <type>cuboid</type>
+    <size>0.1 0.05 1</size>
+    <localFrame>
+      <position>0 0 -0.15</position>
+      <euler>0 0 0</euler>
+    </localFrame>
+    <color>
+      <ambientDiffuse>255 167 36</ambientDiffuse>
+    </color>
+  </primitive>
+  <dynamics>
+    <respondableMask>65295</respondableMask>
+    <mass>4</mass>
+    <principalMomentOfInertia>0.004 0.004 0.004</principalMomentOfInertia>
+  <switches>
+    <static>false</static>
+    <respondable>true</respondable>
+  </switches>
+  </dynamics>
+  <primitive>
+    <type>cylinder</type>
+    <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>0 0 0.35</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+  </primitive>
+  <primitive>
+    <type>cylinder</type>
+    <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>0 0 -0.65</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+  </primitive>
+ </compound>
+  <dynamics>
+      <switches>
+        <static>false</static>
+        <respondable>true</respondable>
+      </switches>
+  </dynamics>
+  <joint>
+    <common>
+      <name>motor</name>
+      <localFrame>
+        <position>0 0 -0.65</position>
+        <euler>-90 0 0</euler>
+      </localFrame>
+      <localObjectProperty>
+        <selectModelBaseInstead>true</selectModelBaseInstead>
+      </localObjectProperty>
+    </common>
+    <type>revolute</type>
+    <mode>force</mode>
+    <switches>
+      <cyclic>true</cyclic>
+    </switches>
+    <sizes>
+      <length>0.05</length>
+      <diameter>0.1</diameter>
+    </sizes>
+    <dynamics>
+      <maxForce>2.5</maxForce>
+      <upperVelocityLimit>360</upperVelocityLimit>
+      <switches>
+        <motorEnabled>true</motorEnabled>
+      </switches>
+    </dynamics>
+    <shape>
+      <common>
+        <name>third_member</name>
+      </common>
+      <compound>  
+      <primitive>
+        <type>cuboid</type>
+        <size>0.1 0.05 1.54</size>
+        <localFrame>
+          <position>0.75 0.175 0</position>
+          <euler>90 -76.9 0</euler>
+        </localFrame>
+      </primitive>
+      <primitive>
+        <type>cylinder</type>
+        <size>0.1 0.1 0.05</size>
+        <localFrame>
+          <position>0 0 0</position>
+          <euler>0 0 0</euler>
+        </localFrame>
+      </primitive>
+      <primitive>
+        <type>cylinder</type>
+        <size>0.1 0.1 0.05</size>
+        <localFrame>
+          <position>1.5 0.35 0</position>
+          <euler>0 0 0</euler>
+        </localFrame>
+      </primitive>
+      </compound>
+      <dynamics>
+        <switches>
+          <static>false</static>
+          <respondable>true</respondable>
+        </switches>
+      </dynamics>
+    </shape>
+  </joint>
+  <shape>
+  <common>
+    <name>second_member</name>
+  </common>
+ <compound>  
+  <primitive>
+    <type>cuboid</type>
+    <size>0.1 0.05 2</size>
+    <localFrame>
+      <position>1.5 0 0</position>
+      <euler>0 0 0</euler>
+    </localFrame>
+  </primitive>
+  <primitive>
+    <type>cylinder</type>
+    <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>1.5 0 1</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+  </primitive>
+  <primitive>
+    <type>cylinder</type>
+    <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>1.5 0 -1</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+  </primitive>
+ </compound>
+  <dynamics>
+      <switches>
+        <static>false</static>
+        <respondable>true</respondable>
+      </switches>
+  </dynamics>
+  </shape>
+  <shape>
+    <common>
+      <name>fourth_member</name>
+    </common>
+    <compound>  
+    <primitive>
+      <type>cuboid</type>
+      <size>0.1 0.05 1.635</size>
+    <localFrame>
+      <position>0.75 0 0.675</position>
+      <euler>0 66.57 0</euler>
+    </localFrame>
+    </primitive>
+    <primitive>
+      <type>cylinder</type>
+      <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>1.5 0 1</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+    </primitive>
+    <primitive>
+      <type>cylinder</type>
+      <size>0.1 0.1 0.05</size>
+    <localFrame>
+      <position>0 0 0.35</position>
+      <euler>90 0 0</euler>
+    </localFrame>
+  </primitive>
+  </compound>
+  <dynamics>
+      <switches>
+        <static>false</static>
+        <respondable>true</respondable>
+      </switches>
+  </dynamics>
+  </shape>
+  <joint>
+   <common>
+     <name>motor2</name>
+     <localFrame>
+       <position>0 0 0.35</position>
+       <euler>-90 0 0</euler>
+     </localFrame>
+     <localObjectProperty>
+       <selectModelBaseInstead>true</selectModelBaseInstead>
+     </localObjectProperty>
+   </common>
+   <type>revolute</type>
+   <mode>force</mode>
+   <switches>
+     <cyclic>true</cyclic>
+   </switches>
+   <sizes>
+     <length>0.05</length>
+     <diameter>0.1</diameter>
+   </sizes>
+   <dynamics>
+     <maxForce>2.5</maxForce>
+     <upperVelocityLimit>360</upperVelocityLimit>
+     <switches>
+       <motorEnabled>true</motorEnabled>
+     </switches>
+   </dynamics>
+  </joint>
+  <joint>
+   <common>
+     <name>motor3</name>
+     <localFrame>
+       <position>1.5 0 1</position>
+       <euler>-90 0 0</euler>
+     </localFrame>
+     <localObjectProperty>
+       <selectModelBaseInstead>true</selectModelBaseInstead>
+     </localObjectProperty>
+   </common>
+   <type>revolute</type>
+   <mode>force</mode>
+   <switches>
+     <cyclic>true</cyclic>
+   </switches>
+   <sizes>
+     <length>0.05</length>
+     <diameter>0.1</diameter>
+   </sizes>
+   <dynamics>
+     <maxForce>2.5</maxForce>
+     <upperVelocityLimit>360</upperVelocityLimit>
+     <switches>
+       <motorEnabled>true</motorEnabled>
+     </switches>
+   </dynamics>
+  </joint>
+  </shape>
+  <shape>
+    <common>
+      <name>floor</name>
+      <localFrame>
+        <position>0 0 -2</position>
+      </localFrame>
+      <localObjectProperty>
+        <selectable>false</selectable>
+      </localObjectProperty>
+      <localObjectSpecialProperty>
+        <collidable>true</collidable>
+        <measurable>true</measurable>
+        <renderable>true</renderable>
+        <detectable>true</detectable>
+      </localObjectSpecialProperty>
+    </common>
+    <primitive>
+      <type>cuboid</type>
+      <size>5 5 0.04</size>
+      <color>
+        <ambientDiffuse>209 209 209</ambientDiffuse>
+      </color>
+    </primitive>
+    <dynamics>
+      <switches>
+        <static>true</static>
+        <respondable>true</respondable>
+      </switches>
+    </dynamics>
+ </shape>
+ -->
+</CoppeliaSim>
