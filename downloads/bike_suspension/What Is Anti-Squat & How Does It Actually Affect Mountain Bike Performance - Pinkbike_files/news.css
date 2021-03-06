@@ -1,0 +1,264 @@
+.news-main-box
+{
+    width: 990px;
+}
+
+
+.news-box
+{
+    float: left;
+    background-color: #FFFFFF;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    border-top: 1px solid #BBBBBB;
+    padding: 12px 8px 8px;
+    width: 800px;
+    padding-bottom: 15px;
+}
+
+.news-ads-box
+{
+    width: 720px;
+    padding-bottom: 15px;
+}
+
+.news-h1
+{
+    color: #000;
+    font-size: 29px;
+    border-top: 5px solid #000;
+    padding-top: 15px;
+}
+
+.newstable {
+    border-top:1px solid #ddd;
+    font-size:12px;
+    margin:0px;
+    border-spacing:0px;
+
+}
+
+.newstable td  {
+    padding:1px 10px;
+}
+
+.newstable tr:nth-child(even) {background: #EEE}
+.newstable tr:nth-child(odd) {background: #FFF}
+
+
+.news-ml
+{
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.news-iframe
+{
+    border: none;
+    overflow: hidden;
+    width: 450px;
+    height: 21px;
+}
+
+.news-ads-box2
+{
+    width: 160px;
+    float: right;
+    margin-left: 8px;
+}
+
+.imgtext
+{
+    color: #FFFFFF;
+    padding: 4px;
+}
+
+.news-d
+{
+    border-bottom: 1px solid #DDD;
+}
+
+.news-d2
+{
+    margin-top: 15px;
+    border-bottom: 3px solid #000;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    width: 500px;
+}
+
+.news-d3
+{
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-top: 3px solid #000;
+}
+
+.news-li
+{
+    padding-bottom: 4px;
+}
+
+.news-comments-container
+{
+    width: 990px;
+}
+
+.news-comments
+{
+    width: 806px;
+    background-color: #FFFFFF;
+    padding: 20px 5px 5px;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+.pbvideo
+{
+    text-align: center;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pbvideo .details {
+    margin-top:5px;
+    font-size:10px;
+}
+
+.pbvideo .video-container {
+    background: black;
+}
+.pbvideo .video-quality {
+    float: left;
+    font-size: 13px;
+    margin-right: .5em;
+}
+.pbvideo .favorite {
+    float: left;
+    font-size: 13px;
+    margin-right: .5em;
+}
+
+.overlay-container {
+    position: relative;
+    overflow: hidden;
+}
+.overlay-container .overlay {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.overlay-container .overlay .blog-text-container {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  max-width: 100%;
+}
+.overlay-container .overlay.top {
+    align-items: flex-start;
+}
+.overlay-container .overlay.middle {
+    align-items: center;
+}
+.overlay-container .overlay.bottom {
+    align-items: flex-end;
+}
+.overlay-container .overlay.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+.overlay-container .overlay.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+.overlay-container .overlay.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.postImage img {
+    vertical-align: top;
+}
+
+.news-photo-frame {
+    background: black;
+    padding: 0 20px;
+}
+.news-photo-caption {
+    margin: auto;
+    padding: 3px 0 10px;
+    font-size: .95em;
+    line-height: 1.2em;
+}
+.news-photo-caption .pb-caption {
+    margin-right: .2em;
+}
+.news-photo-frame .news-photo-caption {
+    color: #fff;
+}
+
+.news-box-container {
+  border-color: black;
+  border-style: solid;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.quotes-small {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4em;
+  display: inline;
+}
+.quotes-medium {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.4em;
+  display: inline;
+}
+.quotes-large {
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.4em;
+  display: inline;
+}
+.quotes-giant {
+  font-style: italic;
+  font-size: 27px;
+  line-height: 1.3em;
+  color: #555;
+}
+
+.quotes-author-small,
+.quotes-author-medium,
+.quotes-author-large,
+.quotes-author-giant {
+  float: right;
+  margin: 1em 2em 0 4em;
+  font-weight: bold;
+  /* color: #000; */
+  font-style: italic;
+  text-align: right;
+}
+.quotes-author-dash {
+  font-weight: normal;
+}
+.quotes-author-large {
+  /* font-weight: normal; */
+  font-size: 18px;
+}
+.quotes-author-giant {
+  font-size: 20px;
+  margin-top: 1.2em;
+}
+

@@ -1,0 +1,166 @@
+.vjsoverlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #FFF;
+    z-index: 100;
+    max-width: 95%;
+}
+
+.vjsoverlay .vjsthumbnail {
+    float: left;
+}
+
+.vjsoverlay .vjsthumbnail img {
+    display: block;
+    clear: left;
+}
+
+.vjsoverlay .vjsdescription {
+    text-align: left;
+    padding-left: 90px;
+}
+
+.vjsoverlay .vjsdescription div {
+    display: inline-block;
+    background-color: #000;
+    border-radius: 6px;
+    padding: 2px 7px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 20px !important;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.vjsoverlay .vjsdescription .vjstitle {
+    margin-bottom: 18px;
+}
+
+.vjsoverlay .vjsdescription .vjsbyline {
+    color: #d70303;
+}
+
+.vjsoverlay .vjsdescription a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.vjsoverlay .vjsclear {
+    clear: both;
+}
+
+#mobile_layout .vjsoverlay .vjsthumbnail img {
+    width: 50px;
+    height: 50px;
+}
+
+#mobile_layout .vjsoverlay .vjsdescription {
+    padding-left: 60px !important;
+}
+
+#mobile_layout .vjsoverlay .vjsdescription .vjstitle {
+    font-size: small !important;
+    margin-bottom: 5px;
+}
+
+#mobile_layout .vjsoverlay .vjsdescription .vjsbyline {
+    font-size: x-small !important;
+}
+
+
+.vjs-pbairplay {
+    background: url(../../i/videojs-pbairplay.png) no-repeat center center #000;
+}
+
+
+.vjs-pblogo {
+    position: relative;
+    background: url(../../i/videojs-pblogo.jpg) no-repeat center center #000;
+}
+
+.vjs-pblogo a {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.vjsadoverlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.vjsrelated {
+    display: none;
+    position: absolute;
+    background: #1E1E1E;
+    border-radius: 5px;
+    z-index: 98;
+    left: 0;
+    right: 0;
+    top: 10%;
+    margin: auto;
+    padding: 4px;
+    width: 80%;
+    max-width: 460px;
+    text-align: left;
+    line-height: 14px;
+}
+
+.vjsrelated a {
+    display: inline-block;
+    color: #FFF !important;    
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+}
+
+.vjsrelated a .vjsbottomtextcontainer {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.vjsrelated a .vjsbottomtext {
+    display: block;
+    padding: 5px 3px 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.vjsthumbnailcontainer {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 4px solid #1E1E1E;
+    vertical-align: top;
+    width: 50%;
+    padding-bottom: 28.125%;
+}
+
+.vjsthumbnailitem {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #DCDCDC;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 11px;
+}

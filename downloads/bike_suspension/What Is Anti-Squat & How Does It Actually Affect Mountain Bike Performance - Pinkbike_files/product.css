@@ -1,0 +1,217 @@
+/*---------- bubble tooltip -----------*/
+span.tt{
+    position:relative;
+    z-index:24;
+    color:#3CA3FF;
+    font-weight:bold;
+    text-decoration:none;
+}
+span.tt span{ display: none; }
+
+/*background:; ie hack, something must be changed in a for ie to execute it*/
+span.tt:hover{ z-index:25; color: #aaaaff; background:;}
+span.tt:hover span.tooltip{
+    display:block;
+    position:absolute;
+    top:0px; left:0;
+    padding: 15px 0 0 0;
+    width:200px;
+    color:#333333;
+    text-align: center;
+    filter: alpha(opacity:90);
+    KHTMLOpacity: 0.90;
+    MozOpacity: 0.90;
+    opacity: 0.90;
+}
+span.tt:hover span.top{
+    display: block;
+    padding: 30px 8px 0;
+    background: url(http://trentrichardson.com/examples/csstooltips/bubble.gif) no-repeat top;
+}
+span.tt:hover span.middle{ /* different middle bg for stretch */
+    display: block;
+    padding: 0 8px;
+    background: url(http://trentrichardson.com/examples/csstooltips/bubble_filler.gif) repeat bottom;
+}
+span.tt:hover span.bottom{
+    display: block;
+    padding:3px 8px 10px;
+    color: #548912;
+    background: url(http://trentrichardson.com/examples/csstooltips/bubble.gif) no-repeat bottom;
+}
+
+
+    #tabsB {
+      float:left;
+      width:100%;
+      font-size:93%;
+      line-height:normal;
+      border-bottom:1px solid #ddd;
+      }
+    #tabsB ul {
+      margin:0;
+      padding:0px 0px 0 0px;
+      list-style:none;
+      }
+    #tabsB li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabsB a {
+      float:left;
+      background:url(http://exploding-boy.com/images/cssmenus/tableftB.gif) no-repeat left top;
+      margin:0;
+      padding:0 0 0 4px;
+      text-decoration:none;
+      font-weight:bold;
+      }
+    #tabsB a span {
+      float:left;
+      display:block;
+      background:url(http://exploding-boy.com/images/cssmenus/tabrightB.gif) no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#666;
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabsB a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabsB a:hover span {
+      color:#000;
+      }
+    #tabsB a:hover {
+      background-position:0% -42px;
+      }
+    #tabsB a:hover span {
+      background-position:100% -42px;
+      }
+
+    #tabsB .selected span {
+      color:#000;
+      }
+    #tabsB .selected {
+      background-position:0% -42px;
+      }
+    #tabsB .selected span {
+      background-position:100% -42px;
+      }
+
+
+
+#productname {
+color:#3778B4;
+font-family:"Century Gothic",Avant Garde,Century Gothic,Avant Garde Gothic,"Lucida Sans",Helvetica,Trebuchet,Arial,Sans;
+font-size:190%;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:bold;
+line-height:normal;
+margin:0 0 0;
+padding:0 2px 4px 0;
+}
+
+.specmenu {
+    width:350px;
+    background-color:#DDD;
+    text-align:center;
+    font-weight:bold;
+
+}
+
+.speccol1 {
+    width:140px;
+    border-top:1px solid #ddd;
+    margin:10px 0px;
+    padding:6px;
+    font-size:12px;
+    font-weight:bold;
+
+}
+.speccol2 {
+    width:320px;
+    border-top:1px solid #ddd;
+    margin:10px 0px;
+    padding:6px;
+    font-size:12px;
+}
+.speccol3 {
+    width:16px;
+    border-top:1px solid #ddd;
+    margin:10px 0px;
+    padding:6px 0px;
+}
+
+.sizetable {
+    border-top:1px solid #ddd;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.sizetable .even {
+    background-color:#F8FAFB;
+}
+
+.sizecol {
+    width:75px;
+    border-top:1px solid #ddd;
+    margin:10px 0px;
+    padding:6px 0px;
+    font-weight:normal;
+}
+
+
+
+.speccontainer {
+    float:left;
+    margin-top:12px;
+    margin-left:15px;
+}
+
+.spectable .even {
+    background-color:#F8FAFB;
+}
+
+.spectable {
+    margin-top:12px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.wherebuy {
+    margin-top:15px;
+}
+
+.wherebuy .head{
+    padding:0px;
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:0px;
+
+}
+
+.wherebuy li {
+    list-style:disc;
+    margin-left:20px;
+    line-height:20px;
+}
+
+
+.wherebuy li a {
+    font-size:13px;
+}
+
+
+.comparetext{
+    margin-bottom:8px;
+    margin-top:11px;
+    text-align:center;
+}
+
+.comparetext a{
+    font-size:15px;
+    font-weight:bold;
+    text-decoration:underline;
+}
+
