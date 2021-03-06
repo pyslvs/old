@@ -1,0 +1,171 @@
+algorithm:
+- algorithm: Differential Evolution
+  cus: {}
+  expression: M[J[R, P[-8.0767, -5.5706], L[L0, L1]], J[R, P[9.084, -3.2259], L[L0,
+    ground]], J[R, P[-24.3123, -11.7948], L[L0, L4]], J[R, P[-14.9472, -20.0056],
+    L[L1, L3]], J[R, P[-34.0647, -14.6472], L[L1, L5]], J[R, P[3.2225, -14.3864],
+    L[ground, L3]], J[R, P[-37.5045, -11.7512], L[L4, L5]]]
+  graph: &id001
+  - - 0
+    - 1
+  - - 0
+    - 2
+  - - 2
+    - 3
+  - - 3
+    - 1
+  - - 0
+    - 4
+  - - 4
+    - 5
+  - - 5
+    - 1
+  hardware_info:
+    cpu: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+    os: Windows 10 AMD64
+  input:
+  - - - 5
+      - 3
+    - - 0
+      - 360
+  interrupted: 'False'
+  last_fitness: 0.05993617262441437
+  last_gen: 1000
+  lower: 0
+  placement:
+    1:
+    - 13.75
+    - -2.0599999999999996
+    - 5.0
+    5:
+    - 5.140000000000001
+    - -17.43
+    - 5.0
+  same: {}
+  settings: &id002
+    cross: 0.95
+    delta: 5.0
+    max_gen: 1000
+    mutate: 0.05
+    pop_num: 500
+    report: 50
+    win: 0.95
+  shape_only: false
+  target:
+    4:
+    - &id003
+      - -34.0647479502137
+      - -14.647207187079626
+    - &id004
+      - -34.47533189181954
+      - -11.180053902408094
+    - &id005
+      - -34.42971145386334
+      - -6.572389668831452
+    - &id006
+      - -33.69978444656407
+      - -2.603411566641671
+    - &id007
+      - -32.69613481152757
+      - 0.40753733846781803
+    - &id008
+      - -31.23628079692903
+      - 3.55534755744592
+  time: 9.59375
+  upper: 20.0
+- algorithm: Real-coded Genetic Algorithm
+  cus: {}
+  expression: M[J[R, P[-8.759, -4.0248], L[L0, L1]], J[R, P[9.4497, -2.146], L[L0,
+    ground]], J[R, P[-18.6692, -9.4364], L[L0, L4]], J[R, P[-16.52, -22.3914], L[L1,
+    L3]], J[R, P[-34.0647, -14.6472], L[L1, L5]], J[R, P[1.9363, -16.1857], L[ground,
+    L3]], J[R, P[-21.6431, -2.3909], L[L4, L5]]]
+  graph: *id001
+  hardware_info:
+    cpu: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+    os: Windows 10 AMD64
+  input:
+  - - - 5
+      - 3
+    - - 0
+      - 360
+  interrupted: 'False'
+  last_fitness: 0.06140363592465863
+  last_gen: 1000
+  lower: 0
+  placement:
+    1:
+    - 13.75
+    - -2.0599999999999996
+    - 5.0
+    5:
+    - 5.140000000000001
+    - -17.43
+    - 5.0
+  same: {}
+  settings: *id002
+  shape_only: false
+  target:
+    4:
+    - *id003
+    - *id004
+    - *id005
+    - *id006
+    - *id007
+    - *id008
+  time: 19.34375
+  upper: 20.0
+background:
+  background: ''
+  background_opacity: 1.0
+  background_scale: 1.0
+  background_x: 0.0
+  background_y: 0.0
+collection:
+- - - 0
+    - 1
+  - - 0
+    - 2
+  - - 2
+    - 3
+  - - 3
+    - 1
+  - - 0
+    - 4
+  - - 4
+    - 5
+  - - 5
+    - 1
+input:
+- - 5
+  - 0
+links:
+  ground: White
+  link_1: Blue
+  link_2: Blue
+  link_3: Blue
+  link_4: Blue
+mechanism: M[J[R, color[green], P[-3.2, -18.8], L[link_1, link_3]], J[R, color[green],
+  P[-7.5, 2.1], L[link_1, link_2]], J[R, color[(255, 0, 0)], P[-34.6, -9.7], L[link_1]],
+  J[R, color[green], P[3, -1], L[link_2, ground]], J[R, color[green], P[13.3, -1],
+  L[link_2, link_4]], J[R, color[green], P[5.3, -16], L[link_3, ground]], J[RP, A[75.0],
+  color[(255, 0, 0)], P[13.2534, -2.4487], L[ground, link_4]]]
+pyslvs_ver: 20.12.0.dev0
+triangle:
+  type1:
+    cus: {}
+    expression: M[J[R, P[-0, -0], L[L0, L1]], J[R, P[89.7496, -6.0606], L[L0, ground]],
+      J[R, P[13.7854, 49.7988], L[L0, L4]], J[R, P[6.4383, -58.4256], L[L1, L3]],
+      J[R, P[-95.2712, -56.8966], L[L1, L5]], J[R, P[47.1444, -57.4255], L[ground,
+      L3]], J[R, P[-55.5223, 4.2636], L[L4, L5]]]
+    graph: *id001
+    input:
+    - - - 5
+        - 3
+      - - 0
+        - 360
+    placement:
+      1: null
+      5: null
+    same: {}
+    target:
+      4: null
