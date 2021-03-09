@@ -1,0 +1,28 @@
+目標:
+
+利用API將檔案(xml、ttt)導入軟體中正常操作
+
+目前遇到問題:
+
+查閱資料有看到相關解法，包含講到相對路經、絕對路徑的寫法
+
+如以下寫法:
+
+        # relative to remote API client location, relative path:
+        sim.simxLoadScene(clientID,'test/testScene.ttt',0xFF,vrep.simx_opmode_blocking)
+
+        # relative to V-REP executable location, relative path:
+        sim.simxLoadScene(clientID,'scenes/collisionDetectionDemo.ttt',0x00,vrep.simx_opmode_blocking)
+
+        # relative to remote API client location, absolute path:
+        sim.simxLoadScene(clientID,'c:/python27/test/testScene.ttt',0xFF,vrep.simx_opmode_blocking)
+
+        # relative to V-REP executable location, absolute path:
+        sim.simxLoadScene(clientID,'d:/v_rep/qrelease/release/scenes/collisionDetectionDemo.ttt',0x00,vrep.simx_opmode_blocking)
+
+官方網站的解法但看不太懂為何這樣寫，目前在了解相對路徑與絕對路徑之間的關係。
+
+網站連結:
+https://forum.coppeliarobotics.com/viewtopic.php?t=6905
+
+        
