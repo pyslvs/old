@@ -44,13 +44,11 @@ class settings:
         # print(list_vpoints, "\n")
         return list_vpoints
         
-        
     def cus_vpoints(self, index, links, type_int, angle, x, y):
         list_vpoints = self.graph2vpoints()
         cus_joint = list_vpoints[index].slider_joint(links, type_int, angle, x, y)
         list_vpoints[index] = cus_joint
         return list_vpoints
-        
         
     def collection(self) -> dict:
         # The relative function "FMatch", The FMatch class needs the each parameters.
@@ -123,6 +121,7 @@ def _run() -> str:
     mech_expr = algorithm_RGA(four_bar)
     # print(f"The expression of synthesis result:\n {result}")
     return mech_expr
+
 
 def synthesis_import_test():
     filename = os.path.basename(__file__)

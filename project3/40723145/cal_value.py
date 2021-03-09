@@ -11,7 +11,7 @@ def get_chain_growth(Lo, Lg):
     return (Lg - Lo) / Lo
     
     
-if __name__ == "__main__":
+def test_chain_growth():
     # The lowest position chain growth:
     # left_pivot(-15, -34), right_pivot(-2, -21)
 
@@ -25,3 +25,12 @@ if __name__ == "__main__":
     
     chain_growth = get_chain_growth(Lo, Lg)
     print("chain_growth: ", chain_growth)
+    
+    
+def leverage_ratio(wheel_travel, stroke)
+    # wheel_travel: the vertical(up/down) distance the wheel can travel
+    return wheel_travel / stroke
+    
+    
+if __name__ == "__main__":
+    test_chain_growth()

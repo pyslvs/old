@@ -24,8 +24,7 @@ algorithm:
     cpu: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
     os: Windows 10 AMD64
   input:
-  - - &id002
-      - 2
+  - - - 2
       - 6
     - - 0
       - 360
@@ -76,22 +75,6 @@ background:
   background_scale: 1.0
   background_x: 0.0
   background_y: 0.0
-collection:
-- *id001
-- - - 0
-    - 2
-  - - 2
-    - 1
-  - - 0
-    - 3
-  - - 3
-    - 4
-  - - 4
-    - 1
-  - - 0
-    - 5
-  - - 5
-    - 1
 input:
 - - 0
   - 1
@@ -103,10 +86,10 @@ links:
   L5: Blue
   ground: White
 mechanism: M[J[R, color[Green], P[-33.625, -19.625], L[ground, L1]], J[R, color[Green],
-  P[-48.3761, 12.1245], L[L1, L3]], J[R, color[Green], P[17.1239, 33.8744], L[L2,
-  L3]], J[P, A[30.0], color[Green], P[51.3789, -12.6306], L[ground, L2]], J[R, color[Green],
-  P[50.3489, 53.1164], L[L2, L5]], J[R, color[Green], P[143.4537, 65.9683], L[L4,
-  L5]], J[R, color[Green], P[99.244, 20.447], L[ground, L4]]]
+  P[-48.375, 12.125], L[L1, L3]], J[R, color[Green], P[17.125, 33.875], L[L2, L3]],
+  J[P, A[30.0], color[Green], P[51.38, -12.63], L[ground, L2]], J[R, color[Green],
+  P[50.35, 53.117], L[L2, L5]], J[R, color[Green], P[143.455, 65.967], L[L4, L5]],
+  J[R, color[Green], P[99.244, 20.447], L[ground, L4]]]
 pyslvs_ver: 20.12.0.dev0
 storage:
   Prototype: M[J[R, color[Green], P[-33.625, -19.625], L[ground, L1]], J[R, color[Green],
@@ -114,11 +97,6 @@ storage:
     J[P, A[30.0], color[Green], P[51.38, -12.63], L[ground, L2]], J[R, color[Green],
     P[50.35, 53.117], L[L2, L5]], J[R, color[Green], P[143.455, 65.967], L[L4, L5]],
     J[R, color[Green], P[99.244, 20.447], L[ground, L4]]]
-  type1: M[J[RP, A[0.0], color[Green], P[55.3489, -10.1893], L[ground, L1]], J[R,
-    color[Green], P[103.95, 24.5], L[ground, L2]], J[R, color[Green], P[-32.5266,
-    -24.6506], L[ground, L4]], J[R, color[Green], P[46.4966, 45.2249], L[L1, L3]],
-    J[R, color[Green], P[47.5965, 39.0387], L[L1, L5]], J[R, color[Green], P[94.0977,
-    79.9142], L[L2, L3]], J[R, color[Green], P[-41.279, 24.5774], L[L4, L5]]]
 triangle:
   type1:
     cus: {}
@@ -128,7 +106,8 @@ triangle:
       J[R, P[-129.9038, -0], L[L4, L5]]]
     graph: *id001
     input:
-    - - *id002
+    - - - 2
+        - 6
       - - 0
         - 360
     lower: 0
