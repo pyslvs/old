@@ -1,0 +1,421 @@
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12) (preloaded format=xelatex 2021.3.10)  10 MAR 2021 18:02
+entering extended mode
+**./流程圖.tex
+(流程圖.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-12-07> xparse <2020-03-03>
+(C:\Users\cadlab\Desktop\miktex\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\cadlab\Desktop\miktex\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count173
+\c@section=\count174
+\c@subsection=\count175
+\c@subsubsection=\count176
+\c@paragraph=\count177
+\c@subparagraph=\count178
+\c@figure=\count179
+\c@table=\count180
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+("C:\Program Files\MiKTeX\tex/latex/psnfss\palatino.sty"
+Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/frontendlayer\tikz.sty
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks15
+\pgfutil@tempdima=\dimen139
+\pgfutil@tempdimb=\dimen140
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfutil-common-lists.
+tex))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box47
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfrcs.code.tex
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2020/12/01 v3.1.7a (3.1.7a)
+))
+Package: pgf 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/basiclayer\pgfcore.sty
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 105.
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics-def\xetex.def
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/systemlayer\pgfsys.sty
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks17
+\pgfkeys@temptoks=\toks18
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfkeysfiltered.code.
+tex
+\pgfkeys@tmptoks=\toks19
+))
+\pgf@x=\dimen143
+\pgf@y=\dimen144
+\pgf@xa=\dimen145
+\pgf@ya=\dimen146
+\pgf@xb=\dimen147
+\pgf@yb=\dimen148
+\pgf@xc=\dimen149
+\pgf@yc=\dimen150
+\pgf@xd=\dimen151
+\pgf@yd=\dimen152
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count181
+\c@pgf@countb=\count182
+\c@pgf@countc=\count183
+\c@pgf@countd=\count184
+\t@pgf@toka=\toks20
+\t@pgf@tokb=\toks21
+\t@pgf@tokc=\toks22
+\pgf@sys@id@count=\count185
+ (C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2020/12/01 v3.1.7a (3.1.7a)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsys-xetex.def
+File: pgfsys-xetex.def 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsys-common-pdf.d
+ef
+File: pgfsys-common-pdf.def 2020/12/01 v3.1.7a (3.1.7a)
+)
+\pgfsys@objnum=\count186
+)))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsyssoftpath.code
+.tex
+File: pgfsyssoftpath.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfsyssoftpath@smallbuffer@items=\count187
+\pgfsyssoftpath@bigbuffer@items=\count188
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/systemlayer\pgfsysprotocol.code
+.tex
+File: pgfsysprotocol.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)) (C:\Users\cadlab\Desktop\miktex\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathcalc.code.tex
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathutil.code.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen153
+\pgfmath@count=\count189
+\pgfmath@box=\box48
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.code.tex
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.basic.cod
+e.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.trigonome
+tric.code.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.random.co
+de.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.compariso
+n.code.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.base.code
+.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.round.cod
+e.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.misc.code
+.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfunctions.integerar
+ithmetics.code.tex)))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count190
+))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfint.code.tex)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorepoints.code.t
+ex
+File: pgfcorepoints.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@picminx=\dimen154
+\pgf@picmaxx=\dimen155
+\pgf@picminy=\dimen156
+\pgf@picmaxy=\dimen157
+\pgf@pathminx=\dimen158
+\pgf@pathmaxx=\dimen159
+\pgf@pathminy=\dimen160
+\pgf@pathmaxy=\dimen161
+\pgf@xx=\dimen162
+\pgf@xy=\dimen163
+\pgf@yx=\dimen164
+\pgf@yy=\dimen165
+\pgf@zx=\dimen166
+\pgf@zy=\dimen167
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorepathconstruct
+.code.tex
+File: pgfcorepathconstruct.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@path@lastx=\dimen168
+\pgf@path@lasty=\dimen169
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorepathusage.cod
+e.tex
+File: pgfcorepathusage.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@shorten@end@additional=\dimen170
+\pgf@shorten@start@additional=\dimen171
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorescopes.code.t
+ex
+File: pgfcorescopes.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfpic=\box49
+\pgf@hbox=\box50
+\pgf@layerbox@main=\box51
+\pgf@picture@serial@count=\count191
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoregraphicstate.
+code.tex
+File: pgfcoregraphicstate.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgflinewidth=\dimen172
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoretransformatio
+ns.code.tex
+File: pgfcoretransformations.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@pt@x=\dimen173
+\pgf@pt@y=\dimen174
+\pgf@pt@temp=\dimen175
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorequick.code.te
+x
+File: pgfcorequick.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoreobjects.code.
+tex
+File: pgfcoreobjects.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorepathprocessin
+g.code.tex
+File: pgfcorepathprocessing.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorearrows.code.t
+ex
+File: pgfcorearrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfarrowsep=\dimen176
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoreshade.code.te
+x
+File: pgfcoreshade.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@max=\dimen177
+\pgf@sys@shading@range@num=\count192
+\pgf@shadingcount=\count193
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoreimage.code.te
+x
+File: pgfcoreimage.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoreexternal.code
+.tex
+File: pgfcoreexternal.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfexternal@startupbox=\box52
+))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorelayers.code.t
+ex
+File: pgfcorelayers.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcoretransparency.
+code.tex
+File: pgfcoretransparency.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorepatterns.code
+.tex
+File: pgfcorepatterns.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/modules\pgfmoduleshapes.code.te
+x
+File: pgfmoduleshapes.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfnodeparttextbox=\box53
+)
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/compatibility\pgfcomp-version-0-6
+5.sty
+Package: pgfcomp-version-0-65 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@nodesepstart=\dimen178
+\pgf@nodesepend=\dimen179
+)
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/compatibility\pgfcomp-version-1-1
+8.sty
+Package: pgfcomp-version-1-18 2020/12/01 v3.1.7a (3.1.7a)
+)) (C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/utilities\pgffor.sty
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/utilities\pgfkeys.sty
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(C:\Users\cadlab\Desktop\miktex\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmath.code.tex))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/math\pgfmath.code.tex)
+\pgffor@iter=\dimen180
+\pgffor@skip=\dimen181
+\pgffor@stack=\toks26
+\pgffor@toks=\toks27
+))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/frontendlayer/tikz\tikz.code.te
+x
+Package: tikz 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/libraries\pgflibraryplothandler
+s.code.tex
+File: pgflibraryplothandlers.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgf@plot@mark@count=\count194
+\pgfplotmarksize=\dimen182
+)
+\tikz@lastx=\dimen183
+\tikz@lasty=\dimen184
+\tikz@lastxsaved=\dimen185
+\tikz@lastysaved=\dimen186
+\tikz@lastmovetox=\dimen187
+\tikz@lastmovetoy=\dimen188
+\tikzleveldistance=\dimen189
+\tikzsiblingdistance=\dimen190
+\tikz@figbox=\box54
+\tikz@figbox@bg=\box55
+\tikz@tempbox=\box56
+\tikz@tempbox@bg=\box57
+\tikztreelevel=\count195
+\tikznumberofchildren=\count196
+\tikznumberofcurrentchild=\count197
+\tikz@fig@count=\count198
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/modules\pgfmodulematrix.code.te
+x
+File: pgfmodulematrix.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfmatrixcurrentrow=\count199
+\pgfmatrixcurrentcolumn=\count266
+\pgf@matrix@numberofcolumns=\count267
+)
+\tikz@expandcount=\count268
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/frontendlayer/tikz/libraries\ti
+kzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+)))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/frontendlayer/tikz/libraries\ti
+kzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/libraries/shapes\pgflibraryshap
+es.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+))
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/frontendlayer/tikz/libraries\ti
+kzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(C:\Users\cadlab\Desktop\miktex\tex/generic/pgf/libraries\pgflibraryarrows.code
+.tex
+File: pgflibraryarrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\arrowsize=\dimen191
+))
+LaTeX Font Info:    Trying to load font information for TU+ppl on input line 6.
+
+LaTeX Font Info:    No file TUppl.fd. on input line 6.
+
+
+LaTeX Font Warning: Font shape `TU/ppl/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 6.
+
+(C:\Users\cadlab\Desktop\miktex\tex/latex/l3backend\l3backend-xetex.def
+File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
+\g__graphics_track_int=\count269
+\l__pdf_internal_box=\box58
+\g__pdf_backend_object_int=\count270
+\g__pdf_backend_annotation_int=\count271
+)
+No file 流程圖.aux.
+\openout1 = `流程圖.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
+.
+(C:\Users\cadlab\Desktop\miktex\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+ [1
+
+] (流程圖.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12341 strings out of 412095
+ 259656 string characters out of 2849927
+ 522936 words of memory out of 3000000
+ 31799 multiletter control sequences out of 15000+200000
+ 403438 words of font info for 28 fonts, out of 3000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 108i,5n,111p,436b,687s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on 流程圖.pdf (1 page).

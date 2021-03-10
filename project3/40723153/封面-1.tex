@@ -1,0 +1,97 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}%數學公式、符號
+\usepackage[top=2.5truecm,bottom=2.5truecm,
+left=3truecm,right=2.5truecm]{geometry}%版面設置
+\usepackage{graphicx, subfig}%圖形
+\usepackage[colorlinks,linkcolor=purple,
+anchorcolor=blue,citecolor=green]{hyperref}%超連結、pdf書籤
+\usepackage{caption}
+\usepackage{graphicx, subfig}%圖片宏包
+\usepackage{type1cm} %調整字體絕對大小
+\usepackage{textpos} %設定文字絕對位置
+%\usepackage{fontspec}%加這個即可設定字體
+\usepackage{xeCJK} %使用xeCJK，其他的還有CJK或是xCJK
+
+
+%%%%%%%%%%%%%自訂字體%%%%%%%%%%%%%
+\newcommand{\thirty}{\fontsize{30pt}\baselineskip\selectfont}%字體大小30pt
+\newcommand{\twentyfour}{\fontsize{24pt}{\baselineskip}\selectfont}%字體大小24pt
+\newcommand{\twenty}{\fontsize{20pt}{\baselineskip}\selectfont}%字體大小20pt
+\newcommand{\eigh}{\fontsize{18pt}{\baselineskip}\selectfont}%字體大小18pt
+\newcommand{\sixteen}{\fontsize{16pt}{\baselineskip}\selectfont}%字體大小14pt
+\newcommand{\fourteen}{\fontsize{14pt}{\baselineskip}\selectfont}%字體大小12pt
+\newcommand{\twelve}{\fontsize{12pt}{\baselineskip}\selectfont}%字體大小10pt
+
+\begin{document}
+    \pagestyle{plain} %設定每頁頁碼
+    {\renewcommand\baselinestretch{1.8}\selectfont %設定以下行距
+    {\begin{center} %以下文字置中
+        \kaishu \twentyfour{國立虎尾科技大學}\\{機械設計工程系}\\{專題製作報告}\\
+        \hspace*{\fill} \\
+        \bf \kaishu \thirty {機構設計模擬實作}\\
+    \end{center}}
+    \par} %結束指定行距
+
+     {\renewcommand\baselinestretch{1.2}\selectfont %設定以下行距
+    {\begin{textblock}{30}(2,2.5) %{寬度}(以左上角為原點之右移量,下移量)
+    \noindent \kaishu \eigh \makebox[6em][s]{指導教授}\enspace:\qquad
+    \kaishu \eigh \makebox[8em][s]{李武鉦}\\ %\noindent指定首行不進行縮排
+    \kaishu \eigh \makebox[6em][s]{班級}\enspace:\qquad
+    \kaishu \eigh \makebox[8em][s]{四設計三甲} \\ %\makebox為文本盒子
+    \kaishu \eigh \makebox[6em][s]{學生}\enspace:\qquad
+    {\begin{minipage}[t][9.8em][s]{12em}
+    \kaishu \eigh \setlength{\baselineskip}{10pt plus 2pt}
+    林昱秀\qquad40723102\vfill 林晏瑩\qquad40723103\vfill 劉光智\qquad40723145\vfill 吳佳穎\qquad40723153\vfill 蔡育灃\qquad40723245
+    \end{minipage}}
+    \end{textblock}} %指定以下文字整體偏移至頁面的絕對位置
+    \par} %結束指定行距
+
+    {\begin{textblock}{12}(0,8)
+    {\begin{center}
+    \noindent \kaishu \eigh \makebox[12em][s]{中華民國一一零年一月}
+    \end{center}}
+    \end{textblock}}
+    \newpage
+%%%%%%%%%%%%%%%%page2%%%%%%%%%%%%%%%%
+    {\begin{center}
+    {\renewcommand\baselinestretch{1.4}
+    \kaishu \eigh {國立虎尾科技大學 \qquad 機械設計工程系}\\{學生專題製作合格認可證明}\\
+    \hspace*{\fill} \\ %似enter鍵換行
+    \par}
+     \end{center}}
+    {\begin{textblock}{60}(0.7,0)
+    \noindent \kaishu \fourteen 專題製作修習學生\enspace:\quad
+    {\begin{minipage}[t]{10em}\underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\ %下劃線符號指令
+    \end{minipage}}
+    {\begin{textblock}{30}(0,0.3)
+    \noindent \kaishu \fourteen 專題製作題目\enspace:\quad
+    \hspace*{\fill} \\
+    \hspace*{\fill} \\
+    \noindent \kaishu \fourteen 經評量合格，特此證明
+    \hspace*{\fill} \\
+    \noindent \kaishu \fourteen \makebox[6em][s]{評審委員}\enspace:\quad
+    {\begin{minipage}[t]{6em} \underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\ \underline{　　　　　　　　　　　　}\\
+    \end{minipage}}
+    \end{textblock}}
+    {\begin{textblock}{10}(0,6.5)
+    {\begin{flushleft}
+    \kaishu \fourteen \makebox[6em][s]{指導老師}\enspace:\quad \underline{　　　　　　　　　　　　}\\
+    \kaishu \fourteen \makebox[6em][s]{系主任}\enspace:\quad \underline{　　　　　　　　　　　　}\\
+    \hspace*{\fill} \\
+    \kaishu \fourteen \makebox[6em][s]{中華民國}\qquad\quad{年}\qquad\quad{月}\qquad\quad{日}
+    \end{flushleft}}
+    \end{textblock}}
+    \end{textblock}}
+    \newpage
+%%%%%%%%%%%%%%%%page3%%%%%%%%%%%%%%%%
+    {\begin{center}
+        \bf \kaishu \twentyfour {摘要}\\
+    \end{center}}
+        \kaishu \sixteen {生產自動化是現今工業界中最重要的一環，一國國力之強弱取決於工業發展的情況，而其經濟的動脈更是來自於自動化工業，故發展自動化工業技術，已是時代潮流。對於我國在踏入高科技產業的同時，如何以更低的成本與縮短生產製程，來提高在國際上的競爭力，是大家所努力的目標，而身為未來二十一世紀的一員，更需了解其重要性。}
+        \kaishu \sixteen\\{目前於市面上的數位控制加工機（CNC），其成本昂貴，且體積龐大，並不方便於一般教學的使用，導致技術無法有效的傳授與教導，為了使教學上能更便利於授課，且學生能立即操作而了解其動作原理，故本組決定運用在校所學之相關課程，以完成一部具有高精度、體積小與低成本（十五萬元以下）的 PC-Based 三軸運動控制實驗台為研究目標，達成在教學上的需要，並增加系內的實驗設備。}
+        \kaishu \sixteen\\{本專題主要目的在了解伺服馬達的控制原理、三軸運動控制卡的使用方式、人機介面程式的撰寫與增加機械實務加工的能力。}
+        \newpage
+%%%%%%%%%%%%%%%%page4%%%%%%%%%%%%%%%%
+
+\end{document} 

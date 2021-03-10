@@ -1,0 +1,35 @@
+% texlive2015, pdflatex
+\documentclass{article}
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\begin{document}
+\thispagestyle{empty}
+% 流程图定义基本形状
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+\begin{tikzpicture}[node distance=2cm]
+%定义流程图具体形状
+\node[startstop](start){Start};
+\node[io, below of = start, yshift = -1cm](in1){Input};
+\node[process, below of = in1, yshift = -1cm](pro1){Process 1};
+\node[decision, below of = pro1, yshift = -1cm](dec1){Decision 1 ?};
+\node[process, below of = dec1, yshift = -1cm](pro2){Process 2};
+\node[io, below of = pro2, yshift = -1cm](out1){Output};
+\node[startstop, below of = out1, yshift = -1cm](stop){Stop};
+\coordinate (point1) at (-3cm, -6cm);
+%连接具体形状
+\draw [arrow] (start) -- (in1);
+\draw [arrow] (in1) -- (pro1);
+\draw [arrow] (pro1) -- (dec1);
+\draw (dec1) -- node [above] {Y} (point1);
+\draw [arrow] (point1) |- (pro1);
+\draw [arrow] (dec1) -- node [right] {N} (pro2);
+\draw [arrow] (pro2) -- (out1);
+\draw [arrow] (out1) -- (stop);
+\end{tikzpicture}
+\end{document}
