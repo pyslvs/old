@@ -1,7 +1,9 @@
 from pyslvs import *
 from pyslvs.graph import *
 from pyslvs.metaheuristics import *
+from random import choice
 import os.path
+
 
 
 class CDMD:
@@ -25,72 +27,102 @@ class CDMD:
             else:
                 graph_altas.append(conventional_g[0])
         return graph_altas
-        
-        
-        
-    def specialization(self, graph_altas):
-        node = []
-        grounded_gph = []
-        # print(graph_altas)
-        for graph in graph_altas:   # Get the whole types of kinematic chains.
-            assign_ground = labeled_enumerate(graph)
-            # print(assign_ground, "\n")
-            for gph in assign_ground:   # Get the unisomorphic  kinematic chains after asssigning the grounded link.
-                # print(gph)
-                grounded_node = []
-                grounded_gph.append(gph[1])
-                node.append([gph[0]])
-        # print(node, "\n")
-        # print(f"The specialization chains after assign the grounded link:\n {grounded_gph}")
-        
-        piston_gph = []
-        for ground_index, graph in enumerate(grounded_gph):  # Get the whole types of kinematic chains.
-            assign_piston = labeled_enumerate(graph)
-            # print(assign_piston)
-            for index, gph in enumerate(assign_piston):
-                # print(gph)
-                if piston_gph == []:
-                    piston_gph.append(gph[1])
-                    node[ground_index].append(gph[0])
-                elif gph[1].is_isomorphic(piston_gph[:][0]) == True:
-                    continue
-                else:
-                    piston_gph.append(gph[1])
-                    node[ground_index].append(gph[0])
-            # print("\n")
-        print(node)
-        # print(piston_gph[:])
-        # print(len(piston_gph))
-        
-        swingarm_gph = []
-        for graph in piston_gph:
-            assign_arm = labeled_enumerate(graph)
-            for gph in assign_arm:
-                # print(gph)
-                if swingarm_gph == []:
-                    swingarm_gph.append(gph[1])
-                elif gph[1].is_isomorphic(swingarm_gph[:][0]) == True:
-                    continue
-                else:
-                    swingarm_gph.append(gph[1])
-        print(swingarm_gph[3])
-        print(type(swingarm_gph[3]))
-        print(len(swingarm_gph))
-        
-        
-    def test_spe(graph_altas):
-        g = []
-        for i in rangle(len(self.nl)):
-            for graph in graph_altas:
-                assignment = labeled_enumerate(graph)
-                for gph in assignment:
-                 g.append(gph[1])   
 
 
+    def test_ssssss(self, graph_altas):
+        nodes_set = []
+        for kc in graph_altas:
+            kc_nodes = []
+            for as_first in labeled_enumerate(kc):
+                first_nodes = []
+                first_nodes.append(as_first[0])
+                print("first: ", as_first)
+                for as_second in labeled_enumerate(as_first[1]):
+                    second_nodes = [as_first[0]]
+                    if len(kc.neighbors(as_second[0])) == 2:
+                        second_nodes.append(as_second[0])
+                        print("second: ", as_second)
+                        # print(second_nodes)
+                    else: continue
+                    for as_third in labeled_enumerate(as_second[1]):
+                        third_nodes = [as_first[0], as_second[0]]
+                        if len(kc.neighbors(as_third[0])) == 2:
+                            third_nodes.append(as_third[0])
+                            kc_nodes.append(third_nodes)
+                            print("third: ", as_third)
+                            # print(third_nodes)
+                        elif as_third[0] in kc.neighbors(as_second[0]) and as_third[0] not in third_nodes:
+                            a = kc.neighbors(as_second[0])
+                            print("neighbor nodes in \"as_second\": ", a)
+                            third_nodes.append(a[0])
+                            kc_nodes.append(third_nodes)
+                            # print("teeeeeee: ", as_third)
+            print(kc_nodes)
+            nodes_set.append(kc_nodes)
+            print("-"*40)
+        print(nodes_set)
+        
+        entirety = [i for i in range(self.nl)]
+        for kc_nodes in nodes_set:
+            for nodes in kc_nodes:
+                # print(nodes)
+                if nodes[0] in entirety and nodes[1] in entirety and nodes[2] in entirety:
+                    cp = [j for j in range(self.nl) if j != nodes[0] and j != nodes[1] and j != nodes[2]]
+                    """
+                    for times in range(len(cp)):
+                        num = choice(cp)
+                        if node[len(cp) + times] != num:
+                            nodes.append(num)
+                            print(nodes)
+                    """
+                    
+                    """
+                    new_altas = nodes + cp
+                    print(new_altas)
+                    """
+                    print("-"*50)
+
+
+def test_isomorphic():
+        #g(link as node)
+        g_origin = Graph([(0, 1), (0, 2), (2, 3), (3, 1), (0, 4), (4, 5), (5, 1)])
+        g0 = Graph([(2, 3), (3, 1), (4, 5), (5, 1)])
+        g1 = Graph([(4, 5), (4, 0), (0, 2), (2, 3)])
+        g2 = Graph([(0, 1), (3, 1), (0, 4), (4, 5), (5, 1)])
+        g3 = Graph([(0, 1), (0, 2), (0, 4), (4, 5), (5, 1)])
+        g4 = Graph([(0, 1), (0, 2), (2, 3), (3, 1), (5, 1)])
+        g5 = Graph([(0, 1), (0, 2), (2, 3), (3, 1), (0, 4)])
+        
+        g23 = Graph([(0, 1), (0, 4), (4, 5), (5, 1)])
+        g234 = Graph([(0, 1), (5, 1)])
+        g24 =  Graph([(0, 1), (3, 1), (5, 1)])
+        
+        le_g_origin = labeled_enumerate(g_origin)
+        le_g2 = labeled_enumerate(g2)
+        le_g24 = labeled_enumerate(g24)
+        print(le_g_origin, "\n")
+        print(le_g2, "\n")
+        print(le_g24)
+        
+        nb = g_origin.neighbors(4)
+        print(nb)
+        
+        ism = g0.is_isomorphic(g3)
+        # print(ism)
+        
+        
+def test_similar():
+    g = Graph([(2, 3), (3, 1), (4, 5), (5, 1)])
+    g2 = Graph([(0, 1), (0, 2), (2, 3), (3, 1), (0, 4), (4, 5), (5, 1)])
+    la = link_assortment(g2)
+    cla = contracted_link_assortment(g2)
+    print(la)
+    print(cla)
+    
 def test_neighbor(graph_altas):
     g1 = (0, Graph([(2, 3), (3, 1), (4, 5), (5, 1)]))
     g2 = (2, Graph([(0, 1), (3, 1), (0, 4), (4, 5), (5, 1)]))
-    ga = graph_altas[0].neighbors(g1[0])
+    ga = graph_altas[0].neighbors(g2[0])
     print(ga)        
 
 
@@ -113,17 +145,27 @@ def get_vpoints():
     }
     vpoints = graph2vpoints(sixbar1, pos)
     print(vpoints)
+    vlinks = get_vlinks(vpoints)
+    # print(vlinks)
 
     
 if __name__ == "__main__":
     mech= CDMD(6, 7)
     graph_altas = mech.number_synthesis()
-    spe = mech.specialization(graph_altas)
+    # spe = mech.specialization(graph_altas)
     
     # graph1 = graph_altas[0]
     # print(graph1)
     # print(graph_altas, "\n")
     
+    # get_vpoints()
+    # mech.test_spe(graph_altas)
+    # mech.test_spe2(graph_altas)
+    # test_neighbor(graph_altas)
+    
+    # mech.test_spe3(graph_altas)
+    mech.test_ssssss(graph_altas)
+    test_isomorphic()
     
     
     

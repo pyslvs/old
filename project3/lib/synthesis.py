@@ -54,9 +54,17 @@ class settings:
         # The relative function "FMatch", The FMatch class needs the each parameters.
         format = {
         'expression': self.graph2vpoints(),
-        # 'expression': self.cus_vpoints(2, ["L1", "L2"], 1, 30, 0, 0),
+        """
+        'expression': [
+        VPoint(["ground", "L1"], 0, 0, "green", 0, 0),
+        VPoint(["ground", "L2"], 0, 0, "green", 90, 0),
+        VPoint(["L1", "L3"], 0, 0, "green", 12.92, 32.53),
+        VPoint(["L2", "L3"], 0, 0, "green", 73.28, 67.97),
+        VPoint(["L3"], 0, 0, "green", 33.3, 66.95),
+        ],
+        """
         'input': [self.input],
-        'graph': self.graph,
+        # 'graph': self.graph,
         'placement': self.placement,
         'target': self.pass_point,
         # 'cus': self.cus,
@@ -116,6 +124,7 @@ def _run() -> str:
     ### define the parameters ###
     
     set = settings(num_links, pos, input, placement, pass_point, cus)
+    # print("ssssss: ", set.graph2vpoints())
     four_bar = set.collection()
     # print(type(four_bar))
     mech_expr = algorithm_RGA(four_bar)

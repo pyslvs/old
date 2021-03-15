@@ -88,14 +88,18 @@ def test_vpointclass():
     vpoints = set.graph2vpoints()
     print("original vpoints: ", vpoints, "\n")
     # print(vpoints[0], "\n")
-    slider_joint = vpoints[0].slider_joint(("L1", "ground") , type_int=VJoint.R, angle=30, x=50, y=50)
+    slider_joint = vpoints[0].slider_joint(("L1", "ground") , type_int=VJoint.P, angle=30, x=50, y=50)
     # print(slider_joint, "\n")
     vpoints[0] = slider_joint
     print("replace_vpoints: ", vpoints)
     
     
+def test_vp():
+    sixbar1 = [(0, 1), (0, 2), (2, 3), (3, 1), (0, 4), (4, 5), (5, 1)]
+    gv = graph2vpoints(sixbar1)
+    print(gv)
     
-        
+    
 if __name__ == "__main__":
     ### define the parameters ###
     num_links = 4
@@ -120,10 +124,10 @@ if __name__ == "__main__":
     set = settings(num_links, pos, input, placement, pass_point, cus)
     mechanism = set.collection()
     mech_expr = algorithm_RGA(mechanism)
-    print(mech_expr, "\n")
+    # print(mech_expr, "\n")
     
     test_vpointclass()
     
-    
     # vlinks = get_vlink(mech_expr)
     # print(vlinks[0])
+    # test_vp()
