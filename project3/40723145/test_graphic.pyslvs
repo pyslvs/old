@@ -1,0 +1,63 @@
+background:
+  background: ''
+  background_opacity: 1.0
+  background_scale: 1.0
+  background_x: 0.0
+  background_y: 0.0
+collection:
+- - - 0
+    - 1
+  - - 0
+    - 2
+  - - 2
+    - 3
+  - - 3
+    - 1
+  - - 0
+    - 4
+  - - 4
+    - 5
+  - - 5
+    - 1
+- &id001
+  - - 0
+    - 2
+  - - 2
+    - 1
+  - - 0
+    - 3
+  - - 3
+    - 4
+  - - 4
+    - 1
+  - - 0
+    - 5
+  - - 5
+    - 1
+links:
+  ground: White
+  link_1: Blue
+  link_3: Blue
+  link_4: Blue
+  link_5: Blue
+mechanism: M[J[R, color[Blue], P[-17.85, -1.8], L[ground, link_1]], J[R, color[Blue],
+  P[-7.75, -9.9], L[ground, link_4]], J[R, color[Blue], P[16.05, -3.2], L[ground,
+  link_5]], J[RP, A[0.0], color[Green], P[-12.25, 23.5], L[link_3, link_1]], J[R,
+  color[Green], P[6.5761, 38.1957], L[link_3, link_4]], J[R, color[Green], P[21.1413,
+  15.5435], L[link_3, link_5]]]
+pyslvs_ver: 20.12.0.dev0
+triangle:
+  '1111':
+    cus: {}
+    expression: M[J[R, P[22.0419, -93.75], L[ground, L2]], J[R, P[179.9778, -108.8459],
+      L[ground, L3]], J[R, P[71.3292, -109.7644], L[ground, L5]], J[R, P[38.5277,
+      139.1511], L[L1, L2]], J[R, P[255.2481, 182.321], L[L1, L4]], J[R, P[100.9862,
+      84.0407], L[L1, L5]], J[R, P[151.5556, 17.9489], L[L3, L4]]]
+    graph: *id001
+    input: []
+    placement:
+      0: null
+      1: null
+      2: null
+    same: {}
+    target: {}

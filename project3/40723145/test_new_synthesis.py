@@ -29,7 +29,7 @@ class CDMD:
         return graph_altas
 
 
-    def test_ssssss(self, graph_altas):
+    def specialization(self, graph_altas):
         nodes_set = []
         for kc in graph_altas:
             kc_nodes = []
@@ -46,41 +46,49 @@ class CDMD:
                     else: continue
                     for as_third in labeled_enumerate(as_second[1]):
                         third_nodes = [as_first[0], as_second[0]]
+                        # print("tttttttttttttttttt: ", as_third)
                         if len(kc.neighbors(as_third[0])) == 2:
                             third_nodes.append(as_third[0])
                             kc_nodes.append(third_nodes)
                             print("third: ", as_third)
                             # print(third_nodes)
-                        elif as_third[0] in kc.neighbors(as_second[0]) and as_third[0] not in third_nodes:
-                            a = kc.neighbors(as_second[0])
-                            print("neighbor nodes in \"as_second\": ", a)
-                            third_nodes.append(a[0])
-                            kc_nodes.append(third_nodes)
-                            # print("teeeeeee: ", as_third)
+                        else:
+                            nb_second = kc.neighbors(as_second[0])
+                            for num in nb_second:
+                                # three conditions:
+                                # (1) The number isn't as_third node because of the relation of adjacency nodes, then we want to get the excluded node. 
+                                # (2) The as_third node must is the as_second neighbor nodes.
+                                # (3) The as_third node can't be repeated.
+                                if num != as_third[0] and as_third[0] in nb_second and as_third[0] not in third_nodes:
+                                    # print(num)
+                                    third_nodes.append(num)
+                                    kc_nodes.append(third_nodes)
             print(kc_nodes)
             nodes_set.append(kc_nodes)
             print("-"*40)
         print(nodes_set)
-        
+        # ----------------------------------------------------------------------------------------------------------------------------#
+        """
         entirety = [i for i in range(self.nl)]
         for kc_nodes in nodes_set:
             for nodes in kc_nodes:
                 # print(nodes)
                 if nodes[0] in entirety and nodes[1] in entirety and nodes[2] in entirety:
                     cp = [j for j in range(self.nl) if j != nodes[0] and j != nodes[1] and j != nodes[2]]
-                    """
+                    
                     for times in range(len(cp)):
                         num = choice(cp)
                         if node[len(cp) + times] != num:
                             nodes.append(num)
                             print(nodes)
-                    """
                     
-                    """
+                    
+                    
                     new_altas = nodes + cp
                     print(new_altas)
-                    """
+                    
                     print("-"*50)
+        """
 
 
 def test_isomorphic():
@@ -152,7 +160,7 @@ def get_vpoints():
 if __name__ == "__main__":
     mech= CDMD(6, 7)
     graph_altas = mech.number_synthesis()
-    # spe = mech.specialization(graph_altas)
+    mech.specialization(graph_altas)
     
     # graph1 = graph_altas[0]
     # print(graph1)
@@ -164,8 +172,7 @@ if __name__ == "__main__":
     # test_neighbor(graph_altas)
     
     # mech.test_spe3(graph_altas)
-    mech.test_ssssss(graph_altas)
-    test_isomorphic()
+    # test_isomorphic()
     
     
     
