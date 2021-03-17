@@ -83,58 +83,216 @@
       </light>
     </color>
   </light>
+  <joint>
+    <common>
+      <name>motor1</name>
+      <localFrame>
+        <position>0 0 0</position>
+        <euler>0 0 0</euler>
+      </localFrame>
+      <localObjectProperty>
+        <selectModelBaseInstead>true</selectModelBaseInstead>
+      </localObjectProperty>
+    </common>
+    <type>revolute</type>
+    <mode>force</mode>
+    <switches>
+      <cyclic>true</cyclic>
+    </switches>
+    <sizes>
+      <length>0.2</length>
+      <diameter>0.1</diameter>
+    </sizes>
+    <dynamics>
+      <maxForce>2.5</maxForce>
+      <upperVelocityLimit>360</upperVelocityLimit>
+      <switches>
+        <motorEnabled>true</motorEnabled>
+      </switches>
+    </dynamics>
+    <shape>
+      <common>
+      </common>
+      <mesh>
+        <fileName>linkage.STL</fileName>
+        <localFrame>
+          <position>-0.1 -0.1 0</position>
+          <euler>0 0 0</euler>
+        </localFrame>
+      </mesh>
+      <dynamics>
+        <switches>
+          <static>false</static>
+          <respondable>true</respondable>
+        </switches>
+      </dynamics>
+    </shape>
+  </joint>
+  <joint>
+    <common>
+      <name>motor2</name>
+      <localFrame>
+        <position>1 0 0</position>
+        <euler>0 0 0</euler>
+      </localFrame>
+      <localObjectProperty>
+        <selectModelBaseInstead>true</selectModelBaseInstead>
+      </localObjectProperty>
+    </common>
+    <type>revolute</type>
+    <mode>force</mode>
+    <switches>
+      <cyclic>true</cyclic>
+    </switches>
+    <sizes>
+      <length>0.2</length>
+      <diameter>0.1</diameter>
+    </sizes>
+    <dynamics>
+      <maxForce>2.5</maxForce>
+      <upperVelocityLimit>360</upperVelocityLimit>
+      <switches>
+        <motorEnabled>true</motorEnabled>
+      </switches>
+    </dynamics>
   <shape>
   <common>
   </common>
   <mesh>
-    <fileName>four_linkage - linkage-1.STL</fileName>
+    <fileName>linkage.STL</fileName>
     <localFrame>
-      <position>0.000000 0.000000 0.000000</position>
-      <euler>-0.000000 0.000000 -0.000000</euler>
+      <position>0.1 -0.1 -0.1</position>
+      <euler>0 0 90</euler>
     </localFrame>
   </mesh>
   <dynamics>
+    <switches>
+      <static>false</static>
+      <respondable>true</respondable>
+    </switches>
   </dynamics>
   </shape>
+  </joint>
+  <joint>
+    <common>
+      <name>motor3</name>
+      <localFrame>
+        <position>1 1 0</position>
+        <euler>0 0 180</euler>
+      </localFrame>
+      <localObjectProperty>
+        <selectModelBaseInstead>true</selectModelBaseInstead>
+      </localObjectProperty>
+    </common>
+    <type>revolute</type>
+    <mode>force</mode>
+    <switches>
+      <cyclic>true</cyclic>
+    </switches>
+    <sizes>
+      <length>0.2</length>
+      <diameter>0.1</diameter>
+    </sizes>
+    <dynamics>
+      <maxForce>2.5</maxForce>
+      <upperVelocityLimit>360</upperVelocityLimit>
+      <switches>
+        <motorEnabled>true</motorEnabled>
+      </switches>
+    </dynamics>
   <shape>
   <common>
   </common>
   <mesh>
-    <fileName>four_linkage - linkage-2.STL</fileName>
+    <fileName>linkage.STL</fileName>
     <localFrame>
-      <position>0.000000 0.000000 0.000000</position>
-      <euler>-0.000000 0.000000 -0.000000</euler>
+      <position>-0.1 -0.1 0</position>
+      <euler>0 0 0</euler>
     </localFrame>
   </mesh>
   <dynamics>
+    <switches>
+      <static>false</static>
+      <respondable>true</respondable>
+    </switches>
   </dynamics>
   </shape>
+  </joint>
+  <joint>
+    <common>
+      <name>motor4</name>
+      <localFrame>
+        <position>0 1 0</position>
+        <euler>0 0 -90</euler>
+      </localFrame>
+      <localObjectProperty>
+        <selectModelBaseInstead>true</selectModelBaseInstead>
+      </localObjectProperty>
+    </common>
+    <type>revolute</type>
+    <mode>force</mode>
+    <switches>
+      <cyclic>true</cyclic>
+    </switches>
+    <sizes>
+      <length>0.2</length>
+      <diameter>0.1</diameter>
+    </sizes>
+    <dynamics>
+      <maxForce>2.5</maxForce>
+      <upperVelocityLimit>360</upperVelocityLimit>
+      <switches>
+        <motorEnabled>true</motorEnabled>
+      </switches>
+    </dynamics>
   <shape>
   <common>
   </common>
   <mesh>
-    <fileName>four_linkage - linkage-3.STL</fileName>
+    <fileName>linkage.STL</fileName>
     <localFrame>
-      <position>0.000000 0.000000 0.000000</position>
-      <euler>-0.000000 0.000000 -0.000000</euler>
+      <position>-0.1 -0.1 -0.1</position>
+      <euler>0 0 0</euler>
     </localFrame>
   </mesh>
   <dynamics>
+    <switches>
+      <static>ture</static>
+      <respondable>true</respondable>
+    </switches>
   </dynamics>
   </shape>
+  </joint>
   <shape>
-  <common>
-  </common>
-  <mesh>
-    <fileName>four_linkage - linkage-4.STL</fileName>
-    <localFrame>
-      <position>0.000000 0.000000 0.000000</position>
-      <euler>-0.000000 0.000000 -0.000000</euler>
-    </localFrame>
-  </mesh>
-  <dynamics>
-  </dynamics>
-  </shape>
+    <common>
+      <name>floor</name>
+      <localFrame>
+        <position>0 0 -0.14</position>
+      </localFrame>
+      <localObjectProperty>
+        <selectable>false</selectable>
+      </localObjectProperty>
+      <localObjectSpecialProperty>
+        <collidable>true</collidable>
+        <measurable>true</measurable>
+        <renderable>true</renderable>
+        <detectable>true</detectable>
+      </localObjectSpecialProperty>
+    </common>
+    <primitive>
+      <type>cuboid</type>
+      <size>5 5 0.04</size>
+      <color>
+        <ambientDiffuse>209 209 209</ambientDiffuse>
+      </color>
+    </primitive>
+    <dynamics>
+      <switches>
+        <static>true</static>
+        <respondable>true</respondable>
+      </switches>
+    </dynamics>
+ </shape>
 <!--
   <shape>
   <common>
