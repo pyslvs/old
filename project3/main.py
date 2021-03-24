@@ -72,42 +72,43 @@ def link_gen(joint_coord, link_point: list):
 
 
 if __name__ == "__main__":
-### define the parameters ###
-    num_links = 6
+### define the parameters (CVA suspension)###
+    num_links = 4
     pos = {
-        0: (-33.62, -19),
-        1: (-48.37, 12.12),
-        2: (17.12, 33.87),
-        3: (51.38, -12.63),
-        4: (50.35, 53.11),
-        5: (143.45, 65.96),
-        6: (99.24, 20.447)
+        0: (0, 0),
+        1: (-25.5, 209.5),
+        2: (-70, -35.6),
+        3: (-105, 251),
+        4: (-416, 57.5),
+        5: (34.5, 207)
     }
-    input = [(0, 3), (0, 360)]
-    placement = {2: (51.38, -12.63, 10), 1: (99.24, 20.447, 10), 0: (-33.62, -19, 10)}
+    cus = {4: 2, 5: 3}
+    input = [(0, 2), (0, 360)]
+    placement = {0: (0, 0, 10), 1: (-25.5, 209.5, 10)}
     pass_point = {
-        5: [
-            [93.18042299933363, 85.07324618729241],
-            [114.39254421145483, 81.28536739941362],
-            [137.11981693872755, 72.19445830850454],
-            [154.54405936297, 51.739912853959076],
-            [161.3622411811518, 31.285367399413623],
+        4: [
+            [-406.9852659893411, 139.81994457715848],
+            [-417.9852659893411, 100.81994457715848],
+            [-423.9852659893411, 61.81994457715848],
+            [-417.9852659893411, 22.81994457715848],
+            [-401.9852659893411, -17.18005542284152],
         ]
     }
-    # cus = {4: 2}
 
-    set = settings(num_links, pos, input, placement, pass_point)
+    set = settings(num_links, pos, input, placement, pass_point, cus)
     # print(type(set))
     ### define the parameters ###
     
     
     mech_expr = synthesis(set)
     print("mech_expr:\n", mech_expr, "\n")
+    """
     joint_coord = get_joint_coord(mech_expr)
     print("joint_coord:\n", joint_coord, "\n")
     link_point = get_link_point(mech_expr)
     print("link_point:\n", link_point, "\n")
     # link_gen(joint_coord, link_point)
+    """
     
     
 

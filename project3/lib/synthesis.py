@@ -10,7 +10,7 @@ class settings:
         self.pos = pos
         # self.expr = PMKSexpr
         self.input = input
-        self.graph = graph
+        # self.graph = graph
         self.placement = placement
         self.pass_point = pass_point
         self.cus = cus
@@ -124,6 +124,7 @@ def _run() -> str:
     ### define the parameters ###
     
     set = settings(num_links, pos, input, placement, pass_point, cus)
+    # print(set.structural_synthesis()[0][0])
     # print("ssssss: ", set.graph2vpoints())
     four_bar = set.collection()
     # print(type(four_bar))
@@ -138,7 +139,8 @@ def synthesis_import_test():
     
 
 if __name__ == "__main__":
-    print(_run(), "\n")
+    _run()
+    # print(_run(), "\n")
     # print(synthesis_import_test())
     # print(set.collection())
     

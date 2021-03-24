@@ -1,4 +1,5 @@
 from math import sqrt
+import numpy
 
 def distance(x1, y1, x2, y2):
     result = sqrt((x2 - x1)**2 + (y2 - y1)**2)
@@ -27,10 +28,17 @@ def test_chain_growth():
     print("chain_growth: ", chain_growth)
     
     
+def anti_squat(pass_points):
+    # y = ax^2 + bx + c
+    A = [pass_points[1], ]
+    
+    
+    
 def leverage_ratio(wheel_travel, stroke)
     # wheel_travel: the vertical(up/down) distance the wheel can travel
     return wheel_travel / stroke
     
     
 if __name__ == "__main__":
-    test_chain_growth()
+    # test_chain_growth()
+    anti_squat([(15, 30), (50, 36), (96, 30)])
